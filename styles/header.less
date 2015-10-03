@@ -1,0 +1,142 @@
+//OFF tweak: { "type" : "value", "title" : "Logo Container Width", "min" : 50, "max" : 500, "step" : 5, "category" : "Site Header", "target" : "#logoImage", "showOnlyWhenPresent" : "#logoImage", "js": "true" }
+@logoContainerWidth: 150px;
+
+//OFF tweak: { "type" : "value", "title" : "Site Title Container Width", "min" : 50, "max" : 500, "step" : 5, "category" : "Site Header", "target" : "#siteTitle", "showOnlyWhenPresent" : "#siteTitle", "js": "true" }
+@siteTitleContainerWidth: 255px;
+
+
+// Animation keyframes
+.header-anim{
+  0% {
+    opacity: 0;
+  }
+  72% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes header-anim {
+  .header-anim;
+}
+@keyframes header-anim {
+  .header-anim;
+}
+
+
+#header {
+  padding: @headerVertPadding @sitePadding;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  line-height: 1em;
+  background-color: @headerBgColor;
+  .font-smoothing(@headerBgColor);
+  position: relative;
+  a {
+    text-decoration: none;
+  }
+  #siteTitle {
+    position: relative;
+    z-index: 1000;
+  }
+
+  .header-inner {
+    width: auto;
+    margin: auto;
+    .border-box;
+    padding: @headerVertPadding 0;
+    display: table;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+
+
+/*    -webkit-animation: header-anim 1s ease-in-out;
+    animation: header-anim 1s ease-in-out;
+*/
+  }
+
+}
+
+/*@media only screen and (min-width: 641px) {*/
+  #header {
+
+    width: 100%;
+
+    #logoWrapper,
+    #siteTitleWrapper,
+    #headerNav {
+      .border-box;
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    #headerNav {
+      text-align: right;
+    }
+
+    #logoWrapper,
+    #logoImage {
+      max-width: @logoContainerWidth;
+    }
+    #siteTitleWrapper,
+    #siteTitle {
+      max-width: @siteTitleContainerWidth;
+    }
+
+    &.tweaking{
+      #logoWrapper,
+      #siteTitleWrapper,
+      #mainNavWrapper {
+        border:1px solid #14aaff;
+      }
+    }
+
+  }
+/*}*/
+
+#logoImage {
+  margin: 0;
+  font-size: 0;
+  max-width: 100%;
+
+  a { display: block; }
+  img {
+    height: auto;
+    max-height: 100px;
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+#siteTitle,
+#siteTitle a {
+  .site-title-font;
+  color: @siteTitleColor;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 1em;
+}
+
+#siteTitle a {
+  border: 3px solid @siteTitleColor;
+  padding: 2px 4px;  
+
+}
+
+
+.header-transparent #header {
+  position: absolute;
+  background-color: transparent;
+}
+
+
+

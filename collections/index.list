@@ -1,0 +1,33 @@
+<div id="index-content">
+  <!-- <div id="nav-index" class="js-sticky" data-sticky-on="#index-content" data-nav-index-content=".index-section"> -->
+    {# @|apply nav-index.block}
+  <!-- </div> -->
+
+{.section collection}
+  <!-- Create index sections -->
+
+  {.repeated section collections}
+  <div class="index-section{.if mainImage} has-image{.end} {title}" data-url-id="{urlId}">
+    <div class="index-section-content">
+      {.collectionTypeNameEquals? gallery}
+        {@|apply index-gallery.block}
+      {.or}
+        {.section mainImage}
+          <div class="color-overlay" data-content-field="main-image"></div>
+          <figure class="loading content-fill"><img {@|image-meta} /></figure>
+        {.end}
+        {.section description}
+          <div class="content-description center banner">{@}</div>
+        {.end}        
+        <div class="content-wrapper">
+          <div class="content-inner" data-content-field="main-content">
+            {mainContent}
+          </div>
+        </div>
+      {.end}
+    </div>
+  </div>
+  {.end}
+
+{.end}
+</div>

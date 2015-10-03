@@ -33,5 +33,5 @@
   }
 
   // The event subscription that reloads images on resize.
-  document.addEventListener('resize', loadAllImages);
+  window.addEventListener('resize', loadAllImages);
 }());

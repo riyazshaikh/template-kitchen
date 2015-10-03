@@ -1,0 +1,23 @@
+.index-nav {
+	ul {
+		line-height: 4em;
+	}
+	li {
+		display: inline-block;
+		vertical-align: middle;
+		text-align: center;
+		&.active a {
+			border-bottom: 1px solid @navActiveColor;
+		}
+		a {
+			padding: .75em 1em;
+			display: block;
+			.nav-font;
+	      line-height: 1em;
+	      color: @navColor;
+	      &:hover {
+	        color: @navActiveColor;
+	      }				
+		}
+	}
+}

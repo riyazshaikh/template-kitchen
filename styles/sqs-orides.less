@@ -1,0 +1,284 @@
+/** All the style overrides for SQS system stuff i.e. blocks and layout engine, go here **/
+
+/* Summary Block */
+
+//OFF tweak: { "category" : "Summary Block", "title" : "Summary Block Title Font", "type" : "font", "target" : ".summary-header-text, .summary-title", "showOnlyWhenPresent" : ".summary-title, .summary-title-link" }
+.summary-heading-font {
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+//OFF tweak: { "category" : "Summary Block", "title" : "Summary Block Title Color", "type" : "color", "target" : ".summary-header-text, .summary-title", "showOnlyWhenPresent" : ".summary-title, .summary-title-link" }
+@summaryHeadingColor: #666;
+
+
+.sqs-modal-lightbox-content .lightbox-inner .lightbox-content .form-wrapper {
+  .body-font;
+}
+
+.html-block,
+.markdown-block,
+.entry-more-link,
+.twitter-block,
+.foursquare-block,
+.rss-block,
+.layout-caption-below .image-caption,
+.summary-excerpt,
+.album-description,
+.product-excerpt,
+.product-description,
+.eventlist-excerpt {
+  a:not(.sqs-block-button-element),
+  a:not(.sqs-block-button-element):visited {
+    color: @pageLinkColor;
+    text-decoration: none;
+  }
+}
+
+body {
+  color: @pageTextColor;
+  background-color: @pageBgColor;
+  .font-smoothing(@pageBgColor);
+  .body-font;
+}
+
+a {
+  color: @pageLinkColor;
+}
+
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    /*border-bottom: 1px dotted @pageTextColor;    */
+  }
+}
+
+.sqs-lightbox-meta a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+h1, h2, h3{
+  text-rendering: optimizeLegibility;
+}
+
+article header {
+  h1 a { color: @heading1Color; }
+}
+
+h1 {
+  .heading1-font;
+}
+
+h1 {
+  color:@heading1Color;
+}
+
+h2 {
+  .heading2-font;
+}
+
+h2 {
+  color:@heading2Color;
+}
+h3 {
+  .heading3-font;
+}
+h3 {
+  color:@heading3Color;
+}
+
+h1,
+h2,
+h3 {
+  margin: 1em 0 0.5em;
+  &:first-child { margin-top: 0; }
+}
+
+blockquote {
+  margin: 0;
+  padding: 0.5em 2.5em;
+  font-style: italic;
+}
+
+// Meta
+
+.entry-actions,
+.entry-comments,
+.eventitem-addtocallinks,
+.album-info .engagement,
+.entry-dateline,
+.entry-byline,
+.entry-morefrom,
+.entry-tags,
+.entry-source,
+.eventitem-backlink,
+.sqs-audio-playlist .tracks .track-info .artist,
+.summary-info-item
+{
+  color:@pageMetaColor;
+  a{
+    color:@pageMetaColor;
+  }
+}
+.sqs-block-summary-v2 .summary-info-item{
+  opacity:1;
+}
+
+// Quote Block blockquote
+
+.comment-count{
+  .body-font;
+  color: @pageTextColor;
+}
+
+.quote-block {
+
+  figure {
+    .quote-font;
+    color: @quoteColor;
+    padding: @sitePadding @sitePadding 0;
+    text-align: center;
+    margin:0;
+    blockquote {
+    }
+  }
+
+  blockquote {
+    padding: 0;
+    border-left-width: 0;
+    font-style: inherit;
+    > span:first-child {
+      font-size: 4em;
+      display: block;
+      opacity: 0.30;
+    }
+    > span:last-child { display: none; }
+  }
+
+  .source {
+    font-size: 0.875em;
+    padding-top: 1em;
+    opacity: 0.50;
+    text-align: center;
+  }
+}
+
+// Horizontal Rule
+
+.sqs-block-horizontalrule hr {
+  border-style: none;
+  border-width: 0;
+  margin: @sitePadding 0;
+  color: fade(@pageTextColor, 15%);
+  background-color: fade(@pageTextColor, 15%);
+}
+
+#preFooter .sqs-block-horizontalrule hr {
+  color: fade(@preFooterTextColor, 15%);
+  background-color: fade(@preFooterTextColor, 15%);
+}
+
+#footer .sqs-block-horizontalrule hr {
+  color: fade(@footerTextColor, 15%);
+  background-color: fade(@footerTextColor, 15%);
+}
+
+
+// Block helpers
+
+.embed-block {
+  iframe,
+  img {
+    max-width: 100%;
+  }
+}
+
+.sqs-block.image-block .image-caption-wrapper p {
+  font-size: 0.875em;
+  line-height: 1.25em;
+}
+
+.ss-social-button {
+
+  .sqs-ui-font(share);
+  // link color
+
+  &:hover {
+    // link hover color
+  }
+
+  &:before {
+    margin-right: 0.4em;
+    // start override sqs-ui-font
+    font-size: 0.85em;
+    width: auto;
+    height: auto;
+    line-height: inherit;
+    text-align: left;
+    vertical-align: initial;
+    // end override sqs-ui-font
+  }
+
+  div {
+    display: inline-block;
+    // sets div with no class names
+  }
+
+}
+
+.ss-social-button-icon {
+  display: none!important;
+}
+
+.sqs-simple-like {
+
+  line-height: inherit;
+  // overrides sqs-simple-like
+
+  .like-count {
+    margin-right: 1.2em;
+    .sqs-ui-font(heart-2);
+    // link color
+
+    &:hover {
+      // link hover color
+    }
+
+    &:before {
+      margin-right: 0.2em;
+      position: relative;
+      top: 0.13em;
+      // start override sqs-ui-font
+      font-size: 1.2em;
+      width: auto;
+      height: auto;
+      line-height: inherit;
+      text-align: left;
+      vertical-align: initial;
+      // end override sqs-ui-font
+    }
+  }
+
+  .like-icon {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  @import 'sqs-grid-breaker';
+}
+
+body.sqs-edit-mode {
+  width: 90%;
+}
+
+.sqs-licensed-asset-preview-bar {
+  display: none;
+}

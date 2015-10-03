@@ -1,0 +1,217 @@
+/* Banner */
+//OFF tweak: { "type" : "color", "title" : "Banner Overlay Color", "category" : "Banner Section", "target" : ".banner-thumbnail-wrapper, .sqs-featured-posts-gallery, #promotedGalleryWrapper, .promoted-gallery-wrapper", "showOnlyWhenPresent" : ".banner-thumbnail-wrapper, .sqs-featured-posts-gallery, #promotedGalleryWrapper .sqs-gallery, .blog-item-wrapper, .promoted-gallery-wrapper .sqs-gallery"  }
+@bannerOverlayColor: rgba(0, 0, 0, 0.3);
+
+// tweak: { "type" : "font", "title" : "Banner Heading Font", "category" : "Banner Section", "target" : ".banner-thumbnail-wrapper, .sqs-featured-posts-gallery, #promotedGalleryWrapper, .promoted-gallery-wrapper", "showOnlyWhenPresent" : ".desc-wrapper, .sqs-featured-posts-gallery, #promotedGalleryWrapper .sqs-gallery, .blog-item-wrapper, .promoted-gallery-wrapper .sqs-gallery" }
+.banner-heading-font {
+  font-family: "Brandon", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 48px;
+  letter-spacing: 0.1rem;
+  text-transform: none;
+  line-height: 1em;
+}
+
+//OFF tweak: { "type" : "color", "title" : "Banner Heading Color", "category" : "Banner Section", "target" : ".banner-thumbnail-wrapper, .sqs-featured-posts-gallery, #promotedGalleryWrapper, .promoted-gallery-wrapper", "showOnlyWhenPresent" : ".desc-wrapper, .sqs-featured-posts-gallery, #promotedGalleryWrapper .sqs-gallery, .blog-item-wrapper, .promoted-gallery-wrapper .sqs-gallery" }
+@bannerHeadingColor: #30373b;
+
+// tweak: { "type" : "font", "title" : "Banner Text Font", "category" : "Banner Section", "target" : ".banner-thumbnail-wrapper, .sqs-featured-posts-gallery, #promotedGalleryWrapper, .promoted-gallery-wrapper", "showOnlyWhenPresent" : ".desc-wrapper, .sqs-featured-posts-gallery, #promotedGalleryWrapper .sqs-gallery, .blog-item-wrapper, .promoted-gallery-wrapper .sqs-gallery" }
+.banner-text-font {
+  font-family: "Brandon", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  letter-spacing: 0.03rem;
+  text-transform: none;
+  line-height: 1.5em;
+}
+
+//OFF tweak: { "type" : "color", "title" : "Banner Text Color", "category" : "Banner Section", "target" : ".banner-thumbnail-wrapper, .sqs-featured-posts-gallery, #promotedGalleryWrapper, .promoted-gallery-wrapper", "showOnlyWhenPresent" : ".desc-wrapper, .sqs-featured-posts-gallery, #promotedGalleryWrapper .sqs-gallery, .blog-item-wrapper, .promoted-gallery-wrapper .sqs-gallery" }
+@bannerTextColor: @pageTextColor;
+
+@bannerMetaColor: @pageMetaColor;
+
+//OFF tweak: { "category": "Banner Section", "title": "Banner Button Style", "type": "dropdown", "options": ["Solid", "Outline", "Raised"], "default": "Solid", "showOnlyWhenPresent": ".has-description .desc-wrapper p:last-child > a, .sqs-gallery-block-slideshow .meta-description p:last-child > a", "target" : ".desc-wrapper p:last-child > a, .meta-description p:last-child > a" }
+
+//OFF tweak: { "category": "Banner Section", "title": "Banner Button Corner Style", "type": "dropdown", "options": ["Square", "Rounded", "Pill"], "default": "Square", "showOnlyWhenPresent": ".has-description .desc-wrapper p:last-child > a, .sqs-gallery-block-slideshow .meta-description p:last-child > a", "target": ".desc-wrapper p:last-child > a, .meta-description p:last-child > a"  }
+
+//OFF tweak: { "category": "Banner Section", "title": "Banner Button Color", "type": "color", "showOnlyWhenPresent": ".has-description .desc-wrapper p:last-child > a, .sqs-gallery-block-slideshow .meta-description p:last-child > a", "target": ".desc-wrapper p:last-child > a, .meta-description p:last-child > a" }
+@bannerButtonColor: #ededed;
+
+//OFF tweak: { "category": "Banner Section", "title": "Banner Button Text Color", "type": "color", "showOnlyWhenPresent": "body:not(.banner-button-style-outline) .has-description .desc-wrapper p:last-child > a, .sqs-gallery-block-slideshow .meta-description p:last-child > a", "target": ".desc-wrapper p:last-child > a, .meta-description p:last-child > a" }
+@bannerButtonTextColor: #181818;
+
+// tweak: { "category": "Banner Section", "title": "Banner Button Font", "type": "font", "showOnlyWhenPresent": ".has-description .desc-wrapper p:last-child > a, .sqs-gallery-block-slideshow .meta-description p:last-child > a", "target": ".desc-wrapper p:last-child > a, .meta-description p:last-child > a" }
+.banner-button-font {
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.banner {  
+  .banner-thumbnail-wrapper figure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-image: radial-gradient(ellipse closest-side, fade(@bannerOverlayColor,30%), fade(@bannerOverlayColor, 90%));
+    }
+
+    width: 100%;
+    margin: 0;
+    a {
+      display: block;
+    }
+  }
+
+  #promotedGalleryWrapper,
+  .promoted-gallery-wrapper,
+  .banner-thumbnail-wrapper,
+  .sqs-featured-posts-gallery {
+    background-color: fade(@pageBgColor,100%);
+    .font-smoothing(@pageBgColor);
+    .color-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      /*background-image: radial-gradient(150% 50%, fade(@bannerOverlayColor,0%), fade(@bannerOverlayColor, 100%));*/
+      z-index: 99;
+    }
+  }
+
+  .banner-thumbnail-wrapper {
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+    width: 100%;
+  }
+
+  .view-list .banner-thumbnail-wrapper,
+  .collection-type-page .banner-thumbnail-wrapper,
+  .collection-type-index .banner-thumbnail-wrapper {
+    min-height: 0;
+    padding: 130px 0;
+  }
+
+  .desc-wrapper {
+
+    p {
+      .banner-text-font;
+      color: @bannerTextColor;
+    }
+    p a {
+      color: @bannerTextColor;
+      border-bottom: 1px solid @bannerTextColor;
+    }
+    p > strong,
+    p > em > strong {
+      display: block;
+      .banner-heading-font;
+      color: @bannerHeadingColor;
+    }
+    p > em > strong {
+      font-style: italic;
+    }
+    p:last-child > a {
+      .banner-button-font;
+      text-decoration: none;
+      background-color: @bannerButtonColor;
+      .font-smoothing(@bannerButtonColor);
+      color: @bannerButtonTextColor;
+      border: none;
+      .transition2(background-color 0.1s 0.0s ease-in-out, color 0.1s 0.0s ease-in-out);
+      &:hover {
+        background-color: fade(@bannerButtonColor, 80%);
+      }
+    }
+    p:last-child > a + a { margin-left: 1em; }
+    p:empty {
+      display: none;
+    }
+
+    p:first-child:after {
+      background-color: @bannerMetaColor;
+    }
+
+    p > em {
+
+      color: @bannerMetaColor;
+    
+    }
+
+  }
+}
+
+.heading-dash .desc-wrapper {
+  h1, p:first-child {
+    &:after {
+      background-color: @bannerMetaColor;     
+    }
+  }
+}
+
+body.banner-button-style-outline {
+  .desc-wrapper p:last-child > a,
+  &.has-promoted-gallery #promotedGalleryWrapper .sqs-gallery-block-slideshow .meta-description p:last-child > a,
+  &.has-promoted-gallery .promoted-gallery-wrapper .sqs-gallery-block-slideshow .meta-description p:last-child > a {
+    background-color: transparent;
+    .font-smoothing(@bannerOverlayColor);
+    border: 2px solid @bannerButtonColor !important;
+    color: @bannerButtonColor;
+    &:hover {
+      background-color: @bannerButtonColor;
+      .banner-button-outline-hover-style-guarded-mixin(@bannerButtonColor);
+    }
+
+    /* ----- Guarded mixin to calculate what text color should be on hover ----- */
+    .banner-button-outline-hover-style-guarded-mixin (@a) when (lightness(@a) >= 40%) { color: #181818; }
+    .banner-button-outline-hover-style-guarded-mixin (@a) when (lightness(@a) < 60%) { color: #efefef; }
+  }
+}
+
+body.banner-button-style-raised {
+  .desc-wrapper p:last-child > a,
+  &.has-promoted-gallery #promotedGalleryWrapper .sqs-gallery-block-slideshow .meta-description p:last-child > a,
+  &.has-promoted-gallery .promoted-gallery-wrapper .sqs-gallery-block-slideshow .meta-description p:last-child > a {
+    -webkit-box-shadow: 0px 0.2em 0px 0px darken(@bannerButtonColor,8%);
+    -moz-box-shadow: 0px 0.2em 0px 0px darken(@bannerButtonColor,8%);
+    box-shadow: 0px 0.2em 0px 0px darken(@bannerButtonColor,8%);
+    &:hover {
+      background-color: lighten(@bannerButtonColor,3%);
+    }
+  }
+}
+
+body.banner-button-corner-style-rounded {
+  .desc-wrapper p:last-child > a,
+  &.has-promoted-gallery #promotedGalleryWrapper .sqs-gallery-block-slideshow .meta-description p:last-child > a,
+  &.has-promoted-gallery .promoted-gallery-wrapper .sqs-gallery-block-slideshow .meta-description p:last-child > a {
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+  }
+}
+
+body.banner-button-corner-style-pill {
+  .desc-wrapper p:last-child > a,
+  &.has-promoted-gallery #promotedGalleryWrapper .sqs-gallery-block-slideshow .meta-description p:last-child > a,
+  &.has-promoted-gallery .promoted-gallery-wrapper .sqs-gallery-block-slideshow .meta-description p:last-child > a {
+    -webkit-border-radius: 300px;
+            border-radius: 300px;
+  }
+}

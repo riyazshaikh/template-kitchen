@@ -1,0 +1,30 @@
+<div class="gallery-block-custom">		
+	<div class="sqs-gallery sqs-gallery-design-stacked">
+  {.repeated section items}        
+      <div class="slide content-fill" data-type="image" data-slide-id="{id}">
+        {.main-image?}
+				<img {@|image-meta color-data} class="loading" data-load="false" />
+        {.end}
+
+        
+        {.if title || body}
+          <div class="meta">
+            <div class="content-description left dash button-style-overlay">
+              <p class="meta-title"><strong>{title}</strong></p>              
+              {body}
+            </div>
+          </div>
+        {.end}
+        
+        <div class="color-overlay"></div>
+      </div>
+	{.end}    
+  </div>
+	<div class="sqs-gallery-meta-container">
+      <div class="sqs-gallery-controls show-hover-effect">
+        <a href="#" class="previous"></a>
+        <a href="#" class="next"></a>
+      </div>
+  </div>
+</div>
+

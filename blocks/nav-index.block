@@ -1,0 +1,79 @@
+<!-- Usage: To scroll to content, data-nav-index-content=".selector-content" -->
+
+{.section collection}
+  
+  {.if collections.1}
+  <nav class="index-nav" >
+    <ul>
+    {.repeated section collections}
+      <li><a href="#{urlId}"><span class="nav-title">{navigationTitle}</span></a></li>
+    {.end}
+    </ul>
+  </nav>
+  <script type="text/javascript">
+  Y.use('node', function () {  
+    var rootEl = document.currentScript.parentNode;
+
+    // Logic to toggle active state
+    Y.one(rootEl).delegate('click', function(e) {
+      e.currentTarget.get('parentNode').addClass('active').siblings().removeClass('active');
+    }, '.index-nav a');
+
+    // Logic to scroll to content
+    var contentSelector = rootEl.getAttribute('data-nav-index-content');
+    if (!contentSelector) return; // nothing to scroll to
+
+    var scrollEl = Y.one(Y.UA.gecko || Y.UA.ie || !!navigator.userAgent.match(/Trident.*rv.11\./) ? 'html' : 'body');      
+
+    var navHeight = rootEl.offsetHeight;
+
+    var onHashChange = function(e) {
+      var hashTarget = Y.one(contentSelector + '[data-url-id="'+e.newHash+'"]');
+
+      if(hashTarget) {
+        var targetY = Math.ceil(hashTarget.getXY()[1]) - navHeight;
+        if (e.quick) {
+          scrollEl.set('scrollTop', targetY);
+        } else {
+
+          scrollEl.anim({}, {
+            to: { scroll: [0, targetY ] },
+            duration: 0.6,
+            easing: Y.Easing.easeBoth
+          }).run().on('end', function() {
+            if(scrollEl.get('scrollTop') !== targetY) {
+              scrollEl.set('scrollTop', targetY);
+            }
+          }, this);
+        }
+      }
+    };
+
+    Y.on('hashchange', onHashChange, Y.config.win);
+
+      // Y.all('#parallax-nav a').each(function(link) {
+      //   link.on('click', function() {
+      //     if (link.getAttribute('href') === window.location.hash) {
+      //       // force hash update
+      //       this.onHashChange({
+      //         newHash: link.getAttribute('href').replace('#', '')
+      //       });
+      //     }
+      //   }, this);
+      // }, this);
+
+    if (Y.config.win.location.hash) {
+      Y.later(100, this, function() {
+        onHashChange({
+          newHash: window.location.hash.replace('#', ''),
+          quick: true
+        });
+      });
+    }
+  });
+  </script>
+  {.or}
+    <!-- <div class="sqs-state-message error">There are no pages in this Index.</div> -->
+  {.end}
+
+{.end}

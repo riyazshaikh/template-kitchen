@@ -1,0 +1,34 @@
+/* Blog */
+
+//OFF tweak: { "category" : "Blog", "title" : "Banner Slideshow Controls", "type" : "dropdown", "options" : [ "Arrows", "None" ], "default" : "Arrows", "js": "true", "target" : ".sqs-featured-posts-gallery", "showOnlyWhenPresent" : ".sqs-featured-posts-gallery" }
+
+//OFF tweak: { "category" : "Blog", "title" : "Meta Priority", "type" : "dropdown", "options" : [ "Date", "Category", "Author", "None" ], "default" : "Date", "target" : ".collection-type-blog #page", "showOnlyWhenPresent" : ".collection-type-blog" }
+
+//OFF tweak: { "category" : "Blog", "title" : "Center Entry Title & Meta", "type" : "checkbox", "active" : "false", "target" : "article header", "showOnlyWhenPresent" : ".hide-blog-sidebar" }
+
+//OFF tweak: { "category" : "Blog", "title" : "Hide Entry Author", "type" : "checkbox", "active" : "true", "target" : ".collection-type-blog #page", "showOnlyWhenPresent" : ".collection-type-blog:not(.meta-priority-author)" }
+
+//OFF tweak: { "category" : "Blog", "title" : "Hide List Entry Footer", "type" : "checkbox", "active" : "true", "target" : ".collection-type-blog #page", "showOnlyWhenPresent" : ".collection-type-blog" }
+
+
+
+article header {
+  h1 a { color: @heading1Color; }
+}
+
+.entry-title {
+  .heading1-font;
+}
+
+.entry-title {
+  color:@heading1Color;
+}
+
+.summary-title a {
+  color:@heading2Color;
+}
+
+.entry-title {
+  margin: 1em 0 0.5em;
+  &:first-child { margin-top: 0; }
+}

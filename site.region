@@ -4,55 +4,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="initial-scale=1">
 
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7811972/758964/css/fonts.css">
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:300' rel='stylesheet' type='text/css'>
+
     <!--Include sqs scripts, meta tags, and user content from the code injection tab.-->
     {squarespace-headers}
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
 
-    <div class="container">
+    <div class="sqs-announcement-bar-dropzone"></div>
 
-      <header id="header" class="header">
-        <!--Site title or logo.-->
-        {.section website}
+    <div id="siteWrapper">
+      <script>
+        if (window.PAGE_CLASS) { // PAGE_CLASS set via header code injection
+          document.currentScript.parentNode.className += ' ' + window.PAGE_CLASS;
+        }
+      </script>
 
-          <h1 class="site-title" data-content-field="site-title">
-            <a href="/">
-              {.section logoImageUrl}
-               <img class="logo" src="{logoImageUrl}?format=original" alt="{siteTitle}" />
-              {.or}
-                {siteTitle}
-              {.end}
-            </a>
-          </h1>
-          
-          <!--Site tagline.-->
-          {.section siteTagLine}
-            <p class="site-tagline">{@}</p>
-          {.end}
+      <div id="headerWrapper" class="header-transparent">
+        {@|apply header.block}
+      </div>
 
-        {.end}
+      {@|apply content.block}
 
-        <!--Main navigation.-->
-        <squarespace:navigation navigationId="mainNav" template="navigation" />
-      </header>
-
-      <!--Content injection point.-->
-      <main id="content" class="content" role="main" data-content-field="main-content">
-       {squarespace.main-content}
-      </main>
-
-      <!--Footer with open block field.-->
-      <footer id="footer" class="footer">
-        <squarespace:block-field id="footerBlocks" columns="12" />
-      </footer>
+      {@|apply footer.block}
 
     </div>
 
     <!--Combo and minify the scripts when you're not logged in.-->
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+    <squarespace:script src="helpers.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+    <squarespace:script src="sticky.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+    <squarespace:script src="rafscroll.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+    <squarespace:script src="parallax.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+    <squarespace:script src="gallerify.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
+    
 
     <!--Injection point for tracking scripts and user content from the code injection tab.-->
     {squarespace-footers}
-    
+
   </body>
 </html> 

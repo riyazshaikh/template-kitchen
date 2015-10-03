@@ -1,0 +1,11 @@
+
+<main id="content" class="content {.if collection}{collection.typeLabel}{.if item}-item{.end}{.end}" role="main" data-content-field="main-content">
+
+  {.section collection}
+  	{@|apply banner.block}
+  {.end}
+
+  {squarespace.main-content}
+
+
+</main>

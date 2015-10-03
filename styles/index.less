@@ -1,0 +1,254 @@
+#index-content {
+	min-height: 1000px;
+
+/*	.page-content {
+		max-width: @pageWidth;
+		margin: 0 auto;
+		padding: @sitePadding;
+	}
+
+*/
+	#nav-index {
+		background-color: @headerBgColor;
+		z-index: 101010;
+		text-align: center;
+	}
+
+	.index-section-content {
+    > .color-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      /*background-color: @bannerOverlayColor;*/
+      /*background-image: radial-gradient(150% 50%, fade(@bannerOverlayColor,0%), fade(@bannerOverlayColor, 100%));*/
+      z-index: 99;
+    }
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+		> figure {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    bottom: 0;
+	    right: 0;
+
+	    width: 100%;
+	    margin: 0;
+	    a {
+	      display: block;
+	    }
+	  }
+
+	  > .content-wrapper {
+	  	position: relative;
+	  	z-index: 100;
+	  }
+	}
+
+	.content-padded {
+		.content-inner {
+	    padding: 5%;
+			max-width: @pageWidth;
+			margin: 0 auto;
+		}	  	
+
+	}
+
+	.effect-gradient {
+		.sqs-block-image:last-child {
+	    &:after {
+	      content: '';
+	      position: absolute;
+	      top: 0;
+	      left: 0;
+	      bottom: 0;
+	      right: 0;
+	    }
+		}
+	}
+	
+
+	/******** New layouts ***********/
+
+	.layout-content-full {
+
+
+
+		.content-inner {
+/*			max-width: 100%;
+			padding: 0;
+
+*/		
+			.sqs-block-image:last-child {
+				padding-bottom: 0;
+
+			}			
+
+		}
+	}
+
+	.layout-content-padded {
+		.layout-content-full;
+
+		.content-wrapper {
+			padding: 0 20px;
+			@media (min-width: 768px)  {
+				padding: 0 5%;
+			}
+		}
+	}
+
+	.layout-content-restrict {
+		.layout-content-padded;
+
+		.content-inner {
+			max-width: @pageWidth;
+			margin: 0 auto;
+		}
+	}
+
+	.layout-hero-center {
+		.layout-content-restrict;
+
+		.desc-wrapper, .content-wrapper {
+			padding-top: 120px;
+			padding-bottom: 80px;
+
+			@media (min-height: 480px) and (min-width: 768px) {
+				padding-top: 160px;
+				padding-bottom: 120px;
+			}
+
+			@media (min-height: 680px) and (min-width: 768px) {
+				padding-top: 260px;
+				padding-bottom: 220px;
+			}
+
+			padding-left: 20px;
+			padding-right: 20px;
+			@media (min-width: 768px)  {
+				padding-left: 5%;
+				padding-right: 5%;
+			}			
+		}		
+
+		.desc-wrapper + .content-wrapper {
+			padding: 0 !important; /* Don't duplicate padding if both present */
+		}
+
+		.content-inner {
+			.sqs-block-button-element {
+				padding: 14px 27px 14px 29px;
+				border-radius: 25px;
+			}
+		}
+	}
+
+	.layout-gallery {
+		.content-inner {
+			max-height: 50%;
+
+			.sqs-block:last-child {
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	.layout-gallery-iphone {
+		.sqs-gallery-container {
+		  background: url(/assets/iphone5.png) no-repeat;
+		}		
+	}
+
+	.layout-gallery-stacked {
+
+		.sqs-gallery-design-stacked {
+			max-height: 600px;
+
+			.meta {
+				margin: 5% !important;
+				z-index: 100;
+				background-color: transparent;
+				.meta-inside {
+					padding: 0 !important;
+				}
+			}
+		}
+
+		.sqs-gallery-block-meta-position-bottom {
+			&-center .meta-description > p > em:before {
+          left: 50%;
+          margin-left: -15px;
+      }
+
+      &-left .meta-description > p > em:before {
+          left: 0;
+      }
+		}
+
+	}
+}
+
+.gallery-block-custom {
+	padding-bottom: 50%;
+	.sqs-gallery {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}
+
+.collection-type-index .header-transparent #header {
+	@textColor : #fff;
+  -webkit-font-smoothing: antialiased;
+
+  padding-bottom: 0;
+	#siteTitle,
+	#siteTitle a {
+	  color: @textColor;
+	}
+
+	#siteTitle a {
+	  border-color: @textColor;
+	}  
+
+	label { 
+		color: @textColor;
+	}
+	nav {
+    a,
+    a:visited,
+    label {
+      color: @textColor;
+      &:hover {
+        color: @textColor;
+      }
+    }
+    .active{
+      > a,
+      > a:visited,
+      > label{
+        color:@textColor;
+      }
+    }
+    .subnav{
+    	background-color: transparent;
+    }
+  }
+
+}
+
+.collection-type-index #footer {
+	display: none;
+}
+
+.sqs-dialog-layout-wrapper .sqs-layout-wrapper.sqs-node-expander-active .sqs-layout {
+	max-width: none;
+}
+

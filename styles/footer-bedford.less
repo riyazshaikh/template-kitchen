@@ -1,0 +1,159 @@
+/* PreFooter */
+
+//OFF tweak: { "type" : "color", "title" : "Pre Footer Background", "category" : "PreFooter", "target" : "#preFooter" }
+@preFooterBgColor: @pageBgColor;
+
+//OFF tweak: { "type" : "color", "title" : "Pre Footer Text Color", "category" : "PreFooter", "target" : "#preFooter" }
+@preFooterTextColor: @pageTextColor;
+
+
+/* Footer */
+
+//OFF tweak: { "type" : "color", "title" : "Footer Background", "category" : "Footer", "target" : "#footer" }
+@footerBgColor: @pageTextColor;
+
+//OFF tweak: { "type" : "color", "title" : "Footer Text Color", "category" : "Footer", "target" : "#footer" }
+@footerTextColor: @pageBgColor;
+
+// tweak: { "type" : "font", "title" : "Footer Nav Font", "category" : "Footer", "target" : "#footer, #secondaryNavigation", "showOnlyWhenPresent" : "#secondaryNavigation" }
+.footer-nav-font {
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+//OFF tweak: { "type" : "color", "title" : "Footer Nav Link Color", "category" : "Footer", "target" : "#footer, #secondaryNavigation", "showOnlyWhenPresent" : "#secondaryNavigation" }
+@footerNavLinkColor: #FFF;
+
+//OFF tweak: { "type" : "color", "title" : "Footer Nav Link (Active)", "category" : "Footer", "target" : "#footer, #secondaryNavigation", "showOnlyWhenPresent" : "#secondaryNavigation" }
+@footerNavActiveColor: #CCC;
+
+// tweak: { "type" : "font", "title" : "Site Info Font", "category" : "Footer", "target" : "#footer, #siteInfo", "showOnlyWhenPresent" : "body:not(.hide-site-info) #siteInfo" }
+.site-info-font {
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+//OFF tweak: { "type" : "color", "title" : "Site Info Color", "category" : "Footer", "target" : "#footer, #siteInfo", "showOnlyWhenPresent" : "body:not(.hide-site-info) #siteInfo" }
+@siteInfoColor: #FFF;
+
+//OFF tweak: { "type" : "checkbox", "title" : "Center Navigation / Info", "active" : "false", "category" : "Footer", "target" : "#footer, #secondaryNavigation", "showOnlyWhenPresent" : "#secondaryNavigation, #siteInfo" }
+
+//OFF tweak: { "type" : "checkbox", "title" : "Hide Site Info", "active" : "false", "category" : "Footer", "target" : "#footer, #siteInfo", "showOnlyWhenPresent" : "#siteInfo" }
+
+
+
+#footer {
+  padding: 20px @sitePadding;
+
+  background-color: @footerBgColor;
+  .font-smoothing(@footerBgColor);
+
+  color: @footerTextColor;
+
+  a,
+  a:visited
+  {
+    color: @footerTextColor;
+    /*border-bottom: 1px solid @footerTextColor;*/
+  }
+
+  .sqs-svg-icon--wrapper {
+    vertical-align: middle;
+  }
+  .sqs-block {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+}
+
+.sqs-ss-badge[data-position="bottom-right"] {
+    right: 5%;
+    bottom: ~"calc(5% + 15px)";
+
+    .transition(none);
+}
+
+#preFooter {
+  margin: 0 @sitePadding;
+  background-color: @preFooterBgColor;
+  color: @preFooterTextColor;
+  border-top: 1px solid #e5e5e5;
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+
+#footer{
+  color: @footerTextColor;
+  h1,
+  h2,
+  h3 { color: @footerTextColor; }
+}
+
+#siteInfo{
+  .site-info-font;
+  color:@siteInfoColor;
+  a,
+  a:visited{
+    color:@siteInfoColor;
+  }
+}
+
+.back-to-top-nav { display: none; }
+
+#secondaryNavWrapper {
+  padding: 0 0 1.5em;
+  z-index: 3;
+  position: relative;
+  line-height: 1.25em;
+  right: auto;
+  nav > div {
+    &:first-child {
+      > a,
+      label {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.site-phone,
+.site-email{
+  white-space:nowrap;
+}
+.site-address + .site-phone,
+.site-address + .site-email,
+.site-phone + .site-email{
+  margin-left:1em;
+}
+
+.center-navigation--info {
+  #secondaryNavWrapper {
+    text-align: center;
+    left: auto;
+  }
+  #siteInfo {
+    text-align: center;
+  }
+}
+
+.hide-site-info {
+  #siteInfo {
+    display: none;
+  }
+}
+
+
+#footerBlocks:not(.empty){
+  margin-top:1.5em;
+}

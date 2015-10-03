@@ -1,0 +1,11 @@
+      <div id="preFooter">
+        <div class="pre-footer-inner">
+          <squarespace:block-field id="preFooterBlocks" columns="12" label="Pre-Footer Content" />
+        </div>
+      </div>
+
+      <!--Footer with open block field.-->
+      <footer id="footer" class="footer">
+        <squarespace:block-field id="footerBlocks" columns="12" />
+      </footer>
+

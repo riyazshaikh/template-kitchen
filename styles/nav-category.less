@@ -1,0 +1,91 @@
+
+// tweak: { "category": "Sidebar", "title": "Sub Nav Title Font", "type": "font", "showOnlyWhenPresent": ".collection-type-page:not(.hide-page-sidebar):not(.hide-sidebar-title) .folder-nav, .collection-type-products:not(.hide-products-sidebar):not(.hide-sidebar-title) .category-nav", "target": "#page, nav.folder-nav, nav.category-nav" }
+.subnav-title-font {
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+//OFF tweak: { "type" : "color", "title" : "Sub Nav Title Color", "category" : "Sidebar", "showOnlyWhenPresent": ".collection-type-page:not(.hide-page-sidebar):not(.hide-sidebar-title) .folder-nav, .collection-type-products:not(.hide-products-sidebar):not(.hide-sidebar-title) .category-nav", "target": "#page, nav.folder-nav, nav.category-nav" }
+@subNavTitleColor: #111;
+
+// tweak: { "category": "Sidebar", "title": "Sub Nav Link Font", "type": "font", "showOnlyWhenPresent": ".collection-type-page:not(.hide-page-sidebar) .folder-nav, .collection-type-products:not(.hide-products-sidebar) .category-nav", "target": "#page, nav.folder-nav, nav.category-nav" }
+.subnav-link-font {
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+//OFF tweak: { "type" : "color", "title" : "Sub Nav Link Color", "category" : "Sidebar", "showOnlyWhenPresent": ".collection-type-page:not(.hide-page-sidebar) .folder-nav, .collection-type-products:not(.hide-products-sidebar) .category-nav", "target": "#page, nav.folder-nav, nav.category-nav" }
+@subNavLinkColor: #949494;
+
+//OFF tweak: { "type" : "color", "title" : "Sub Nav Link (Active)", "category" : "Sidebar", "showOnlyWhenPresent": ".collection-type-page:not(.hide-page-sidebar) .folder-nav, .collection-type-products:not(.hide-products-sidebar) .category-nav", "target": "#page, nav.folder-nav, nav.category-nav" }
+@subNavActiveColor: #111;
+
+
+
+#catNav {
+	background-color: @pageBgColor;
+
+	.catnav-container {
+		display: table;
+		width: 100%;
+		.border-box;
+
+		.catnav-list {
+			display: table-cell;
+			width: 80%;
+			vertical-align: middle;
+
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+
+			.catnav-item {
+				display: inline-block;
+				padding: 20px 8px;
+
+				a {
+					.subnav-link-font;
+					color: @subNavLinkColor;
+				}
+
+				&.active-link a {
+					color: @subNavActiveColor;	
+				}
+			}
+		}
+
+		.sortby-container, .search-container {
+			display: table-cell;
+			width: 10%;
+			vertical-align: middle;
+		}
+
+		.sortby-container {
+			a {
+				.subnav-link-font;
+				color: @subNavActiveColor;
+			}
+		}
+		.search-container {
+			text-align: right;
+			.icon-search {
+			    display: inline-block;
+			    width: 20px;
+			    height: 20px;
+				background-image: url(/universal/images-v6/icons/icon-searchqueries-20-dark.png);
+			}
+		}
+	}
+
+}

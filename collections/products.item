@@ -1,0 +1,103 @@
+{.section item}
+<div id="productWrapper" class="product hentry" data-item-id="{id}">
+
+  <div id="productNav"><a href="{collection.fullUrl}"><span class="back-arrow">←</span> Back to Products</a></div>
+
+  <div id="productSummary" class="clear">
+
+    <h1 class="product-title mobile" data-content-field="title">{title}</h1>
+
+    <div id="productGallery">
+
+						<div class="main-screenshot">
+						  <a class="preview-link" target=_blank href="//{urlId}.squarespace.com">
+						    <div class="demo-overlay">
+								  <div class="demo-overlay__table">
+								    <div class="demo-overlay__inner">
+								      <span class="demo-overlay__button">View demo</span>
+								    </div>
+								  </div>
+								</div>
+
+								{.main-image?}
+									<img {@|image-meta} data-load="true" class="loading" />
+								{.end}
+						  </a>
+						</div>
+
+            <div class="iphone-wrapper">
+              <div class="iphone">
+                <div class="iphone__screenshot">
+                  <a class="iphone__link preview-link" target=_blank href="//{urlId}.squarespace.com">
+                    <div class="demo-overlay">
+										  <div class="demo-overlay__table">
+										    <div class="demo-overlay__inner">
+										      <span class="demo-overlay__button">View demo</span>
+										    </div>
+										  </div>
+										</div>
+
+										{.main-image?}
+											<img {@|image-meta} data-load="true" class="loading" />
+										{.end}
+									</a>                
+								</div>
+              </div>
+            </div>
+    </div>
+
+
+    <div id="productDetails">
+      
+
+      <h1 class="product-title" data-content-field="title">{title}</h1>
+
+      <div class="price-demo">
+      	{@|product-price}
+
+      	<a target=_blank href="//{urlId}.squarespace.com">View Demo</a>
+      </div>
+
+      <div class="product-excerpt" data-content-field="excerpt">{excerpt}</div>
+
+		  {@|product-checkout}
+
+		  <div class="product-info">
+		  	<h2 class="">Support</h2>
+		  	<div class="">
+			  	<div >
+			  		<span class="label">Made By</span>
+			  		<span class="value"><a class="author" href="#">{author.displayName}</a></span>
+			  	</div>
+			  	<div >
+			  		<span class="label">Last Updated</span>
+			  		<span class="value"><a><time datetime="{addedOn|date %F}">{updatedOn|date %B %d, %Y}</time></a></span>
+			  	</div>
+			  	<div >
+			  		<span class="label">Documentation</span>
+			  		<span class="value"><a>Available</a></span>
+			  	</div>
+			  	<div >
+			  		<span class="label">Compatibility</span>
+			  		<span class="value"><i class="fa fa-chrome fa-lg" title="Chrome Latest"></i><i class="fa fa-firefox fa-lg"  title="Firefox Latest"></i><i class="fa fa-internet-explorer fa-lg" title="IE 10+"></i><i class="fa fa-safari fa-lg" title="Safari 8+"></i></span>
+			  	</div>
+			  </div>
+		  	<h2 class="">Features</h2>
+		  	<div class="">
+			  	<p><i class="fa fa-star-o"></i><a>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</a></p>
+			  	<p><i class="fa fa-check"></i><a>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</a></p>
+			  	<p><i class="fa fa-star"></i><a>Maecenas faucibus mollis interdum.</a></p>
+			  	<p><i class="fa fa-check-circle"></i><a>Etiam porta sem malesuada magna mollis euismod.</a></p>
+			  	<p><i class="fa fa-star"></i><a>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</a></p>
+		  	</div>
+		  </div>
+    </div>
+  </div>
+
+  <div id="productsRelated" class="products-related">
+  	<a href="{collection.fullUrl}?tag={.repeated section tags}{@}{.alternates with},{.end}" data-dynamic-summary="carousel">More Templates like {title}</a>
+
+  	{@|apply dynamic-summary.block}
+  </div>
+</div>
+{.end}

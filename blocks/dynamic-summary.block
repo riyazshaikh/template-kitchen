@@ -1,0 +1,116 @@
+<div id="dynamic-summary" class="sqs-gallery-design-carousel sqs-gallery-design-carousel-slides-in-view-4">
+
+	<script id="carousel-template" type="text/x-jsont-template">
+
+		<header class="">
+
+		  <!-- Collection Title -->
+		  <div class="label">
+		    
+		      <h2>{.meta-left}title{.meta-right}</h2>
+		    
+		  </div>
+
+		  <!-- Carousel Nav -->
+		  <div class="sqs-gallery-controls">
+		    <span class="next"></span>
+		    <span class="previous"></span>
+		  </div>
+
+		</header>
+
+
+		<div class="sqs-gallery">		  
+			{.meta-left}.repeated section items{.meta-right}
+			<div class="productitem">
+				<a href="{.meta-left}fullUrl{.meta-right}" class="productitem-thumb {.meta-left}@|item-classes{.meta-right}" data-item-id="{.meta-left}id{.meta-right}">
+
+					{.meta-left}.main-image?{.meta-right}
+						<img {.meta-left}@|image-meta{.meta-right} data-load="false" class="loading"/>
+					{.meta-left}.end{.meta-right}
+
+				</a>
+
+				<div class="productitem-info">
+					<div class="info-cell"><a href="{.meta-left}fullUrl{.meta-right}">{.meta-left}title{.meta-right}</a></div>
+					<div class="info-cell"><small>{.meta-left}@|product-price{.meta-right}{.meta-left}@|product-status{.meta-right}</small></div>
+				</div>
+			</div>
+				
+
+			{.meta-left}.end{.meta-right}
+
+		</div>
+	</script>
+
+</div>
+
+  
+  
+
+<script>
+  // remove current product from summary blocks if present
+  // var nodes = document.querySelectorAll('.summary-item a[data-title="{title}"]');
+
+  // for (var i=0; i<nodes.length; i++) {
+  // 	nodes[i].parentNode.remove();
+  // }
+  console.log(document.currentScript.parentNode.id);
+
+  Y.use('squarespace-gallery-ng', function (Y) {
+		Singleton.create({
+
+			ready: function () {
+					this.init();
+			},
+
+			init: function() {
+
+			  var trigger = Y.one('a[data-dynamic-summary]');
+			  var url = trigger.getAttribute('href');
+			  var title = trigger.get('text');
+
+				url += url.indexOf('?') > -1 ? '&' : '?';
+
+			  url += 'format=json';
+
+			  var that = this;
+			  Y.Data.get({
+			  	url: url,
+			  	success: function(obj) {
+
+			  		obj.title = title;
+
+					  var template = Y.one('#carousel-template').getHTML();
+						Y.one('#carousel-template').replace(Y.JSONTemplate.evaluateJsonTemplate(template, obj));							  		
+
+						that.makeGallery();
+
+						trigger.hide();
+			  	}
+			  });
+
+
+			},
+
+			makeGallery: function() {
+				var gallery = new Y.Squarespace.Gallery2({				
+						autoHeight: false,
+						container: Y.one('#dynamic-summary .sqs-gallery'),
+						slides: Y.all('#dynamic-summary .productitem'),
+						elements: {
+							next: '#dynamic-summary .sqs-gallery-controls .next',
+							previous: '#dynamic-summary .sqs-gallery-controls .previous'
+						},
+						loaderOptions: {
+							load: true
+						},
+						design: 'carousel',
+						designOptions: {
+						}
+						// refreshOnResize: true
+					});					
+			}
+		});
+	});
+</script>

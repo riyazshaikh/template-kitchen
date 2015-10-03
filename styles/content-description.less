@@ -1,0 +1,86 @@
+/** Generic layouts **/
+.content-description {
+  z-index: 100;
+  position: relative;
+  margin: 0 auto;
+  max-width: @pageWidth;
+  text-rendering: optimizeLegibility;
+
+  p {
+    margin: 1rem auto;
+  }
+
+  p > strong,
+  p > em > strong {
+    display: block;
+	}
+
+  p:last-child > a {
+    .border-box;
+    display: inline-block;
+    /** Default font values **/
+    padding: 1rem 1.75rem;
+    font-size: 1rem;
+    line-height: 1rem;
+    margin: 1rem 0;
+  }
+  p:last-child > a + a { margin-left: 1rem; }
+  p:empty {
+    display: none;
+  }
+
+  /** Different layout options **/
+  &.dash {
+    p:first-child {
+      position: relative;
+      margin-bottom: 2rem;
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+
+        left: 0;
+        bottom: -1rem;
+        height: 3px;
+        width: 2rem;
+      }
+    }
+
+    /** Default is left **/
+    &.center p:first-child:after {
+      left: 50%;
+      margin-left: -1rem;
+    }    
+
+    &.right p:first-child:after {
+      right: 0;
+    }
+
+    &.banner p:first-child {
+      margin-bottom: 3rem;
+      &:after {
+        bottom: -1.5rem;
+      }
+    }
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.right {
+    text-align: right;
+  }
+
+  &.left {
+    text-align: left;  /** Also the default **/
+  }
+
+  &.banner {
+    .border-box;
+    padding: @sitePadding;  
+  }
+
+}
+

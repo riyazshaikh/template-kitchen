@@ -425,3 +425,13 @@ td,
 th {
   padding: 0;
 }
+
+/**
+ * Clean lists for use in navigation
+ */
+
+nav ul, nav ul li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,19 @@
+ <div id="nav-slidebar">
+ 	<label for="mobileNavToggle" class="mobile-nav-toggle-label">
+ 		<div class="top-bar"></div><div class="middle-bar"></div><div class="bottom-bar"></div>
+ 	</label>
+ 	<input type="checkbox" name="mobile-nav-toggle" id="mobileNavToggle" class="mobile-nav-toggle-box hidden" />
+ 	<a href="#" class="body-overlay"></a>
+    <div id="sidecarNav">
+      <squarespace:navigation navigationId="mainNav" template="navigation" />
+    </div>
+</div>
+
+    <script>
+    var body = document.querySelector('body');
+
+    document.querySelector('#mobileNavToggle').addEventListener('click', function(e) {
+    	console.log(e.target.checked);
+    	body.classList[e.target.checked ? 'add' : 'remove']('mobile-nav-enabled');	
+    });
+    </script>
