@@ -32,3 +32,74 @@ article header {
   margin: 1em 0 0.5em;
   &:first-child { margin-top: 0; }
 }
+
+.collection-type-blog .content-description.banner {
+	padding: 0;
+}
+
+.blog-content {
+	max-width: @pageWidth;
+	margin: 0 auto;
+
+	.blog-list {
+		position: relative;
+		.border-box;
+		overflow: hidden;
+
+		max-width: 102%;
+		margin-left: -2%;
+		padding-top: 10px;
+
+		article {
+
+			display: block;
+			float: left;
+			width: 100%/3 - 2%;
+			margin-left: 2%;
+			margin-bottom: 3em;
+
+			box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+	    border-radius: 4px;
+    	padding: 1.5rem 1rem;
+    	box-sizing: border-box;	    
+
+			&:nth-child(3n+1) {
+				clear: left;
+			}
+
+			> a {
+				text-decoration: none;
+				cursor: pointer;
+				display: block;
+				padding-bottom: 50%;
+				margin: -1rem -0.5rem 1rem -0.5rem;
+				position: relative;
+
+				figure {
+					position: absolute;
+					top: 0;
+					left: 0;
+					bottom: 0;
+					right: 0;
+					margin: 0;
+				}
+			}	
+
+			.title {
+				margin-top: 0;
+				color: rgb(51, 51, 51);
+			}
+
+			.excerpt {
+				color: rgb(122, 122, 122);
+				margin-top: 0.5em;
+				p {
+					margin: 0;
+				}
+			}
+			.meta, .location {
+				display: none;
+			}
+		}
+	}
+}

@@ -98,8 +98,11 @@
   .banner-thumbnail-wrapper {
     position: relative;
     overflow: hidden;
-    min-height: 320px;
-    width: 100%;
+
+    &.has-image {
+      min-height: 320px;  
+    }
+    
   }
 
   .view-list .banner-thumbnail-wrapper,

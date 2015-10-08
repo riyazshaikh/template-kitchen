@@ -1,6 +1,6 @@
 {.if mainImage || description}
 <div class="banner">    
-    <div class="banner-thumbnail-wrapper{.if description} has-description{.end}" data-content-field="main-image">
+    <div class="banner-thumbnail-wrapper{.if description} has-description{.end}{.if mainImage} has-image{.end}" data-content-field="main-image">
 			{.section mainImage}
 	      <div class="color-overlay"></div>
 	      <figure class="loading content-fill"><img {@|image-meta} /></figure>
