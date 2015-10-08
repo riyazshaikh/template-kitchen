@@ -53,19 +53,23 @@ Y.use('node', function (Y) {
 		initializer: function () {
 
 			this.el = Y.one('.js-sticky');
+			this.elWrapper = Y.Node.create("<div class='js-sticky-wrapper'></div>");
+			this.elContainer = Y.Node.create("<div class='js-sticky-container'></div>");
+
 
 			if (this.el) {
-				this.el.wrap("<div class='js-sticky-wrapper'></div>");
+				this.el.wrap(this.elWrapper);
+				this.elWrapper.wrap(this.elContainer);
 			}
 
 			this.mode = 'always';
 
 			if (this.el.hasAttribute('data-sticky-on')) {
 				this.mode = 'on';
-				this.elOffset = Y.one(this.el.getAttribute('data-sticky-on'));
-			} else if (this.el.hasAttribute('data-sticky-after')) {
-				this.mode = 'after';
-				this.elOffset = Y.one(this.el.getAttribute('data-sticky-after'));
+				this.elTarget = Y.one(this.el.getAttribute('data-sticky-on')).addClass('js-sticky-on');
+			} else if (this.el.hasAttribute('data-sticky-within')) {
+				this.mode = 'within';
+				this.elTarget = Y.one(this.el.getAttribute('data-sticky-within')).addClass('js-sticky-within');
 			} else if (this.el.hasAttribute('data-sticky-scroll')) {
 				this.mode = 'scroll';
 				this.direction = this.el.getAttribute('data-sticky-scroll');
@@ -85,21 +89,22 @@ Y.use('node', function (Y) {
 
 		syncUI: function () {
 
-			// Make sure sticky's wrapper keeps the right height.
-			this.el.get('parentNode').setStyle('height', this.el.get('offsetHeight'));
-
+			// Make sure sticky's wrappers keeps the right width/height.
+			this.elWrapper.setStyle('width', this.elContainer.get('offsetWidth'));
+			this.elContainer.setStyle('height', this.elWrapper.get('offsetHeight'));
 
 			switch(this.mode) {
-				case 'after':
-					this.navShowPosition = this.elOffset.getY() + this.elOffset.get('offsetHeight');
+				case 'within':
+					this.navShowPosition = this.elTarget.getY();
+					this.navEndPosition = this.navShowPosition + this.elTarget.get('offsetHeight') - this.el.get('offsetHeight');
 					break;
 
 				case 'on':
-					this.navShowPosition = this.elOffset.getY();
+					this.navShowPosition = this.elTarget.getY();
 					break;
 
 				case 'always':
-					this.el.addClass('js-sticky-enabled');
+					this.elContainer.addClass('js-sticky-enabled');
 					break;
 			}
 
@@ -119,7 +124,7 @@ Y.use('node', function (Y) {
 					this.scrollLogic();
 					helper.debounce(function () {
 						this.scrolling = false;
-					}, 100, this);
+					}, 10, this);
 				}
 			}, this);
 
@@ -129,12 +134,28 @@ Y.use('node', function (Y) {
 
 			if (this.mode == 'always') return;
 
-			if (this.mode == 'on' || this.mode == 'after') {
+			if (this.mode == 'on') {
 
-				if (window.scrollY > this.navShowPosition) {
-					this.el.addClass('js-sticky-enabled');
+				if (window.scrollY >= this.navShowPosition) {
+					this.elContainer.addClass('js-sticky-enabled');
 				} else {
-					this.el.removeClass('js-sticky-enabled');
+					this.elContainer.removeClass('js-sticky-enabled');
+				}
+
+			} else if (this.mode == 'within') {
+
+				if (window.scrollY >= this.navShowPosition) {
+
+					if (window.scrollY >= this.navEndPosition) {
+						this.elContainer.addClass('js-sticky-end');
+						this.elContainer.removeClass('js-sticky-enabled');
+					} else {
+						this.elContainer.addClass('js-sticky-enabled');
+						this.elContainer.removeClass('js-sticky-end');
+					}
+					
+				} else {
+					this.elContainer.removeClass('js-sticky-enabled');
 				}
 
 			}

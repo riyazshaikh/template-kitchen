@@ -1,17 +1,29 @@
-.js-sticky-wrapper {
-	position: relative;
+.js-sticky-container {
 
+	&:not(.js-sticky-enabled):not(.js-sticky-end) {
+		height: auto !important;
+
+		.js-sticky-wrapper {
+			width: auto !important;
+		}
+	}
+
+	&.js-sticky-enabled .js-sticky-wrapper {
+		position: fixed;
+		top: 0;
+		z-index: 1;
+	}
+
+	&.js-sticky-end .js-sticky-wrapper {
+		position: absolute;
+		bottom: 0;
+	}
+	/*padding: 0 @sitePadding;*/
+	/*.border-box;*/
+
+	/*box-shadow: 0 0 1px rgba(0,0,0,0.15);*/
 }
 
-.js-sticky-enabled {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 1;
-
-	padding: 0 @sitePadding;
-	.border-box;
-
-	box-shadow: 0 0 1px rgba(0,0,0,0.15);
+.js-sticky-within {
+	position: relative;
 }

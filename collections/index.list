@@ -10,7 +10,9 @@
   <div class="index-section{.if mainImage} has-image{.end} {title}" data-url-id="{urlId}">
     <div class="index-section-content">
       {.collectionTypeNameEquals? gallery}
-        {@|apply index-gallery.block}
+        <div class="index-gallery-wrapper {title}">
+          {@|apply index-gallery-multi.block}
+        </div>
       {.or}
         {.section mainImage}
           <div class="color-overlay" data-content-field="main-image"></div>

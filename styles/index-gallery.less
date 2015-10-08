@@ -1,17 +1,17 @@
-.gallery-block-custom {
+.layout-content-full {
+	.gallery-shape-half;
+
 	.meta {
 		position: relative;
-	    z-index: 2;
-	    top: 100%;
-	    padding: 6rem;	
-    	max-width: @pageWidth;
-    	margin: 0 auto;	    
+    z-index: 2;
+    top: 100%;
+    padding: 6rem;	
+  	max-width: @pageWidth;
+  	margin: 0 auto;	    
 
-	    opacity: 0;
-	    .transform(translate(0,0));
-	    .transition(all 0.64s ease);
-
-
+    opacity: 0;
+    .transform(translate(0,0));
+    .transition(all 0.64s ease);
 	}
 
 	.sqs-active-slide .meta {
@@ -22,5 +22,84 @@
 		position: absolute;
 		top: 0; left: 0; right: 0; bottom: 0;
 		z-index: 1;
+	}
+}
+
+.gallery-shape-half {
+	.gallery-aspect-ratio {
+		padding-bottom: 50%;
+		position: relative;
+		
+		.sqs-gallery {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+}
+
+.gallery-background-cinema {
+	.gallery-wrapper {
+		background-image: url(/assets/white-devices-noscreen-cinema.webp);		
+    background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50%;
+		padding-bottom: 75%; 
+
+		position: relative;
+		.gallery-aspect-ratio {
+			top: 10.4%;
+	    left: 8.6%;
+	    width: 82.9%;
+	    height: 65.7%;    	
+
+  		position: absolute;
+  		overflow: hidden;
+  		.sqs-gallery {
+  			height: 100%;
+  		}
+  	}
+	}
+}
+
+.layout-gallery-sidemeta {
+	.index-gallery {
+		overflow: hidden;
+		margin-top: 5em;
+
+		.gallery-container {
+			float: left;
+			width: 70%;
+			min-height: 2px;
+			.border-box;
+			padding: 0 5%;
+
+			.gallery-background-cinema;
+
+			.sqs-gallery-controls	{
+				display: none;
+			}
+		}
+		aside {
+			float: right;
+			width: 30%;
+
+	    box-sizing: border-box;
+	    padding-right: 8%;
+	    padding-bottom: 8%;
+	    padding-top: 3.3%;
+    
+			position: relative;
+
+			.meta {
+				padding-top: 50vh;
+
+				&:first-child {
+					padding-top: 0;
+				}
+			}
+		}
 	}
 }
