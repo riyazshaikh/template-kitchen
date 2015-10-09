@@ -76,7 +76,12 @@
 			.border-box;
 			padding: 0 5%;
 
-			.gallery-background-cinema;
+			.gallery-shape-half;
+			/*.gallery-background-cinema;*/
+
+			.gallery-wrapper {
+				.viewport-center;
+			}
 
 			.sqs-gallery-controls	{
 				display: none;
@@ -90,14 +95,20 @@
 	    padding-right: 8%;
 	    padding-bottom: 8%;
 	    padding-top: 3.3%;
-    
+
 			position: relative;
 
 			.meta {
 				padding-top: 50vh;
 
 				&:first-child {
-					padding-top: 0;
+					padding-top: 20vh;
+				}
+
+				.transition(opacity 0.4s);
+				opacity: 0;
+				&.active {
+					opacity: 1;
 				}
 			}
 		}

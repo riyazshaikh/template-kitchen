@@ -43,10 +43,12 @@ Y.use('node', function (Y) {
 			if (!Y.one('.js-sticky')) { 
 				return false;
 			}
-			
-			this.initializer();
-			this.bindUI();
-			this.syncUI();
+
+			Y.on('domready', function() {			
+				this.initializer();
+				this.bindUI();
+				this.syncUI();
+			}, this);
 
 		},
 
