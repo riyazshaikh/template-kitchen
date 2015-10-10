@@ -4,14 +4,16 @@ Y.use(['jsonp', 'squarespace-google-maps-renderer'], function (Y) {
 
   window.BlogMap = Singleton.create({
 
-    TPL_INFOWINDOW: '<div class="content">' +
+    TPL_INFOWINDOW: '<div class="content" id="infowindow-{id}">' +
                       '{.main-image?}' +
+                        '<a class="image" href="{fullUrl}">' +
                           '<figure class="loading content-fill"><img {@|image-meta} /></figure>' +
+                        '</a>' +
                       '{.end}' +
-                      '<a href="{fullUrl}"><h2>{title}</h2></a>' +
+                        '<a class="title" href="{fullUrl}"><h2>{title}</h2></a>' +
                       '{.section location}' +
                         '<a class="location" target=_blank href="{mapUrl}">' +
-                          '<div class="address">{addressLine1}<br/>{addressLine2}</div>' +
+                          '{address}' +
                         '</a>' +
                       '{.end}' +
                     '</div>',
@@ -75,6 +77,8 @@ Y.use(['jsonp', 'squarespace-google-maps-renderer'], function (Y) {
 
       var style = Y.clone(Y.Squarespace.GoogleMaps.StylesConfig[Y.Squarespace.GoogleMaps.Styles.GRAYSCALE-1]);
 
+      style.colors[style.colors.length-1].stylers = [{ visibility: "on" }];
+      
       this.map.setOptions({ mapTypeId: window.google.maps.MapTypeId.ROADMAP, styles: style.colors });
 
 
@@ -115,7 +119,11 @@ Y.use(['jsonp', 'squarespace-google-maps-renderer'], function (Y) {
       });     
 
       infowindow.addListener('domready', function() {
-        ImageLoader.load(Y.one('.gm-style-iw .content img'));
+        ImageLoader.load(Y.one('#infowindow-'+post.id+' img'));
+      });
+
+      this.map.addListener('click', function() {
+         infowindow.close();
       });
 
       marker.addListener('click', Y.bind(function() {
@@ -132,9 +140,10 @@ Y.use(['jsonp', 'squarespace-google-maps-renderer'], function (Y) {
 
     _generateInfoWindow: function(point, post) {
       
+      post.address = this._generateAddress(post.location);
       post.location.mapUrl = "http://maps.google.com/maps?" + Y.QueryString.stringify({
           sll: point.toUrlValue(),
-          q: this._generateAddress(post.location),
+          q: post.address,
           z: this.map.getZoom()
       });     
 

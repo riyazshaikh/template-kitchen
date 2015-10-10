@@ -5,13 +5,37 @@
   margin: 1em 0 2em 0;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
-.gm-style .content figure {
+
+/*** Image ***/
+.gm-style .content .image {
+  display: block;
+  position: relative;
   padding-bottom: 50%;
 }
-
+.gm-style .content .image figure {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
 .gm-style img {
   max-width: none !important;
 }
+
+.gm-style .content .title h2 {
+  margin: 0.5em 0;  
+}
+
+/** Hide X **/
+.gm-style .gm-style-iw > div, .gm-style .gm-style-iw > div > div  {
+  overflow: visible !important;
+}
+.gm-style-iw + div {
+  display: none !important;
+}
+.gm-style .content {
+  margin-right: -1.5rem;
+}
+
+
 </style>
 <squarespace:script src="blog-map.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
 
