@@ -69,6 +69,20 @@
 	.apply-colors(@h1Color: #fff; @h2Color: #fff;);	
 }
 
+.palette-4 {
+	@bgColor: #fff;
+	@textColor: #000;
+
+	.apply-colors();
+}
+
+.palette-5 {
+	@bgColor: #889CB3;
+	@textColor: #fff;
+
+	.apply-colors();
+}
+
 /** @textColor and @bgColor are required to be set before calling **/
 .apply-colors(@overlayColor: @bgColor;
 							@linkColor: @textColor;
@@ -128,7 +142,7 @@
 				color: @h1Color;
 			}
 
-			&:last-child > a {
+			&:last-child > a:first-child {
 				background-color: @textColor;
 	      .font-smoothing(@textColor);
 	      color: @bgColor;
@@ -153,7 +167,7 @@
       }
 	  }
 
-	  &.button-style-outline > p:last-child > a {
+	  &.button-style-outline > p:last-child > a:first-child {
 
     	background-color: transparent;
     	.font-smoothing(@overlayColor);
@@ -166,7 +180,7 @@
 
    	}
 
-   	&.button-style-overlay > p:last-child > a {
+   	&.button-style-overlay > p:last-child > a:first-child {
    		background-color: fade(@textColor,10%);
    		.font-smoothing(@overlayColor);
    		color: @textColor;
@@ -178,18 +192,18 @@
    		}
    	}
 
-    &.button-style-raised > p:last-child > a {
+    &.button-style-raised > p:last-child > a:first-child {
     	box-shadow: 0px 0.2em 0px 0px darken(@textColor,8%);
 	    &:hover {
 	      background-color: lighten(@textColor,3%);
 	    }
 	  }
 
-	  &.button-corner-style-rounded > p:last-child > a {
+	  &.button-corner-style-rounded > p:last-child > a:first-child {
 	  	border-radius: 3px;
 	  }
 
-	  &.button-corner-style-pill > p:last-child > a {
+	  &.button-corner-style-pill > p:last-child > a:first-child {
 	  	border-radius: 300px;
 	  }
 
