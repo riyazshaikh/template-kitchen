@@ -164,13 +164,11 @@ Y.use('node', function (Y) {
 
 			this.prevPos = window.scrollY;
 
-			Y.later(100, this, function () {
-				if (this.scrolling === true) {
-					window.requestAnimationFrame(Y.bind(function () {
-						this.scrollLogic();
-					}, this));
-				}
-			});
+			if (this.scrolling === true) {
+				window.requestAnimationFrame(Y.bind(function () {
+					this.scrollLogic();
+				}, this));
+			}
 
 		}
 
