@@ -196,45 +196,19 @@ body {
     .transform(translatex(-260px) translatez(0));
 }
 
-#nav-slidebar {
-  position: relative;
-}
-
 .mobile-nav-toggle-label {
-  display: none;
-  .border-box;
-  z-index: 100;
-  width: 10%;
-  position: absolute;
-  z-index: 1002;
-  top: 50%;
-  right: 0;
-  margin-top: -8px;
-  padding: 0;
-  vertical-align: middle;
-  line-height: 16px;
-  text-align: right;
+  position: relative;
   cursor: pointer;
-  user-select: none;
   color: @navColor;
   width: 22px;
-  height: 22px;
+  height: 16px;
   .top-bar,
   .middle-bar,
   .bottom-bar {
     width: 22px;
     height: 2px;
     background-color: fade(@navColor, 100%);
-    -webkit-transition: -webkit-transform 0.1s 0s ease-in-out, top 0.1s 0.1s ease-in-out;
-       -moz-transition: -moz-transform 0.1s 0s ease-in-out, top 0.1s 0.1s ease-in-out;
-        -ms-transition: -ms-transform 0.1s 0s ease-in-out, top 0.1s 0.1s ease-in-out;
-         -o-transition: -o-transform 0.1s 0s ease-in-out, top 0.1s 0.1s ease-in-out;
-            transition: transform 0.1s 0s ease-in-out, top 0.1s 0.1s ease-in-out;
-    -webkit-transform-origin: 50% 50%;
-       -moz-transform-origin: 50% 50%;
-        -ms-transform-origin: 50% 50%;
-         -o-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
+    .transition(transform 0.1s ease-in-out);
     position: absolute;
     top: 0;
     right: 0;
