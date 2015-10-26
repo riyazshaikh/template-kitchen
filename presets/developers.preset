@@ -1,0 +1,10 @@
+{
+  "title" : "Default",
+  "templateTweaks" : {
+  	"header---behavior": "transparent",
+  	"index-1---palette": "1",
+  	"index-1---layout": "banner",
+  	"index-2---layout": "padded",
+  	"index-2---palette": "3"
+  }
+}

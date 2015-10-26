@@ -1,5 +1,5 @@
 <div id="index-content">
-  <!-- <div id="nav-index" class="js-sticky" data-sticky-on="#index-content" data-nav-index-content=".index-section"> -->
+  <!-- <div id="nav-index" class="nav-wrapper" data-sticky-on="#index-content" data-nav-index-content=".index-section"> -->
     {# @|apply nav-index.block}
   <!-- </div> -->
 
@@ -7,25 +7,28 @@
   <!-- Create index sections -->
 
   {.repeated section collections}
-  <div class="index-section{.if mainImage} has-image{.end} {title}" data-url-id="{urlId}">
+  <div id="index-{@index}" class="index-section{.if mainImage} has-image{.end}" data-url-id="{urlId}">
     <div class="index-section-content">
       {.collectionTypeNameEquals? gallery}
-        <div class="index-gallery-wrapper {title}">
+        <div id="index-{@index}-gallery" class="index-gallery-wrapper">
           {@|apply index-gallery-multi.block}
         </div>
       {.or}
-        {.section mainImage}
-          <div class="color-overlay" data-content-field="main-image"></div>
-          <figure class="loading content-fill"><img {@|image-meta} /></figure>
-        {.end}
-        {.section description}
-          <div class="content-description center banner">{@}</div>
-        {.end}        
-        <div class="content-wrapper">
-          <div class="content-inner" data-content-field="main-content">
-            {mainContent}
+        {.if description}
+          <div class="banner-wrapper">
+            {@|apply banner.block}
           </div>
-        </div>
+        {.or}
+          {.section mainImage}
+            <figure class="loading content-fill"><img {@|image-meta} /></figure>
+            <div class="color-overlay" data-content-field="main-image"></div>
+          {.end}
+          <div class="content-wrapper">
+            <div class="content-inner" data-content-field="main-content">
+              {mainContent}
+            </div>
+          </div>
+        {.end}
       {.end}
     </div>
   </div>
