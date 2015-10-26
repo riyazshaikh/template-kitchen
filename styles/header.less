@@ -1,3 +1,7 @@
+//OFF tweak: { "type" : "color", "title" : "Header Background Color", "category" : "Site Header", "target" : "body:not(.has-banner-image) #header" }
+@headerBgColor: @pageBgColor;
+
+
 //OFF tweak: { "type" : "value", "title" : "Logo Container Width", "min" : 50, "max" : 500, "step" : 5, "category" : "Site Header", "target" : "#logoImage", "showOnlyWhenPresent" : "#logoImage", "js": "true" }
 @logoContainerWidth: 150px;
 
@@ -5,27 +9,9 @@
 @siteTitleContainerWidth: 255px;
 
 
-// Animation keyframes
-.header-anim{
-  0% {
-    opacity: 0;
-  }
-  72% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes header-anim {
-  .header-anim;
-}
-@keyframes header-anim {
-  .header-anim;
-}
+@headerVertPadding: 20px;
 
-
-#header {
+.header {
   padding: @headerVertPadding @sitePadding;
   .border-box;
   
@@ -34,8 +20,7 @@
   left: 0;
   width: 100%;
   line-height: 1em;
-  background-color: @headerBgColor;
-  .font-smoothing(@headerBgColor);
+  .background-color(@headerBgColor);
   position: relative;
   a {
     text-decoration: none;
@@ -57,15 +42,12 @@
     > #headerNav {
       width: 100%;
     }
-/*    -webkit-animation: header-anim 1s ease-in-out;
-    animation: header-anim 1s ease-in-out;
-*/
   }
 
 }
 
 /*@media only screen and (min-width: 641px) {*/
-  #header {
+.header {
 
     #logoWrapper,
     #siteTitleWrapper,
@@ -111,22 +93,45 @@
 #siteTitle a {
   .site-title-font;
   color: @siteTitleColor;
+  border-color: @siteTitleColor;
   margin: 0;
   padding-top: 0;
   padding-bottom: 0;
   line-height: 1em;
 }
 
-#siteTitle a {
-  border: 3px solid @siteTitleColor;
-  padding: 2px 4px;  
 
+[data-palette="1"] .header {
+  .background-color(@p1-bgColor);
+  #siteTitle a { 
+    color: @p1-textColor; 
+    border-color: @p1-textColor; 
+  }
+}
+[data-palette="2"] .header {
+  .background-color(@p2-bgColor);
+  #siteTitle a { 
+    color: @p2-textColor; 
+    border-color: @p2-textColor; 
+  }
+}
+[data-palette="3"] .header {
+  .background-color(@p3-bgColor);
+  #siteTitle a { 
+    color: @p3-textColor; 
+    border-color: @p3-textColor; 
+  }
 }
 
-
-#header.transparent {
-  position: absolute;
+[data-behavior="transparent"] .header {
+  /*position: absolute;*/
   background-color: transparent;
+  padding-bottom: 0;
+}
+
+[data-header-title="boxed"] .header #siteTitle a {
+  border: 3px solid;
+  padding: 2px 4px;  
 }
 
 

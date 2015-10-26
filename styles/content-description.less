@@ -15,6 +15,11 @@
     display: block;
 	}
 
+  p a {
+    color: @pageLinkColor;
+    border-bottom: 1px solid @pageLinkColor;
+  }
+
   p:last-child > a:first-child {
     .border-box;
     display: inline-block;
@@ -70,5 +75,159 @@
     padding: @sitePadding;  
   }
 
+  @textColor: @pageTextColor;
+  @overlayColor: @textColor;
+
+  &.button-style-outline > p:last-child > a:first-child {
+
+    background-color: transparent;
+    .font-smoothing(@overlayColor);
+    border: 2px solid @textColor !important;
+    color: @textColor;
+    &:hover {
+      background-color: @textColor;
+      color: @pageBgColor;
+    }
+
+  }
+
+  &.button-style-overlay > p:last-child > a:first-child {
+    background-color: fade(@textColor,10%);
+    .font-smoothing(@overlayColor);
+    color: @textColor;
+    box-shadow: inset 0 0 0 1px fade(@textColor, 8%);
+    border-radius: 60rem;
+
+    &:hover {
+      background-color: fade(@textColor,15%);
+    }
+  }
+
+  &.button-style-raised > p:last-child > a:first-child {
+    box-shadow: 0px 0.2em 0px 0px darken(@textColor,8%);
+    &:hover {
+      background-color: lighten(@textColor,3%);
+    }
+  }
+
+  &.button-corner-style-rounded > p:last-child > a:first-child {
+    border-radius: 3px;
+  }
+
+  &.button-corner-style-pill > p:last-child > a:first-child {
+    border-radius: 300px;
+  }
+
+}
+
+.font-dev {
+  .content-description > p {
+    .font-dev-body;
+
+    > strong,
+    > em > strong {
+      .font-dev-h1;
+    }
+  }  
+}
+
+.font-hero {
+  .content-description > p {
+    .font-hero-body;
+
+    > strong,
+    > em > strong {
+      .font-hero-h1;
+    }
+  }  
+}
+
+.font-alt {
+  .content-description > p {
+    .font-alt-body;
+
+    > strong,
+    > em > strong {
+      .font-alt-h1;
+    }
+  }  
+}
+
+[data-palette="1"] .content-description > p {
+  > strong,
+  > em > strong {
+    color: @p1-headingColor;
+  }
+
+  &:last-child > a:first-child {
+    .background-color(@p1-textColor);
+    color: @p1-bgColor;
+    border: none;
+    .transition2(background-color 0.1s 0.0s ease-in-out, color 0.1s 0.0s ease-in-out);
+    &:hover {
+      background-color: fade(@p1-textColor, 80%);
+    }
+
+  }
+
+  > em {
+    color: @p1-metaColor;
+  }    
+
+  &:first-child:after {
+     background-color: @p1-metaColor;     
+  }
+}
+
+[data-palette="2"] .content-description > p {
+  > strong,
+  > em > strong {
+    color: @p2-headingColor;
+  }
+
+  &:last-child > a:first-child {
+    .background-color(@p2-textColor);
+    color: @p2-bgColor;
+    border: none;
+    .transition2(background-color 0.1s 0.0s ease-in-out, color 0.1s 0.0s ease-in-out);
+    &:hover {
+      background-color: fade(@p2-textColor, 80%);
+    }
+
+  }
+
+  > em {
+    color: @p2-metaColor;
+  }    
+
+  &:first-child:after {
+     background-color: @p2-metaColor;     
+  }
+}
+
+[data-palette="3"] .content-description > p {
+  > strong,
+  > em > strong {
+    color: @p3-headingColor;
+  }
+
+  &:last-child > a:first-child {
+    .background-color(@p3-textColor);
+    color: @p3-bgColor;
+    border: none;
+    .transition2(background-color 0.1s 0.0s ease-in-out, color 0.1s 0.0s ease-in-out);
+    &:hover {
+      background-color: fade(@p3-textColor, 80%);
+    }
+
+  }
+
+  > em {
+    color: @p3-metaColor;
+  }    
+
+  &:first-child:after {
+     background-color: @p3-metaColor;     
+  }
 }
 

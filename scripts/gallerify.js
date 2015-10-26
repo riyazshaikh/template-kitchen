@@ -85,7 +85,7 @@ Y.use('squarespace-gallery-ng', function (Y) {
 
 		makeGallery: function(node) {
 			var id = node.getAttribute('id'); 
-			var mode = node.ancestor('.layout-gallery-sidemeta') ? 'sidemeta' : 'regular';
+			var mode = node.ancestor('[data-layout="scroll"]') ? 'sidemeta' : 'regular';
 
 			if (!id) {
 				 id = Y.Squarespace.Utils.getGuid();

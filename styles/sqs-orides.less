@@ -45,10 +45,11 @@ body {
   .body-font;
 }
 
+
+
 a {
   color: @pageLinkColor;
 }
-
 
 a {
   text-decoration: none;
@@ -126,6 +127,8 @@ blockquote {
     color:@pageMetaColor;
   }
 }
+
+
 .sqs-block-summary-v2 .summary-info-item{
   opacity:1;
 }
@@ -179,7 +182,8 @@ blockquote {
   background-color: fade(@pageTextColor, 15%);
 }
 
-#preFooter .sqs-block-horizontalrule hr {
+
+/*#preFooter .sqs-block-horizontalrule hr {
   color: fade(@preFooterTextColor, 15%);
   background-color: fade(@preFooterTextColor, 15%);
 }
@@ -188,7 +192,7 @@ blockquote {
   color: fade(@footerTextColor, 15%);
   background-color: fade(@footerTextColor, 15%);
 }
-
+*/
 
 // Block helpers
 
@@ -271,6 +275,10 @@ blockquote {
 
 }
 
+.color-overlay {
+  .background-color(fade(@pageTextColor,60%));
+}
+
 @media screen and (max-width: 600px) {
   @import 'sqs-grid-breaker';
 }
@@ -281,4 +289,95 @@ body.sqs-edit-mode {
 
 .sqs-licensed-asset-preview-bar {
   display: none;
+}
+
+.font-dev {
+  .font-dev-body;
+  h1 { .font-dev-h1; }
+  h2 { .font-dev-h2; }
+}
+
+.font-hero {
+  .font-hero-body;
+  h1 { .font-hero-h1; }
+  h2 { .font-hero-h2; }
+  p {
+    margin: 0;
+  }  
+}
+
+.font-alt {
+  .font-alt-body;
+  h1 { .font-alt-h1; }
+  h2 { .font-alt-h2; }
+  article {
+    font-size: 14px;
+  }  
+}
+.sqs-block-button-element {
+  .button-font;
+}
+
+.fa {
+  display: block;
+  text-align: center;
+  font-size: 100px;
+}
+
+[data-palette="1"] {
+  color: @p1-textColor;
+  .background-color(@p1-bgColor);
+  a {
+    color: @p1-linkColor;
+  }
+  h1,h2,h3 { color: @p1-headingColor; }  
+  .sqs-block-horizontalrule hr {
+    color: fade(@p1-textColor, 15%);
+    background-color: fade(@p1-textColor, 15%);
+  }    
+  .sqs-block-button-element {
+   background-color: @p1-textColor;  
+   color: @p1-bgColor;
+  }    
+  .color-overlay {
+    .background-color(fade(@p1-bgColor,60%));
+  }    
+}
+[data-palette="2"] {
+  color: @p2-textColor;
+  .background-color(@p2-bgColor);
+  a {
+    color: @p2-linkColor;
+  }    
+  h1,h2,h3 { color: @p2-headingColor; }   
+  .sqs-block-horizontalrule hr {
+    color: fade(@p2-textColor, 15%);
+    background-color: fade(@p2-textColor, 15%);
+  }    
+  .sqs-block-button-element {
+    background-color: @p2-textColor;  
+    color: @p2-bgColor;
+  }    
+  .color-overlay {
+    .background-color(fade(@p2-bgColor,60%));
+  }
+}
+[data-palette="3"] {
+  color: @p3-textColor;
+  .background-color(@p3-bgColor);
+  a {
+    color: @p3-linkColor;
+  }    
+  h1,h2,h3 { color: @p3-headingColor; }  
+  .sqs-block-horizontalrule hr {
+    color: fade(@p3-textColor, 15%);
+    background-color: fade(@p3-textColor, 15%);
+  }
+  .sqs-block-button-element {
+    background-color: @p3-textColor;  
+    color: @p3-bgColor;
+  }
+  .color-overlay {
+    .background-color(fade(@p3-bgColor,60%));
+  }
 }

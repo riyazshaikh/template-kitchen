@@ -138,3 +138,8 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
+
+.background-color(@bg) {
+	background-color: @bg;
+	.font-smoothing(@bg);
+}

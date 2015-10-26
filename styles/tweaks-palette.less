@@ -1,6 +1,3 @@
-//OFF tweak: { "type" : "color", "title" : "Header Background Color", "category" : "Site Header", "target" : "body:not(.has-banner-image) #header" }
-@headerBgColor: #f3efee;
-
 //OFF tweak: { "type" : "color", "title" : "Site Title Color", "category" : "Site Header", "showOnlyWhenPresent" : "#siteTitle", "target" : "#siteTitle" }
 @siteTitleColor: #000;
 
@@ -35,53 +32,45 @@
 @quoteColor: #AAA;
 
 
-//OFF tweak: { "type" : "color", "title" : "Sub Nav Title Color", "category" : "Sidebar", "showOnlyWhenPresent": ".collection-type-page:not(.hide-page-sidebar):not(.hide-sidebar-title) .folder-nav, .collection-type-products:not(.hide-products-sidebar):not(.hide-sidebar-title) .category-nav", "target": "#page, nav.folder-nav, nav.category-nav" }
-@subNavTitleColor: #111;
+@p1-textColor: #fff;
+@p1-bgColor: rgb(16,17,19);
+@p1-linkColor: #fefefe;
+@p1-headingColor: @p1-textColor;
+@p1-metaColor: @p1-textColor;
+
+/*@p2-textColor: #323639; 
+@p2-bgColor: #e8eaeb;
+@p2-headingColor: #000;
+@p2-linkColor: #101113;
+@p2-metaColor: @p2-textColor;
+*/
+
+@p2-textColor: @pageTextColor; 
+@p2-bgColor: @pageBgColor;
+@p2-headingColor: #30373b;
+@p2-linkColor: #ededed; /* #181818 */
+@p2-metaColor: @pageMetaColor;
+
+/*@p3-bgColor: #101113;
+@p3-textColor: #909499;
+@p3-headingColor: #fff;
+@p3-linkColor: @p3-textColor;
+@p3-metaColor: @p3-textColor;
+*/
+@p3-bgColor: #fff;
+@p3-textColor: #000;
+@p3-headingColor: @p3-textColor;
+@p3-linkColor: @p3-textColor;
+@p3-metaColor: @p3-textColor;
+
+/*@p3-bgColor: #889CB3;
+@p3-textColor: #fff;
+@p3-headingColor: @p3-textColor;
+@p3-linkColor: @p3-textColor;
+@p3-metaColor: @p3-textColor;
+*/
 
 
-//OFF tweak: { "type" : "color", "title" : "Sub Nav Link Color", "category" : "Sidebar", "showOnlyWhenPresent": ".collection-type-page:not(.hide-page-sidebar) .folder-nav, .collection-type-products:not(.hide-products-sidebar) .category-nav", "target": "#page, nav.folder-nav, nav.category-nav" }
-@subNavLinkColor: #949494;
-
-//OFF tweak: { "type" : "color", "title" : "Sub Nav Link (Active)", "category" : "Sidebar", "showOnlyWhenPresent": ".collection-type-page:not(.hide-page-sidebar) .folder-nav, .collection-type-products:not(.hide-products-sidebar) .category-nav", "target": "#page, nav.folder-nav, nav.category-nav" }
-@subNavActiveColor: #111;
-
-
-.palette-1 {
-	@textColor: #fff;
-	@bgColor: rgb(16,17,19);
-	.apply-colors(@overlayColor: rgba(16,17,19,.6));
-
-}
-
-.palette-2 {
-
-	@textColor: #323639; 
-	@bgColor: #e8eaeb;
-
-	.apply-colors(@h1Color: #000; @linkColor: #101113);
-
-}
-
-.palette-3 {
-	@bgColor: #101113;
-	@textColor: #909499;
-
-	.apply-colors(@h1Color: #fff; @h2Color: #fff;);	
-}
-
-.palette-4 {
-	@bgColor: #fff;
-	@textColor: #000;
-
-	.apply-colors();
-}
-
-.palette-5 {
-	@bgColor: #889CB3;
-	@textColor: #fff;
-
-	.apply-colors();
-}
 
 /** @textColor and @bgColor are required to be set before calling **/
 .apply-colors(@overlayColor: @bgColor;
@@ -92,122 +81,6 @@
 							@h3Color: @textColor;
 							@quoteColor: @textColor;) {
 
-  color: @textColor;
-  background-color: @bgColor;
-	.font-smoothing(@bgColor);
-
-	.color-overlay {
-    background-color: fade(@overlayColor,60%);
-    .font-smoothing(@overlayColor);
-	}
-
-	a {
-	  color: @linkColor;
-	  /*border-bottom: 1px solid @linkColor;*/
-	}
-
-	h1 {
-	  color:@h1Color;
-	}
-
-	h2 {
-	  color:@h2Color;
-	}
-	h3 {
-	  color:@h3Color;
-	}
-	.entry-actions,
-	.entry-comments,
-	.eventitem-addtocallinks,
-	.album-info .engagement,
-	.entry-dateline,
-	.entry-byline,
-	.entry-morefrom,
-	.entry-tags,
-	.entry-source,
-	.eventitem-backlink,
-	.sqs-audio-playlist .tracks .track-info .artist,
-	.summary-info-item
-	{
-	  color:@metaColor;
-	  a{
-	    color:@metaColor;
-	  }
-	}
-
- 	.content-description {
- 		> p {
-	    > strong,
-	    > em > strong {
-				color: @h1Color;
-			}
-
-			&:last-child > a:first-child {
-				background-color: @textColor;
-	      .font-smoothing(@textColor);
-	      color: @bgColor;
-	      border: none;
-	      .transition2(background-color 0.1s 0.0s ease-in-out, color 0.1s 0.0s ease-in-out);
-	      &:hover {
-	        background-color: fade(@textColor, 80%);
-	      }
-
-			}
-
-			&:empty {
-	      display: none;
-	    }
-
-			> em {
-	      color: @metaColor;
-	    }    
-
-		  &:first-child:after {
-    	   background-color: @metaColor;     
-      }
-	  }
-
-	  &.button-style-outline > p:last-child > a:first-child {
-
-    	background-color: transparent;
-    	.font-smoothing(@overlayColor);
-	    border: 2px solid @textColor !important;
-	    color: @textColor;
-	    &:hover {
-	      background-color: @textColor;
-	      color: @bgColor;
-	    }
-
-   	}
-
-   	&.button-style-overlay > p:last-child > a:first-child {
-   		background-color: fade(@textColor,10%);
-   		.font-smoothing(@overlayColor);
-   		color: @textColor;
-   		box-shadow: inset 0 0 0 1px fade(@textColor, 8%);
-   		border-radius: 60rem;
-
-   		&:hover {
-   			background-color: fade(@textColor,15%);
-   		}
-   	}
-
-    &.button-style-raised > p:last-child > a:first-child {
-    	box-shadow: 0px 0.2em 0px 0px darken(@textColor,8%);
-	    &:hover {
-	      background-color: lighten(@textColor,3%);
-	    }
-	  }
-
-	  &.button-corner-style-rounded > p:last-child > a:first-child {
-	  	border-radius: 3px;
-	  }
-
-	  &.button-corner-style-pill > p:last-child > a:first-child {
-	  	border-radius: 300px;
-	  }
-
-	}
 
 	.sqs-gallery-design-stacked .meta {
 		.meta-title {
@@ -225,20 +98,4 @@
     color: @quoteColor;
   }
 
-	.sqs-block-horizontalrule hr {
-	  color: fade(@textColor, 15%);
-	  background-color: fade(@textColor, 15%);
-	}
-
-	.sqs-block-button-element {
-	   background-color: @textColor;	
-	   color: @bgColor;
-	}
-
-
-	.sqs-block-image:last-child {	
-		&:after {
-			background-image: radial-gradient(ellipse closest-side, fade(@bgColor,0%), fade(@bgColor,100%));
-		}
-	}
 }

@@ -36,14 +36,23 @@
 <script>
 var parent = document.currentScript.parentNode;
 
-if (parent.classList.contains('layout-gallery-sidemeta')) {
-  var metas = parent.querySelectorAll('.slide .meta');
+var handleTweak = function(arr) {
+  if (parent.dataset.layout === 'scroll') {
+    var metas = parent.querySelectorAll('.slide .meta');
 
-  for( var i =0; i<metas.length; i++) {
-    parent.querySelector('aside').appendChild(metas[i]);
+    for( var i =0; i<metas.length; i++) {
+      parent.querySelector('aside').appendChild(metas[i]);
+    }
+
+    parent.querySelector('.gallery-wrapper').classList.add('js-sticky');  
+    parent.querySelector('.gallery-wrapper').setAttribute('data-sticky-within', '#' + parent.id + ' .index-gallery');
   }
+};
 
-  parent.querySelector('.gallery-wrapper').classList.add('js-sticky');
-  parent.querySelector('.gallery-wrapper').setAttribute('data-sticky-within', '.layout-gallery-sidemeta .index-gallery');
-}
+var observer = new MutationObserver(handleTweak);
+observer.observe(parent, {
+  attributes: true,
+  attributeFilter: ['data-layout']
+});
+
 </script>

@@ -10,6 +10,15 @@
 
     <!--Include sqs scripts, meta tags, and user content from the code injection tab.-->
     {squarespace-headers}
+
+    {@|apply selector-listener.block}
+    <script>
+    // document.addSelectorListener('#nav-index', function(event) {
+    //   var nav = document.querySelector('#nav-regular');
+    //   nav.replaceChild(event.target, nav.querySelector('#mainNavWrapper'));
+    //   return false;
+    // });
+    </script>
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
 
@@ -22,7 +31,7 @@
         }
       </script>
 
-      <div id="headerWrapper" class="header-transparent">
+      <div id="header">
         {@|apply header.block}
       </div>
 
@@ -39,7 +48,6 @@
     <squarespace:script src="rafscroll.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     <squarespace:script src="parallax.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     <squarespace:script src="gallerify.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
-    
 
     <!--Injection point for tracking scripts and user content from the code injection tab.-->
     {squarespace-footers}

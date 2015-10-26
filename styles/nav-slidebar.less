@@ -42,8 +42,7 @@
   overflow: auto;
   visibility: hidden;
   /*background-color: fade(@headerBgColor, 100%);*/
-  background-color: #0C0C0C;
-  .font-smoothing(@headerBgColor);
+  .background-color(@pageTextColor);
   .border-box;
   .transform(translate3d(260px,0,0));
   .transition2(height 0s 0.14s linear, visibility 0s 0.14s linear);
@@ -348,4 +347,26 @@ body {
 
 .mobile-nav-toggle-label {
   display: none;
+}
+
+[data-palette="1"] .mobile-nav-toggle-label {
+  .top-bar,
+  .middle-bar,
+  .bottom-bar {
+    background-color: @p1-textColor;
+  }
+}
+[data-palette="2"] .mobile-nav-toggle-label {
+  .top-bar,
+  .middle-bar,
+  .bottom-bar {
+    background-color: @p2-textColor;
+  }
+}
+[data-palette="3"] .mobile-nav-toggle-label {
+  .top-bar,
+  .middle-bar,
+  .bottom-bar {
+    background-color: @p3-textColor;
+  }
 }
