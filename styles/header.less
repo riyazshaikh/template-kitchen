@@ -101,30 +101,23 @@
 }
 
 
-[data-palette="1"] .header {
+[data-palette=alternate] .header {
   .background-color(@p1-bgColor);
   #siteTitle a { 
     color: @p1-textColor; 
     border-color: @p1-textColor; 
   }
 }
-[data-palette="2"] .header {
+[data-palette=banner] .header {
   .background-color(@p2-bgColor);
   #siteTitle a { 
     color: @p2-textColor; 
     border-color: @p2-textColor; 
   }
 }
-[data-palette="3"] .header {
-  .background-color(@p3-bgColor);
-  #siteTitle a { 
-    color: @p3-textColor; 
-    border-color: @p3-textColor; 
-  }
-}
 
 [data-behavior="transparent"] .header {
-  /*position: absolute;*/
+  position: absolute;
   background-color: transparent;
   padding-bottom: 0;
 }

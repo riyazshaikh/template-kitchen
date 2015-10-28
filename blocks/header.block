@@ -1,14 +1,44 @@
-      <header id="header" role="banner" >
-        <div class="header-inner">
-          {.section website}<div id="{.if logoImageUrl}logoWrapper{.or}siteTitleWrapper{.end}" class="wrapper" data-content-field="site-title">
-            {.section logoImageUrl}
-              <h1 id="logoImage"><a href="/"><img src="{logoImageUrl}?format=1500w" alt="{siteTitle}" /></a></h1>
-            {.or}
-              <h1 id="siteTitle" class="site-title"><a href="/">{siteTitle}</a></h1>
-            {.end}
-          </div>{.end}<div id="headerNav">
-            {@|apply nav-regular.block}
-          </div>
-        </div>
-      </header>
+<header class="header">
+  <div class="header-inner">
+    {.section website}<div id="{.if logoImageUrl}logoWrapper{.or}siteTitleWrapper{.end}" class="wrapper" data-content-field="site-title">
+      {.section logoImageUrl}
+        <h1 id="logoImage"><a href="/"><img src="{logoImageUrl}?format=1500w" alt="{siteTitle}" /></a></h1>
+      {.or}
+        <h1 id="siteTitle" class="site-title"><a href="/">{siteTitle}</a></h1>
+      {.end}
+    </div>{.end}<div id="headerNav">
+      {@|apply nav-regular.block}
+    </div>
+    <div id="burger">
+    {@|apply nav-slidebar.block}
+    </div>
+  </div>
+</header>
+<script>
+var node = document.currentScript.parentNode;
+var selector = '.content-description.banner, .index-section-content .content-wrapper';
 
+var handleTweak = function() {
+  if (node.dataset.behavior === 'transparent') {
+    var banner = document.querySelector(selector);
+    if (banner) {
+      var height = node.querySelector('.header').offsetHeight;
+      banner.style.marginTop = height + 'px';
+    } else {
+      document.addSelectorListener(selector, function() { handleTweak(); return false; });
+    } 
+  } else {
+    var banner = document.querySelector(selector);
+    if (banner) banner.style.marginTop = '';    
+  }
+};
+
+var observer = new MutationObserver(handleTweak);
+observer.observe(node, {
+  attributes: true,
+  attributeFilter: ['data-behavior']
+});
+
+window.addEventListener('resize', handleTweak);
+
+</script>

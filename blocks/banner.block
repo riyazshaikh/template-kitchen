@@ -1,29 +1,10 @@
-{.if mainImage || description}
 <div class="banner">    
     <div class="banner-thumbnail-wrapper{.if description} has-description{.end}{.if mainImage} has-image{.end}" data-content-field="main-image">
 			{.section mainImage}
-	      <div class="color-overlay"></div>
 	      <figure class="loading content-fill"><img {@|image-meta} /></figure>
+	      <div class="color-overlay"></div>
 	    {.end}
       {.section description}<div class="content-description center banner dash desc-wrapper" data-collection-id="{id}">{@}</div>{.end}
     </div>
 </div>
-
-<script type="text/javascript">
-// the only thing we know that can overlap
-var elOverlap = document.querySelector('.header-transparent');
-var content = document.currentScript.parentNode.querySelector('.content-description');
-
-var adjust = function() {
-	var headerHeight = elOverlap.querySelector('header').offsetHeight;
-	content.style.marginTop = headerHeight + 'px';
-};
-
-if (elOverlap && content) {
-	adjust();
-	window.addEventListener('resize', adjust);
-}
-
-</script>
-{.end}
 

@@ -4,11 +4,9 @@
   
   {.if collections.1}
   <nav class="index-nav" >
-    <ul>
     {.repeated section collections}
-      <li><a href="#{urlId}"><span class="nav-title">{navigationTitle}</span></a></li>
+      <div><a href="#{urlId}"><span class="nav-title">{navigationTitle}</span></a></div>
     {.end}
-    </ul>
   </nav>
   <script type="text/javascript">
   Y.use('node', function () {  
