@@ -1,5 +1,5 @@
 #nav-regular {
-
+  display: none;
   /*white-space: nowrap;*/
 
   nav {
@@ -108,7 +108,7 @@
   }  
 }
 
-[data-palette="1"] #nav-regular {
+[data-palette=alternate] #nav-regular {
   label { 
     color: @p1-textColor;
   }
@@ -135,7 +135,7 @@
 
 }
 
-[data-palette="2"] #nav-regular {
+[data-palette=banner] #nav-regular {
   label { 
     color: @p2-textColor;
   }
@@ -163,31 +163,4 @@
 
 }
 
-[data-palette="3"] #nav-regular {
-  label { 
-    color: @p3-textColor;
-  }
-  nav {
-    a,
-    a:visited,
-    label {
-      color: @p3-textColor;
-      &:hover {
-        color: @p3-textColor;
-      }
-    }
-    .active{
-      > a,
-      > a:visited,
-      > label{
-        color:@p3-textColor;
-      }
-    }
-    .subnav{
-      .background-color(fade(@p3-bgColor, 60%));
-    }      
-
-  }
-
-}
 

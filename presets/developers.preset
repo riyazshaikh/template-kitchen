@@ -1,5 +1,5 @@
 {
-  "title" : "Default",
+  "title" : "developers",
   "templateTweaks" : {
   	"header---behavior": "transparent",
   	"index-1---palette": "1",
@@ -8,3 +8,11 @@
   	"index-2---palette": "3"
   }
 }
+
+/*@p3-bgColor: #889CB3;
+@p3-textColor: #fff;
+@p3-headingColor: @p3-textColor;
+@p3-linkColor: @p3-textColor;
+@p3-metaColor: @p3-textColor;
+*/
+

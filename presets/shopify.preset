@@ -1,0 +1,16 @@
+{
+  "title" : "default",
+  "templateTweaks" : {
+  	"font-banner-body": "{font-family:'brandon-grotesque';font-size:18px;}",
+  	"font-banner-h1": "{font-family:'brandon-grotesque';font-size:60px;letter-spacing:1px;margin-bottom:0.5em;}",
+  	"banner---palette": "main"
+  }
+}
+
+/*@p2-textColor: #323639; 
+@p2-bgColor: #e8eaeb;
+@p2-headingColor: #000;
+@p2-linkColor: #101113;
+@p2-metaColor: @p2-textColor;
+*/
+

@@ -2,7 +2,11 @@
 <main id="content" class="content {.if collection}{collection.typeLabel}{.if item}-item{.end}{.end}" role="main" data-content-field="main-content">
 
   {.section collection}
-  	{@|apply banner.block}
+	  {.if mainImage || description}
+	  <div id="banner">
+  		{@|apply banner.block}
+  	</div>
+  	{.end}
   {.end}
 
   {squarespace.main-content}

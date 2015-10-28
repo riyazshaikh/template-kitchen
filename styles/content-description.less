@@ -13,6 +13,7 @@
   p > strong,
   p > em > strong {
     display: block;
+    margin: 0;
 	}
 
   p a {
@@ -25,9 +26,11 @@
     display: inline-block;
     /** Default font values **/
     padding: 1rem 1.75rem;
-    font-size: 1rem;
-    line-height: 1rem;
     margin: 1rem 0;
+
+    .button-font;
+    .background-color(@pageLinkColor);    
+    color: @pageBgColor;
   }
   p:last-child > a + a { margin-left: 1rem; }
   p:empty {
@@ -49,6 +52,8 @@
         bottom: -1rem;
         height: 3px;
         width: 2rem;
+
+        background-color: @pageMetaColor;
       }
     }
 
@@ -120,52 +125,45 @@
 
 }
 
-.font-dev {
+[data-typeset=alternate] {
   .content-description > p {
-    .font-dev-body;
+    .font-alt-body-responsive;
 
     > strong,
     > em > strong {
-      .font-dev-h1;
+      .font-alt-h1-responsive;
     }
   }  
 }
 
-.font-hero {
+[data-typeset=banner] {
   .content-description > p {
-    .font-hero-body;
+    .font-banner-body-responsive;
 
     > strong,
     > em > strong {
-      .font-hero-h1;
+      .font-banner-h1-responsive;
+    }
+
+    &:last-child > a:first-child {    
+      .font-banner-button;
     }
   }  
 }
 
-.font-alt {
-  .content-description > p {
-    .font-alt-body;
-
-    > strong,
-    > em > strong {
-      .font-alt-h1;
-    }
-  }  
-}
-
-[data-palette="1"] .content-description > p {
+[data-palette=alternate] .content-description > p {
   > strong,
   > em > strong {
     color: @p1-headingColor;
   }
 
   &:last-child > a:first-child {
-    .background-color(@p1-textColor);
+    .background-color(@p1-linkColor);
     color: @p1-bgColor;
     border: none;
     .transition2(background-color 0.1s 0.0s ease-in-out, color 0.1s 0.0s ease-in-out);
     &:hover {
-      background-color: fade(@p1-textColor, 80%);
+      background-color: fade(@p1-linkColor, 80%);
     }
 
   }
@@ -179,19 +177,19 @@
   }
 }
 
-[data-palette="2"] .content-description > p {
+[data-palette=banner] .content-description > p {
   > strong,
   > em > strong {
     color: @p2-headingColor;
   }
 
   &:last-child > a:first-child {
-    .background-color(@p2-textColor);
+    .background-color(@p2-linkColor);
     color: @p2-bgColor;
     border: none;
     .transition2(background-color 0.1s 0.0s ease-in-out, color 0.1s 0.0s ease-in-out);
     &:hover {
-      background-color: fade(@p2-textColor, 80%);
+      background-color: fade(@p2-linkColor, 80%);
     }
 
   }
@@ -205,29 +203,4 @@
   }
 }
 
-[data-palette="3"] .content-description > p {
-  > strong,
-  > em > strong {
-    color: @p3-headingColor;
-  }
-
-  &:last-child > a:first-child {
-    .background-color(@p3-textColor);
-    color: @p3-bgColor;
-    border: none;
-    .transition2(background-color 0.1s 0.0s ease-in-out, color 0.1s 0.0s ease-in-out);
-    &:hover {
-      background-color: fade(@p3-textColor, 80%);
-    }
-
-  }
-
-  > em {
-    color: @p3-metaColor;
-  }    
-
-  &:first-child:after {
-     background-color: @p3-metaColor;     
-  }
-}
 

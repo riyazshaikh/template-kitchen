@@ -11,11 +11,11 @@
     <div class="index-section-content">
       {.collectionTypeNameEquals? gallery}
         <div id="index-{@index}-gallery" class="index-gallery-wrapper">
-          {@|apply index-gallery-multi.block}
+          {@|apply index-gallery.block}
         </div>
       {.or}
         {.if description}
-          <div class="banner-wrapper">
+          <div id="index-{@index}-banner" class="banner-wrapper">
             {@|apply banner.block}
           </div>
         {.or}

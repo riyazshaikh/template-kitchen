@@ -5,9 +5,6 @@
     <meta name="viewport" content="initial-scale=1">
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7811972/758964/css/fonts.css">
-    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:300' rel='stylesheet' type='text/css'>
-
     <!--Include sqs scripts, meta tags, and user content from the code injection tab.-->
     {squarespace-headers}
 
@@ -25,12 +22,6 @@
     <div class="sqs-announcement-bar-dropzone"></div>
 
     <div id="siteWrapper">
-      <script>
-        if (window.PAGE_CLASS) { // PAGE_CLASS set via header code injection
-          document.currentScript.parentNode.className += ' ' + window.PAGE_CLASS;
-        }
-      </script>
-
       <div id="header">
         {@|apply header.block}
       </div>

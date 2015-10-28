@@ -1,74 +1,68 @@
-//OFF tweak: { "type" : "color", "title" : "Site Title Color", "category" : "Site Header", "showOnlyWhenPresent" : "#siteTitle", "target" : "#siteTitle" }
+//tweak: { "type" : "color", "title" : "Site Title Color", "category" : "Site Header", "showOnlyWhenPresent" : "#siteTitle", "target" : "#siteTitle" }
 @siteTitleColor: #000;
 
-//OFF tweak: { "type" : "color", "title" : "Nav Link Color", "category" : "Site Navigation", "target" : "body:not(.force-mobile-nav) #mainNavWrapper, #sidecarNav" }
+//tweak: { "type" : "color", "title" : "Nav Link Color", "category" : "Site Navigation", "target" : "#mainNavWrapper" }
 @navColor: #666;
 
-//OFF tweak: { "type" : "color", "title" : "Nav Link (Active)", "category" : "Site Navigation", "target" : "body:not(.force-mobile-nav) #mainNavWrapper, #sidecarNav" }
+//tweak: { "type" : "color", "title" : "Nav Link (Active)", "category" : "Site Navigation", "target" : "#mainNavWrapper" }
 @navActiveColor: #444;
 
-//OFF tweak: { "type" : "color", "title" : "Page Background", "category" : "Main Content", "target" : "#siteWrapper" }
+//tweak: { "type" : "color", "title" : "Page Background", "category" : "Main Content", "target" : "#siteWrapper" }
 @pageBgColor: #f3efee;
 
-//OFF tweak: { "type" : "color", "title" : "Page Text Color", "category" : "Main Content", "target" : "body:not(.collection-type-index) #content p, .collection-type-index .page-content p" }
+//tweak: { "type" : "color", "title" : "Page Text Color", "category" : "Main Content", "target" : "body" }
 @pageTextColor: #000;
 
-//OFF tweak: { "type" : "color", "title" : "Page Link Color", "category" : "Main Content", "target" : "body:not(.collection-type-index) #content .html-block a, body:not(.collection-type-index) #content .entry-more-link a, .collection-type-index .page-content .html-block a, .collection-type-index .page-content .entry-more-link a, .summary-excerpt a" }
+//tweak: { "type" : "color", "title" : "Page Link Color", "category" : "Main Content", "target" : "a" }
 @pageLinkColor: #000;
 
-//OFF tweak: { "type" : "color", "title" : "Page Meta Color", "category" : "Main Content", "target" : "body:not(.collection-type-index) #content .meta-above-title, body:not(.collection-type-index) #content .meta-below-title, .collection-type-index .page-content .meta-above-title, .collection-type-index .page-content .meta-below-title, .summary-info-item" }
+//tweak: { "type" : "color", "title" : "Page Meta Color", "category" : "Main Content", "target" : ".meta" }
 @pageMetaColor: #666666;
 
-//OFF tweak: { "type" : "color", "title" : "Heading 1 Color", "category" : "Main Content", "target" : "body:not(.collection-type-index) #content h1, .collection-type-index .page-content h1, .entry-title" }
+//tweak: { "type" : "color", "title" : "Heading 1 Color", "category" : "Main Content", "target" : "h1, .entry-title" }
 @heading1Color: #111;
 
-//OFF tweak: { "type" : "color", "title" : "Heading 2 Color", "category" : "Main Content", "target" : "body:not(.collection-type-index) #content h2, .collection-type-index .page-content h2" }
+//tweak: { "type" : "color", "title" : "Heading 2 Color", "category" : "Main Content", "target" : "h2" }
 @heading2Color: #111;
 
-//OFF tweak: { "type" : "color", "title" : "Heading 3 Color", "category" : "Main Content", "target" : "body:not(.collection-type-index) #content h3, .collection-type-index .page-content h3" }
+//tweak: { "type" : "color", "title" : "Heading 3 Color", "category" : "Main Content", "target" : "h3" }
 @heading3Color: #111;
 
-//OFF tweak: { "type" : "color", "title" : "Quote Color", "category" : "Main Content", "target" : ".quote-block", "showOnlyWhenPresent" : ".quote-block" }
+//tweak: { "type" : "color", "title" : "Quote Color", "category" : "Main Content", "target" : ".quote-block", "showOnlyWhenPresent" : ".quote-block" }
 @quoteColor: #AAA;
 
 
+
+//tweak: { "type" : "color", "title" : "Text Color", "category" : "Alternate Content", "target" : "body" }
 @p1-textColor: #fff;
+
+//tweak: { "type" : "color", "title" : "Background", "category" : "Alternate Content", "target" : "body" }
 @p1-bgColor: rgb(16,17,19);
+
+//tweak: { "type" : "color", "title" : "Link Color", "category" : "Alternate Content", "target" : "body" }
 @p1-linkColor: #fefefe;
+
+//tweak: { "type" : "color", "title" : "Heading Color", "category" : "Alternate Content", "target" : "body" }
 @p1-headingColor: @p1-textColor;
+
+//tweak: { "type" : "color", "title" : "Meta Color", "category" : "Alternate Content", "target" : "body" }
 @p1-metaColor: @p1-textColor;
 
-/*@p2-textColor: #323639; 
-@p2-bgColor: #e8eaeb;
-@p2-headingColor: #000;
-@p2-linkColor: #101113;
-@p2-metaColor: @p2-textColor;
-*/
-
+//tweak: { "type" : "color", "title" : "Text Color", "category" : "Banner Content", "target" : "body" }
 @p2-textColor: @pageTextColor; 
+
+//tweak: { "type" : "color", "title" : "Background Color", "category" : "Banner Content", "target" : "body" }
 @p2-bgColor: @pageBgColor;
+
+//tweak: { "type" : "color", "title" : "Heading Color", "category" : "Banner Content", "target" : "body" }
 @p2-headingColor: #30373b;
+
+//tweak: { "type" : "color", "title" : "Link Color", "category" : "Banner Content", "target" : "body" }
 @p2-linkColor: #ededed; /* #181818 */
+
+//tweak: { "type" : "color", "title" : "Meta Color", "category" : "Banner Content", "target" : "body" }
 @p2-metaColor: @pageMetaColor;
 
-/*@p3-bgColor: #101113;
-@p3-textColor: #909499;
-@p3-headingColor: #fff;
-@p3-linkColor: @p3-textColor;
-@p3-metaColor: @p3-textColor;
-*/
-@p3-bgColor: #fff;
-@p3-textColor: #000;
-@p3-headingColor: @p3-textColor;
-@p3-linkColor: @p3-textColor;
-@p3-metaColor: @p3-textColor;
-
-/*@p3-bgColor: #889CB3;
-@p3-textColor: #fff;
-@p3-headingColor: @p3-textColor;
-@p3-linkColor: @p3-textColor;
-@p3-metaColor: @p3-textColor;
-*/
 
 
 

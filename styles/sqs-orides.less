@@ -1,19 +1,5 @@
 /** All the style overrides for SQS system stuff i.e. blocks and layout engine, go here **/
 
-/* Summary Block */
-
-//OFF tweak: { "category" : "Summary Block", "title" : "Summary Block Title Font", "type" : "font", "target" : ".summary-header-text, .summary-title", "showOnlyWhenPresent" : ".summary-title, .summary-title-link" }
-.summary-heading-font {
-  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-//OFF tweak: { "category" : "Summary Block", "title" : "Summary Block Title Color", "type" : "color", "target" : ".summary-header-text, .summary-title", "showOnlyWhenPresent" : ".summary-title, .summary-title-link" }
-@summaryHeadingColor: #666;
-
 
 .sqs-modal-lightbox-content .lightbox-inner .lightbox-content .form-wrapper {
   .body-font;
@@ -276,7 +262,7 @@ blockquote {
 }
 
 .color-overlay {
-  .background-color(fade(@pageTextColor,60%));
+  .background-color(fade(@pageBgColor,60%));
 }
 
 @media screen and (max-width: 600px) {
@@ -291,40 +277,103 @@ body.sqs-edit-mode {
   display: none;
 }
 
-.font-dev {
-  .font-dev-body;
-  h1 { .font-dev-h1; }
-  h2 { .font-dev-h2; }
+
+
+.font-alt-body-responsive {
+  .font-alt-body;
+
+  @media (max-width: 600px)  {
+    font-size: @font-alt-body-font-size * 0.8;
+    /*line-height: @font-alt-body-line-height * 0.8;*/
+  }
+}
+.font-alt-h1-responsive() {
+  .font-alt-h1;
+  /*margin: 0.67em 0;*/
+
+  @media (max-width: 600px)  {
+    font-size: @font-alt-h1-font-size * 0.67;
+    /*line-height: @font-alt-h1-line-height * 0.67;*/
+  }
+}
+.font-alt-h2-responsive() {
+  .font-alt-h2;
+
+  @media (min-width: 600px)  {
+    font-size: @font-alt-h2-font-size * 0.7;
+    /*line-height: @font-alt-h2-line-height * 0.7;*/
+  }
+}
+.font-alt-h3-responsive() {
+  .font-alt-h3;
+
+  @media (min-width: 600px)  {
+    font-size: @font-alt-h3-font-size * 0.8;
+    /*line-height: @font-alt-h3-line-height * 0.8;*/
+  }    
 }
 
-.font-hero {
-  .font-hero-body;
-  h1 { .font-hero-h1; }
-  h2 { .font-hero-h2; }
+.font-banner-body-responsive {
+  .font-banner-body;
+
+  @media (max-width: 600px)  {
+    font-size: @font-banner-body-font-size * 0.8;
+    /*line-height: @font-banner-body-line-height * 0.8;*/
+  }
+}
+.font-banner-h1-responsive {
+  .font-banner-h1;
+
+  @media (max-width: 1200px) {
+    font-size: @font-banner-h1-font-size * 0.7;
+    /*line-height: @font-banner-h1-line-height * 0.7;*/
+  }  
+
+  @media (max-width: 600px)  {
+    font-size: @font-banner-h1-font-size * 0.5;
+    font-weight: lighter;
+    /*line-height: @font-banner-h1-line-height * 0.5;*/
+  }
+
+}
+.font-banner-h2-responsive {
+  .font-banner-h2;
+}
+
+
+
+
+[data-typeset=alternate] {
+  .font-alt-body-responsive;
+  h1 { .font-alt-h1-responsive; }
+  h2 { .font-alt-h2-responsive; }
+}
+
+[data-typeset=banner] {
+  .font-banner-body-responsive;
+  h1 { 
+    .font-banner-h1-responsive; 
+    margin: 0;
+  }
+  h2 { 
+    .font-banner-h2-responsive; 
+  }
   p {
     margin: 0;
   }  
 }
 
-.font-alt {
-  .font-alt-body;
-  h1 { .font-alt-h1; }
-  h2 { .font-alt-h2; }
-  article {
-    font-size: 14px;
-  }  
-}
 .sqs-block-button-element {
   .button-font;
 }
 
 .fa {
-  display: block;
+  /*display: block;*/
   text-align: center;
   font-size: 100px;
 }
 
-[data-palette="1"] {
+[data-palette=alternate] {
   color: @p1-textColor;
   .background-color(@p1-bgColor);
   a {
@@ -343,7 +392,7 @@ body.sqs-edit-mode {
     .background-color(fade(@p1-bgColor,60%));
   }    
 }
-[data-palette="2"] {
+[data-palette=banner] {
   color: @p2-textColor;
   .background-color(@p2-bgColor);
   a {
@@ -360,24 +409,5 @@ body.sqs-edit-mode {
   }    
   .color-overlay {
     .background-color(fade(@p2-bgColor,60%));
-  }
-}
-[data-palette="3"] {
-  color: @p3-textColor;
-  .background-color(@p3-bgColor);
-  a {
-    color: @p3-linkColor;
-  }    
-  h1,h2,h3 { color: @p3-headingColor; }  
-  .sqs-block-horizontalrule hr {
-    color: fade(@p3-textColor, 15%);
-    background-color: fade(@p3-textColor, 15%);
-  }
-  .sqs-block-button-element {
-    background-color: @p3-textColor;  
-    color: @p3-bgColor;
-  }
-  .color-overlay {
-    .background-color(fade(@p3-bgColor,60%));
   }
 }

@@ -1,0 +1,12 @@
+{
+  "title" : "hats",
+  "templateTweaks" : {
+  	"header---behavior": "transparent",
+	"p1-bgColor": "#fff",
+	"p1-textColor": "#000",
+	"p1-headingColor": "#000",
+	"p1-linkColor": "#000",
+	"p1-metaColor": "#000",
+	"body---palette": "alternate"
+  }
+}
