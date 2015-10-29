@@ -6,11 +6,11 @@
       {.or}
         <h1 id="siteTitle" class="site-title"><a href="/">{siteTitle}</a></h1>
       {.end}
-    </div>{.end}<div id="headerNav">
-      {@|apply nav-regular.block}
+    </div>{.end}<div id="headerNav" data-navigation-align="space-around" data-navigation-active="underline" data-navigation-folder="dropdown">
+      <squarespace:navigation navigationId="mainNav" template="navigation" />
     </div>
     <div id="burger">
-    {@|apply nav-slidebar.block}
+    {@|apply slidebar.block}
     </div>
   </div>
 </header>

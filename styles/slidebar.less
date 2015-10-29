@@ -1,0 +1,127 @@
+#sidecarNav {
+  position: fixed;
+  .border-box;
+  width: 260px;
+  padding: 20px;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  line-height: 1em;
+  text-align: left;
+  overflow: auto;
+  visibility: hidden;
+  /*background-color: fade(@headerBgColor, 100%);*/
+  .background-color(@pageTextColor);
+  .transform(translate3d(260px,0,0));
+  .transition2(height 0s 0.14s linear, visibility 0s 0.14s linear);
+}  
+
+// fixes checkbox hack for android < 4.1.2
+body {
+  -webkit-animation: bugfix infinite 1s;
+}
+@-webkit-keyframes bugfix {
+  from { padding: 0; }
+  to { padding: 0; }
+}
+.mobile-nav-enabled #nav-slidebar .body-overlay{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:9999;
+    cursor: e-resize;
+    .transform(translatex(-260px) translatez(0));
+}
+
+.mobile-nav-toggle-label {
+  position: relative;
+  cursor: pointer;
+  color: @navColor;
+  width: 22px;
+  height: 16px;
+  .top-bar,
+  .middle-bar,
+  .bottom-bar {
+    width: 22px;
+    height: 2px;
+    background-color: fade(@navColor, 100%);
+    .transition(transform 0.1s ease-in-out);
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .middle-bar {
+    .transition(opacity 0s 0.15s linear);
+    top: 7px;
+  }
+  .bottom-bar {
+    top: 14px;
+  }
+}
+
+
+#siteWrapper {
+  .transition(transform 0.2s ease-in-out);
+}
+
+.mobile-nav-enabled {
+  #siteWrapper {
+    .transform(translate3d(-260px,0,0));
+    .mobile-nav-toggle-label {
+      .top-bar,
+      .bottom-bar {
+        .transition2(top 0.1s 0.1s ease-in-out, transform 0.1s 0.2s ease-in-out);
+      }
+      .top-bar {
+        .transform(rotate(45deg));
+        top: 7px;
+      }
+      .middle-bar {
+        opacity: 0;
+      }
+      .bottom-bar {
+        .transform(rotate(-45deg));
+        top: 7px;
+      }
+    }
+  }
+
+  #sidecarNav {
+    height: 100%;
+    visibility: visible;
+    .transition2(height 0s 0.14s linear, visibility 0s 0s linear);
+  }
+}
+
+
+
+@media only screen and (min-width: 641px) {
+  .sqs-style-mode.dialog-open #mobileNavToggle:checked {
+    ~ #siteWrapper {
+      .transform(translate3d(-480px, 0, 0));
+    }
+  }
+}
+
+.mobile-nav-toggle-label {
+  display: none;
+}
+
+[data-palette=alternate] .mobile-nav-toggle-label {
+  .top-bar,
+  .middle-bar,
+  .bottom-bar {
+    background-color: @p1-textColor;
+  }
+}
+[data-palette=banner] .mobile-nav-toggle-label {
+  .top-bar,
+  .middle-bar,
+  .bottom-bar {
+    background-color: @p2-textColor;
+  }
+}

@@ -1,20 +1,14 @@
 	{.section collection}
 		{.section categories}
-		<nav id="catNav" class="js-sticky" data-sticky-on="#catNav">
-			<div class="catnav-container">
-				<div class="sortby-container">
-					<a class="icon-sort">SHOWING</a>
-				</div>
-				<ul class="catnav-list">
-					<li class="catnav-item{.if categoryFilter}{.or} active-link{.end}"><a href="{fullUrl}" class="catnav-link"><span class="catnav-link-text">All</span></a></li>
-					{.repeated section @}
-						<li class="catnav-item{.equal? categoryFilter @} active-link{.end}"><a href="{fullUrl}?category={@|url-encode}" class="catnav-link"><span class="catnav-link-text">{@}</span></a></li>
-					{.end}
-				</ul>
-				<div class="search-container">
-					<a class="icon-search" href="/search"></a>
-				</div>
+		<nav class="navigation">
+			<div class="{.if categoryFilter}{.or} active-link{.end}">
+				<a href="{fullUrl}">All</a>
 			</div>
+			{.repeated section @}
+			<div class="{.equal? categoryFilter @} active-link{.end}">
+					<a href="{fullUrl}?category={@|url-encode}">{@}</a>
+			</div>
+			{.end}
 		</nav>
 		{.end}
 	{.end}

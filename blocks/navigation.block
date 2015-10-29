@@ -1,5 +1,5 @@
-{.section items}<div id="mainNavWrapper" class="nav-wrapper" data-content-field="navigation-mainNav">
-  <nav id="mainNavigation" data-content-field="navigation-mainNav">
+{.section items}
+  <nav class="navigation" data-content-field="navigation-mainNav">
     {.repeated section @}
       {.collection?}
         {.index?}
@@ -59,7 +59,6 @@
 
     {.end}
   </nav>
-</div>
 <!-- style below blocks out the mobile nav toggle only when nav is loaded -->
 <style>.mobile-nav-toggle-label { display: inline-block !important; }</style>
 {.end}

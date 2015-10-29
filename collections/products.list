@@ -1,6 +1,8 @@
 <div class="products-page">
 
-	{@|apply nav-category.block}
+	<div id="category-nav" data-navigation-align="center">
+		{@|apply nav-category.block}
+	</div>
 	
 	<!-- Product Grid -->
 

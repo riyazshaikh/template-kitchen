@@ -1,7 +1,7 @@
 <div id="index-content">
-  <!-- <div id="nav-index" class="nav-wrapper" data-sticky-on="#index-content" data-nav-index-content=".index-section"> -->
-    {# @|apply nav-index.block}
-  <!-- </div> -->
+  <div id="nav-index" class="nav-wrapper" data-navigation-align="space-between" data-sticky-on="#index-content" data-nav-index-content=".index-section">
+    {@|apply nav-index.block}
+  </div>
 
 {.section collection}
   <!-- Create index sections -->
