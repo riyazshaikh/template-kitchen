@@ -1,4 +1,4 @@
-nav.navigation {
+.navigation {
 
   > div {
     padding: 0 0.75em;
@@ -8,22 +8,16 @@ nav.navigation {
     }
 
     a, label {
-      .transition(color 0.1s 0s ease-in-out);
-    }
-    a, label {
       .nav-font;
-      /*display: block;*/
+      .transition(color 0.1s 0s ease-in-out);
     }
   }
 
-  a,
-  a:visited,
-  label {
+  a, label {
     color: @navColor;
-    &:hover {
-      color: @navActiveColor;
-    }
+    display: inline-block;
   }
+
   .folder-toggle-label {
     cursor: pointer;
   }  
@@ -235,69 +229,91 @@ html.touch-styles [data-navigation-folder=dropdown] .navigation {
   }
 }
 
-[data-navigation-active="contrast"] .navigation {
-  div.active{
-    > a,
-    > a:visited,
-    > label{
-      color: contrast(@headerBgColor);
-    }
-  }
-
-}
-
-[data-navigation-active="underline"] .navigation {
-  div.active{
-    > a,
-    > a:visited,
-    > label{
-      display: inline-block;
-      border-bottom: 1px solid @navColor;
-    }
+[data-navigation-active=contrast] .navigation {
+  a:hover, .active > a, .active > label {
+    color: contrast(@headerBgColor);
   }
 }
 
-[data-palette=alternate] .navigation {
-  a,
-  a:visited,
-  label {
-    color: @p1-textColor;
-    &:hover {
+[data-navigation-active=underline] .navigation {
+  .active > a, .active > label {
+    border-bottom: 1px solid @navColor;
+  }
+}
+
+[data-palette=alternate] {
+  .navigation {
+    a, label {
       color: @p1-textColor;
     }
   }
-  .active{
-    > a,
-    > a:visited,
-    > label{
-      color:@p1-textColor;
+
+  [data-navigation-active=underline] .navigation {
+    .active > a, .active > label {
+      border-bottom: 1px solid @p1-textColor;
     }
   }
-  .subnav{
-    .background-color(fade(@p1-bgColor, 60%));
-  }      
 
+  [data-navigation-active=contrast] .navigation {
+    a:hover, .active > a, .active > label {
+      color: contrast(@p1-bgColor);
+    }
+  }
+
+  [data-navigation-folder-label=underline] .navigation {
+    .subnav:before {
+      background-color: @p1-textColor;
+    }
+  }
+
+  [data-navigation-folder*=drop] .navigation {
+    .folder .subnav {
+      background-color: fade(@p1-bgColor, 60%);      
+    }
+  }
 }
 
-[data-palette=banner] .navigation {
-  a,
-  a:visited,
-  label {
-    color: @p2-textColor;
-    &:hover {
+
+[data-palette=banner] {
+  .navigation {
+    a, label {
       color: @p2-textColor;
     }
   }
-  .active{
-    > a,
-    > a:visited,
-    > label{
-      color:@p2-textColor;
+
+  [data-navigation-active=underline] .navigation {
+    .active > a, .active > label {
+      border-bottom: 1px solid @p2-textColor;
     }
   }
-  .subnav{
-    .background-color(fade(@p2-bgColor, 60%));
-  }      
+
+  [data-navigation-active=contrast] .navigation {
+    a:hover, .active > a, .active > label {
+      color: contrast(@p2-bgColor);
+    }
+  }
+
+  [data-navigation-folder-label=underline] .navigation {
+    .subnav:before {
+      background-color: @p2-textColor;
+    }
+  }
+
+  [data-navigation-folder*=drop] .navigation {
+    .folder .subnav {
+      background-color: fade(@p2-bgColor, 60%);      
+    }
+  }
 }
 
+[data-typeset=alternate] .navigation > div {
+  a, label {
+    .font-alt-button;
+  }
+}
 
+[data-typeset=banner] .navigation > div {
+  a, label {
+    .font-banner-button;
+  }
+}
