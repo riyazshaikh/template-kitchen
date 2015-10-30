@@ -42,9 +42,12 @@
     <squarespace:script src="rafscroll.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     <squarespace:script src="parallax.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     <squarespace:script src="gallerify.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
-
+    
     <!--Injection point for tracking scripts and user content from the code injection tab.-->
     {squarespace-footers}
 
+    {.if authenticatedAccount}
+    <squarespace:script src="tweaking.js" />
+    {.end}
   </body>
 </html> 
