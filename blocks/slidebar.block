@@ -1,11 +1,12 @@
- <div id="nav-slidebar">
+ <div class="slidebar">
  	<label for="mobileNavToggle" class="mobile-nav-toggle-label">
  		<div class="top-bar"></div><div class="middle-bar"></div><div class="bottom-bar"></div>
  	</label>
+ 	
  	<input type="checkbox" name="mobile-nav-toggle" id="mobileNavToggle" class="mobile-nav-toggle-box hidden" />
  	<a href="#" class="body-overlay"></a>
-    <div id="sidecarNav" data-navigation-folder="visible" data-navigation-active="contrast" data-navigation-folder-label="invisible">
-      <squarespace:navigation navigationId="mainNav" template="navigation" />
+    <div id="slidebar-nav" data-content-field="navigation-mainNav" data-folder="visible" data-active="contrast" data-folder-label="invisible" >
+    	<squarespace:navigation navigationId="mainNav" template="navigation"/>
     </div>
 </div>
 

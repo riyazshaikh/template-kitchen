@@ -4,8 +4,7 @@
         </div>
       </div>
 
-      <div id="footer-nav" data-navigation-align="space-between" data-navigation-folder="dropup">
-      	<squarespace:navigation navigationId="mainNav" template="navigation" />
+      <div id="footer-nav" data-align="space-between" data-folder="dropup">
       </div>
       
       <!--Footer with open block field.-->

@@ -1,4 +1,5 @@
 <script>
+/** Under Apache 2 License from https://github.com/csuwildcat/SelectorListener **/
 (function(){
 	
 	var events = {},
@@ -78,7 +79,13 @@
 			}, this);
 		}
 	};
+
+	// Single invocation version
+	HTMLDocument.prototype.onSelector = HTMLElement.prototype.onSelector = function(selector,fn) {
+		this.addSelectorListener(selector, function() { fn(); return false; });
+	};
 })();
+
 
 var attrTweak = function(id, attr, value) {
 
@@ -93,7 +100,7 @@ var tweaks = Static.SQUARESPACE_CONTEXT.tweakJSON, parts, value, key;
 for (key in tweaks) {
 	parts = key.split('---');
 	if ( parts ) {
-		attrTweak(parts[0], parts[1], tweaks[key].toLowerCase());
+		attrTweak(parts[0], parts[1], tweaks[key].toLowerCase().replace(/\s/g,"-"));
 	}
 }
 </script>

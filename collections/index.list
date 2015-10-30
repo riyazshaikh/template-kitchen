@@ -1,5 +1,5 @@
 <div id="index-content">
-  <div id="nav-index" class="nav-wrapper" data-navigation-align="space-between" data-sticky-on="#index-content" data-nav-index-content=".index-section">
+  <div id="index-nav" class="nav-wrapper" data-nav-index-content=".index-section">
     {@|apply nav-index.block}
   </div>
 
@@ -23,7 +23,7 @@
             <figure class="loading content-fill"><img {@|image-meta} /></figure>
             <div class="color-overlay" data-content-field="main-image"></div>
           {.end}
-          <div class="content-wrapper">
+          <div class="content-wrapper header-overlap">
             <div class="content-inner" data-content-field="main-content">
               {mainContent}
             </div>

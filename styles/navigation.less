@@ -39,71 +39,54 @@
   }
 }
 
-[data-navigation-align=space-between] .navigation {
+[data-align] .navigation {
   display: flex;
   flex-wrap: wrap;
+}
+
+[data-align=space-between] .navigation {
   justify-content: space-between;
 
   > div {
     &:first-child {
-      > a,
-      label {
-        padding-left: 0;
-      }
+      padding-left: 0;
     }
     &:last-child {
-      > a,
-      label {
-        padding-right: 0;
-      }
+      padding-right: 0;
     }
   }  
 }
 
-[data-navigation-align=space-around] .navigation {
-  display: flex;
-  flex-wrap: wrap;
+[data-align=space-around] .navigation {
   justify-content: space-around;
 }
 
 
-[data-navigation-align=center] .navigation {
-  display: flex;
-  flex-wrap: wrap;
+[data-align=center] .navigation {
   justify-content: center;
 }
 
-[data-navigation-align=left] .navigation {
-  display: flex;
-  flex-wrap: wrap;
+[data-align=left] .navigation {
   justify-content: flex-start;
 
   > div {
     &:first-child {
-      > a,
-      label {
-        padding-left: 0;
-      }
+      padding-left: 0;
     }  
   }
 }
 
-[data-navigation-align=right] .navigation {
-  display: flex;
-  flex-wrap: wrap;
+[data-align=right] .navigation {
   justify-content: flex-end;
 
   > div {
     &:last-child {
-      > a,
-      label {
-        padding-right: 0;
-      }
+      padding-right: 0;
     }
   }    
 }
 
-[data-navigation-folder=dropdown] .navigation {
+[data-folder=dropdown] .navigation {
   .folder {
     position: relative;
     .subnav {
@@ -166,7 +149,7 @@ html.touch-styles [data-navigation-folder=dropdown] .navigation {
 
 
 
-[data-navigation-folder=dropup] .navigation {
+[data-folder=dropup] .navigation {
   .folder {
     position: relative;
     .subnav {
@@ -202,19 +185,19 @@ html.touch-styles [data-navigation-folder=dropdown] .navigation {
   }  
 }
 
-[data-navigation-folder=visible] .navigation {
+[data-folder=visible] .navigation {
   .folder {
     margin-bottom: 1em;
   }
 }
 
-[data-navigation-folder-label=invisible] .navigation {
+[data-folder-label=invisible] .navigation {
   .folder label {
     visibility: hidden;
   }
 }
 
-[data-navigation-folder-label=underline] .navigation {
+[data-folder-label=underline] .navigation {
   .subnav:before {
     content: '';
     display: block;
@@ -229,13 +212,13 @@ html.touch-styles [data-navigation-folder=dropdown] .navigation {
   }
 }
 
-[data-navigation-active=contrast] .navigation {
+[data-active=contrast] .navigation {
   a:hover, .active > a, .active > label {
     color: contrast(@headerBgColor);
   }
 }
 
-[data-navigation-active=underline] .navigation {
+[data-active=underline] .navigation {
   .active > a, .active > label {
     border-bottom: 1px solid @navColor;
   }

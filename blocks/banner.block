@@ -4,7 +4,7 @@
 	      <figure class="loading content-fill"><img {@|image-meta} /></figure>
 	      <div class="color-overlay"></div>
 	    {.end}
-      {.section description}<div class="content-description center banner dash desc-wrapper" data-collection-id="{id}">{@}</div>{.end}
+      {.section description}<div class="content-description center banner dash desc-wrapper header-overlap" data-collection-id="{id}">{@}</div>{.end}
     </div>
 </div>
 

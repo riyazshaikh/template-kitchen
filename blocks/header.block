@@ -6,31 +6,40 @@
       {.or}
         <h1 id="siteTitle" class="site-title"><a href="/">{siteTitle}</a></h1>
       {.end}
-    </div>{.end}<div id="headerNav" data-navigation-align="space-around" data-navigation-active="underline" data-navigation-folder="dropdown">
-      <squarespace:navigation navigationId="mainNav" template="navigation" />
+    </div>{.end}
+    <div id="header-nav" data-content-field="navigation-mainNav" data-folder="dropdown" data-align>
+      <squarespace:navigation navigationId="mainNav" template="navigation"/>
     </div>
-    <div id="burger">
+    <div class="openblock-field"></div>
+    <div id="slidebar">
     {@|apply slidebar.block}
     </div>
   </div>
 </header>
 <script>
 var node = document.currentScript.parentNode;
-var selector = '.content-description.banner, .index-section-content .content-wrapper';
+var selector = '.header-overlap';
 
-var handleTweak = function() {
-  if (node.dataset.behavior === 'transparent') {
-    var banner = document.querySelector(selector);
-    if (banner) {
-      var height = node.querySelector('.header').offsetHeight;
-      banner.style.marginTop = height + 'px';
-    } else {
-      document.addSelectorListener(selector, function() { handleTweak(); return false; });
-    } 
-  } else {
-    var banner = document.querySelector(selector);
-    if (banner) banner.style.marginTop = '';    
-  }
+var handleTweak = function(mutations) {
+  mutations.forEach(function(mutation) {
+
+    if (mutation.attributeName == 'data-behavior') {
+      var banner = document.querySelector(selector);
+      if (!banner) {
+        document.onSelector(selector, handleTweak.bind(this, [mutation]));
+        return;
+      }
+
+      if (node.dataset.behavior === 'transparent') {
+        var height = node.querySelector('.header').offsetHeight;
+        banner.style.marginTop = height + 'px';
+      } else {
+        banner.style.marginTop = '';    
+      }
+    }
+
+  });
+
 };
 
 var observer = new MutationObserver(handleTweak);
@@ -39,6 +48,6 @@ observer.observe(node, {
   attributeFilter: ['data-behavior']
 });
 
-window.addEventListener('resize', handleTweak);
+window.addEventListener('resize', handleTweak.bind(this, [{attributeName: 'data-behavior'}])); // simulate a mutation
 
 </script>

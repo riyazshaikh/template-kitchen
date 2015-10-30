@@ -15,7 +15,7 @@
     // Logic to toggle active state
     Y.one(rootEl).delegate('click', function(e) {
       e.currentTarget.get('parentNode').addClass('active').siblings().removeClass('active');
-    }, '.index-nav a');
+    }, '.navigation a');
 
     // Logic to scroll to content
     var contentSelector = rootEl.getAttribute('data-nav-index-content');
@@ -48,17 +48,6 @@
     };
 
     Y.on('hashchange', onHashChange, Y.config.win);
-
-      // Y.all('#parallax-nav a').each(function(link) {
-      //   link.on('click', function() {
-      //     if (link.getAttribute('href') === window.location.hash) {
-      //       // force hash update
-      //       this.onHashChange({
-      //         newHash: link.getAttribute('href').replace('#', '')
-      //       });
-      //     }
-      //   }, this);
-      // }, this);
 
     if (Y.config.win.location.hash) {
       Y.later(100, this, function() {
