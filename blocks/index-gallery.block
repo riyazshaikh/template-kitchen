@@ -44,8 +44,7 @@ var handleTweak = function(arr) {
       parent.querySelector('aside').appendChild(metas[i]);
     }
 
-    parent.querySelector('.gallery-wrapper').classList.add('js-sticky');  
-    parent.querySelector('.gallery-wrapper').setAttribute('data-sticky-within', '#' + parent.id + ' .index-gallery');
+    parent.querySelector('.gallery-wrapper').setAttribute('data-sticky', 'within---' + parent.id + ' .index-gallery');
   }
 };
 

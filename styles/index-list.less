@@ -1,3 +1,15 @@
+// tweak: { "category": "Index Collection", "title": "Index Nav - Align", "type": "dropdown", "options": ["Left", "Right", "Center", "Space Around", "Space Between"], "default": "Center", showOnlyWhenPresent: "body:not(.index-nav---position-hidden)", js:true }
+
+// tweak: { "category": "Index Collection", "title": "Index Nav - Active", "type": "dropdown", "options": ["None", "Contrast", "Underline"], "default": "Contrast", showOnlyWhenPresent: "body:not(.index-nav---position-hidden)", js:true }
+
+
+#index-nav {
+	background-color: @headerBgColor;
+	z-index: 101010;
+	text-align: center;
+	padding: 20px @sitePadding;
+}
+
 #index-content {
 	min-height: 1000px;
 
@@ -8,11 +20,6 @@
 	}
 
 */
-	#nav-index {
-		background-color: @headerBgColor;
-		z-index: 101010;
-		text-align: center;
-	}
 
 	.index-section-content {
     > .color-overlay {
@@ -181,3 +188,11 @@
 	max-width: none;
 }
 
+[data-behavior="transparent"] #index-nav {
+  position: absolute;
+  background-color: transparent;
+  padding-bottom: 0;
+
+  width: 100%;
+  .border-box;
+}

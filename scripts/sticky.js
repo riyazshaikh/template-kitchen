@@ -1,176 +1,173 @@
-/*
-
-	This script takes an existing relatively positioned element
-	like a header and converts it to fixed at a certain point
-	when the user is scrolling down the page.
-
-	To initialize it, you add a sticky-js class to the element
-	you want to make sticky
-
-	<header	class="js-sticky">
-
-	This will simply make the header sticky to top of viewport
-	while keeping a height on its original container.
-
-	To control when the stickiness is triggered, 
-	use the following data attributes
-
-	data-sticky-on="#selector"
-	--------------------------
-	  Stickiness triggered when top of viewport scrolls to #selector. 
-
-	data-sticky-after="#selector"
-	-----------------------------
-	  Stickiness triggered when top of viewport scrolls past #selector.
-
-	data-sticky-scroll="up"
-	-----------------------
-	  Stickiness triggered when page is being scrolled up.
-
-	More control
-	============
-	- If #selector matches multiple elements, the first one is used.
-	- You can customize the sticky transition by overriding the styles
-	  under .js-sticky-enabled 
-
-*/
-
 Y.use('node', function (Y) {
 	window.Sticky = Singleton.create({
 
-		ready: function () {
+		ready: function() {
 
-			if (!Y.one('.js-sticky')) { 
-				return false;
-			}
 
-			Y.on('domready', function() {			
-				this.initializer();
-				this.bindUI();
-				this.syncUI();
+			Y.on('domready', function() {
+				this.init();
+				Y.Global && this.tweakHandler();
 			}, this);
 
 		},
 
-		initializer: function () {
+		init: function() {
+			this.stickyNodes = [];
 
-			this.el = Y.one('.js-sticky');
-			this.elWrapper = Y.Node.create("<div class='js-sticky-wrapper'></div>");
-			this.elContainer = Y.Node.create("<div class='js-sticky-container'></div>");
+			Y.all('[data-sticky]').each(function(node) {
+				// Extract config from [data-sticky=<mode>---<target>]
+				var config = node.getData('sticky').split('---');
 
+				if (config.length < 2) return; // skip if config missing
 
-			if (this.el) {
-				this.el.wrap(this.elWrapper);
-				this.elWrapper.wrap(this.elContainer);
+				if (config[0] == 'within' || config[0] == 'after') {
+					var target = Y.one('#' + config[1]);
+					if (!target) return; // skip if target not present
+
+					node.setData('elTarget', target);
+					target.addClass('js-sticky-' + config[0]);
+				}	
+
+				node.setData('mode', config[0]);
+				node.setData('target', config[1]);
+
+				this.wrapItUp(node);
+
+				this.stickyNodes.push(node);
+
+			}, this);
+
+			if (this.stickyNodes.length) {
+				console.log('stickyNodes', this.stickyNodes);
+				this.bindUI();
+				this.syncUI();
 			}
+		},
 
-			this.mode = 'always';
+		destroy: function() {
+			// unwrap
+			// remove sticky classes
+			// unset data
+			this.resizeHandler.detach();
+			this.scrollHandler.detach();
 
-			if (this.el.hasAttribute('data-sticky-on')) {
-				this.mode = 'on';
-				this.elTarget = Y.one(this.el.getAttribute('data-sticky-on')).addClass('js-sticky-on');
-			} else if (this.el.hasAttribute('data-sticky-within')) {
-				this.mode = 'within';
-				this.elTarget = Y.one(this.el.getAttribute('data-sticky-within')).addClass('js-sticky-within');
-			} else if (this.el.hasAttribute('data-sticky-scroll')) {
-				this.mode = 'scroll';
-				this.direction = this.el.getAttribute('data-sticky-scroll');
-			}
-			// future modes can be added here
-
+			this.stickyNodes = [];
 		},
 
 		bindUI: function () {
 
-			Y.one(window).on('resize', function () {
+			this.resizeHandler = Y.one(window).on('resize', function () {
 				this.syncUI();
 			}, this);
 
-			this.scrollEvents();	
+			// this.scrolling = false;
+			this.scrollHandler = Y.one(window).on('scroll', function () {
+				// if (this.scrolling === false) {
+					// this.scrolling = true;
+					this.scrollLogic();
+					// helper.debounce(function () {
+						// this.scrolling = false;
+					// }, 10, this);
+				// }
+			}, this);
+
 		},
+
 
 		syncUI: function () {
 
-			// Make sure sticky's wrappers keeps the right width/height.
-			this.elWrapper.setStyle('width', this.elContainer.get('offsetWidth'));
-			this.elContainer.setStyle('height', this.elWrapper.get('offsetHeight'));
+			this.stickyNodes.forEach(function(node) {
+				var elContainer = node.getData('elContainer');
+				var elWrapper = node.getData('elWrapper');
 
-			switch(this.mode) {
-				case 'within':
-					this.navShowPosition = this.elTarget.getY();
-					this.navEndPosition = this.navShowPosition + this.elTarget.get('offsetHeight') - this.el.get('offsetHeight');
-					break;
+				// Make sure sticky's wrappers keeps the right width/height.
+				elWrapper.setStyle('width', elContainer.get('offsetWidth'));
+				elContainer.setStyle('height', elWrapper.get('offsetHeight'));
 
-				case 'on':
-					this.navShowPosition = this.elTarget.getY();
-					break;
+				var mode = node.getData('mode');
 
-				case 'always':
-					this.elContainer.addClass('js-sticky-enabled');
-					break;
-			}
+				switch(mode) {
+					case 'within':
+						var region = node.getData('elTarget').get('region');
+						node.setData('navShowPosition', region.top);
+						node.setData('navEndPosition', region.bottom - node.get('offsetHeight'));
+						break;
 
-			
+					case 'after':
+						var region = node.getData('elTarget').get('region');
+						node.setData('navShowPosition', region.bottom);
+						break;
+
+					case 'scroll':
+						break;
+				}
+
+			}, this);
+
 			this.scrollLogic();	
 		},
 
-		scrollEvents: function () {
+		wrapItUp: function(node) {
+			var elWrapper = Y.Node.create("<div class='js-sticky-wrapper'></div>");
+			node.wrap(elWrapper);
+			node.setData('elWrapper',elWrapper);
 
-			if (this.mode == 'always') return;
+			var elContainer = Y.Node.create("<div class='js-sticky-container'></div>");
+			elWrapper.wrap(elContainer);
+			node.setData('elContainer',elContainer);
 
-			this.scrolling = false;
-
-			Y.one(window).on('scroll', function () {
-				if (this.scrolling === false) {
-					this.scrolling = true;
-					this.scrollLogic();
-					helper.debounce(function () {
-						this.scrolling = false;
-					}, 10, this);
-				}
-			}, this);
-
+			// elContainer.addClass(node.getStyle('position'));
 		},
 
 		scrollLogic: function () {
 
-			if (this.mode == 'always') return;
+			var scrollY = window.scrollY;
+			this.stickyNodes.forEach(function(node) {
 
-			if (this.mode == 'on') {
+				var elContainer = node.getData('elContainer');
+				switch(node.getData('mode')) {
+					case 'after':
+						if (scrollY > node.getData('navShowPosition')) {
+							elContainer.addClass('js-sticky-enabled');
+						} else {
+							elContainer.removeClass('js-sticky-enabled');
+						}
+						break;
 
-				if (window.scrollY >= this.navShowPosition) {
-					this.elContainer.addClass('js-sticky-enabled');
-				} else {
-					this.elContainer.removeClass('js-sticky-enabled');
+					case 'within':
+						if (scrollY >= node.getData('navShowPosition')) {
+
+							if (scrollY >= node.getData('navEndPosition')) {
+								elContainer.addClass('js-sticky-end').removeClass('js-sticky-enabled');
+							} else {
+								elContainer.addClass('js-sticky-enabled').removeClass('js-sticky-end');
+							}
+							
+						} else {
+							elContainer.removeClass('js-sticky-enabled');
+						}
+						break;
+
 				}
+			}, this);
 
-			} else if (this.mode == 'within') {
+			this.prevPos = scrollY;
 
-				if (window.scrollY >= this.navShowPosition) {
+			// if (this.scrolling === true) {
+			// 	window.requestAnimationFrame(Y.bind(function () {
+			// 		this.scrollLogic();
+			// 	}, this));
+			// }
 
-					if (window.scrollY >= this.navEndPosition) {
-						this.elContainer.addClass('js-sticky-end');
-						this.elContainer.removeClass('js-sticky-enabled');
-					} else {
-						this.elContainer.addClass('js-sticky-enabled');
-						this.elContainer.removeClass('js-sticky-end');
-					}
-					
-				} else {
-					this.elContainer.removeClass('js-sticky-enabled');
-				}
+		},
 
-			}
+		tweakHandler: function() {
+			Y.Global.on('tweak:save', function (f) {
+				this.destroy();
+				this.init();
+			}, this);
 
-			this.prevPos = window.scrollY;
-
-			if (this.scrolling === true) {
-				window.requestAnimationFrame(Y.bind(function () {
-					this.scrollLogic();
-				}, this));
-			}
-
-		}
+		}		
 
 	});
 });

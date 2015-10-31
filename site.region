@@ -11,20 +11,20 @@
     <script>/* Must be below {squarespace-headers} */(function(){var e='ontouchstart'in window||navigator.msMaxTouchPoints;var t=document.documentElement;if(!e&&t){t.className=t.className.replace(/touch-styles/,'')}})()
     </script>
 
-    {@|apply selector-listener.block}
     <script>
-    // document.addSelectorListener('#nav-index', function(event) {
-    //   var nav = document.querySelector('#nav-regular');
-    //   nav.replaceChild(event.target, nav.querySelector('#mainNavWrapper'));
-    //   return false;
-    // });
+    Static.SQUARESPACE_CONTEXT.tweakJSON['header---sticky'] = 'After - Index 1';
+    Static.SQUARESPACE_CONTEXT.tweakJSON['header---behavior'] = 'Transparent';
+    Static.SQUARESPACE_CONTEXT.tweakJSON['index-nav---sticky'] = 'After - Index 1';
+    Static.SQUARESPACE_CONTEXT.tweakJSON['index-nav---behavior'] = 'Transparent';
+    Static.SQUARESPACE_CONTEXT.tweakJSON['products-nav---sticky'] = 'Within - Products Page';
     </script>
+    {@|apply selector-listener.block}
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
 
     <div class="sqs-announcement-bar-dropzone"></div>
 
-    <div id="siteWrapper">
+    <div id="site">
       <div id="header">
         {@|apply header.block}
       </div>

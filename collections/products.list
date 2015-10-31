@@ -1,4 +1,4 @@
-<div class="products-page">
+<div id="products-page">
 
 	<div id="products-nav" data-align="center">
 		<div id="category-nav">

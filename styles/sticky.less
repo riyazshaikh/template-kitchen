@@ -1,4 +1,7 @@
+
 .js-sticky-container {
+
+	@zIndexBase: 100;
 
 	&:not(.js-sticky-enabled):not(.js-sticky-end) {
 		height: auto !important;
@@ -11,19 +14,16 @@
 	&.js-sticky-enabled .js-sticky-wrapper {
 		position: fixed;
 		top: 0;
-		z-index: 1;
+		z-index: @zIndexBase + 1;
 	}
 
 	&.js-sticky-end .js-sticky-wrapper {
 		position: absolute;
 		bottom: 0;
 	}
+
 	/*padding: 0 @sitePadding;*/
 	/*.border-box;*/
 
 	/*box-shadow: 0 0 1px rgba(0,0,0,0.15);*/
-}
-
-.js-sticky-within {
-	position: relative;
 }

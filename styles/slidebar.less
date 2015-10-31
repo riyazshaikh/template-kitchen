@@ -65,12 +65,12 @@ body {
 }
 
 
-#siteWrapper {
+#site {
   .transition(transform 0.2s ease-in-out);
 }
 
 .mobile-nav-enabled {
-  #siteWrapper {
+  #site {
     .transform(translate3d(-260px,0,0));
     .mobile-nav-toggle-label {
       .top-bar,
@@ -102,7 +102,7 @@ body {
 
 @media only screen and (min-width: 641px) {
   .sqs-style-mode.dialog-open #mobileNavToggle:checked {
-    ~ #siteWrapper {
+    ~ #site {
       .transform(translate3d(-480px, 0, 0));
     }
   }
@@ -129,5 +129,5 @@ body {
   .transform(translate3d(-260px,0,0));
 }
 body.header---direction-reverse.mobile-nav-enabled { /* Cannot find a cleaner way */
-  #siteWrapper, .slidebar .body-overlay { .transform(translate3d(260px,0,0));  }
+  #site, .slidebar .body-overlay { .transform(translate3d(260px,0,0));  }
 }

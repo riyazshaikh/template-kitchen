@@ -17,7 +17,7 @@
 
 // tweak: { "category": "Header", "title": "Header - Direction", "type": "dropdown", "options": ["Normal", "Reverse"], "default": "Reverse", js: true }
 
-// tweak: { "category": "Header", "title": "Header - Navigation", "type": "dropdown", "options": ["Normal", "Slidebar", "Hidden"], "default": "Normal", js: true }
+// tweak: { "category": "Header", "title": "Header - Navigation", "type": "dropdown", "options": ["Normal", "Slidebar", "Hidden"], "default": "Slidebar", js: true }
 
 // tweak: { "category": "Header", "title": "Header Nav - Align", "type": "dropdown", "options": ["Left", "Right", "Center", "Space Around", "Space Between"], "default": "Left", showOnlyWhenPresent: "body.header---navigation-normal", js:true }
 
@@ -30,9 +30,6 @@
   .border-box;
   
   z-index: 1000;
-  top: 0;
-  left: 0;
-  width: 100%;
   line-height: 1em;
   .background-color(@headerBgColor);
   position: relative;
@@ -138,6 +135,9 @@
   position: absolute;
   background-color: transparent;
   padding-bottom: 0;
+
+  width: 100%;
+  .border-box;
 }
 
 [data-header-title="boxed"] .header #siteTitle a {
