@@ -14,7 +14,7 @@ Y.use('node', function (Y) {
 		init: function() {
 			this.stickyNodes = [];
 
-			Y.all('[data-sticky]').each(function(node) {
+			Y.all('[data-sticky]:not([data-behavior="hidden"]').each(function(node) {
 				// Extract config from [data-sticky=<mode>---<target>]
 				var config = node.getData('sticky').split('---');
 

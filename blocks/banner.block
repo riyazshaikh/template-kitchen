@@ -4,7 +4,13 @@
 	      <figure class="loading content-fill"><img {@|image-meta} /></figure>
 	      <div class="color-overlay"></div>
 	    {.end}
-      {.section description}<div class="content-description center banner dash desc-wrapper header-overlap" data-collection-id="{id}">{@}</div>{.end}
+      {.section description}
+      <div class="content-wrapper header-overlap">
+        <div class="content-inner content-description" data-content-field="description">
+          {@}
+        </div>
+      </div>
+      {.end}
     </div>
 </div>
 

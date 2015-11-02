@@ -8,6 +8,19 @@
 	z-index: 101010;
 	text-align: center;
 	padding: 20px @sitePadding;
+	
+	&[data-behavior="transparent"] {
+	  position: absolute;
+	  background-color: transparent;
+	  padding-bottom: 0;
+
+	  width: 100%;
+	  .border-box;
+	}
+
+	&[data-behavior="hidden"] {
+		display: none;
+	}	
 }
 
 #index-content {
@@ -102,7 +115,7 @@
 [data-layout=banner] {
 	.content-restricted;
 
-	.desc-wrapper, .content-wrapper {
+	.content-wrapper {
 		padding-top: 80px;
 		padding-bottom: 80px;
 
@@ -188,11 +201,3 @@
 	max-width: none;
 }
 
-[data-behavior="transparent"] #index-nav {
-  position: absolute;
-  background-color: transparent;
-  padding-bottom: 0;
-
-  width: 100%;
-  .border-box;
-}
