@@ -15,15 +15,15 @@
 		position: fixed;
 		top: 0;
 		z-index: @zIndexBase + 1;
+
+		[data-sticky]:not([data-behavior=transparent]) {
+			box-shadow: 0 0 1px rgba(0,0,0,0.15);	
+		}
 	}
 
 	&.js-sticky-end .js-sticky-wrapper {
 		position: absolute;
 		bottom: 0;
 	}
-
-	/*padding: 0 @sitePadding;*/
-	/*.border-box;*/
-
-	/*box-shadow: 0 0 1px rgba(0,0,0,0.15);*/
+	
 }

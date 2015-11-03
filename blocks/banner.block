@@ -1,16 +1,21 @@
-<div class="banner">    
-    <div class="banner-thumbnail-wrapper{.if description} has-description{.end}{.if mainImage} has-image{.end}" data-content-field="main-image">
-			{.section mainImage}
-	      <figure class="loading content-fill"><img {@|image-meta} /></figure>
-	      <div class="color-overlay"></div>
-	    {.end}
-      {.section description}
-      <div class="content-wrapper header-overlap">
-        <div class="content-inner content-description" data-content-field="description">
-          {@}
+<div class="banner {.if mainImage} has-image{.end}" data-collection-id="{id}" data-edit-main-image="Background">    
+		{.section mainImage}
+      <figure class="loading content-fill"><img {@|image-meta} /></figure>
+    {.end}
+    <div class="content-wrapper {.if mainImage}header-overlap{.end}">
+      <div class="content-inner">
+        <squarespace:block-field id="banner-content-{id}" columns="12" label="Banner Content"/>
+        <div class="content-meta">
+          <div class="content-title" data-content-field="title">
+            {title}
+          </div>
+          {.section description}
+          <div class="content-description" data-content-field="description">
+            {@}
+          </div>
+          {.end}
         </div>
       </div>
-      {.end}
     </div>
 </div>
 

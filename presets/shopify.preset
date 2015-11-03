@@ -1,9 +1,8 @@
 {
   "title" : "default",
   "templateTweaks" : {
-  	"font-banner-body": "{font-family:'brandon-grotesque';font-size:18px;}",
-  	"font-banner-h1": "{font-family:'brandon-grotesque';font-size:60px;letter-spacing:1px;margin-bottom:0.5em;}",
-  	"banner---palette": "main"
+  	"banner-body-font": "{font-family:'brandon-grotesque';font-size:18px;}",
+  	"banner-heading1-font": "{font-family:'brandon-grotesque';font-size:60px;letter-spacing:1px;margin-bottom:0.5em;}"
   }
 }
 

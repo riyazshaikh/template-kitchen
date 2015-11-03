@@ -14,21 +14,14 @@
           {@|apply index-gallery.block}
         </div>
       {.or}
-        {.if description}
-          <div id="index-{@index}-banner" class="banner-wrapper">
-            {@|apply banner.block}
+        <div id="index-{@index}-banner" class="banner-wrapper">
+          {@|apply banner.block}
+        </div>
+        <div id="index-{@index}-content" class="content-wrapper">
+          <div class="content-inner" data-content-field="main-content">
+            {mainContent}
           </div>
-        {.or}
-          {.section mainImage}
-            <figure class="loading content-fill"><img {@|image-meta} /></figure>
-            <div class="color-overlay" data-content-field="main-image"></div>
-          {.end}
-          <div class="content-wrapper header-overlap">
-            <div class="content-inner" data-content-field="main-content">
-              {mainContent}
-            </div>
-          </div>
-        {.end}
+        </div>
       {.end}
     </div>
   </div>

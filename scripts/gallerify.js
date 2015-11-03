@@ -13,7 +13,7 @@ Y.use('squarespace-gallery-ng', function (Y) {
 			this.viewportRegion = Y.one(Y.config.win).get('region');					
 			this.galleries = {};
 
-			Y.all('.sqs-gallery').each(function(node) {
+			Y.all('.index-gallery .sqs-gallery').each(function(node) {
 				var gallery = this.makeGallery(node);
 				this.bindUI(gallery);
 				this.syncUI(gallery);

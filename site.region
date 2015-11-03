@@ -16,10 +16,16 @@
         'header---sticky': 'Within - Site',
         'header---behavior': 'Transparent',
         'index-nav---behavior': 'Hidden',
+        'banner---layout': 'Banner',
+        'banner---palette': 'Main',
+        'banner---description': 'Center',
+        'banner---title': 'Hidden',
+        'banner---overlay': 'None', // 'Image', ''
         // 'index-nav---sticky': 'After - Index 1',
         // 'products-nav---sticky': 'Within - Products Page',
         'products-nav---behavior': 'Hidden',
-        'banner---layout': 'Banner'
+        'index-2-gallery---layout': 'Alternate'
+        // 'banner---layout': 'Banner'
     };
     Static.SQUARESPACE_CONTEXT.tweakJSON = Y.merge(Static.SQUARESPACE_CONTEXT.tweakJSON, orides);
     </script>
@@ -34,7 +40,15 @@
         {@|apply header.block}
       </div>
 
-      {@|apply content.block}
+      {.section collection}
+          <div id="banner">
+            {@|apply banner.block}
+        </div>
+      {.end}
+
+      <main id="content" class="content" role="main" data-content-field="main-content">
+        {squarespace.main-content}
+      </main>
 
       {@|apply footer.block}
 
