@@ -1,17 +1,21 @@
-// tweak: { "category": "Banner", "title": "Banner - Palette", "type": "dropdown", "options": ["Main", "Banner", "Alternate"], "default": "Banner", js: true }
-// tweak: { "category": "Banner", "title": "Banner - Typeset", "type": "dropdown", "options": ["Main", "Banner", "Alternate"], "default": "Banner", js: true }
-// tweak: { "category": "Banner", "title": "Banner - Layout", "type": "dropdown", "options": ["Main", "Banner", "Alternate"], "default": "Banner", js: true }
+// tweak: { category: "Banner", title: "Banner - Palette", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Alternate", js: true }
+// tweak: { category: "Banner", title: "Banner - Typeset", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Alternate", js: true }
+// tweak: { category: "Banner", title: "Banner - Layout", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Alternate", js: true }
 
-// tweak: { "category": "Banner", "title": "Banner - Align", "type": "dropdown", "options": ["Left", "Right", "Center"], "default": "Left", js: true }
-// tweak: { "category": "Banner", "title": "Banner - Button", "type": "dropdown", "options": ["Solid", "Outline", "Raised"], "default": "Solid", js: true }
-// tweak: { "category": "Banner", "title": "Banner - Button Corner", "type": "dropdown", "options": ["Square", "Rounded", "Pill"], "default": "Square", js: true }
-//OFF tweak: { "category": "Banner", "title": "Banner - Dash", "type": "dropdown", "options": ["None", "Solid"], "default": "Solid", js: true }
+// tweak: { category: "Banner", title: "Banner - Background Overlay", type: "dropdown", options: ["None","Image","Description"], default: "None", js: true }
+
+// tweak: { category: "Banner", title: "Banner - Description", type: "dropdown", options: ["Hide", "Show", "Overlay"], default: "Show", js: true }
+// tweak: { category: "Banner", title: "Banner - Description Title", type: "dropdown", options: ["Show","Hide"], default: "Show", js: true }
+// tweak: { category: "Banner", title: "Banner - Description Position", type: "dropdown", options: ["Center","Left","Right","Top Left","Top Right","Bottom Left","Bottom Right"], default: "Center", js: true }
+// tweak: { category: "Banner", title: "Banner - Description Italic", type: "dropdown", options: ["Normal", "Dash"], default: "Dash", js: true }
+// tweak: { category: "Banner", title: "Banner - Description Button", type: "dropdown", options: ["Solid", "Outline", "Overlay"], default: "Outline", js: true }
+// tweak: { category: "Banner", title: "Banner - Description Button Corner", type: "dropdown", options: ["Square", "Rounded", "Pill"], default: "Rounded", js: true }
 
 .banner {  
   position: relative;
   overflow: hidden;
   &.has-image {
-    min-height: 320px;  
+    /*min-height: 320px;  */
 
     > figure {
       position: absolute;
@@ -27,16 +31,6 @@
         display: block;
       }
 
-      &:after {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background-color: fade(@p2-bgColor,60%);
-      }
     }
 
   }
@@ -54,13 +48,6 @@
       }
 
     }
-  }
-
-  .sqs-layout:not(.empty) ~ .content-meta {
-    position: absolute;
-    bottom: 0;
-    left: @mainSpacingSide;
-    z-index: 1;
   }
 
 }
@@ -93,48 +80,113 @@
   }
 }*/
 
-[data-title=hidden] .banner .content-title {
-  display: none;
+.background-overlay() {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: fade(@p2-bgColor,60%);
 }
 
-[data-description=hidden] .banner .content-description {
-  display: none;
-}
-
-[data-description=center] .banner .content-meta {
-  text-align: center;
-}
-
-[data-description=right] .banner .content-meta {
-  text-align: right;
-}
-
-[data-overlay=image] {
-  .sqs-block-image:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background-color: fade(@p2-bgColor,60%);
+[data-background-overlay=image] {
+  .banner > figure, .banner .sqs-block-image {
+    &:after {
+      .background-overlay;
+    }
   }
 }    
 
+[data-background-overlay=description] {
+  .banner .content-meta:after {
+    .background-overlay;
+  }
+}    
+
+[data-description=overlay] {
+  .banner .sqs-layout:not(.empty) ~ .content-meta {
+    position: absolute;
+    z-index: 1;
+  }
+
+  &[data-description-position=left] .banner .content-meta {
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &[data-description-position=right] .banner .content-meta {
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &[data-description-position=center] .banner .content-meta {
+
+    top: 0; left: 0; right: 0; bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &[data-description-position=top-left] .banner .content-meta {
+    left: 0;
+    top: 0;
+  }
+
+  &[data-description-position=top-right] .banner .content-meta {
+    right: 0;
+    top: 0;
+  }
+
+  &[data-description-position=bottom-left] .banner .content-meta {
+    left: 0;
+    bottom: 0;
+  }
+
+  &[data-description-position=bottom-right] .banner .content-meta {
+    right: 0;
+    bottom: 0;
+  }
+
+}
+
+[data-description-position~=left] .banner .content-meta {
+  text-align: left;
+}
+
+[data-description-position~=center] .banner .content-meta {
+  text-align: center;
+}
+
+[data-description-position~=right] .banner .content-meta {
+  text-align: right;
+}
+
 [data-layout=main] {
+
   .content-wrapper {
     width: @mainContentWidth;
     max-width: 100%;
+    .border-box;
+    padding: @mainSpacingTop @mainSpacingSide;
 
     .content-inner {
-      padding: @mainSpacingTop @mainSpacingSide;
-
-      .content-meta {
+      .content-description {
         max-width: 100%;
-        /*width: @mainMetaWidth;*/
+        width: @mainMetaWidth;
+        margin: 0 auto;
         .border-box;
-        padding: 10px;
+        padding: @mainSpacingTop @mainSpacingSide;
       }
     }
   }
@@ -144,15 +196,16 @@
   .content-wrapper {
     width: @altContentWidth;
     max-width: 100%;
+    .border-box;
+    padding: @altSpacingTop @altSpacingSide;
 
     .content-inner {
-      padding: @altSpacingTop @altSpacingSide;
-
-      .content-meta {
+      .content-description {
         max-width: 100%;
         width: @altMetaWidth;
+        margin: 0 auto;
         .border-box;
-        padding: 10px;
+        padding: @altSpacingTop @altSpacingSide;
       }
     }
   }
@@ -162,15 +215,16 @@
   .content-wrapper {
     width: @bannerContentWidth;
     max-width: 100%;
+    .border-box;
+    padding: @bannerSpacingTop @bannerSpacingSide;
 
     .content-inner {
-      padding: @bannerSpacingTop @bannerSpacingSide;
-
-      .content-meta {
+      .content-description {
         max-width: 100%;
-        /*width: @bannerMetaWidth;*/
+        width: @bannerMetaWidth;
+        margin: 0 auto;
         .border-box;
-        padding: 10px;
+        padding: @bannerSpacingTop @bannerSpacingSide;
       }
 
     }

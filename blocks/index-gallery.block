@@ -12,7 +12,7 @@
               
               {.if title || body}
                 <div class="meta">
-                  <div class="content-description left dash button-style-overlay">
+                  <div class="content-description">
                     <p class="meta-title"><strong>{title}</strong></p>              
                     {body}
                   </div>

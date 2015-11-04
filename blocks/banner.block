@@ -6,14 +6,12 @@
       <div class="content-inner">
         <squarespace:block-field id="banner-content-{id}" columns="12" label="Banner Content"/>
         <div class="content-meta">
-          <div class="content-title" data-content-field="title">
-            {title}
+          <div  class="content-description" data-content-field="description">
+            <p class="title" data-content-field="title">
+              {title}
+            </p>            
+            {description}
           </div>
-          {.section description}
-          <div class="content-description" data-content-field="description">
-            {@}
-          </div>
-          {.end}
         </div>
       </div>
     </div>

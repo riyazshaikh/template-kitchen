@@ -12,21 +12,36 @@
     </script>
 
     <script>
-    var orides = {
-        'header---sticky': 'Within - Site',
-        'header---behavior': 'Transparent',
-        'index-nav---behavior': 'Hidden',
-        'banner---layout': 'Banner',
-        'banner---palette': 'Main',
-        'banner---description': 'Center',
-        'banner---title': 'Hidden',
-        'banner---overlay': 'None', // 'Image', ''
-        // 'index-nav---sticky': 'After - Index 1',
-        // 'products-nav---sticky': 'Within - Products Page',
-        'products-nav---behavior': 'Hidden',
-        'index-2-gallery---layout': 'Alternate'
-        // 'banner---layout': 'Banner'
-    };
+    var orides;
+
+    var title = Static.SQUARESPACE_CONTEXT.collection.title;
+    if ( title == 'Templates') {
+      orides = {
+          'header---sticky': 'Within - Site',
+          'header---behavior': 'Transparent',
+          'banner---palette': 'Main',
+          'banner---typeset': 'Banner',
+          'banner---layout': 'Banner',
+          'banner---description': 'Show',
+          'banner---description-position': 'Center',
+          'banner---description-title': 'Hide',
+
+          'products-nav---behavior': 'Hidden',
+      }
+    } else if (title == 'Banner2') {
+      orides = {
+          'header---sticky': 'None',
+          'header---behavior': 'Transparent',
+          'banner---palette': 'Alternate',
+          'banner---typeset': 'Banner',
+          'banner---layout': 'Alternate',
+          'banner---background-overlay': 'Image',
+          'banner---description': 'Overlay',
+          'banner---description-position': 'bottom-left',
+      }
+    } else {
+    }
+    
     Static.SQUARESPACE_CONTEXT.tweakJSON = Y.merge(Static.SQUARESPACE_CONTEXT.tweakJSON, orides);
     </script>
     {@|apply selector-listener.block}
