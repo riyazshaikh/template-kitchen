@@ -9,14 +9,14 @@
   {.repeated section collections}
   <div id="index-{@index}" class="index-section{.if mainImage} has-image{.end}" data-url-id="{urlId}">
     <div class="index-section-content">
+      <div id="index-{@index}-banner" class="banner-wrapper">
+        {@|apply banner.block}
+      </div>
       {.collectionTypeNameEquals? gallery}
         <div id="index-{@index}-gallery" class="index-gallery-wrapper">
-          {@|apply index-gallery.block}
+          {@|apply gallery-slide.block}
         </div>
       {.or}
-        <div id="index-{@index}-banner" class="banner-wrapper">
-          {@|apply banner.block}
-        </div>
         <div id="index-{@index}-content" class="content-wrapper">
           <div class="content-inner" data-content-field="main-content">
             {mainContent}

@@ -57,3 +57,30 @@
 // tweak: { category: "Index - 1", title: "Index 1 Gallery - Layout", type: "dropdown", options: ["Full", "Scroll", "Slide"], default: "Full", js: true }
 // tweak: { category: "Index - 1", title: "Index 1 Gallery - Meta", type: "dropdown", options: ["None", "Side", "Overlay"], default: "None", showOnlyWhenPresent: ".index-1-gallery-full", js: true }
 
+
+[data-layout=main] {
+  padding: @mainSpacingTop @mainSpacingSide;
+	> div:first-child {
+	  width: @mainContentWidth;
+	  max-width: 100%;
+	  margin: auto;
+	}
+}
+
+[data-layout=alternate] {
+  padding: @altSpacingTop @altSpacingSide;
+	> div:first-child {
+	  width: @altContentWidth;
+	  max-width: 100%;
+	  margin: auto;
+	}
+}
+
+[data-layout=banner] {
+  padding: @bannerSpacingTop @bannerSpacingSide;
+	> div:first-child {
+	  width: @bannerContentWidth;
+	  max-width: 100%;
+	  margin: auto;
+	}
+}

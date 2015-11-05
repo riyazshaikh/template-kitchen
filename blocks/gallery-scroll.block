@@ -1,0 +1,103 @@
+<div id="gallery-{collection.id}" class="gallery-scroll">
+  <div class="gallery-container">
+    <div class="gallery-background" data-sticky="within---gallery-{collection.id}">
+      <div class="gallery-aspect-ratio">    
+        <div class="sqs-gallery sqs-gallery-design-stacked">
+        {.repeated section items}        
+            <div class="slide content-fill" data-type="image" data-slide-id="{id}">
+              {.main-image?}
+              <img {@|image-meta color-data} class="loading" data-load="false" />
+              {.end}
+            </div>
+        {.end}    
+        </div>
+      </div>
+    </div>
+  </div>
+  <aside>
+  {.repeated section items}       
+    <div class="meta">
+      <div class="meta-inside">
+        <p class="meta-title"><strong>{title}</strong></p>              
+        <div class="meta-description">{body}</div>
+      </div>
+    </div>
+  {.end}    
+  </aside>
+</div>
+
+<script>
+var parent = document.currentScript.parentNode;
+
+Y.use('squarespace-gallery-ng', function (Y) {
+  
+  window.Galleries = window.Galleries || {}; // to store references;
+
+  window.Galleries[parent.id] = Singleton.create({
+
+    ready: function() {
+      this.parentEl = Y.one(parent);
+      this.init();
+    },
+
+    init: function() {
+      this.gallery = this.makeGallery(this.parentEl.one('.sqs-gallery'));
+      this.bindUI();
+      this.syncUI();
+    },
+
+    destroy: function() {
+      this.gallery.destroy();
+    },
+
+    bindUI: function() {
+      this.resizeHandler = Y.one(window).on('resize', Y.throttle(Y.bind(this.syncUI, this), 100));
+      this.scrollHandler = Y.one(window).on('scroll', Y.throttle(Y.bind(this.scrollLogic, this)));
+    },
+
+    syncUI: function() {
+
+      this.metaOffsets = [];
+
+      this.parentEl.all('.meta').each(function(node) {
+        this.metaOffsets.push(node.getXY()[1]);
+      },this);
+
+      this.scrollLogic();
+      // this.gallery.refresh();
+    },
+
+    scrollLogic: function() {
+
+      for (var i=0; i<this.metaOffsets.length-1; i++) {
+        if (window.scrollY < this.metaOffsets[i+1]) {
+          break;
+        }
+      }
+
+      if (this.gallery.get('currentIndex') !== i) {
+        this.gallery.set('currentIndex', i);
+        this.parentEl.all('.meta').item(i).addClass('active').siblings().removeClass('active');
+      }
+    },
+
+    makeGallery: function(node) {
+      this.parentEl.one('.meta').addClass('active');
+
+      return new Y.Squarespace.Gallery2({       
+          container: node,
+          slides: node.all('.slide'),
+          loaderOptions: {
+            load: true
+          },
+          design: 'stacked',
+          designOptions: {
+            autoHeight: false,
+            transition: 'fade'
+          },
+          refreshOnResize: true
+      });   
+    }    
+  });
+});
+</script>

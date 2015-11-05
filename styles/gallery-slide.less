@@ -1,0 +1,26 @@
+.gallery-slide {
+	.gallery-shape-half;
+
+	.meta {
+		position: relative;
+    z-index: 2;
+    top: 100%;
+    padding: 6rem;	
+  	max-width: @pageWidth;
+  	margin: 0 auto;	    
+
+    opacity: 0;
+    .transform(translate(0,0));
+    .transition(all 0.64s ease);
+	}
+
+	.sqs-active-slide .meta {
+		opacity: 1;
+		.transform(translate(0,-100%));
+	}
+	.color-overlay {
+		position: absolute;
+		top: 0; left: 0; right: 0; bottom: 0;
+		z-index: 1;
+	}
+}

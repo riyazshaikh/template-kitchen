@@ -1,0 +1,36 @@
+.gallery-scroll {
+	position: relative;
+	margin-top: 5em;
+
+	/*.gallery-shape-half;*/
+	.gallery-background-cinema;
+
+	display: flex;
+	justify-content: flex-between;
+
+	.gallery-container {
+		width: 100%;
+		.viewport-center;
+	}
+
+	aside {
+		width: @mainMetaWidth;
+		padding: @mainSpacingSide;
+		.border-box;
+
+		.meta {
+			padding-top: 50vh;
+
+			&:first-child {
+				padding-top: 20vh;
+			}
+
+			.transition(opacity 0.4s);
+			opacity: 0;
+			&.active {
+				opacity: 1;
+			}
+		}
+	}
+}
+

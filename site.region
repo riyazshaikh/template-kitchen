@@ -41,6 +41,15 @@
           'banner--description---position': 'Bottom Left',
           'banner--description---title': 'Hide',
       }
+    } else if (title == 'HatGallery') {
+      orides = {
+          'banner--description---display': 'Hide',
+          'header---sticky': 'None',
+          'header---behavior': 'Normal',
+          'header---sticky-effect': 'Shadow',
+          'content---layout': 'Banner',
+          'content---palette': 'Banner'
+      }
     }
 
     Static.SQUARESPACE_CONTEXT.tweakJSON = Y.merge(Static.SQUARESPACE_CONTEXT.tweakJSON, orides);
@@ -76,7 +85,6 @@
     <squarespace:script src="sticky.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     <squarespace:script src="rafscroll.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     <squarespace:script src="parallax.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
-    <squarespace:script src="gallerify.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     <squarespace:script src="auto-palette.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     
     <!--Injection point for tracking scripts and user content from the code injection tab.-->
