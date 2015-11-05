@@ -1,15 +1,16 @@
 // tweak: { category: "Banner", title: "Banner - Palette", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Alternate", js: true }
 // tweak: { category: "Banner", title: "Banner - Typeset", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Alternate", js: true }
-// tweak: { category: "Banner", title: "Banner - Layout", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Alternate", js: true }
+// tweak: { category: "Banner", title: "Banner  Content - Layout", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Banner", js: true }
 
 // tweak: { category: "Banner", title: "Banner - Background Overlay", type: "dropdown", options: ["None","Image","Description"], default: "None", js: true }
 
-// tweak: { category: "Banner", title: "Banner - Description", type: "dropdown", options: ["Hide", "Show", "Overlay"], default: "Show", js: true }
-// tweak: { category: "Banner", title: "Banner - Description Title", type: "dropdown", options: ["Show","Hide"], default: "Show", js: true }
-// tweak: { category: "Banner", title: "Banner - Description Position", type: "dropdown", options: ["Center","Left","Right","Top Left","Top Right","Bottom Left","Bottom Right"], default: "Center", js: true }
-// tweak: { category: "Banner", title: "Banner - Description Italic", type: "dropdown", options: ["Normal", "Dash"], default: "Dash", js: true }
-// tweak: { category: "Banner", title: "Banner - Description Button", type: "dropdown", options: ["Solid", "Outline", "Overlay"], default: "Outline", js: true }
-// tweak: { category: "Banner", title: "Banner - Description Button Corner", type: "dropdown", options: ["Square", "Rounded", "Pill"], default: "Rounded", js: true }
+// tweak: { category: "Banner", title: "Banner  Description - Display", type: "dropdown", options: ["Hide", "Show", "Overlaid"], default: "Show", js: true }
+// tweak: { category: "Banner", title: "Banner  Description - Layout", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Main", js: true }
+// tweak: { category: "Banner", title: "Banner  Description - Title", type: "dropdown", options: ["Show","Hide"], default: "Show", js: true }
+// tweak: { category: "Banner", title: "Banner  Description - Position", type: "dropdown", options: ["Center","Left","Right","Top Left","Top Right","Bottom Left","Bottom Right"], default: "Center", js: true }
+// tweak: { category: "Banner", title: "Banner  Description - Italic", type: "dropdown", options: ["Normal", "Dash"], default: "Dash", js: true }
+// tweak: { category: "Banner", title: "Banner  Description - Button", type: "dropdown", options: ["Solid", "Outline", "Overlay"], default: "Outline", js: true }
+// tweak: { category: "Banner", title: "Banner  Description - Button Corner", type: "dropdown", options: ["Square", "Rounded", "Pill"], default: "Rounded", js: true }
 
 .banner {  
   position: relative;
@@ -80,6 +81,7 @@
   }
 }*/
 
+
 .background-overlay() {
   content: '';
   display: block;
@@ -100,133 +102,29 @@
 }    
 
 [data-background-overlay=description] {
-  .banner .content-meta:after {
+  .banner .meta:after {
     .background-overlay;
   }
 }    
 
-[data-description=overlay] {
-  .banner .sqs-layout:not(.empty) ~ .content-meta {
-    position: absolute;
-    z-index: 1;
-  }
 
-  &[data-description-position=left] .banner .content-meta {
-    left: 0;
-    top: 0;
-    bottom: 0;
-
-    display: flex;
-    align-items: center;
-  }
-
-  &[data-description-position=right] .banner .content-meta {
-    right: 0;
-    top: 0;
-    bottom: 0;
-
-    display: flex;
-    align-items: center;
-  }
-
-  &[data-description-position=center] .banner .content-meta {
-
-    top: 0; left: 0; right: 0; bottom: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &[data-description-position=top-left] .banner .content-meta {
-    left: 0;
-    top: 0;
-  }
-
-  &[data-description-position=top-right] .banner .content-meta {
-    right: 0;
-    top: 0;
-  }
-
-  &[data-description-position=bottom-left] .banner .content-meta {
-    left: 0;
-    bottom: 0;
-  }
-
-  &[data-description-position=bottom-right] .banner .content-meta {
-    right: 0;
-    bottom: 0;
-  }
-
+[data-layout=main] > div:first-child {
+  width: @mainContentWidth;
+  max-width: 100%;
+  .border-box;
+  padding: @mainSpacingTop @mainSpacingSide;
 }
 
-[data-description-position~=left] .banner .content-meta {
-  text-align: left;
+[data-layout=alternate] > div:first-child {
+  width: @altContentWidth;
+  max-width: 100%;
+  .border-box;
+  padding: @altSpacingTop @altSpacingSide;
 }
 
-[data-description-position~=center] .banner .content-meta {
-  text-align: center;
-}
-
-[data-description-position~=right] .banner .content-meta {
-  text-align: right;
-}
-
-[data-layout=main] {
-
-  .content-wrapper {
-    width: @mainContentWidth;
-    max-width: 100%;
-    .border-box;
-    padding: @mainSpacingTop @mainSpacingSide;
-
-    .content-inner {
-      .content-description {
-        max-width: 100%;
-        width: @mainMetaWidth;
-        margin: 0 auto;
-        .border-box;
-        padding: @mainSpacingTop @mainSpacingSide;
-      }
-    }
-  }
-}
-
-[data-layout=alternate] {
-  .content-wrapper {
-    width: @altContentWidth;
-    max-width: 100%;
-    .border-box;
-    padding: @altSpacingTop @altSpacingSide;
-
-    .content-inner {
-      .content-description {
-        max-width: 100%;
-        width: @altMetaWidth;
-        margin: 0 auto;
-        .border-box;
-        padding: @altSpacingTop @altSpacingSide;
-      }
-    }
-  }
-}
-
-[data-layout=banner] {
-  .content-wrapper {
-    width: @bannerContentWidth;
-    max-width: 100%;
-    .border-box;
-    padding: @bannerSpacingTop @bannerSpacingSide;
-
-    .content-inner {
-      .content-description {
-        max-width: 100%;
-        width: @bannerMetaWidth;
-        margin: 0 auto;
-        .border-box;
-        padding: @bannerSpacingTop @bannerSpacingSide;
-      }
-
-    }
-  }
+[data-layout=banner] > div:first-child {
+  width: @bannerContentWidth;
+  max-width: 100%;
+  .border-box;
+  padding: @bannerSpacingTop @bannerSpacingSide;
 }

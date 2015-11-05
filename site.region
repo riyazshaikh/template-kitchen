@@ -21,10 +21,10 @@
           'header---behavior': 'Transparent',
           'banner---palette': 'Main',
           'banner---typeset': 'Banner',
-          'banner---layout': 'Banner',
-          'banner---description': 'Show',
-          'banner---description-position': 'Center',
-          'banner---description-title': 'Hide',
+          'banner--description---layout': 'Main',
+          'banner--description---display': 'Show',
+          'banner--description---position': 'Center',
+          'banner--description---title': 'Hide',
 
           'products-nav---behavior': 'Hidden',
       }
@@ -34,14 +34,15 @@
           'header---behavior': 'Transparent',
           'banner---palette': 'Alternate',
           'banner---typeset': 'Banner',
-          'banner---layout': 'Alternate',
           'banner---background-overlay': 'Image',
-          'banner---description': 'Overlay',
-          'banner---description-position': 'bottom-left',
+          'banner--content---layout': 'Banner',
+          'banner--description---layout': 'Main',
+          'banner--description---display': 'Overlaid',
+          'banner--description---position': 'Bottom Left',
+          'banner--description---title': 'Hide',
       }
-    } else {
     }
-    
+
     Static.SQUARESPACE_CONTEXT.tweakJSON = Y.merge(Static.SQUARESPACE_CONTEXT.tweakJSON, orides);
     </script>
     {@|apply selector-listener.block}

@@ -4,13 +4,19 @@
     {.end}
     <div class="content-wrapper {.if mainImage}header-overlap{.end}">
       <div class="content-inner">
-        <squarespace:block-field id="banner-content-{id}" columns="12" label="Banner Content"/>
-        <div class="content-meta">
-          <div  class="content-description" data-content-field="description">
-            <p class="title" data-content-field="title">
-              {title}
-            </p>            
-            {description}
+        <div class="content open-blocks">
+          <squarespace:block-field id="banner-content-{id}" columns="12" label="Banner Content"/>
+        </div>
+        <div class="description">
+          <div class="meta">
+            <div class="meta-inside">
+              <div class="meta-title" data-content-field="title">
+                {title}
+              </div>            
+              <div class="meta-description" data-content-field="description">
+              {description}
+              </div>
+            </div>
           </div>
         </div>
       </div>
