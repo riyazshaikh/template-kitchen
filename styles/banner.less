@@ -1,10 +1,12 @@
 // tweak: { category: "Banner", title: "Banner - Palette", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Alternate", js: true }
 // tweak: { category: "Banner", title: "Banner - Typeset", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Alternate", js: true }
-// tweak: { category: "Banner", title: "Banner  Content - Layout", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Banner", js: true }
+// tweak: { category: "Banner", title: "Banner  Content - Layout", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Main", js: true }
 
-// tweak: { category: "Banner", title: "Banner - Background Overlay", type: "dropdown", options: ["None","Image","Description"], default: "None", js: true }
+// tweak: { category: "Banner", title: "Banner - Display", type: "dropdown", options: ["Hide", "Show"], default: "Show", js: true }
 
-// tweak: { category: "Banner", title: "Banner  Description - Display", type: "dropdown", options: ["Hide", "Show", "Overlaid"], default: "Show", js: true }
+// tweak: { category: "Banner", title: "Banner - Background Overlay", type: "dropdown", options: ["None","Image","Description"], default: "Image", js: true }
+
+// tweak: { category: "Banner", title: "Banner  Description - Display", type: "dropdown", options: ["Hide", "Show", "Overlaid"], default: "Overlaid", js: true }
 // tweak: { category: "Banner", title: "Banner  Description - Layout", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Main", js: true }
 // tweak: { category: "Banner", title: "Banner  Description - Title", type: "dropdown", options: ["Show","Hide"], default: "Show", js: true }
 // tweak: { category: "Banner", title: "Banner  Description - Position", type: "dropdown", options: ["Center","Left","Right","Top Left","Top Right","Bottom Left","Bottom Right"], default: "Center", js: true }
@@ -52,35 +54,6 @@
   }
 
 }
-
-/*.content-full() {
-  .content-inner {
-    .sqs-block-image:last-child {
-      padding-bottom: 0;
-    }     
-  }
-}
-
-.content-padded() {
-  .content-full;
-  
-  .content-wrapper {
-    padding: 0 20px;
-    @media (min-width: 768px)  {
-      padding: 0 5%;
-    }
-  }
-}
-
-.content-restricted() {
-  .content-padded;
-
-  .content-inner {
-    max-width: @pageWidth;
-    margin: 0 auto;
-  }
-}*/
-
 
 .background-overlay() {
   content: '';

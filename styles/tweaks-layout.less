@@ -1,8 +1,5 @@
 /* Layout variables */
 @sitePadding: 5%;
-@mobilePadding: 20px;
-@pageWidth: 1200px;
-@pageWidthNarrow: 700px;
 
 // tweak: { category: 'Main - Layout', "title" : "Content Width", "type" : "value", "target" : "#content" }
 @mainContentWidth: 1100px;
@@ -59,28 +56,31 @@
 
 
 [data-layout=main] {
+  width: @mainContentWidth;
   padding: @mainSpacingTop @mainSpacingSide;
-	> div:first-child {
-	  width: @mainContentWidth;
-	  max-width: 100%;
-	  margin: auto;
-	}
+  max-width: 100%;
+  .border-box;
+  margin: auto;
 }
 
 [data-layout=alternate] {
   padding: @altSpacingTop @altSpacingSide;
-	> div:first-child {
-	  width: @altContentWidth;
-	  max-width: 100%;
-	  margin: auto;
-	}
+  width: @altContentWidth;
+  max-width: 100%;
+  .border-box;
+  margin: auto;
 }
 
 [data-layout=banner] {
   padding: @bannerSpacingTop @bannerSpacingSide;
-	> div:first-child {
-	  width: @bannerContentWidth;
-	  max-width: 100%;
-	  margin: auto;
-	}
+  width: @bannerContentWidth;
+  max-width: 100%;
+  .border-box;
+  margin: auto;
 }
+
+[data-display=hide] {
+  display: none;
+  padding: 0;
+}
+

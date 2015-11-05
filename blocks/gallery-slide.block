@@ -10,12 +10,12 @@
 
             
             {.if title || body}
-              <div class="meta">
-                <div class="content-description">
-                  <p class="meta-title"><strong>{title}</strong></p>              
-                  {body}
-                </div>
+            <div class="slide-meta" data-layout=main>
+              <div class="meta-inside">
+                <p class="meta-title"><strong>{title}</strong></p>              
+                <div class="meta-description">{body}</div>
               </div>
+            </div>
             {.end}
             
             <div class="color-overlay"></div>
@@ -26,7 +26,13 @@
         <a href="#" class="previous"></a>
         <a href="#" class="next"></a>
       </div>
-    </div>
+<!--       <div class="meta" data-display="overlaid" data-position="top-left" data-layout="main">
+        <div class="meta-inside">
+          <p class="meta-title"><strong>{collection.title}</strong></p>              
+          <div class="meta-description">{collection.description}</div>
+        </div>
+      </div>
+ -->    </div>
   </div>
 </div>
 

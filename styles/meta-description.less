@@ -1,11 +1,4 @@
-/** Generic layouts **/
 .meta-description {
-/*  z-index: 100;
-  position: relative;
-  margin: 0 auto;
-  max-width: 100%;
-  text-rendering: optimizeLegibility;
-*/
   p {
     margin: 1rem auto;
   }
@@ -39,63 +32,61 @@
 
 }
 
+.meta {
 
-[data-display=overlaid] {
+  &[data-position] { /*default */
+    text-align: center !important;
+  }
+
+  &[data-position*=left] {
+    text-align: left !important;
+  }
+
+  &[data-position*=right] {
+    text-align: right !important;
+  }
+
   .absolute-overlay() {
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    z-index: 1;
+    z-index: 890; /* Above galleries */
 
     height: auto;
-    max-width: 100%;
-    width: @mainContentWidth;
-    .border-box;
-    padding: @mainSpacingTop @mainSpacingSide;
-    margin: auto;
-
     display: flex;
 
     .meta-inside {
       width: @mainMetaWidth;
     }
   }
-  .meta {
+
+  &[data-display=overlaid] {
     .absolute-overlay !important;
+
     align-items: center; /* default */
-    justify-content: center;
+    justify-content: center;    
+
+    &[data-position*=left] {
+      justify-content: flex-start;
+    }
+
+    &[data-position*=right] {
+      justify-content: flex-end;
+    }
+
+    &[data-position*=top] {
+      align-items: flex-start;
+    }
+
+    &[data-position*=bottom] {
+      align-items: flex-end;
+    }
+
   }
 
-  &[data-position*=left] .meta {
-    justify-content: flex-start;
-  }
 
-  &[data-position*=right] .meta {
-    justify-content: flex-end;
-  }
-
-  &[data-position*=top] .meta {
-    align-items: flex-start;
-  }
-
-  &[data-position*=bottom] .meta {
-    align-items: flex-end;
-  }
-
-}
-
-[data-position] .meta { /*default */
-  text-align: center !important;
-}
-
-[data-position*=left] .meta {
-  text-align: left !important;
-}
-
-[data-position*=right] .meta {
-  text-align: right !important;
 }
 
 [data-italic=dash] {
@@ -148,13 +139,10 @@
   }    
 }
 
-[data-title=hide] .meta .meta-title {
+[data-title=hide] .meta-title {
   display: none;
 }
 
-[data-display=hide] .meta {
-  display: none;
-}
 
 
 [data-overlay=description] {
