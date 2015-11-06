@@ -13,7 +13,7 @@
   overflow: auto;
   visibility: hidden;
   /*background-color: fade(@headerBgColor, 100%);*/
-  .background-color(@pageTextColor);
+  .background-color(@main-textColor);
   .transform(translate3d(260px,0,0));
   .transition2(height 0s 0.14s linear, visibility 0s 0.14s linear);
 }  
@@ -112,14 +112,14 @@ body {
   .top-bar,
   .middle-bar,
   .bottom-bar {
-    background-color: @p1-textColor;
+    background-color: @alt-textColor;
   }
 }
 [data-palette=banner] .mobile-nav-toggle-label {
   .top-bar,
   .middle-bar,
   .bottom-bar {
-    background-color: @p2-textColor;
+    background-color: @banner-textColor;
   }
 }
 

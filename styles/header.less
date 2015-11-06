@@ -1,5 +1,5 @@
 //OFF tweak: { "type" : "color", "title" : "Header Background Color", "category" : "Site Header", "target" : "body:not(.has-banner-image) #header" }
-@headerBgColor: @pageBgColor;
+@headerBgColor: @main-bgColor;
 
 //OFF tweak: { "type" : "value", "title" : "Logo Container Width", "min" : 50, "max" : 500, "step" : 5, "category" : "Site Header", "target" : "#logoImage", "showOnlyWhenPresent" : "#logoImage", "js": "true" }
 @logoContainerWidth: 150px;
@@ -117,17 +117,17 @@
 
 
 [data-palette=alternate] .header {
-  .background-color(@p1-bgColor);
+  .background-color(@alt-bgColor);
   #siteTitle a { 
-    color: @p1-textColor; 
-    border-color: @p1-textColor; 
+    color: @alt-textColor; 
+    border-color: @alt-textColor; 
   }
 }
 [data-palette=banner] .header {
-  .background-color(@p2-bgColor);
+  .background-color(@banner-bgColor);
   #siteTitle a { 
-    color: @p2-textColor; 
-    border-color: @p2-textColor; 
+    color: @banner-textColor; 
+    border-color: @banner-textColor; 
   }
 }
 

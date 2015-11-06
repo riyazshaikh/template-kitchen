@@ -19,29 +19,29 @@
 .eventlist-excerpt {
   a:not(.sqs-block-button-element),
   a:not(.sqs-block-button-element):visited {
-    color: @pageLinkColor;
+    color: @main-linkColor;
     text-decoration: none;
   }
 }
 
 body {
-  color: @pageTextColor;
-  background-color: @pageBgColor;
-  .font-smoothing(@pageBgColor);
+  color: @main-textColor;
+  background-color: @main-bgColor;
+  .font-smoothing(@main-bgColor);
   .body-font;
 }
 
 
 
 a {
-  color: @pageLinkColor;
+  color: @main-linkColor;
 }
 
 a {
   text-decoration: none;
 
   &:hover {
-    /*border-bottom: 1px dotted @pageTextColor;    */
+    /*border-bottom: 1px dotted @main-textColor;    */
   }
 }
 
@@ -55,29 +55,23 @@ h1, h2, h3{
 }
 
 article header {
-  h1 a { color: @heading1Color; }
+  h1 a { color: @main-headingColor; }
 }
 
 h1 {
   .heading1-font;
 }
 
-h1 {
-  color:@heading1Color;
+h1, h2, h3 {
+  color:@main-headingColor;
 }
 
 h2 {
   .heading2-font;
 }
 
-h2 {
-  color:@heading2Color;
-}
 h3 {
   .heading3-font;
-}
-h3 {
-  color:@heading3Color;
 }
 
 h1,
@@ -108,9 +102,9 @@ blockquote {
 .sqs-audio-playlist .tracks .track-info .artist,
 .summary-info-item
 {
-  color:@pageMetaColor;
+  color:@main-metaColor;
   a{
-    color:@pageMetaColor;
+    color:@main-metaColor;
   }
 }
 
@@ -123,7 +117,7 @@ blockquote {
 
 .comment-count{
   .body-font;
-  color: @pageTextColor;
+  color: @main-textColor;
 }
 
 .quote-block {
@@ -164,8 +158,8 @@ blockquote {
   border-style: none;
   border-width: 0;
   margin: @sitePadding 0;
-  color: fade(@pageTextColor, 15%);
-  background-color: fade(@pageTextColor, 15%);
+  color: fade(@main-textColor, 15%);
+  background-color: fade(@main-textColor, 15%);
 }
 
 
@@ -262,7 +256,7 @@ blockquote {
 }
 
 .color-overlay {
-  .background-color(fade(@pageBgColor,60%));
+  .background-color(fade(@main-bgColor,60%));
 }
 
 @media screen and (max-width: 600px) {
@@ -367,40 +361,40 @@ blockquote {
 }
 
 [data-palette=alternate] {
-  color: @p1-textColor;
-  .background-color(@p1-bgColor);
+  color: @alt-textColor;
+  .background-color(@alt-bgColor);
   a {
-    color: @p1-linkColor;
+    color: @alt-linkColor;
   }
-  h1,h2,h3 { color: @p1-headingColor; }  
+  h1,h2,h3 { color: @alt-headingColor; }  
   .sqs-block-horizontalrule hr {
-    color: fade(@p1-textColor, 15%);
-    background-color: fade(@p1-textColor, 15%);
+    color: fade(@alt-textColor, 15%);
+    background-color: fade(@alt-textColor, 15%);
   }    
   .sqs-block-button-element {
-   background-color: @p1-textColor;  
-   color: @p1-bgColor;
+   background-color: @alt-textColor;  
+   color: @alt-bgColor;
   }    
   .color-overlay {
-    .background-color(fade(@p1-bgColor,60%));
+    .background-color(fade(@alt-bgColor,60%));
   }    
 }
 [data-palette=banner] {
-  color: @p2-textColor;
-  .background-color(@p2-bgColor);
+  color: @banner-textColor;
+  .background-color(@banner-bgColor);
   a {
-    color: @p2-linkColor;
+    color: @banner-linkColor;
   }    
-  h1,h2,h3 { color: @p2-headingColor; }   
+  h1,h2,h3 { color: @banner-headingColor; }   
   .sqs-block-horizontalrule hr {
-    color: fade(@p2-textColor, 15%);
-    background-color: fade(@p2-textColor, 15%);
+    color: fade(@banner-textColor, 15%);
+    background-color: fade(@banner-textColor, 15%);
   }    
   .sqs-block-button-element {
-    background-color: @p2-textColor;  
-    color: @p2-bgColor;
+    background-color: @banner-textColor;  
+    color: @banner-bgColor;
   }    
   .color-overlay {
-    .background-color(fade(@p2-bgColor,60%));
+    .background-color(fade(@banner-bgColor,60%));
   }
 }

@@ -1,72 +1,4 @@
-/* PreFooter */
-
-//OFF tweak: { "type" : "color", "title" : "Pre Footer Background", "category" : "PreFooter", "target" : "#preFooter" }
-@preFooterBgColor: @pageBgColor;
-
-//OFF tweak: { "type" : "color", "title" : "Pre Footer Text Color", "category" : "PreFooter", "target" : "#preFooter" }
-@preFooterTextColor: @pageTextColor;
-
-
-/* Footer */
-
-//OFF tweak: { "type" : "color", "title" : "Footer Background", "category" : "Footer", "target" : "#footer" }
-@footerBgColor: @pageTextColor;
-
-//OFF tweak: { "type" : "color", "title" : "Footer Text Color", "category" : "Footer", "target" : "#footer" }
-@footerTextColor: @pageBgColor;
-
-// tweak: { "type" : "font", "title" : "Footer Nav Font", "category" : "Footer", "target" : "#footer, #secondaryNavigation", "showOnlyWhenPresent" : "#secondaryNavigation" }
-.footer-nav-font {
-  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-//OFF tweak: { "type" : "color", "title" : "Footer Nav Link Color", "category" : "Footer", "target" : "#footer, #secondaryNavigation", "showOnlyWhenPresent" : "#secondaryNavigation" }
-@footerNavLinkColor: #FFF;
-
-//OFF tweak: { "type" : "color", "title" : "Footer Nav Link (Active)", "category" : "Footer", "target" : "#footer, #secondaryNavigation", "showOnlyWhenPresent" : "#secondaryNavigation" }
-@footerNavActiveColor: #CCC;
-
-// tweak: { "type" : "font", "title" : "Site Info Font", "category" : "Footer", "target" : "#footer, #siteInfo", "showOnlyWhenPresent" : "body:not(.hide-site-info) #siteInfo" }
-.site-info-font {
-  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-//OFF tweak: { "type" : "color", "title" : "Site Info Color", "category" : "Footer", "target" : "#footer, #siteInfo", "showOnlyWhenPresent" : "body:not(.hide-site-info) #siteInfo" }
-@siteInfoColor: #FFF;
-
-//OFF tweak: { "type" : "checkbox", "title" : "Center Navigation / Info", "active" : "false", "category" : "Footer", "target" : "#footer, #secondaryNavigation", "showOnlyWhenPresent" : "#secondaryNavigation, #siteInfo" }
-
-//OFF tweak: { "type" : "checkbox", "title" : "Hide Site Info", "active" : "false", "category" : "Footer", "target" : "#footer, #siteInfo", "showOnlyWhenPresent" : "#siteInfo" }
-
-
-
 #footer {
-  padding: 20px @sitePadding;
-
-  background-color: @footerBgColor;
-  .font-smoothing(@footerBgColor);
-
-  color: @footerTextColor;
-
-  a,
-  a:visited
-  {
-    color: @footerTextColor;
-    /*border-bottom: 1px solid @footerTextColor;*/
-  }
-
   .sqs-svg-icon--wrapper {
     vertical-align: middle;
   }
@@ -82,31 +14,6 @@
     bottom: ~"calc(5% + 15px)";
 
     .transition(none);
-}
-
-#preFooter {
-  margin: 0 @sitePadding;
-  background-color: @preFooterBgColor;
-  color: @preFooterTextColor;
-  border-top: 1px solid #e5e5e5;
-  padding-top: 2em;
-  padding-bottom: 1em;
-}
-
-#footer{
-  color: @footerTextColor;
-  h1,
-  h2,
-  h3 { color: @footerTextColor; }
-}
-
-#siteInfo{
-  .site-info-font;
-  color:@siteInfoColor;
-  a,
-  a:visited{
-    color:@siteInfoColor;
-  }
 }
 
 .back-to-top-nav { display: none; }

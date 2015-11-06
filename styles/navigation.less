@@ -208,7 +208,7 @@ html.touch-styles [data-navigation-folder=dropdown] .navigation {
     top: 0.5em;
     height: 1px;
 
-    background-color: @pageLinkColor;
+    background-color: @main-linkColor;
   }
 }
 
@@ -227,31 +227,31 @@ html.touch-styles [data-navigation-folder=dropdown] .navigation {
 [data-palette=alternate] {
   .navigation {
     a, label {
-      color: @p1-textColor;
+      color: @alt-textColor;
     }
   }
 
   [data-navigation-active=underline] .navigation {
     .active > a, .active > label {
-      border-bottom: 1px solid @p1-textColor;
+      border-bottom: 1px solid @alt-textColor;
     }
   }
 
   [data-navigation-active=contrast] .navigation {
     a:hover, .active > a, .active > label {
-      color: contrast(@p1-bgColor);
+      color: contrast(@alt-bgColor);
     }
   }
 
   [data-navigation-folder-label=underline] .navigation {
     .subnav:before {
-      background-color: @p1-textColor;
+      background-color: @alt-textColor;
     }
   }
 
   [data-navigation-folder*=drop] .navigation {
     .folder .subnav {
-      background-color: fade(@p1-bgColor, 60%);      
+      background-color: fade(@alt-bgColor, 60%);      
     }
   }
 }
@@ -260,31 +260,31 @@ html.touch-styles [data-navigation-folder=dropdown] .navigation {
 [data-palette=banner] {
   .navigation {
     a, label {
-      color: @p2-textColor;
+      color: @banner-textColor;
     }
   }
 
   [data-navigation-active=underline] .navigation {
     .active > a, .active > label {
-      border-bottom: 1px solid @p2-textColor;
+      border-bottom: 1px solid @banner-textColor;
     }
   }
 
   [data-navigation-active=contrast] .navigation {
     a:hover, .active > a, .active > label {
-      color: contrast(@p2-bgColor);
+      color: contrast(@banner-bgColor);
     }
   }
 
   [data-navigation-folder-label=underline] .navigation {
     .subnav:before {
-      background-color: @p2-textColor;
+      background-color: @banner-textColor;
     }
   }
 
   [data-navigation-folder*=drop] .navigation {
     .folder .subnav {
-      background-color: fade(@p2-bgColor, 60%);      
+      background-color: fade(@banner-bgColor, 60%);      
     }
   }
 }

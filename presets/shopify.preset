@@ -6,10 +6,10 @@
   }
 }
 
-/*@p2-textColor: #323639; 
-@p2-bgColor: #e8eaeb;
-@p2-headingColor: #000;
-@p2-linkColor: #101113;
-@p2-metaColor: @p2-textColor;
+/*@banner-textColor: #323639; 
+@banner-bgColor: #e8eaeb;
+@banner-headingColor: #000;
+@banner-linkColor: #101113;
+@banner-metaColor: @banner-textColor;
 */
 

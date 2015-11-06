@@ -8,25 +8,19 @@
 @navActiveColor: #000;
 
 //tweak: { "type" : "color", "title" : "Page Background", "category" : "Main - Palette", "target" : "#site" }
-@pageBgColor: #f3efee;
+@main-bgColor: #f3efee;
 
 //tweak: { "type" : "color", "title" : "Page Text Color", "category" : "Main - Palette", "target" : "body" }
-@pageTextColor: #000;
+@main-textColor: #000;
 
 //tweak: { "type" : "color", "title" : "Page Link Color", "category" : "Main - Palette", "target" : "a" }
-@pageLinkColor: #000;
+@main-linkColor: #000;
 
 //tweak: { "type" : "color", "title" : "Page Meta Color", "category" : "Main - Palette", "target" : ".meta" }
-@pageMetaColor: #666666;
+@main-metaColor: #666666;
 
-//tweak: { "type" : "color", "title" : "Heading 1 Color", "category" : "Main - Palette", "target" : "h1, .entry-title" }
-@heading1Color: #111;
-
-//tweak: { "type" : "color", "title" : "Heading 2 Color", "category" : "Main - Palette", "target" : "h2" }
-@heading2Color: #111;
-
-//tweak: { "type" : "color", "title" : "Heading 3 Color", "category" : "Main - Palette", "target" : "h3" }
-@heading3Color: #111;
+//tweak: { "type" : "color", "title" : "Heading Color", "category" : "Main - Palette", "target" : "h1, .entry-title" }
+@main-headingColor: #111;
 
 //tweak: { "type" : "color", "title" : "Quote Color", "category" : "Main - Palette", "target" : ".quote-block", "showOnlyWhenPresent" : ".quote-block" }
 @quoteColor: #AAA;
@@ -34,64 +28,35 @@
 
 
 //tweak: { "type" : "color", "title" : "Text Color", "category" : "Alternate - Palette", "target" : "body" }
-@p1-textColor: #fff;
+@alt-textColor: #fff;
 
 //tweak: { "type" : "color", "title" : "Background", "category" : "Alternate - Palette", "target" : "body" }
-@p1-bgColor: rgb(16,17,19);
+@alt-bgColor: rgb(16,17,19);
 
 //tweak: { "type" : "color", "title" : "Link Color", "category" : "Alternate - Palette", "target" : "body" }
-@p1-linkColor: #fefefe;
+@alt-linkColor: #fefefe;
 
 //tweak: { "type" : "color", "title" : "Heading Color", "category" : "Alternate - Palette", "target" : "body" }
-@p1-headingColor: @p1-textColor;
+@alt-headingColor: @alt-textColor;
 
 //tweak: { "type" : "color", "title" : "Meta Color", "category" : "Alternate - Palette", "target" : "body" }
-@p1-metaColor: @p1-textColor;
+@alt-metaColor: @alt-textColor;
 
 
 
 //tweak: { "type" : "color", "title" : "Text Color", "category" : "Banner - Palette", "target" : "body" }
-@p2-textColor: rgb(16,17,19); 
+@banner-textColor: rgb(16,17,19); 
 
 //tweak: { "type" : "color", "title" : "Background Color", "category" : "Banner - Palette", "target" : "body" }
-@p2-bgColor: #fff;
+@banner-bgColor: #fff;
 
 //tweak: { "type" : "color", "title" : "Heading Color", "category" : "Banner - Palette", "target" : "body" }
-@p2-headingColor: rgb(16,17,19);
+@banner-headingColor: rgb(16,17,19);
 
 //tweak: { "type" : "color", "title" : "Link Color", "category" : "Banner - Palette", "target" : "body" }
-@p2-linkColor: #ededed; /* #181818 */
+@banner-linkColor: #ededed; /* #181818 */
 
 //tweak: { "type" : "color", "title" : "Meta Color", "category" : "Banner - Palette", "target" : "body" }
-@p2-metaColor: rgb(16,17,19);
+@banner-metaColor: rgb(16,17,19);
 
 
-
-
-/** @textColor and @bgColor are required to be set before calling **/
-.apply-colors(@overlayColor: @bgColor;
-							@linkColor: @textColor;
-							@metaColor: @textColor;
-							@h1Color: @textColor;
-							@h2Color: @textColor;
-							@h3Color: @textColor;
-							@quoteColor: @textColor;) {
-
-
-	.sqs-gallery-design-stacked .meta {
-		.meta-title {
-			color: #fff;
-		}
-		.meta-description > p {
-			> em:before {
-				background-color: @textColor;
-			}
-		}
-
-	}
-
-	.quote-block figure {
-    color: @quoteColor;
-  }
-
-}
