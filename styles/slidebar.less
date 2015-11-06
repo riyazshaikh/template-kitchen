@@ -12,8 +12,18 @@
   text-align: left;
   overflow: auto;
   visibility: hidden;
-  /*background-color: fade(@headerBgColor, 100%);*/
-  .background-color(@main-textColor);
+
+  .colors(@textColor, @bgColor) {
+    .background-color(@textColor);
+    .navigation > div {
+      a, label { color: @bgColor; }
+    }
+  }
+
+  [data-palette=main] & { .colors(@main-textColor, @main-bgColor) }
+  [data-palette=banner] & { .colors(@banner-textColor, @banner-bgColor) }
+  [data-palette=alternate] & { .colors(@alt-textColor, @alt-bgColor) }
+
   .transform(translate3d(260px,0,0));
   .transition2(height 0s 0.14s linear, visibility 0s 0.14s linear);
 }  
@@ -41,15 +51,23 @@ body {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  color: @navColor;
   width: 22px;
   height: 16px;
+
+  [data-palette=main] & { color: @main-textColor }
+  [data-palette=alternate] & { color: @alt-textColor }
+  [data-palette=banner] & { color: @banner-textColor }
+
   .top-bar,
   .middle-bar,
   .bottom-bar {
     width: 22px;
     height: 2px;
-    background-color: fade(@navColor, 100%);
+
+    [data-palette=main] & { background-color: @main-textColor }
+    [data-palette=alternate] & { background-color: @alt-textColor }
+    [data-palette=banner] & { background-color: @banner-textColor }
+
     .transition(transform 0.1s ease-in-out);
     position: absolute;
     top: 0;
@@ -99,27 +117,11 @@ body {
 }
 
 
-
 @media only screen and (min-width: 641px) {
   .sqs-style-mode.dialog-open #mobileNavToggle:checked {
     ~ #site {
       .transform(translate3d(-480px, 0, 0));
     }
-  }
-}
-
-[data-palette=alternate] .mobile-nav-toggle-label {
-  .top-bar,
-  .middle-bar,
-  .bottom-bar {
-    background-color: @alt-textColor;
-  }
-}
-[data-palette=banner] .mobile-nav-toggle-label {
-  .top-bar,
-  .middle-bar,
-  .bottom-bar {
-    background-color: @banner-textColor;
   }
 }
 

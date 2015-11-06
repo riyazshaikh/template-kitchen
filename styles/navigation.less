@@ -8,14 +8,14 @@
     }
 
     a, label {
+      display: inline-block;
       .nav-font;
       .transition(color 0.1s 0s ease-in-out);
-    }
-  }
 
-  a, label {
-    color: @navColor;
-    display: inline-block;
+      [data-palette=main] & { color: @main-textColor; }
+      [data-palette=banner] & { color: @banner-textColor; }
+      [data-palette=alternate] & { color: @alt-textColor; }
+    }
   }
 
   .folder-toggle-label {
@@ -30,12 +30,7 @@
       font-size: @nav-font-font-size;
       .border-box;
       white-space: nowrap;
-
-/*      &.right {
-        left: auto;
-        right: -.5em;
-      }
-*/    }
+    }
   }
 }
 
@@ -44,27 +39,9 @@
   flex-wrap: wrap;
 }
 
-[data-align=space-between] .navigation {
-  justify-content: space-between;
+[data-align=space-around] .navigation { justify-content: space-around; }
 
-  > div {
-    &:first-child {
-      padding-left: 0;
-    }
-    &:last-child {
-      padding-right: 0;
-    }
-  }  
-}
-
-[data-align=space-around] .navigation {
-  justify-content: space-around;
-}
-
-
-[data-align=center] .navigation {
-  justify-content: center;
-}
+[data-align=center] .navigation {  justify-content: center; }
 
 [data-align=left] .navigation {
   justify-content: flex-start;
@@ -86,6 +63,19 @@
   }    
 }
 
+[data-align=space-between] .navigation {
+  justify-content: space-between;
+
+  > div {
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }  
+}
+
 [data-folder=dropdown] .navigation {
   .folder {
     position: relative;
@@ -95,7 +85,9 @@
       left: -1em;
       z-index: 1000;
 
-      background-color: fade(@headerBgColor, 100%);
+      [data-palette=main] & { background-color: @main-bgColor }
+      [data-palette=alternate] & { background-color: @alt-bgColor }
+      [data-palette=banner] & { background-color: @banner-bgColor }
 
       .scale(1, 0);
       .transform-origin(0, 0);
@@ -120,33 +112,33 @@
       }
     }  
   }
-}
-// Folders on mobile
-html.touch-styles [data-navigation-folder=dropdown] .navigation {
-  .folder-toggle-label ~ .subnav {
-    height: 0;
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 1.5em 0;
-    position: absolute;
-    text-align: left;
-    left: 0;
-    > div {
-      padding: 1em 0 0;
-    }
-  }
-  .folder-toggle-box:checked ~ .subnav {
-    height: auto;
-    max-height: 999px;
-    padding: 0 1em 1em;
-  }
-  .folder:last-child .subnav {
-    text-align: right;
-    right: -1em;
-    left: auto;
-  }
-}
 
+  // Folders on mobile
+  html.touch-styles & {
+    .folder-toggle-label ~ .subnav {
+      height: 0;
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 1.5em 0;
+      position: absolute;
+      text-align: left;
+      left: 0;
+      > div {
+        padding: 1em 0 0;
+      }
+    }
+    .folder-toggle-box:checked ~ .subnav {
+      height: auto;
+      max-height: 999px;
+      padding: 0 1em 1em;
+    }
+    .folder:last-child .subnav {
+      text-align: right;
+      right: -1em;
+      left: auto;
+    }    
+  }
+}
 
 
 [data-folder=dropup] .navigation {
@@ -158,7 +150,9 @@ html.touch-styles [data-navigation-folder=dropdown] .navigation {
       left: -1em;
       z-index: 1000;
 
-      background-color: fade(@headerBgColor, 100%);
+      [data-palette=main] & { background-color: @main-bgColor }
+      [data-palette=alternate] & { background-color: @alt-bgColor }
+      [data-palette=banner] & { background-color: @banner-bgColor }
 
       .scale(1, 0);
       .transform-origin(bottom);
@@ -208,95 +202,31 @@ html.touch-styles [data-navigation-folder=dropdown] .navigation {
     top: 0.5em;
     height: 1px;
 
-    background-color: @main-linkColor;
+    [data-palette=main] & { background-color: @main-metaColor }
+    [data-palette=alternate] & { background-color: @alt-metaColor }
+    [data-palette=banner] & { background-color: @banner-metaColor }
   }
 }
 
 [data-active=contrast] .navigation {
-  a:hover, .active > a, .active > label {
-    color: contrast(@headerBgColor);
+  .colors(@textColor) {
+    a:hover, .active > a, .active > label {
+      color: darken(@textColor, 30%);
+    }
   }
+  [data-palette=main] & { .colors(@main-textColor) }
+  [data-palette=alternate] & { .colors(@alt-textColor) }
+  [data-palette=banner] & { .colors(@banner-textColor) }
 }
 
 [data-active=underline] .navigation {
-  .active > a, .active > label {
-    border-bottom: 1px solid @navColor;
-  }
-}
-
-[data-palette=alternate] {
-  .navigation {
-    a, label {
-      color: @alt-textColor;
-    }
-  }
-
-  [data-navigation-active=underline] .navigation {
+  .colors(@textColor) {
     .active > a, .active > label {
-      border-bottom: 1px solid @alt-textColor;
+      border-bottom: 1px solid @textColor;
     }
   }
-
-  [data-navigation-active=contrast] .navigation {
-    a:hover, .active > a, .active > label {
-      color: contrast(@alt-bgColor);
-    }
-  }
-
-  [data-navigation-folder-label=underline] .navigation {
-    .subnav:before {
-      background-color: @alt-textColor;
-    }
-  }
-
-  [data-navigation-folder*=drop] .navigation {
-    .folder .subnav {
-      background-color: fade(@alt-bgColor, 60%);      
-    }
-  }
+  [data-palette=main] & { .colors(@main-textColor) }
+  [data-palette=alternate] & { .colors(@alt-textColor) }
+  [data-palette=banner] & { .colors(@banner-textColor) }
 }
 
-
-[data-palette=banner] {
-  .navigation {
-    a, label {
-      color: @banner-textColor;
-    }
-  }
-
-  [data-navigation-active=underline] .navigation {
-    .active > a, .active > label {
-      border-bottom: 1px solid @banner-textColor;
-    }
-  }
-
-  [data-navigation-active=contrast] .navigation {
-    a:hover, .active > a, .active > label {
-      color: contrast(@banner-bgColor);
-    }
-  }
-
-  [data-navigation-folder-label=underline] .navigation {
-    .subnav:before {
-      background-color: @banner-textColor;
-    }
-  }
-
-  [data-navigation-folder*=drop] .navigation {
-    .folder .subnav {
-      background-color: fade(@banner-bgColor, 60%);      
-    }
-  }
-}
-
-[data-typeset=alternate] .navigation > div {
-  a, label {
-    .alt-button-font;
-  }
-}
-
-[data-typeset=banner] .navigation > div {
-  a, label {
-    .banner-button-font;
-  }
-}
