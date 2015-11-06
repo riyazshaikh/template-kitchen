@@ -4,10 +4,10 @@
 
 // tweak: { category: "Banner", title: "Banner - Display", type: "dropdown", options: ["Hide", "Show"], default: "Show", js: true }
 
-// tweak: { category: "Banner", title: "Banner - Background Overlay", type: "dropdown", options: ["None","Image","Description"], default: "Image", js: true }
+// tweak: { category: "Banner", title: "Banner - Overlay", type: "dropdown", options: ["None","Image","Description","Container","Text"], default: "Description", js: true }
 
 // tweak: { category: "Banner", title: "Banner  Description - Display", type: "dropdown", options: ["Hide", "Show", "Overlaid"], default: "Overlaid", js: true }
-// tweak: { category: "Banner", title: "Banner  Description - Layout", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Main", js: true }
+// tweak: { category: "Banner", title: "Banner  Description - Layout", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Banner", js: true }
 // tweak: { category: "Banner", title: "Banner  Description - Title", type: "dropdown", options: ["Show","Hide"], default: "Show", js: true }
 // tweak: { category: "Banner", title: "Banner  Description - Position", type: "dropdown", options: ["Center","Left","Right","Top Left","Top Right","Bottom Left","Bottom Right"], default: "Center", js: true }
 // tweak: { category: "Banner", title: "Banner  Description - Italic", type: "dropdown", options: ["Normal", "Dash"], default: "Dash", js: true }
@@ -66,19 +66,23 @@
   background-color: fade(@banner-bgColor,60%);
 }
 
-[data-background-overlay=image] {
+[data-overlay=description] .meta-inside {
+
+  padding: 5%;
+
+  .colors(@bgColor) {
+    background-color: fade(@bgColor,60%);
+  }
+
+  [data-palette=banner] & { .colors(@banner-bgColor) }
+  [data-palette=main] & { .colors(@main-bgColor) }
+  [data-palette=alternate] & { .colors(@alt-bgColor) }
+}
+
+[data-overlay=image] {
   .banner > figure, .banner .sqs-block-image {
     &:after {
       .background-overlay;
     }
   }
 }    
-
-[data-background-overlay=description] {
-  .banner .meta:after {
-    .background-overlay;
-  }
-}    
-
-
-

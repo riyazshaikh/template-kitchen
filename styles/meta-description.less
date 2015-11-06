@@ -122,19 +122,22 @@
   }    
 }
 
-[data-overlay=description] .meta-inside {
+[data-italic=highlight] {
+  .meta-description > p > em {
+    font-style: normal;
+    display: inline;
 
-  padding: 5%;
+    .colors(@bgColor) {
+      .background-color(@bgColor);
+      box-shadow: 10px 0 0 @bgColor, -10px 0 0 @bgColor;      
+    }
+    
+    [data-palette=main] & { .colors(@main-bgColor) }
+    [data-palette=alternate] & { .colors(@alt-bgColor) }
+    [data-palette=banner] & { .colors(@banner-bgColor) }
+  }    
 
-  .colors(@bgColor) {
-    background-color: fade(@bgColor,60%);
-  }
-
-  [data-palette=banner] & { .colors(@banner-bgColor) }
-  [data-palette=main] & { .colors(@main-bgColor) }
-  [data-palette=alternate] & { .colors(@alt-bgColor) }
 }
-
 
 .button-outline(@textColor, @bgColor) {
   .meta-description > p:last-child > a:first-child {
@@ -220,7 +223,7 @@
     .meta-inside { 
       width: @metaWidth; 
       max-width: 100%; 
-      margin: auto;
+      /*margin: auto;*/
     }
   }
 

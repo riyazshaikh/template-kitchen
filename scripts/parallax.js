@@ -4,15 +4,14 @@ Y.use('node', function () {
 		ready: function() {
 
 			Y.on('domready', function() {
-				this.init();
+				this.bindUI();
+				this.syncUI();
 			}, this);
 
 		},
 
-		init: function() {
-      this.scrollEl = Y.one(Y.UA.gecko || Y.UA.ie || !!navigator.userAgent.match(/Trident.*rv.11\./) ? 'html' : 'body');
-
-			this.parallaxNodes = Y.all('.parallax');
+		syncUI: function() {
+			this.parallaxNodes = Y.all('[data-parallax]');
 
 			this.parallaxNodes.each(function(node) {
 				var img = node.one('img');
@@ -20,25 +19,24 @@ Y.use('node', function () {
 					img.get('parentNode').setStyle('transform', 'translateZ(0)');
 					img.setStyle('transform', 'translate3d(0,0,0)');
 				}
-				node.offset = node.getXY()[1];
+				node.setData('region', node.get('region'));
 			}, this);
 
-			this.bindUI();
-			this.syncUI();
+			this.scrollLogic();
 		},
 
 		bindUI: function() {
-			new rafscroll(Y.bind(this.syncUI, this));
+			this.scrollHandler = new rafscroll(Y.bind(this.scrollLogic, this));
+      this.resizeHandler = Y.one(window).on('resize', Y.throttle(Y.bind(this.syncUI, this), 200));
 		},
 
-		syncUI: function() {
-      var scrollTop = this.scrollEl.get('scrollTop');
-      var viewportRegion = Y.one(Y.config.win).get('region');
+		scrollLogic: function() {
+      var scrollY = window.scrollY;
 
       this.parallaxNodes.each(function(node, i) {
-        if (node.inRegion(viewportRegion)) {
-          var pageYDoc = node.offset;
-          var pageYViewport = pageYDoc - scrollTop;
+				if (Y.DOM.inViewportRegion(node._node,false,node.getData('region'))) {      	
+          var pageYDoc = node.getData('region').top;
+          var pageYViewport = pageYDoc - scrollY;
           var factor = 0.25;
           var imageY = -1 * pageYViewport * factor;
           var image = node.one('img');
