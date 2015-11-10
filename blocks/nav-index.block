@@ -1,5 +1,3 @@
-<!-- Usage: To scroll to content, data-nav-index-content=".selector-content" -->
-
 {.section collection}
   
   {.if collections.1}
@@ -17,16 +15,12 @@
       e.currentTarget.get('parentNode').addClass('active').siblings().removeClass('active');
     }, '.navigation a');
 
-    // Logic to scroll to content
-    var contentSelector = rootEl.getAttribute('data-nav-index-content');
-    if (!contentSelector) return; // nothing to scroll to
-
     var scrollEl = Y.one(Y.UA.gecko || Y.UA.ie || !!navigator.userAgent.match(/Trident.*rv.11\./) ? 'html' : 'body');      
 
     var navHeight = rootEl.offsetHeight;
 
     var onHashChange = function(e) {
-      var hashTarget = Y.one(contentSelector + '[data-url-id="'+e.newHash+'"]');
+      var hashTarget = Y.one('[data-url-id="'+e.newHash+'"]');
 
       if(hashTarget) {
         var targetY = Math.ceil(hashTarget.getXY()[1]) - navHeight;

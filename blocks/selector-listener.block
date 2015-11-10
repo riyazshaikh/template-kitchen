@@ -112,4 +112,11 @@ for (key in tweaks) {
 		attrTweak(parts[0], parts[1], tweaks[key].toLowerCase().replace(/\s/g,"-"));
 	}
 }
+
+document.onSelector('.fa', function(event) {
+	var link = document.createElement('link');
+	link.setAttribute('rel', 'stylesheet');
+	link.setAttribute('href', '//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
+	document.getElementsByTagName('head')[0].appendChild(link);
+});
 </script>
