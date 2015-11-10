@@ -3,7 +3,7 @@
 {.section collection}
   
   {.if collections.1}
-  <nav class="navigation" >
+  <nav class="navigation" role="navigation">
     {.repeated section collections}
       <div><a href="#{urlId}"><span class="nav-title">{navigationTitle}</span></a></div>
     {.end}

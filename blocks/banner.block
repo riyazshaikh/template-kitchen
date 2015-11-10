@@ -1,23 +1,17 @@
-<div class="banner {.if mainImage} has-image{.end}" data-collection-id="{id}" data-edit-main-image="Background">    
-		{.section mainImage}
-      <figure class="loading content-fill"><img {@|image-meta} /></figure>
-    {.end}
-    <div class="content-wrapper {.if mainImage}header-overlap{.end}">
-      <div class="content-inner">
-        <div class="content open-blocks">
-          <squarespace:block-field id="banner-content-{id}" columns="12" label="Banner Content"/>
-        </div>
-        <div class="meta description">
-          <div class="meta-inside">
-            <div class="meta-title" data-content-field="title">
-              {title}
-            </div>            
-            <div class="meta-description" data-content-field="description">
-            {description}
-            </div>
-          </div>
-        </div>
+<div class="banner{.if mainImage} has-image{.end}" data-collection-id="{id}" data-edit-main-image="Background">    
+	{.section mainImage}
+    <figure class="loading content-fill"><img {@|image-meta} /></figure>
+  {.end}
+  <squarespace:block-field class="content" id="banner-content-{id}" columns="12" label="Banner Content"/>
+  <div class="meta description header-overlap">
+    <div class="meta-inside">
+      <div class="meta-title" data-content-field="title">
+        {title}
+      </div>            
+      <div class="meta-description" data-content-field="description">
+      {description}
       </div>
     </div>
+  </div>
 </div>
 

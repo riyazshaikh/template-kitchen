@@ -1,41 +1,43 @@
-<header class="header">
-  <div class="header-inner">
-    {.section website}<div id="{.if logoImageUrl}logoWrapper{.or}siteTitleWrapper{.end}" class="wrapper" data-content-field="site-title">
-      {.section logoImageUrl}
-        <h1 id="logoImage"><a href="/"><img src="{logoImageUrl}?format=1500w" alt="{siteTitle}" /></a></h1>
-      {.or}
-        <h1 id="siteTitle" class="site-title"><a href="/">{siteTitle}</a></h1>
-      {.end}
-    </div>{.end}
-    <div id="header-nav" data-content-field="navigation-mainNav" data-folder="dropdown" data-align>
-      <squarespace:navigation navigationId="mainNav" template="navigation"/>
-    </div>
-    <div class="openblock-field"></div>
-    <div id="slidebar">
-    {@|apply slidebar.block}
-    </div>
+<header class="header content">
+  {.section website}
+    {.section logoImageUrl}
+      <div class="site-logo" data-content-field="site-title">
+        <a href="/"><img src="{logoImageUrl}?format=1500w" alt="{siteTitle}" /></a>
+      </div>
+    {.or}
+      <div class="site-title" data-content-field="site-title">
+        <a href="/">{siteTitle}</a>
+      </div>
+    {.end}
+  {.end}
+  <div class="nav" data-content-field="navigation-mainNav" data-folder="dropdown" data-align>
+    <squarespace:navigation navigationId="mainNav" template="navigation"/>
+  </div>
+  <squarespace:block-field class="block" id="header-block" columns="1" label="Header Block Content"/>
+  <div class="slidebar">
+  {@|apply slidebar.block}
   </div>
 </header>
 <script>
+// textshrink site-title
+
 var node = document.currentScript.parentNode;
 var selector = '.header-overlap';
 
 var handleTweak = function(mutations) {
   mutations.forEach(function(mutation) {
 
-    if (mutation.attributeName == 'data-behavior') {
-      var banner = document.querySelector(selector);
-      if (!banner) {
-        document.onSelector(selector, handleTweak.bind(this, [mutation]));
-        return;
-      }
+    var banner = document.querySelector(selector);
+    if (!banner) {
+      document.onSelector(selector, handleTweak.bind(this, [mutation]));
+      return;
+    }
 
-      if (node.dataset.behavior === 'transparent') {
-        var height = node.querySelector('.header').offsetHeight;
-        banner.style.marginTop = height + 'px';
-      } else {
-        banner.style.marginTop = '';    
-      }
+    if (node.dataset.position === 'overlaid') {
+      var height = node.querySelector('.header').offsetHeight;
+      banner.style.marginTop = height + 'px';
+    } else {
+      banner.style.marginTop = '';    
     }
 
   });
@@ -45,9 +47,9 @@ var handleTweak = function(mutations) {
 var observer = new MutationObserver(handleTweak);
 observer.observe(node, {
   attributes: true,
-  attributeFilter: ['data-behavior']
+  attributeFilter: ['data-position']
 });
 
-window.addEventListener('resize', handleTweak.bind(this, [{attributeName: 'data-behavior'}])); // simulate a mutation
+window.addEventListener('resize', handleTweak.bind(this, [{attributeName: 'data-position'}])); // simulate a mutation
 
 </script>

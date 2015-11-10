@@ -1,0 +1,68 @@
+// tweak: { "category": "Header", "title": "Header - Palette", "type": "dropdown", "options": ["Main", "Banner", "Alternate"], "default": "Main", js:true }
+// tweak: { "category": "Header", "title": "Header - Display", "type": "dropdown", "options": ["Normal", "Overlaid"], "default": "Normal", js: true }
+// tweak: { "category": "Header", "title": "Header - Sticky", "type": "dropdown", "options": ["Normal", "Within - Site"], "default": "Normal", js: true }
+// tweak: { "category": "Header", "title": "Header Content - Layout", "type": "dropdown", "options": ["Main", "Banner", "Alternate"], "default": "Main", js: true }
+// tweak: { "category": "Header", "title": "Header - Direction", "type": "dropdown", "options": ["Normal", "Reverse"], "default": "Normal", js: true }
+// tweak: { "category": "Header", "title": "Header - Nav", "type": "dropdown", "options": ["Shown", "Hidden", "Auto"], "default": "Auto", js: true }
+// tweak: { "category": "Header", "title": "Header - Block", "type": "dropdown", "options": ["Shown", "Hidden"], "default": "Hidden", js: true }
+// tweak: { "category": "Header", "title": "Header - Slidebar", "type": "dropdown", "options": ["Shown", "Hidden", "Auto"], "default": "Auto", js: true }
+// tweak: { "category": "Header", "title": "Header Nav - Align", "type": "dropdown", "options": ["Left", "Right", "Center", "Space Around", "Space Between"], "default": "Center", showOnlyWhenPresent: "body.header---navigation-normal", js:true }
+// tweak: { "category": "Header", "title": "Header Nav - Active", "type": "dropdown", "options": ["None", "Contrast", "Underline"], "default": "Contrast", showOnlyWhenPresent: "body.header---navigation-normal", js:true }
+
+
+// tweak: { category: "Banner", title: "Banner - Palette", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Alternate", js: true }
+// tweak: { category: "Banner", title: "Banner - Typeset", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Alternate", js: true }
+// tweak: { category: "Banner", title: "Banner - Overlay", type: "dropdown", options: ["None","Image","Description","Container","Text"], default: "Description", js: true }
+// tweak: { category: "Banner", title: "Banner Content - Layout", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Main", js: true }
+// tweak: { category: "Banner", title: "Banner Content - Display", type: "dropdown", options: ["Hide", "Show"], default: "Show", js: true }
+// tweak: { category: "Banner", title: "Banner Description - Display", type: "dropdown", options: ["Hide", "Show", "Overlaid"], default: "Overlaid", js: true }
+// tweak: { category: "Banner", title: "Banner Description - Layout", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Banner", js: true }
+// tweak: { category: "Banner", title: "Banner Description - Title", type: "dropdown", options: ["Show","Hide"], default: "Show", js: true }
+// tweak: { category: "Banner", title: "Banner Description - Position", type: "dropdown", options: ["Center","Left","Right","Top Left","Top Right","Bottom Left","Bottom Right"], default: "Center", js: true }
+// tweak: { category: "Banner", title: "Banner Description - Italic", type: "dropdown", options: ["Normal", "Dash"], default: "Dash", js: true }
+// tweak: { category: "Banner", title: "Banner Description - Button", type: "dropdown", options: ["Solid", "Outline", "Overlay"], default: "Outline", js: true }
+// tweak: { category: "Banner", title: "Banner Description - Button Corner", type: "dropdown", options: ["Square", "Rounded", "Pill"], default: "Rounded", js: true }
+
+// tweak: { category: "Site", title: "Gallery - Layout", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Banner", js: true }
+// tweak: { category: "Site", title: "Products - Layout", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Banner", js: true }
+
+
+
+/* CSS pre-processing by {less}. http://lesscss.org/
+***************************************************/
+
+
+
+/* Mobile first
+***************************************************/
+
+// Site
+
+/*#site {
+  position: relative;
+  padding: 0;
+  margin: 0 auto;
+  .border-box;
+}
+*/
+main { /* Default */
+  width: @mainContentWidth;
+  padding: @mainSpacingTop @mainSpacingSide;
+  max-width: 100%;
+  .border-box;
+  margin: auto;
+}  
+
+/*img {
+  -webkit-transform: scale(1);
+  opacity: 1;
+  .transition(~"opacity 0.3s ease-out, -webkit-transform 0.3s ease-out");
+  &.loading {
+    -webkit-transform: scale(0.94);
+    opacity: 0;
+  }
+}
+
+*/
+
+

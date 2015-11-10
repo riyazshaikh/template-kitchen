@@ -51,4 +51,36 @@
 //tweak: { "type" : "color", "title" : "Meta Color", "category" : "Banner - Palette", "target" : "body" }
 @banner-metaColor: rgb(16,17,19);
 
+[data-palette=main] {
+	color: @main-textColor;
+	background-color: @main-bgColor;
+	h1,h2,h3 {
+		color: @main-headingColor;
+	}
+	a {
+		color: @main-linkColor;
+	}
+}
+
+[data-palette=alternate] {
+	color: @alt-textColor;
+	background-color: @alt-bgColor;
+	h1,h2,h3 {
+		color: @alt-headingColor;
+	}
+	a {
+		color: @alt-linkColor;
+	}
+}
+
+[data-palette=banner] {
+	color: @banner-textColor;
+	background-color: @banner-bgColor;
+	h1,h2,h3 {
+		color: @banner-headingColor;
+	}
+	a {
+		color: @banner-linkColor;
+	}
+}
 

@@ -20,8 +20,8 @@ Y.use('node', function (Y) {
 		},
 
 		init: function() {
-			this.paletteNodes = Y.all('[data-palette]:not([data-behavior="transparent"])');
-			this.transparentNodes = Y.all('[data-behavior="transparent"]');
+			this.paletteNodes = Y.all('[data-palette]:not([data-display="overlaid"])');
+			this.transparentNodes = Y.all('[data-display="overlaid"]');
 
 			if (this.transparentNodes.size() && this.paletteNodes.size()) {
 				this.bindUI();

@@ -17,40 +17,41 @@
     var title = Static.SQUARESPACE_CONTEXT.collection.title;
     if ( title == 'Templates') {
       orides = {
-          'header---sticky': 'Within - Site',
-          'header---behavior': 'Transparent',
-          'banner---palette': 'Main',
-          'banner---typeset': 'Banner',
-          'banner--description---layout': 'Banner',
-          'banner--description---display': 'Show',
-          'banner--description---position': 'Center',
-          'banner--description---title': 'Hide',
+          // 'header---sticky': 'Within - Site',
+          // 'banner---palette': 'Main',
+          // 'banner---typeset': 'Banner',
+          // 'banner--description---layout': 'Banner',
+          // 'banner--description---display': 'Show',
+          // 'banner--description---position': 'Center',
+          // 'banner--description---title': 'Hide',
 
-          'products-nav---behavior': 'Hidden',
+          // 'products-nav---behavior': 'Hidden',
       }
     } else if (title == 'Banner2') {
       orides = {
-          'header---sticky': 'None',
-          'header---palette': 'Alternate',
-          'header---behavior': 'Transparent',
-          'banner---palette': 'Alternate',
-          'banner---typeset': 'Banner',
-          'banner---overlay': 'Image',
-          'banner--content---layout': 'Banner',
-          'banner--description---layout': 'Main',
-          'banner--description---display': 'Overlaid',
-          'banner--description---position': 'Bottom Left',
-          'banner--description---title': 'Hide',
-          'banner---parallax': '1'
+          // 'header---sticky': 'None',
+          // 'header---position': 'Overlaid',
+          // 'header---palette': 'Alternate',
+          // 'header---layout': 'Main',
+
+          // 'banner---palette': 'Alternate',
+          // 'banner---typeset': 'Banner',
+          // 'banner---overlay': 'Image',
+          // 'banner--content---layout': 'Banner',
+          // 'banner--description---layout': 'Main',
+          // 'banner--description---display': 'Overlaid',
+          // 'banner--description---position': 'Bottom Left',
+          // 'banner--description---title': 'Hide',
+          // 'banner---parallax': '1'
       }
     } else if (title == 'HatGallery') {
       orides = {
-          'banner--description---display': 'Hide',
-          'header---sticky': 'None',
-          'header---behavior': 'Normal',
-          'header---sticky-effect': 'Shadow',
-          'content---layout': 'Banner',
-          'content---palette': 'Banner'
+          // 'banner--description---display': 'Hide',
+          // 'header---sticky': 'None',
+          // 'header---position': 'Normal',
+          // 'header---sticky-effect': 'Shadow',
+          // 'content---layout': 'Banner',
+          // 'content---palette': 'Banner'
       }
     }
 
@@ -63,26 +64,25 @@
     <div class="sqs-announcement-bar-dropzone"></div>
 
     <div id="site">
-      <div id="header">
+
+      <div id="header" role="header">
         {@|apply header.block}
       </div>
 
-      {.section collection}
-          <div id="banner">
-            {@|apply banner.block}
-        </div>
-      {.end}
+      <div id="banner" role="banner">
+        {collection|apply banner.block}
+      </div>
 
-      <main id="content" class="content" role="main" data-content-field="main-content">
+      <main id="{collection.typeName}" class="content" role="main" data-content-field="main-content">
         {squarespace.main-content}
       </main>
 
-      {@|apply footer.block}
-
+      <div id="footer" role="footer">
+        {@|apply footer.block}
+      </div>
     </div>
 
     <!--Combo and minify the scripts when you're not logged in.-->
-    <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     <squarespace:script src="helpers.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     <squarespace:script src="sticky.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     <squarespace:script src="rafscroll.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
