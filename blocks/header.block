@@ -33,7 +33,7 @@ var handleTweak = function(mutations) {
       return;
     }
 
-    if (node.dataset.position === 'overlaid') {
+    if (node.dataset.display === 'overlaid') {
       var height = node.querySelector('.header').offsetHeight;
       banner.style.marginTop = height + 'px';
     } else {
@@ -47,9 +47,9 @@ var handleTweak = function(mutations) {
 var observer = new MutationObserver(handleTweak);
 observer.observe(node, {
   attributes: true,
-  attributeFilter: ['data-position']
+  attributeFilter: ['data-display']
 });
 
-window.addEventListener('resize', handleTweak.bind(this, [{attributeName: 'data-position'}])); // simulate a mutation
+window.addEventListener('resize', handleTweak.bind(this, [{attributeName: 'data-display'}])); // simulate a mutation
 
 </script>

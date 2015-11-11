@@ -18,7 +18,7 @@
 @bannerContentWidth: 100%;
 
 // tweak: { category: 'Banner - Layout', "title" : "Meta Width", "type" : "value", "target" : "#banner .meta" }
-@bannerMetaWidth: 100%;
+@bannerMetaWidth: 600px;
 
 // tweak: { category: 'Banner - Layout', "title" : "Spacing - Side", "type" : "value", "target" : "#banner" }
 @bannerSpacingSide: 0;
@@ -40,21 +40,6 @@
 @altSpacingTop: 5%;
 
 
-
-// tweak: { category: "Index - 1", title: "Index 1 Banner - Layout", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Banner", js: true }
-// tweak: { category: "Index - 1", title: "Index 1 Banner - Palette", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Banner", js: true }
-// tweak: { category: "Index - 1", title: "Index 1 Banner - Typeset", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Banner", js: true }
-// tweak: { category: "Index - 1", title: "Index 1 Banner - Effect", type: "dropdown", options: ["None", "Parallax", "Sticky"], default: "None", js: true }
-
-// tweak: { category: "Index - 1", title: "Index 1 Content - Layout", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Main", js: true }
-// tweak: { category: "Index - 1", title: "Index 1 Content - Palette", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Main", js: true }
-// tweak: { category: "Index - 1", title: "Index 1 Content - Typeset", type: "dropdown", options: ["Main", "Banner", "Alternate"], default: "Main", js: true }
-// tweak: { category: "Index - 1", title: "Index 1 Content - Effect", type: "dropdown", options: ["None", "Parallax", "Sticky"], default: "None", js: true }
-
-// tweak: { category: "Index - 1", title: "Index 1 Gallery - Layout", type: "dropdown", options: ["Full", "Scroll", "Slide"], default: "Full", js: true }
-// tweak: { category: "Index - 1", title: "Index 1 Gallery - Meta", type: "dropdown", options: ["None", "Side", "Overlay"], default: "None", showOnlyWhenPresent: ".index-1-gallery-full", js: true }
-
-
 [role="main"], [data-layout=main] {
   width: @mainContentWidth;
   padding: @mainSpacingTop @mainSpacingSide;
@@ -69,6 +54,7 @@
   max-width: 100%;
   .border-box;
   margin: auto;
+
 }
 
 [data-layout=banner] {
@@ -77,16 +63,63 @@
   max-width: 100%;
   .border-box;
   margin: auto;
+
+}
+
+[data-meta] {
+  .layout(@metaWidth, @spacingTop, @spacingSide) {
+    width: @metaWidth;
+    max-width: 100%;
+    &[data-background=normal], &[data-background=translucent] {
+      .border-box;
+      padding: @spacingTop @spacingSide;
+    }
+  }
+
+  [data-layout=main] & { .layout(@mainMetaWidth, @mainSpacingTop, @mainSpacingSide) }
+  [data-layout=alternate] & { .layout(@altMetaWidth, @altSpacingTop, @altSpacingSide) }
+  [data-layout=banner] & { .layout(@bannerMetaWidth, @bannerSpacingTop, @bannerSpacingSide) }
+}
+
+[data-meta*=center] {
+  margin: auto;
+  text-align: center;
+}
+[data-meta*=left] {
+  margin-right: auto;
+  margin-left: 0;
+  text-align: left;
+}
+[data-meta*=right] {
+  margin-left: auto;
+  margin-right: 0;
+  text-align: right;
 }
 
 [data-display=hide] {
   display: none;
 }
 
-[data-display=overlaid] {
+[data-display*=overlaid] {
   position: absolute;
   left: 0;
   right: 0;
-  z-index: 890; /* Above system block galleries */
+  z-index: 2; 
   margin: auto;
+}
+
+[data-display*=overlaid-whole] {
+  top: 0;
+  bottom: 0;
+
+  display: flex; /* To make it easier to position vertically */
+
+  [data-meta*=top] {
+    margin-top: 0;
+    margin-bottom: auto;
+  }
+  [data-meta*=bottom] {
+    margin-top: auto;
+    margin-bottom: 0;
+  }
 }

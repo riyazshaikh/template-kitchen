@@ -84,3 +84,18 @@ body, [data-palette=main] { /* Default */
 	}
 }
 
+[data-background=normal] {
+  &[data-palette=main], [data-palette=main] & { .background-color(@main-bgColor) }
+  &[data-palette=alternate], [data-palette=alternate] & { .background-color(@alt-bgColor) }
+  &[data-palette=banner], [data-palette=banner] & { .background-color(@banner-bgColor) }
+}
+
+[data-background=translucent] {
+  &[data-palette=main], [data-palette=main] & { .background-color(fade(@main-bgColor,60%)) }
+  &[data-palette=alternate], [data-palette=alternate] & { .background-color(fade(@alt-bgColor,60%)) }
+  &[data-palette=banner], [data-palette=banner] & { .background-color(fade(@banner-bgColor,60%)) }
+}
+
+[data-background=transparent] {
+  &[data-palette], [data-palette] & { background: transparent; }
+}

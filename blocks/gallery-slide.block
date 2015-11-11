@@ -26,13 +26,7 @@
         <a href="#" class="previous"></a>
         <a href="#" class="next"></a>
       </div>
-<!--       <div class="meta" data-display="overlaid" data-position="top-left" data-layout="main">
-        <div class="meta-inside">
-          <p class="meta-title"><strong>{collection.title}</strong></p>              
-          <div class="meta-description">{collection.description}</div>
-        </div>
-      </div>
- -->    </div>
+    </div>
   </div>
 </div>
 

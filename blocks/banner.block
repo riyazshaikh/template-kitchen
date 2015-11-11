@@ -3,12 +3,12 @@
     <figure class="loading content-fill"><img {@|image-meta} /></figure>
   {.end}
   <squarespace:block-field class="content" id="banner-content-{id}" columns="12" label="Banner Content"/>
-  <div class="meta description header-overlap">
-    <div class="meta-inside">
-      <div class="meta-title" data-content-field="title">
+  <div class="description header-overlap">
+    <div class="content">
+      <div class="title" data-content-field="title">
         {title}
       </div>            
-      <div class="meta-description" data-content-field="description">
+      <div data-content="fancy-text" data-content-field="description">
       {description}
       </div>
     </div>
