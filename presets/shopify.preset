@@ -1,6 +1,7 @@
 {
-  "title" : "default",
+  "title" : "shopify",
   "templateTweaks" : {
+  	"header---palette": 'banner',
   	"banner-body-font": "{font-family:'brandon-grotesque';font-size:18px;}",
   	"banner-heading1-font": "{font-family:'brandon-grotesque';font-size:60px;letter-spacing:1px;}"
   }

@@ -1,5 +1,5 @@
  <div class="slidebar">
- 	<label for="mobileNavToggle" class="mobile-nav-toggle-label">
+ 	<label for="mobileNavToggle" class="mobile-nav-toggle-label" data-toggle-body="mobile-nav-enabled">
  		<div class="top-bar"></div><div class="middle-bar"></div><div class="bottom-bar"></div>
  	</label>
  	
@@ -9,11 +9,3 @@
     	<squarespace:navigation navigationId="mainNav" template="navigation"/>
     </div>
 </div>
-
-    <script>
-    var body = document.querySelector('body');
-
-    document.querySelector('#mobileNavToggle').addEventListener('click', function(e) {
-    	body.classList[e.target.checked ? 'add' : 'remove']('mobile-nav-enabled');	
-    });
-    </script>

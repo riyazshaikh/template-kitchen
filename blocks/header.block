@@ -6,7 +6,7 @@
       </div>
     {.or}
       <div class="site-title" data-content-field="site-title">
-        <a href="/">{siteTitle}</a>
+        <a href="/" data-text-shrink>{siteTitle}</a>
       </div>
     {.end}
   {.end}
@@ -19,8 +19,6 @@
   </div>
 </header>
 <script>
-// textshrink site-title
-
 var node = document.currentScript.parentNode;
 var selector = '.header-overlap';
 

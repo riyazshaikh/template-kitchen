@@ -1,12 +1,10 @@
-Y.use('node', function () {
+Y.use('squarespace-ui-base', function () {
 	window.helper = Singleton.create({
 
 		ready: function() {
-
-			Y.on('domready', function() {
+			// Y.on('domready', function() {
 				this.bindUI();
-			}, this);
-
+			// }, this);
 		},
 
 
@@ -15,8 +13,9 @@ Y.use('node', function () {
 			this.dataToggleBody();
 			this.dataToggleEl();
 			this.dataLightbox();
+			this.dataTextShrink();
 
-			// Y.one(window).on('resize', this.syncUI, this);
+			Y.one(window).on('resize', this.syncUI, this);
 
 		},
 
@@ -171,6 +170,14 @@ Y.use('node', function () {
 
 		},
 
+		dataTextShrink: function() {
+			Y.all('[data-text-shrink]').each(function(node) {
+				node.plug(Y.Squarespace.TextShrink, {
+					parentEl: node.ancestor(node.getData('text-shrink'))
+    		});
+    		node.TextShrink.refresh();
+			});
+		},
 
 		debounce: function(callback, timer, context) {
 
@@ -186,7 +193,7 @@ Y.use('node', function () {
 			*/
 
 			timer = timer || 100;
-			context = context || Site;
+			context = context || this;
 
 			if (callback) {
 				this._timeout && this._timeout.cancel();

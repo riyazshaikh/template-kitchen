@@ -15,7 +15,7 @@
       'header---display': 'overlaid',
       'header---nav': 'hide',
       'header---slidebar': 'show',
-      'header---palette': 'main',
+      // 'header---palette': 'main',
       'header--content---layout': 'alternate',
       'banner---palette': 'main',
       'banner--content---layout': 'banner',
@@ -64,7 +64,6 @@
     <squarespace:script src="rafscroll.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     <squarespace:script src="parallax.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     <squarespace:script src="auto-palette.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
-    <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     
     <!--Injection point for tracking scripts and user content from the code injection tab.-->
     {squarespace-footers}

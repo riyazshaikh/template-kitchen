@@ -20,8 +20,12 @@
   }
 
   .site-title {
-    .site-title-font;
     max-width: @siteTitleContainerWidth;
+    a {
+      .site-title-font;
+      display: inline-block;
+      white-space: nowrap;
+    }
   }
   .site-logo {
     max-width: @logoContainerWidth;
