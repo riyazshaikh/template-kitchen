@@ -21,7 +21,7 @@
       'banner--content---layout': 'banner',
       'banner--description---display': 'normal',
       'banner--description---layout': 'main',
-      'banner--description---title': 'hide',
+      'banner--description--title---display': 'hide',
       'banner--description---italic': 'dash'
     };
 
