@@ -11,22 +11,7 @@
     </script>
 
     <script>
-    var orides = {
-      'header---display': 'overlaid',
-      'header---nav': 'hide',
-      'header---slidebar': 'show',
-      // 'header---palette': 'main',
-      'header--content---layout': 'alternate',
-      'banner---palette': 'main',
-      'banner--content---layout': 'banner',
-      'banner--description---display': 'normal',
-      'banner--description---layout': 'main',
-      'banner--description--title---display': 'hide',
-      'banner--description---italic': 'dash'
-    };
-
-    // var title = Static.SQUARESPACE_CONTEXT.collection.title;
-    Static.SQUARESPACE_CONTEXT.tweakJSON = Y.merge(Static.SQUARESPACE_CONTEXT.tweakJSON, orides);
+    // Static.SQUARESPACE_CONTEXT.tweakJSON = Y.merge(Static.SQUARESPACE_CONTEXT.tweakJSON, orides);
     </script>
     {@|apply selector-listener.block}
   </head>
