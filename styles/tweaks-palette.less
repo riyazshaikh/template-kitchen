@@ -9,24 +9,23 @@
 @main-textColor: #000;
 
 //tweak: { "type" : "color", "title" : "Page Link Color", "category" : "Main - Palette", "target" : "a" }
-@main-linkColor: #000;
-
-//tweak: { "type" : "color", "title" : "Page Meta Color", "category" : "Main - Palette", "target" : ".meta" }
-@main-metaColor: #666666;
+@main-linkColor: @main-textColor;
 
 //tweak: { "type" : "color", "title" : "Heading Color", "category" : "Main - Palette", "target" : "h1, .entry-title" }
-@main-headingColor: #111;
+@main-headingColor: @main-textColor;
 
+//tweak: { "type" : "color", "title" : "Page Meta Color", "category" : "Main - Palette", "target" : ".meta" }
+@main-metaColor: @main-textColor;
 
-
-//tweak: { "type" : "color", "title" : "Text Color", "category" : "Alternate - Palette", "target" : "body" }
-@alt-textColor: #fff;
 
 //tweak: { "type" : "color", "title" : "Background", "category" : "Alternate - Palette", "target" : "body" }
 @alt-bgColor: rgb(16,17,19);
 
+//tweak: { "type" : "color", "title" : "Text Color", "category" : "Alternate - Palette", "target" : "body" }
+@alt-textColor: #fff;
+
 //tweak: { "type" : "color", "title" : "Link Color", "category" : "Alternate - Palette", "target" : "body" }
-@alt-linkColor: #fefefe;
+@alt-linkColor: @alt-textColor;
 
 //tweak: { "type" : "color", "title" : "Heading Color", "category" : "Alternate - Palette", "target" : "body" }
 @alt-headingColor: @alt-textColor;
@@ -35,21 +34,21 @@
 @alt-metaColor: @alt-textColor;
 
 
+//tweak: { "type" : "color", "title" : "Background Color", "category" : "Banner - Palette", "target" : "body" }
+@banner-bgColor: #fff;
 
 //tweak: { "type" : "color", "title" : "Text Color", "category" : "Banner - Palette", "target" : "body" }
 @banner-textColor: rgb(16,17,19); 
 
-//tweak: { "type" : "color", "title" : "Background Color", "category" : "Banner - Palette", "target" : "body" }
-@banner-bgColor: #fff;
+//tweak: { "type" : "color", "title" : "Link Color", "category" : "Banner - Palette", "target" : "body" }
+@banner-linkColor: @banner-textColor; /* #181818 */
 
 //tweak: { "type" : "color", "title" : "Heading Color", "category" : "Banner - Palette", "target" : "body" }
-@banner-headingColor: rgb(16,17,19);
-
-//tweak: { "type" : "color", "title" : "Link Color", "category" : "Banner - Palette", "target" : "body" }
-@banner-linkColor: #ededed; /* #181818 */
+@banner-headingColor: @banner-textColor;
 
 //tweak: { "type" : "color", "title" : "Meta Color", "category" : "Banner - Palette", "target" : "body" }
-@banner-metaColor: rgb(16,17,19);
+@banner-metaColor: @banner-textColor;
+
 
 body, [data-palette=main] { /* Default */
 	color: @main-textColor;
