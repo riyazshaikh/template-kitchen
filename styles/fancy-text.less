@@ -66,6 +66,8 @@
 
   &[data-italic=dash] {
     em {
+      font-style: normal;
+      
       position: relative;
       margin-bottom: 2rem;
       display: inline-block;
@@ -83,7 +85,7 @@
     }
 
     .colors(@metaColor) {
-      .meta-description > p > em:after {
+      > em:after {
         background-color: @metaColor;
       }
     }
@@ -92,14 +94,14 @@
     [data-palette="banner"] & { .colors(@banner-metaColor) }
     [data-palette="alternate"] & { .colors(@alt-metaColor) }
 
-    [data-position~=center] & {
+    [data-align~=center] &, .text-align-center & {
       em:after {
         left: 50%;
         margin-left: -1rem;
       }    
     }
 
-    [data-position~=right] & {
+    [data-align~=right] &, .text-align-right & {
       em:after {
         right: 0;
       }    
