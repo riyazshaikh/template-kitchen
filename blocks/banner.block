@@ -8,7 +8,7 @@
       <div class="title" data-content-field="title">
         {title}
       </div>            
-      <div data-layout="meta" data-content="fancy-text" data-content-field="description">
+      <div data-content="fancy-text" data-content-field="description">
       {description}
       </div>
     </div>
