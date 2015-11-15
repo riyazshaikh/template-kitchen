@@ -66,7 +66,7 @@
 
 }
 
-[data-meta] {
+[data-layout=meta] {
   .layout(@metaWidth, @spacingTop, @spacingSide) {
     width: @metaWidth;
     max-width: 100%;
@@ -81,21 +81,21 @@
   [data-layout=banner] & { .layout(@bannerMetaWidth, @bannerSpacingTop, @bannerSpacingSide) }
 }
 
-[data-meta*=center] {
+/*[data-align*=center] {
   margin: auto;
   text-align: center;
 }
-[data-meta*=left] {
+[data-align*=left] {
   margin-right: auto;
   margin-left: 0;
   text-align: left;
 }
-[data-meta*=right] {
+[data-align*=right] {
   margin-left: auto;
   margin-right: 0;
   text-align: right;
 }
-
+*/
 [data-display=hide] {
   display: none;
 }
@@ -108,18 +108,34 @@
   margin: auto;
 }
 
-[data-display*=overlaid-whole] {
+[data-display=overlaid-caption] { /* Triggers caption positioning */
   top: 0;
   bottom: 0;
 
-  display: flex; /* To make it easier to position vertically */
+  > [data-layout] { /* To make it easier to position vertically */  
+    height: 100%;
+    display: flex; 
+    flex-direction: column;
 
-  [data-meta*=top] {
-    margin-top: 0;
-    margin-bottom: auto;
-  }
-  [data-meta*=bottom] {
-    margin-top: auto;
-    margin-bottom: 0;
+    [data-align*=center] {
+      align-items: center;
+      justify-content: center;
+    }
+
+    [data-align*=top] {
+      align-items: flex-start;
+    }
+
+    [data-align*=bottom] {
+      align-items: flex-end;
+    }
+
+    [data-align*=left] {
+      justify-content: left;
+    }
+
+    [data-align*=right] {
+      justify-content: right;
+    }
   }
 }
