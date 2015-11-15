@@ -1,3 +1,7 @@
+// tweak: { category: 'Main', "title" : "Font Icon Size", "type" : "value", "target" : ".fa" }
+@fontIconSize: 100px;
+
+
 /** All the style overrides for SQS system stuff i.e. blocks and layout engine, go here **/
 
 
@@ -248,10 +252,10 @@ blockquote {
   padding: 0;
 }
 
-.fa {
-  /*display: block;*/
+i.fa {
+  display: block;
   text-align: center;
-  font-size: 100px;
+  font-size: @fontIconSize;
 }
 
 [data-text-shrink]:not([data-shrink-original-size]) {
