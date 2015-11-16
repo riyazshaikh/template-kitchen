@@ -17,6 +17,7 @@ Y.use('squarespace-ui-base', function () {
 
 			Y.one(window).on('resize', this.syncUI, this);
 
+			Y.on('domready', this.imgLoad, this); // to correct things like banner image loading before layout blocks
 		},
 
 
