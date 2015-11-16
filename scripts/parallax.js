@@ -11,15 +11,15 @@ Y.use('node', function () {
 		},
 
 		syncUI: function() {
-			this.parallaxNodes = Y.all('[data-parallax]');
+			this.parallaxNodes = Y.all('[data-parallax="enable"]');
 
 			this.parallaxNodes.each(function(node) {
-				var img = node.one('img');
-				if (img) {
-					img.get('parentNode').setStyle('transform', 'translateZ(0)');
-					img.setStyle('transform', 'translate3d(0,0,0)');
-				}
-				node.setData('region', node.get('region'));
+				// var img = node.one('img');
+				// if (img) {
+					node.get('parentNode').setStyle('transform', 'translateZ(0)');
+					node.setStyle('transform', 'translate3d(0,0,0)');
+				// }
+				node.setData('region', node.get('parentNode').get('region'));
 			}, this);
 
 			this.scrollLogic();
@@ -34,14 +34,14 @@ Y.use('node', function () {
       var scrollY = window.scrollY;
 
       this.parallaxNodes.each(function(node, i) {
-				if (Y.DOM.inViewportRegion(node._node,false,node.getData('region'))) {      	
+				if (Y.DOM.inViewportRegion(node.get('parentNode'),false,node.getData('region'))) {      	
           var pageYDoc = node.getData('region').top;
           var pageYViewport = pageYDoc - scrollY;
           var factor = 0.25;
           var imageY = -1 * pageYViewport * factor;
-          var image = node.one('img');
+          // var image = node.one('img');
 
-          image && image.setStyle('transform', 'translate3d(0,' + imageY + 'px,0)');
+          node.setStyle('transform', 'translate3d(0,' + imageY + 'px,0)');
         }
       }, this);
 		}
