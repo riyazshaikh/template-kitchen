@@ -22,14 +22,19 @@
 
   }
 
-  .sqs-layout, .description {
-/*    position: relative;
+  .blocks {
+    position: relative;
     z-index: 1;
-*/
+
     .sqs-block:last-child {
       padding-bottom: 0 !important;
     }
 
+  }
+
+  .description:not([data-display*=overlaid]) {
+    position: relative;
+    z-index: 1;
   }
 }
 
