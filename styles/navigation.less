@@ -76,6 +76,16 @@
   }  
 }
 
+[data-background=translucent] {
+  &[data-palette=main] [data-folder*=drop] .folder .subnav { .background-color(fade(@main-bgColor,60%)) }
+  &[data-palette=alternate] [data-folder*=drop] .folder .subnav { .background-color(fade(@alt-bgColor,60%)) }
+  &[data-palette=banner] [data-folder*=drop] .folder .subnav { .background-color(fade(@banner-bgColor,60%)) }
+}
+
+[data-background=transparent] {
+  [data-folder*=drop] .folder .subnav { background: transparent; }
+}
+
 [data-folder=dropdown] .navigation {
   .folder {
     position: relative;
