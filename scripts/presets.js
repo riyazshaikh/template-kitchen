@@ -33,6 +33,7 @@ PRESETS.katana = {
 		"header---block": "Hide",
 
 		"banner---background": "Transparent",
+		"banner--banner---parallax": "Enable",
 		"banner--description---display": "Overlaid Caption",
 		"banner--description---background": "Translucent",
 		"banner--description--content---layout": "Main",
