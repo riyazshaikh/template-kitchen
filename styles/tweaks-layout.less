@@ -17,8 +17,8 @@
 // tweak: { category: 'Banner - Layout', "title" : "Content Width", "type" : "value", "target" : "#banner" }
 @bannerContentWidth: 100%;
 
-// tweak: { category: 'Banner - Layout', "title" : "Meta Width", "type" : "value", "target" : "#banner .meta" }
-@bannerMetaWidth: 600px;
+//OFF tweak: { category: 'Banner - Layout', "title" : "Meta Width", "type" : "value", "target" : "#banner .meta" }
+/*@bannerMetaWidth: 600px;*/
 
 // tweak: { category: 'Banner - Layout', "title" : "Spacing - Side", "type" : "value", "target" : "#banner" }
 @bannerSpacingSide: 0;
@@ -30,8 +30,8 @@
 // tweak: { category: 'Alternate - Layout', "title" : "Content Width", "type" : "value", "target" : "#content" }
 @altContentWidth: 100%;
 
-// tweak: { category: 'Alternate - Layout', "title" : "Meta Width", "type" : "value", "target" : "#content .meta" }
-@altMetaWidth: 40%;
+//OFF tweak: { category: 'Alternate - Layout', "title" : "Meta Width", "type" : "value", "target" : "#content .meta" }
+/*@altMetaWidth: 40%;*/
 
 // tweak: { category: 'Alternate - Layout', "title" : "Spacing - Side", "type" : "value", "target" : "#content" }
 @altSpacingSide: 5%;
@@ -76,10 +76,11 @@
     }
   }
 
-  [data-layout=main] & { .layout(@mainMetaWidth, @mainSpacingTop, @mainSpacingSide) }
+  .layout(@mainMetaWidth, @mainSpacingTop, @mainSpacingSide);
+/*  [data-layout=main] & { .layout(@mainMetaWidth, @mainSpacingTop, @mainSpacingSide) }
   [data-layout=alternate] & { .layout(@altMetaWidth, @altSpacingTop, @altSpacingSide) }
   [data-layout=banner] & { .layout(@bannerMetaWidth, @bannerSpacingTop, @bannerSpacingSide) }
-}
+*/}
 
 [data-layout=meta] {
   .layout-meta;
