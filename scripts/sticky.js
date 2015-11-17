@@ -14,22 +14,19 @@ Y.use('node', function (Y) {
 		init: function() {
 			this.stickyNodes = [];
 
-			Y.all('[data-sticky]:not([data-behavior="hidden"]').each(function(node) {
+			Y.all('[data-sticky="enable"]').each(function(node) {
 				// Extract config from [data-sticky=<mode>---<target>]
-				var config = node.getData('sticky').split('---');
+				// var config = node.getData('sticky').split('---');
 
-				if (config.length < 2) return; // skip if config missing
+				// if (config.length < 2) return; // skip if config missing
 
-				if (config[0] == 'within' || config[0] == 'after') {
-					var target = Y.one('#' + config[1]);
-					if (!target) return; // skip if target not present
-
+				// if (config[0] == 'within' || config[0] == 'after') {
+					var target = node.get('parentNode');
 					node.setData('elTarget', target);
-					target.addClass('js-sticky-' + config[0]);
-				}	
+					target.addClass('js-sticky-within');
+				// }	
 
-				node.setData('mode', config[0]);
-				node.setData('target', config[1]);
+				node.setData('mode', 'within');
 
 				this.wrapItUp(node);
 

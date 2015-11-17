@@ -77,7 +77,11 @@ PRESETS.squaremart = {
 		"banner---background": "Transparent",
 		"banner--image---parallax": "Enable",
 		"banner--description---display": "Hide",
-		"banner--blocks---background": "Translucent"
+		"banner--blocks---background": "Translucent",
+
+		"page-footer---palette": "Banner",
+		"page-footer--content---layout": "Alternate",
+		"page-footer--content---sticky": "Enable",
 
 	},
 	webfontsJson: [
