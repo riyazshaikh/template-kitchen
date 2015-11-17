@@ -33,7 +33,6 @@ PRESETS.katana = {
 		"header---block": "Hide",
 
 		"banner---background": "Transparent",
-		"banner--content---parallax": "Enable",
 		"banner--description---display": "Overlaid Caption",
 		"banner--description---background": "Translucent",
 		"banner--description--content---layout": "Main",
@@ -76,6 +75,7 @@ PRESETS.squaremart = {
 		"header---block": "Hide",
 
 		"banner---background": "Transparent",
+		"banner--image---parallax": "Enable",
 		"banner--description---display": "Hide",
 		"banner--blocks---background": "Translucent"
 
