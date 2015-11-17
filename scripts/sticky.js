@@ -3,7 +3,6 @@ Y.use('node', function (Y) {
 
 		ready: function() {
 
-
 			Y.on('domready', function() {
 				this.init();
 				Y.Global && this.tweakHandler();
@@ -14,21 +13,24 @@ Y.use('node', function (Y) {
 		init: function() {
 			this.stickyNodes = [];
 
-			Y.all('[data-sticky="enable"]').each(function(node) {
-				// Extract config from [data-sticky=<mode>---<target>]
-				// var config = node.getData('sticky').split('---');
+			Y.all('[data-sticky]:not([data-sticky="disable"]').each(function(node) {
 
-				// if (config.length < 2) return; // skip if config missing
+				// Config is data-sticky=<mode>-<selector>-<top/bottom>-<underlaid>
+				var config = node.getData('sticky').split('-');
+				config.length && node.setData('mode', config.shift());	
 
-				// if (config[0] == 'within' || config[0] == 'after') {
-					var target = node.get('parentNode');
-					node.setData('elTarget', target);
-					target.addClass('js-sticky-within');
-				// }	
+				var target = Y.one('#' + config.shift()) || node.get('parentNode');
+				node.setData('elTarget', target);
 
-				node.setData('mode', 'within');
+				target.addClass('js-sticky-target'); // mostly for debugging
+
+				// for deciding whether to check viewport crossing from top or bottom
+				node.setData('direction', config.length ? config.shift() : 'top'); // default is top
 
 				this.wrapItUp(node);
+
+				// underlaid styling
+				config.length && node.getData('elWrapper').addClass(config.shift());
 
 				this.stickyNodes.push(node);
 
@@ -81,25 +83,12 @@ Y.use('node', function (Y) {
 				elWrapper.setStyle('width', elContainer.get('offsetWidth'));
 				elContainer.setStyle('height', elWrapper.get('offsetHeight'));
 
-				var mode = node.getData('mode');
-
-				switch(mode) {
-					case 'within':
-						var region = node.getData('elTarget').get('region');
-						node.setData('navShowPosition', region.top);
-						node.setData('navEndPosition', region.bottom - node.get('offsetHeight'));
-						break;
-
-					case 'after':
-						var region = node.getData('elTarget').get('region');
-						node.setData('navShowPosition', region.bottom);
-						break;
-
-					case 'scroll':
-						break;
-				}
+				node.setData('elTargetRegion', node.getData('elTarget').get('region'));
+				node.setData('elRegion', node.get('region'));
 
 			}, this);
+
+			this.viewportRegion = Y.DOM.viewportRegion();
 
 			this.scrollLogic();	
 		},
@@ -108,6 +97,7 @@ Y.use('node', function (Y) {
 			var elWrapper = Y.Node.create("<div class='js-sticky-wrapper'></div>");
 			node.wrap(elWrapper);
 			node.setData('elWrapper',elWrapper);
+			elWrapper.addClass(node.getData('direction'));
 
 			var elContainer = Y.Node.create("<div class='js-sticky-container'></div>");
 			elWrapper.wrap(elContainer);
@@ -116,39 +106,74 @@ Y.use('node', function (Y) {
 			// elContainer.addClass(node.getStyle('position'));
 		},
 
+		setSticky: function(elContainer, bEnabled) {
+			if (bEnabled) elContainer.addClass('js-sticky-enabled');
+			else elContainer.removeClass('js-sticky-enabled');
+		},
+
+		setAbsolute: function(elContainer, bEnabled) {
+			if (bEnabled) elContainer.addClass('js-sticky-end').removeClass('js-sticky-enabled');
+			else elContainer.removeClass('js-sticky-end').addClass('js-sticky-enabled');
+		},
+
 		scrollLogic: function () {
 
-			var scrollY = window.scrollY;
+			// update without hitting dom
+			this.viewportRegion.top = window.scrollY;
+			this.viewportRegion.bottom = this.viewportRegion.top + this.viewportRegion.height;
+
 			this.stickyNodes.forEach(function(node) {
 
 				var elContainer = node.getData('elContainer');
+				var elTargetRegion = node.getData('elTargetRegion');
+				var direction = node.getData('direction');
+				var elRegion = node.getData('elRegion');
+
 				switch(node.getData('mode')) {
 					case 'after':
-						if (scrollY > node.getData('navShowPosition')) {
-							elContainer.addClass('js-sticky-enabled');
+						if (direction == 'bottom') {
+							if (this.viewportRegion.bottom <= elTargetRegion.bottom) this.setSticky(elContainer, true);
+							else this.setSticky(elContainer, false);
 						} else {
-							elContainer.removeClass('js-sticky-enabled');
+							if (this.viewportRegion.top >= elTargetRegion.top) this.setSticky(elContainer, true);
+							else this.setSticky(elContainer, false);
 						}
 						break;
 
 					case 'within':
-						if (scrollY >= node.getData('navShowPosition')) {
-
-							if (scrollY >= node.getData('navEndPosition')) {
-								elContainer.addClass('js-sticky-end').removeClass('js-sticky-enabled');
+						if (direction == 'bottom') {
+							if (this.viewportRegion.bottom <= elRegion.bottom) {
+								if (this.viewportRegion.bottom <= elTargetRegion.top - elRegion.height) {
+									this.setAbsolute(elContainer,true);
+									this.setSticky(elContainer, false);
+								} else {
+									this.setAbsolute(elContainer,false);
+									this.setSticky(elContainer, true);
+								}
 							} else {
-								elContainer.addClass('js-sticky-enabled').removeClass('js-sticky-end');
+								this.setAbsolute(elContainer,false);
+								this.setSticky(elContainer,false);
 							}
-							
 						} else {
-							elContainer.removeClass('js-sticky-enabled');
+							if (this.viewportRegion.top >= elRegion.top) {
+								if (this.viewportRegion.top >= elTargetRegion.bottom - elRegion.height) {
+									this.setAbsolute(elContainer,true);
+									this.setSticky(elContainer, false);
+								} else {
+									this.setAbsolute(elContainer,false);
+									this.setSticky(elContainer, true);
+								}
+							} else {
+								this.setAbsolute(elContainer,false);
+								this.setSticky(elContainer,false);
+							}
 						}
 						break;
 
 				}
 			}, this);
 
-			this.prevPos = scrollY;
+			// this.prevPos = scrollY;
 
 			// if (this.scrolling === true) {
 			// 	window.requestAnimationFrame(Y.bind(function () {

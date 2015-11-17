@@ -81,7 +81,7 @@ PRESETS.squaremart = {
 
 		"page-footer---palette": "Banner",
 		"page-footer--content---layout": "Alternate",
-		"page-footer--content---sticky": "Enable",
+		"page-footer--content---sticky": "within-site-bottom-underlaid",
 
 	},
 	webfontsJson: [

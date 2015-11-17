@@ -13,17 +13,36 @@
 
 	&.js-sticky-enabled .js-sticky-wrapper {
 		position: fixed;
-		top: 0;
 		z-index: @zIndexBase + 1;
 
-		[data-sticky][data-sticky-effect=shadow] {
+		&.top {
+			top: 0;	
+		}
+
+		&.bottom {
+			bottom: 0;
+		}
+		
+		&.underlaid {
+			z-index: -1;
+		}
+
+		&.shadow {
 			box-shadow: 0 0 1px rgba(0,0,0,0.15);	
 		}
 	}
 
 	&.js-sticky-end .js-sticky-wrapper {
 		position: absolute;
-		bottom: 0;
+
+		&.top {
+			bottom: 0;	
+		}
+
+		&.bottom {
+			top: 0;
+		}
+		
 	}
 	
 }
