@@ -1,0 +1,6 @@
+{
+  "title" : "Default",
+  "templateTweaks" : {
+  	"header---sticky": "Enable"
+  }
+}
