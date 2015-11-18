@@ -2,7 +2,6 @@
   position: fixed;
   .border-box;
   width: 260px;
-  padding: 20px;
   z-index: -1;
   top: 0;
   right: 0;
@@ -12,6 +11,10 @@
   text-align: left;
   overflow: auto;
   visibility: hidden;
+
+  [data-layout=main] & { padding: @mainSpacingTop @mainSpacingSide; }
+  [data-layout=alternate] & { padding: @altSpacingTop @altSpacingSide; }
+  [data-layout=banner] & { padding: @bannerSpacingTop @bannerSpacingSide; }
 
   .colors(@textColor, @bgColor) {
     .background-color(@textColor);
