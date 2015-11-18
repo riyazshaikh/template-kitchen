@@ -12,10 +12,14 @@
       {@|apply banner.block}
     </div>
     <div id="index-{@index}-{typeName}" class="index-{typeName} content" data-content-field="main-content">
-    {.collectionTypeNameEquals? gallery}
-      {@|apply gallery-slide.block}
-    {.or}
-      {mainContent}
+    {.equal? typeName "gallery-scroll"}
+      {@|apply gallery-scroll.block}
+    {.or}  
+      {.equal? typeName "gallery"}
+        {@|apply gallery-slide.block}
+      {.or}
+        {mainContent}
+      {.end}
     {.end}
     </div>
   </div>
