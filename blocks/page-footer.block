@@ -1,0 +1,9 @@
+<div class="page-footer{.if mainImage} has-image{.end}" data-collection-id="{id}" data-edit-main-image="Background">    
+	{.section mainImage}
+    <figure class="loading content-fill"><img class="image" {@|image-meta} /></figure>
+  {.end}
+  <div class="blocks">
+    <squarespace:block-field class="content" id="page-footer-{id}" columns="12" label="Page Footer Content"/>
+  </div>
+</div>
+

@@ -31,7 +31,7 @@
       </main>
 
       <div id="page-footer">
-        <squarespace:block-field class="content" id="page-footer-{collection.id}" columns="12" label="Page Footer Content" />
+        {collection|apply page-footer.block}
       </div>
 
       <footer id="footer" role="contentinfo">
