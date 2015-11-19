@@ -89,6 +89,33 @@ PRESETS.squaremart = {
 		
 	]
 };
+
+
+PRESETS.galleryscroll = {
+	tweakJson: {
+		"main-bgColor": "#fff",
+		"main-textColor": "#323639",
+		"main-headingColor": "#000",
+
+		"header---palette": "Main",
+		"header---background": "Transparent",
+		"header---display": "Overlaid",
+		"header---sticky": "Within Site",
+		"header--content---layout": "Alternate",
+		"header---block": "Hide",
+		"header---nav": "Hide",
+		"header---slidebar": "Show",
+
+		"banner---palette": "Main",
+		// "banner---background": "Transparent",
+		"banner--image---parallax": "Enable",
+		"banner--description---display": "Hide",
+
+	},
+	webfontsJson: [
+		
+	]
+};
 	
 var mode = document.currentScript.getAttribute('src').split('mode=')[1];
 
