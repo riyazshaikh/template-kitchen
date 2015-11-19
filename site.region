@@ -18,7 +18,7 @@
 
     <div id="site">
 
-      <div id="header" role="header">
+      <div id="header" role="banner">
         {@|apply header.block}
       </div>
 
@@ -30,7 +30,7 @@
         {squarespace.main-content}
       </main>
 
-      <div id="page-footer">
+      <div id="page-footer" role="complementary">
         {collection|apply page-footer.block}
       </div>
 

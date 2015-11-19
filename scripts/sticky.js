@@ -29,9 +29,6 @@ Y.use('node', function (Y) {
 
 				this.wrapItUp(node);
 
-				// underlaid styling
-				config.length && node.getData('elWrapper').addClass(config.shift());
-
 				this.stickyNodes.push(node);
 
 			}, this);

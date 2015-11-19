@@ -35,10 +35,11 @@
 // tweak: { title: "Footer - Display", options: ["Hide", "Show"], default: "Show", category: "Footer", type: "dropdown", js:true }
 
 // tweak: { title: "Page Footer - Palette", options: ["Main", "Banner", "Alternate"], default: "Alternate", category: "Page Footer", type: "dropdown", js:true }
+// tweak: { title: "Page Footer - Display", options: ["Hide", "Show", "Overlaid"], default: "Show", category: "Page Footer", type: "dropdown", js:true }
 // tweak: { title: "Page Footer  Content - Layout", options: ["Main", "Banner", "Alternate"], default: "Main", category: "Page Footer", type: "dropdown", js:true }
-// tweak: { title: "Page Footer - Sticky", options: ["Disable","Within Site Bottom Underlaid"], default: "Disable", category: "Page Footer", type: "dropdown", js:true }
-// tweak: { title: "Page Footer - Display", options: ["Hide", "Show"], default: "Show", category: "Page Footer", type: "dropdown", js:true }
+// tweak: { title: "Page Footer  Content - Sticky", options: ["Disable","Within Site Bottom"], default: "Disable", category: "Page Footer", type: "dropdown", js:true }
 // tweak: { title: "Page Footer  Image - Parallax", options: ["Disable","Enable"], default: "Disable", category: "Page Footer", type: "dropdown", js:true }
+// tweak: { title: "Page Footer  Blocks - Background", options: ["Normal", "Transparent", "Translucent"], default: "Transparent", category: "Page Footer", type: "dropdown", js:true }
 
 
 /* Mobile first
@@ -54,14 +55,13 @@
 }
 */
 
-[role="banner"], [role="main"], [role="contentinfo"] { 
+[role] { /* Make them stack */
   position: relative;
   z-index: 1;
 }
 
-[role="header"] {
-  position: relative;
-  z-index: 2;
+[role="complementary"] { /* Make prefooter go under by default */
+  z-index: 0;
 }
 
 /*img {
