@@ -32,7 +32,7 @@ var handleTweak = function(mutations) {
     }
 
     if (node.dataset.display === 'overlaid') {
-      var height = node.querySelector('.header').offsetHeight;
+      var height = node.offsetHeight;
       banner.style.marginTop = height + 'px';
     } else {
       banner.style.marginTop = '';    
