@@ -110,7 +110,8 @@ PRESETS.galleryscroll = {
 		// "banner---background": "Transparent",
 		"banner--image---parallax": "Enable",
 		"banner--description---display": "Hide",
-
+		"banner--blocks--content---layout": "Main",
+		"banner--blocks--content---parallax": "Enable"
 	},
 	webfontsJson: [
 		
