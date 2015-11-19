@@ -126,6 +126,7 @@ PRESETS.artassign = {
 		"mainSpacingTop": "0",
 
 		"page-footer---display": "Overlaid",
+		"page-footer---background": "Transparent"
 	},
 	webfontsJson: [
 		
