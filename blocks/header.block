@@ -42,12 +42,12 @@ var handleTweak = function(mutations) {
 
 };
 
-// var observer = new MutationObserver(handleTweak);
-// observer.observe(node, {
-//   attributes: true,
-//   attributeFilter: ['data-display']
-// });
+var observer = new MutationObserver(handleTweak);
+observer.observe(node, {
+  attributes: true,
+  attributeFilter: ['data-display']
+});
 
-// window.addEventListener('resize', handleTweak.bind(this, [{attributeName: 'data-display'}])); // simulate a mutation
+window.addEventListener('resize', handleTweak.bind(this, [{attributeName: 'data-display'}])); // simulate a mutation
 
 </script>
