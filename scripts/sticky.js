@@ -79,6 +79,9 @@ Y.use('node', function (Y) {
 				var elContainer = node.getData('elContainer');
 				var elWrapper = node.getData('elWrapper');
 
+				// unset for measuring
+				this.setSticky(elContainer, false);
+				
 				// Make sure sticky's wrappers keeps the right width/height.
 				elWrapper.setStyle('width', elContainer.get('offsetWidth'));
 				elContainer.setStyle('height', elWrapper.get('offsetHeight'));
