@@ -22,12 +22,14 @@
         {@|apply header.block}
       </div>
 
-      <div id="banner" role="banner">
+      <div id="banner" role="banner" data-palette="banner">
         {collection|apply banner.block}
       </div>
 
       <main id="{collection.typeName}" role="main" data-palette="main" data-content-field="main-content">
+        <div class="content" data-layout="main">
         {squarespace.main-content}
+        </div>
       </main>
 
       <div id="page-footer" role="complementary">
