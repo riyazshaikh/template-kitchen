@@ -2,11 +2,11 @@
 	{.section mainImage}
     <figure class="loading content-fill image"><img {@|image-meta} /></figure>
   {.end}
-  <div class="blocks">
-    <squarespace:block-field class="content header-overlap" id="banner-content-{id}" columns="12" label="Banner Content"/>
+  <div class="blocks header-overlap">
+    <squarespace:block-field class="content" id="banner-content-{id}" columns="12" label="Banner Content"/>
   </div>
-  <div class="description">
-    <div class="content header-overlap">
+  <div class="description header-overlap">
+    <div class="content">
       <div class="title" data-content-field="title">
         {title}
       </div>            

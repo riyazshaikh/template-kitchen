@@ -20,7 +20,7 @@
 </header>
 <script>
 var node = document.currentScript.parentNode;
-var selector = '[data-display="show"] .header-overlap';
+var selector = '.header-overlap[data-display="show"]';
 
 var handleTweak = function(mutations) {
   mutations.forEach(function(mutation) {
@@ -33,9 +33,9 @@ var handleTweak = function(mutations) {
 
     if (node.dataset.display === 'overlaid') {
       var height = node.offsetHeight;
-      banner.style.marginTop = height + 'px';
+      banner.style.paddingTop = height + 'px';
     } else {
-      banner.style.marginTop = '';    
+      banner.style.paddingTop = '';    
     }
 
   });
