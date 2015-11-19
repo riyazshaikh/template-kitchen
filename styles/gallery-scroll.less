@@ -1,22 +1,25 @@
 .gallery-scroll {
-	position: relative;
-	margin-top: 5em;
+
+	.content {
+		position: relative;
+	}
 
 	/*.gallery-shape-half;*/
 	.gallery-background-cinema;
 
 	.gallery-container {
+		.viewport-center;
 		position: absolute;
-		height: ~"calc(100vh - @{mainSpacingTop} - @{mainSpacingTop})";
-		top: @mainSpacingTop;
-		left: @mainSpacingSide;
-		right: ~"calc(@{mainSpacingSide} + @{mainMetaWidth} + @{mainSpacingSide})";
+		top: 0;
+		left: 0;
+		width: ~"calc(100% - @{mainMetaWidth})";
 	}
 
-	aside {
+	.gallery-meta {
 		width: @mainMetaWidth;
 		margin-left: auto;
 		padding-left: @mainSpacingSide;
+		.border-box;
 
 		.meta {
 			padding-top: 50vh;
