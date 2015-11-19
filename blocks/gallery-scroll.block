@@ -1,17 +1,15 @@
 <div id="gallery{collection.id}" class="gallery-scroll">
-  <div class="gallery-container">
-    <div class="viewport-center" data-sticky="within-gallery{collection.id}">
-      <div class="gallery-background" >
-        <div class="gallery-aspect-ratio">    
-          <div class="sqs-gallery sqs-gallery-design-stacked">
-          {.repeated section items}        
-              <div class="slide content-fill" data-type="image" data-slide-id="{id}">
-                {.main-image?}
-                <img {@|image-meta color-data} class="loading" data-load="false" />
-                {.end}
-              </div>
-          {.end}    
-          </div>
+  <div class="gallery-container viewport-center" data-sticky="within-gallery{collection.id}">
+    <div class="gallery-background" >
+      <div class="gallery-aspect-ratio">    
+        <div class="sqs-gallery sqs-gallery-design-stacked">
+        {.repeated section items}        
+            <div class="slide content-fill" data-type="image" data-slide-id="{id}">
+              {.main-image?}
+              <img {@|image-meta color-data} class="loading" data-load="false" />
+              {.end}
+            </div>
+        {.end}    
         </div>
       </div>
     </div>

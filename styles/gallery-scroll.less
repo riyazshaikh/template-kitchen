@@ -5,17 +5,18 @@
 	/*.gallery-shape-half;*/
 	.gallery-background-cinema;
 
-	display: flex;
-	justify-content: space-between;
-
 	.gallery-container {
-		width: 100%;
+		position: absolute;
+		height: ~"calc(100vh - @{mainSpacingTop} - @{mainSpacingTop})";
+		top: @mainSpacingTop;
+		left: @mainSpacingSide;
+		right: @mainSpacingSide + @mainMetaWidth + @mainSpacingSide;
 	}
 
 	aside {
 		width: @mainMetaWidth;
-		padding: @mainSpacingSide;
-		.border-box;
+		margin-left: auto;
+		padding-left: @mainSpacingSide;
 
 		.meta {
 			padding-top: 50vh;
