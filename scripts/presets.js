@@ -118,6 +118,19 @@ PRESETS.galleryscroll = {
 		
 	]
 };
+
+PRESETS.artassign = {
+	tweakJson: {
+		"mainContentWidth": "100%",
+		"mainSpacingSide": "0",
+		"mainSpacingTop": "0",
+
+		"page-footer---display": "Overlaid",
+	},
+	webfontsJson: [
+		
+	]
+};
 	
 var mode = document.currentScript.getAttribute('src').split('mode=')[1];
 
