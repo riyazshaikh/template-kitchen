@@ -26,7 +26,7 @@
         {collection|apply banner.block}
       </div>
 
-      <main id="{collection.typeName}" role="main" data-content-field="main-content">
+      <main id="{collection.typeName}" role="main" data-palette="main" data-content-field="main-content">
         {squarespace.main-content}
       </main>
 
