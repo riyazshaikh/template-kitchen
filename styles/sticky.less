@@ -35,6 +35,10 @@
 	&.js-sticky-end .js-sticky-wrapper {
 		position: absolute;
 
+		> [data-sticky] {
+			position: relative; /* In case it was absolute */
+		}
+
 		&.top {
 			bottom: 0;	
 		}
