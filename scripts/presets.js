@@ -122,7 +122,7 @@ PRESETS.galleryscroll = {
 PRESETS.artassign = {
 	tweakJson: {
 		"banner---display": "Overlaid",
-		"banner---background": "Translucent",
+		"banner---background": "Transparent",
 		"banner---palette": "Main",
 		"banner--blocks--content---layout": "Main"
 	},
