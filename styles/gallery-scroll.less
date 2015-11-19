@@ -33,7 +33,7 @@
 		}
 
 		.meta {
-			padding-top: 50vh;
+			padding: 50vh 0;
 
 			&:first-child {
 				padding-top: 20vh;
@@ -42,10 +42,15 @@
 			&:last-child {
 				padding-bottom: 20vh;
 			}
+
 			.transition(opacity 0.4s);
 			opacity: 0;
 			&.active {
 				opacity: 1;
+			}
+
+			@media screen and (max-width: 640px) {
+				opacity: 1; /* Always show */
 			}
 		}
 	}
