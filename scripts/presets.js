@@ -79,6 +79,7 @@ PRESETS.squaremart = {
 		"Banner  Image - Parallax": "Enable",
 		"Banner  Description - Display": "Hide",
 		"Banner  Blocks - Background": "Translucent",
+		"Banner  Blocks  Content - Layout": "Banner",
 
 		"Page Footer - Palette": "Banner",
 		"Page Footer  Image - Parallax": "Enable",
