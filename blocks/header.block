@@ -18,7 +18,7 @@
 </header>
 <script>
 var node = document.currentScript.parentNode;
-var selector = '.header-overlap[data-display="show"]';
+var selector = '.header-overlap';
 
 var handleTweak = function(mutations) {
   mutations.forEach(function(mutation) {
