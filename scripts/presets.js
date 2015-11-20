@@ -37,6 +37,8 @@ PRESETS.katana = {
 		"banner--description---background": "Translucent",
 		"banner--description--content---layout": "Main",
 		"banner--description--content---align": "Center Left",
+
+		"Page  Content - Italic": "Dash"
 	},
 	webfontsJson: [
 		"Open+Sans:300,300italic,700normal,700italic,500undefined"
@@ -124,7 +126,9 @@ PRESETS.artassign = {
 		"banner---display": "Overlaid",
 		"banner---background": "Transparent",
 		"banner---palette": "Main",
-		"banner--blocks--content---layout": "Main"
+		"banner--blocks--content---layout": "Main",
+
+		"Banner  Blocks  Content - Italic": "Highlight"
 	},
 	webfontsJson: [
 		
@@ -134,6 +138,12 @@ PRESETS.artassign = {
 var mode = document.currentScript.getAttribute('src').split('mode=')[1];
 
 if (!mode || !PRESETS[mode]) mode = 'default';
+
+// process tweak names
+for(var name in PRESETS[mode].tweakJson) {
+	PRESETS[mode].tweakJson[name.replace(/\s/g,'-').toLowerCase()] = PRESETS[mode].tweakJson[name];
+	delete PRESETS[mode].tweakJson[name];
+}
 
 Y.use('squarespace-util', function(Y) {
 
