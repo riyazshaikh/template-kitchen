@@ -103,7 +103,7 @@ PRESETS.galleryscroll = {
 		"Header - Palette": "Main",
 		"Header - Background": "Transparent",
 		"Header - Display": "Overlaid",
-		// "Header - Sticky": "Within Site",
+		"Header - Sticky": "Within Site",
 		"Header  Content - Layout": "Alternate",
 		"Header  Block - Display": "Hide",
 		"Header  Slidebar - Display": "Always",
