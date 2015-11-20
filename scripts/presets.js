@@ -142,7 +142,8 @@ if (!mode || !PRESETS[mode]) mode = 'default';
 // process tweak names
 var newObj = {};
 for(var name in PRESETS[mode].tweakJson) {
-	newObj[name.replace(/\s/g,'-').toLowerCase()] = PRESETS[mode].tweakJson[name];
+	var newName = name.match(/\s/) ? name.replace(/\s/g,'-').toLowerCase() : name;
+	newObj[newName] = PRESETS[mode].tweakJson[name];
 }
 PRESETS[mode].tweakJson = newObj;
 
