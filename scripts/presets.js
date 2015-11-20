@@ -106,8 +106,8 @@ PRESETS.galleryscroll = {
 		"Header - Sticky": "Within Site",
 		"Header  Content - Layout": "Alternate",
 		"Header  Block - Display": "Hide",
-		"Header  Nav - Display": "Hide",
 		"Header  Slidebar - Display": "Always",
+		"Header  Nav - Display": "Hide",
 
 		"Banner - Palette": "Main",
 		"Banner  Image - Parallax": "Enable",
@@ -126,7 +126,9 @@ PRESETS.artassign = {
 		"Banner - Background": "Transparent",
 		"Banner - Palette": "Main",
 		"Banner  Blocks  Content - Layout": "Main",
-		"Banner  Blocks  Content - Italic": "Highlight"
+		"Banner  Blocks  Content - Italic": "Highlight",
+
+		"Gallery  Content - Layout": "Banner"
 	},
 	webfontsJson: [
 		
