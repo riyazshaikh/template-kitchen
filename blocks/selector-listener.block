@@ -97,7 +97,7 @@ var attrTweak = function(id, attr, value) {
 
 	if (!id.startsWith('#')) id = '#' + id; // allow for explicit selectors
 	// console.log('setting listener', id, attr, value);
-	document.addSelectorListener(id, function(event) {
+	document.onSelector(id, function(event) {
 		console.log('adding tweak', id, attr, value);
     event.target.setAttribute('data-' + attr, value);
   });	
