@@ -86,6 +86,40 @@
   .layout-meta;
 }
 
+[data-flex=left] {
+  display: flex;
+  justify-content: flex-start;
+}
+
+[data-flex=right] {
+  display: flex;
+  justify-content: flex-end;
+}
+
+[data-flex=center] {
+  display: flex;
+  justify-content: center;
+}
+
+[data-flex=space-around] {
+  display: flex;
+  justify-content: space-around;
+}
+
+[data-flex=space-between] {
+  display: flex;
+  justify-content: space-between;
+}
+
+[data-flex] {
+  > * {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0 !important;
+  }
+}
+
 /*[data-align*=center] {
   margin: auto;
   text-align: center;
@@ -110,6 +144,7 @@
   left: 0;
   right: 0;
   z-index: 2; 
+  pointer-events: none; /* Allow clicks to pass through to bottom layer */
 }
 
 [data-display=overlaid-caption] { /* Triggers caption positioning */
