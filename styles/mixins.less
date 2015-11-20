@@ -144,10 +144,6 @@
 	.font-smoothing(@bg);
 }
 
-.vendor-prefix(@prop, @val) {
-	(~"@{prop}"): @val;
-	(~"-webkit-@{prop}"): @val;
-	(~"-moz-@{prop}"): @val;
-	(~"-ms-@{prop}"): @val;
-	(~"-o-@{prop}"): @val;
+.prefix(@property, @value) {
+    -:~";-webkit-@{property}: @{value}; -moz-@{property}: @{value}; -ms-@{property}: @{value}; -o-@{property}: @{value}; @{property}: @{value}";
 }
