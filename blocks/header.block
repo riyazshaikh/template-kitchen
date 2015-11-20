@@ -14,9 +14,7 @@
     <squarespace:navigation navigationId="mainNav" template="navigation"/>
   </div>
   <squarespace:block-field class="block" id="header-block" columns="1" label="Header Block Content"/>
-  <div class="slidebar">
   {@|apply slidebar.block}
-  </div>
 </header>
 <script>
 var node = document.currentScript.parentNode;
