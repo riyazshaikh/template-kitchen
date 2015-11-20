@@ -12,6 +12,7 @@ Y.use('node', function () {
 
 		syncUI: function() {
 			this.parallaxNodes = Y.all('[data-parallax="enable"]');
+			console.log('parallaxNodes', this.parallaxNodes);
 
 			this.parallaxNodes.each(function(node) {
 				// var img = node.one('img');
