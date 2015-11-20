@@ -140,10 +140,11 @@ var mode = document.currentScript.getAttribute('src').split('mode=')[1];
 if (!mode || !PRESETS[mode]) mode = 'default';
 
 // process tweak names
+var newObj = {};
 for(var name in PRESETS[mode].tweakJson) {
-	PRESETS[mode].tweakJson[name.replace(/\s/g,'-').toLowerCase()] = PRESETS[mode].tweakJson[name];
-	delete PRESETS[mode].tweakJson[name];
+	newObj[name.replace(/\s/g,'-').toLowerCase()] = PRESETS[mode].tweakJson[name];
 }
+PRESETS[mode].tweakJson = newObj;
 
 Y.use('squarespace-util', function(Y) {
 
