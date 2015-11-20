@@ -107,78 +107,82 @@
       }    
     }
   }
+}
 
-  &[data-italic=meta] {
-    em {
-      font-style: normal;
-      
-      [data-palette=main] & { color: @main-metaColor; }
-      [data-palette=alternate] & { color: @alt-metaColor; }
-      [data-palette=banner] & { color: @banner-metaColor; }
-    }    
-  }
+[data-italic=meta] {
+  em {
+    font-style: normal;
+    
+    [data-palette=main] & { color: @main-metaColor; }
+    [data-palette=alternate] & { color: @alt-metaColor; }
+    [data-palette=banner] & { color: @banner-metaColor; }
+  }    
+}
 
-  &[data-italic=highlight] {
-    em {
-      font-style: normal;
-      display: inline;
+[data-italic=highlight] {
+  em {
+    font-style: normal;
+    display: inline;
 
-      .colors(@bgColor) {
-        .background-color(@bgColor);
-        box-shadow: 10px 0 0 @bgColor, -10px 0 0 @bgColor;      
-      }
-      
-      [data-palette=main] & { .colors(@main-bgColor) }
-      [data-palette=alternate] & { .colors(@alt-bgColor) }
-      [data-palette=banner] & { .colors(@banner-bgColor) }
-    }    
-  }
-
-  .button-outline(@textColor, @bgColor) {
-    p:last-child > a:first-child {
-      background-color: transparent;
-      .font-smoothing(@bgColor);
-      border: 2px solid @textColor !important;
-      color: @textColor;
-      &:hover {
-        background-color: @textColor;
-        color: @bgColor;
-      }
+    .colors(@bgColor) {
+      .background-color(@bgColor);
+      position: relative;
+      left: 10px;
+      box-shadow: 5px 0 0 5px @bgColor, -5px 0 0 5px @bgColor;      
+      .vendor-prefix("box-decoration-break", "clone");
     }
-  }
+    
+    [data-palette=main] & { .colors(@main-bgColor) }
+    [data-palette=alternate] & { .colors(@alt-bgColor) }
+    [data-palette=banner] & { .colors(@banner-bgColor) }
+  }    
+}
 
-  &[data-button=outline] {
-    [data-palette="main"] &  {  .button-outline(@main-textColor, @main-bgColor) }
-    [data-palette="banner"] &  {  .button-outline(@banner-textColor, @banner-bgColor) }
-    [data-palette="alternate"] &  {  .button-outline(@alt-textColor, @alt-bgColor) }
-  }
-
-
-  .button-overlay(@textColor, @bgColor) {
-    p:last-child > a:first-child {
-
-      .background-color(fade(@bgColor,10%));
-      color: @textColor;
-      box-shadow: inset 0 0 0 1px fade(@bgColor, 8%);
-      border-radius: 60rem;
-
-      &:hover {
-        background-color: fade(@bgColor,15%);
-      }
+.button-outline(@textColor, @bgColor) {
+  p:last-child > a:first-child {
+    background-color: transparent;
+    .font-smoothing(@bgColor);
+    border: 2px solid @textColor !important;
+    color: @textColor;
+    &:hover {
+      background-color: @textColor;
+      color: @bgColor;
     }
-  }
-
-  &[data-button=overlay] {
-    [data-palette="main"] &  {  .button-overlay(@main-textColor, @main-bgColor); }
-    [data-palette="banner"] &  {  .button-overlay(@banner-textColor, @banner-bgColor); }
-    [data-palette="alternate"] &  {  .button-overlay(@alt-textColor, @alt-bgColor); }
-  }
-
-  &[data-button-corner="rounded"] {
-    p:last-child > a:first-child { border-radius: 3px; }
-  }
-
-  &[data-button-corner="pill"] {
-    p:last-child > a:first-child { border-radius: 300px; }
   }
 }
+
+[data-button=outline] {
+  [data-palette="main"] &  {  .button-outline(@main-textColor, @main-bgColor) }
+  [data-palette="banner"] &  {  .button-outline(@banner-textColor, @banner-bgColor) }
+  [data-palette="alternate"] &  {  .button-outline(@alt-textColor, @alt-bgColor) }
+}
+
+
+.button-overlay(@textColor, @bgColor) {
+  p:last-child > a:first-child {
+
+    .background-color(fade(@bgColor,10%));
+    color: @textColor;
+    box-shadow: inset 0 0 0 1px fade(@bgColor, 8%);
+    border-radius: 60rem;
+
+    &:hover {
+      background-color: fade(@bgColor,15%);
+    }
+  }
+}
+
+[data-button=overlay] {
+  [data-palette="main"] &  {  .button-overlay(@main-textColor, @main-bgColor); }
+  [data-palette="banner"] &  {  .button-overlay(@banner-textColor, @banner-bgColor); }
+  [data-palette="alternate"] &  {  .button-overlay(@alt-textColor, @alt-bgColor); }
+}
+
+[data-button-corner="rounded"] {
+  p:last-child > a:first-child { border-radius: 3px; }
+}
+
+[data-button-corner="pill"] {
+  p:last-child > a:first-child { border-radius: 300px; }
+}
+
