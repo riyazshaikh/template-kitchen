@@ -1,7 +1,7 @@
-//OFF tweak: { "type" : "value", "title" : "Logo Container Width", "min" : 50, "max" : 500, "step" : 5, "category" : "Site Header", "target" : "#logoImage", "showOnlyWhenPresent" : "#logoImage", "js": "true" }
+//tweak: { "type" : "value", "title" : "Logo Container Width", "min" : 50, "max" : 500, "step" : 5, "category" : "Site Header", "target" : "#logoImage", "showOnlyWhenPresent" : "#logoImage", "js": "true" }
 @logoContainerWidth: 150px;
 
-//OFF tweak: { "type" : "value", "title" : "Site Title Container Width", "min" : 50, "max" : 500, "step" : 5, "category" : "Site Header", "target" : "#siteTitle", "showOnlyWhenPresent" : "#siteTitle", "js": "true" }
+//tweak: { "type" : "value", "title" : "Site Title Container Width", "min" : 50, "max" : 500, "step" : 5, "category" : "Site Header", "target" : "#siteTitle", "showOnlyWhenPresent" : "#siteTitle", "js": "true" }
 @siteTitleContainerWidth: 255px;
 
 
@@ -40,29 +40,13 @@
     }
   }
 
-  [data-title="boxed"] & .site-title {
-    border: 3px solid;
-    padding: 2px 4px;  
-  }
-
-  [data-block=hide] & .block {
-    display: none;
-  }
-
-  [data-nav=hide] & .nav {
-    display: none;
-  }
-
-  [data-slidebar=hide] & .slidebar {
-    display: none;
-  }
-
-  [data-nav=auto] & .nav {
+  .nav:not([data-display=always]) {
     @media only screen and (max-width: 640px) {
       display: none;
     }    
   }
-  [data-slidebar=auto] & .slidebar {
+
+  .slidebar:not([data-display=always]) {
     display: none;
     @media only screen and (max-width: 640px) {
       display: block;

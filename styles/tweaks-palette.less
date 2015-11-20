@@ -50,7 +50,7 @@
 @banner-metaColor: @banner-textColor;
 
 
-[data-palette=main] { /* Default */
+body, [data-palette=main] { /* Default */
 	color: @main-textColor;
 	.background-color(@main-bgColor);
 	h1,h2,h3 {
@@ -83,7 +83,7 @@
 	}
 }
 
-[data-background=normal] {
+[data-background=solid] {
   &[data-palette=main], [data-palette=main] & { .background-color(@main-bgColor) }
   &[data-palette=alternate], [data-palette=alternate] & { .background-color(@alt-bgColor) }
   &[data-palette=banner], [data-palette=banner] & { .background-color(@banner-bgColor) }

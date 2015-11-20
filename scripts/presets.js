@@ -27,16 +27,16 @@ PRESETS.katana = {
 		"banner-bgColor": "rgba(0,0,0,0.5)",
 		"banner-textColor": "rgb(255,255,255)",
 
-		"header---display": "Overlaid",
-		"header---background": "Transparent",
-		"header--content---layout": "Main",
-		"header---block": "Hide",
+		"Header - Display": "Overlaid",
+		"Header - Background": "Transparent",
+		"Header  Content - Layout": "Main",
+		"Header  Block - Display": "Hide",
 
-		"banner---background": "Transparent",
-		"banner--description---display": "Overlaid Caption",
-		"banner--description---background": "Translucent",
-		"banner--description--content---layout": "Main",
-		"banner--description--content---align": "Center Left",
+		"Banner - Background": "Transparent",
+		"Banner  Description - Display": "Overlaid Caption",
+		"Banner  Description - Background": "Translucent",
+		"Banner  Description  Content - Layout": "Main",
+		"Banner  Description  Content - Align": "Center Left",
 
 		"Page  Content - Italic": "Dash"
 	},
@@ -70,22 +70,21 @@ PRESETS.squaremart = {
 		"banner-bgColor": "rgb(16,17,19)",
 		"banner-textColor": "#fff",
 
-		"header---display": "Overlaid",
-		"header---palette": "Banner",
-		"header---background": "Transparent",
-		"header--content---layout": "Alternate",
-		"header---block": "Hide",
+		"Header - Display": "Overlaid",
+		"Header - Background": "Transparent",
+		"Header  Content - Layout": "Alternate",
+		"Header  Block - Display": "Hide",
 
-		"banner---background": "Transparent",
-		"banner--image---parallax": "Enable",
-		"banner--description---display": "Hide",
-		"banner--blocks---background": "Translucent",
+		"Banner - Background": "Transparent",
+		"Banner  Image - Parallax": "Enable",
+		"Banner  Description - Display": "Hide",
+		"Banner  Blocks - Background": "Translucent",
 
-		"page-footer---palette": "Banner",
-		"page-footer--image---parallax": "Enable",
-		"page-footer--content---layout": "Alternate",
-		"page-footer--content---sticky": "within-site-bottom",
-		"page-footer--blocks---background": "Translucent",
+		"Page Footer - Palette": "Banner",
+		"Page Footer  Image - Parallax": "Enable",
+		"Page Footer  Content - Layout": "Alternate",
+		"Page Footer  Content - Sticky": "within-site-bottom",
+		"Page Footer  Blocks - Background": "Translucent",
 
 	},
 	webfontsJson: [
@@ -100,21 +99,20 @@ PRESETS.galleryscroll = {
 		"main-textColor": "#323639",
 		"main-headingColor": "#000",
 
-		"header---palette": "Main",
-		"header---background": "Transparent",
-		"header---display": "Overlaid",
-		"header---sticky": "Within Site",
-		"header--content---layout": "Alternate",
-		"header---block": "Hide",
-		"header---nav": "Hide",
-		"header---slidebar": "Show",
+		"Header - Palette": "Main",
+		"Header - Background": "Transparent",
+		"Header - Display": "Overlaid",
+		"Header - Sticky": "Within Site",
+		"Header  Content - Layout": "Alternate",
+		"Header  Block - Display": "Hide",
+		"Header  Nav - Display": "Hide",
+		"Header  Slidebar - Display": "Always",
 
-		"banner---palette": "Main",
-		// "banner---background": "Transparent",
-		"banner--image---parallax": "Enable",
-		"banner--description---display": "Hide",
-		"banner--blocks--content---layout": "Main",
-		"banner--blocks--content---parallax": "Enable"
+		"Banner - Palette": "Main",
+		"Banner  Image - Parallax": "Enable",
+		"Banner  Description - Display": "Hide",
+		"Banner  Blocks  Content - Layout": "Main",
+		"Banner  Blocks  Content - Parallax": "Enable"
 	},
 	webfontsJson: [
 		
@@ -123,11 +121,10 @@ PRESETS.galleryscroll = {
 
 PRESETS.artassign = {
 	tweakJson: {
-		"banner---display": "Overlaid",
-		"banner---background": "Transparent",
-		"banner---palette": "Main",
-		"banner--blocks--content---layout": "Main",
-
+		"Banner - Display": "Overlaid",
+		"Banner - Background": "Transparent",
+		"Banner - Palette": "Main",
+		"Banner  Blocks  Content - Layout": "Main",
 		"Banner  Blocks  Content - Italic": "Highlight"
 	},
 	webfontsJson: [

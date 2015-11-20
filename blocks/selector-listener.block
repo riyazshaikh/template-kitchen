@@ -97,7 +97,7 @@ var attrTweak = function(id, attr, value) {
 
 	if (!id.startsWith('#')) id = '#' + id; // allow for explicit selectors
 	// console.log('setting listener', id, attr, value);
-	document.onSelector(id, function(event) {
+	document.addSelectorListener(id, function(event) {
 		console.log('adding tweak', id, attr, value);
     event.target.setAttribute('data-' + attr, value);
   });	
@@ -109,6 +109,8 @@ for (key in tweaks) {
 	parts = key.split('---');
 	if ( parts.length > 1 ) {
 		parts[0] = parts[0].replace(/--/g,' .'); // make double space into class
+
+		if (tweaks[key] !== "")
 		attrTweak(parts[0], parts[1], tweaks[key].toLowerCase().replace(/\s/g,"-"));
 	}
 }
