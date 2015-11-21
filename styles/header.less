@@ -40,18 +40,14 @@
     }
   }
 
-/*  .nav:not([data-display=always]) {
+  .nav[data-display=auto] {
+    ~ .slidebar { display: none; }
     @media only screen and (max-width: 640px) {
       display: none;
-    }    
+      ~ .slidebar { display: block; }
+    }
   }
 
-  .slidebar:not([data-display=always]) {
-    @media only screen and (min-width: 641px) {
-      width: 0;
-    }    
-  }
-*/
   [data-direction=reverse] & {
     flex-direction: row-reverse;
   }  
