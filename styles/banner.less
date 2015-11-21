@@ -13,4 +13,40 @@
     [data-palette=banner] & { color: @banner-metaColor; }
   }
 
+  &.has-image {
+    /*min-height: 320px;  */
+
+    > figure {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+
+      width: 100%;
+      margin: 0;
+      a {
+        display: block;
+      }
+
+    }
+
+  }
+
+  .blocks {
+    position: relative;
+    z-index: 1;
+
+    .sqs-block:last-child {
+      padding-bottom: 0 !important;
+    }
+
+  }
+
+  .description:not([data-display*=overlaid]) {
+    position: relative;
+    z-index: 1;
+  }
+
 }
