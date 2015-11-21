@@ -105,11 +105,11 @@
 				attr = parts[1]; 
 				value = tweaks[key].toLowerCase().replace(/\s/g,"-");
 
-				document.addSelectorListener(selector, function(event) {
+				document.addSelectorListener(selector, function(selector, attr, value, event) {
 					console.log('adding tweak', selector, attr, value);
 			    event.target.setAttribute('data-' + attr, value);
 			    event.target.style.visibility = 'visible';
-			  });	
+			  }.bind(this, selector, attr, value));	
 			}
 		}
 	}
