@@ -61,7 +61,9 @@ RECIPES.bravo = {
 		"mainSpacingTop": "2.5%",
 		"mainMetaWidth": "500px",
 
-		"body-font": "{font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:300;line-height:1.5em;}",
+		"body-font": "{font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;font-weight:300;line-height:1.5em;}",
+		"heading2-font": "{font-family:inherit;font-size:36px;font-weight:700;line-height:1.2em;}",
+
 		"banner-body-font": "{font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:24px;font-weight:300;line-height:1.3em;}",
 		"banner-heading1-font": "{font-family:inherit;font-size:40px;font-weight:700;line-height:1.2em;}",
 
@@ -87,6 +89,9 @@ RECIPES.bravo = {
 		"Banner  Description - Background": "Translucent",
 		"Banner  Description  Content - Layout": "Main",
 		"Banner  Description  Content - Align": "Center Left",
+		"Banner  Description  Content - Italic": "Dash",
+		"Banner  Description  Content - Button": "Overlay",
+		"Banner  Description  Content - Button Corner": "Pill",
 
 		"Page  Content - Italic": "Dash"
 	},
