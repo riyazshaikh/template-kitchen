@@ -15,9 +15,7 @@ Y.use('squarespace-ui-base', function () {
 			this.dataLightbox();
 			this.dataTextShrink();
 
-			Y.one(window).on('resize', this.syncUI, this);
-
-			Y.on('domready', this.imgLoad, this); // to correct things like banner image loading before layout blocks
+			this.sensor = new ResizeSensor(document.querySelector('#site'), Y.bind(this.debounce, this, this.imgLoad));;
 		},
 
 
@@ -205,7 +203,7 @@ Y.use('squarespace-ui-base', function () {
 
 
 		imgLoad: function (el) {
-
+			console.log('imgload called');
 			/*
 				Pass an image selector to this function and
 				Squarespace will load up the proper image
