@@ -1,11 +1,11 @@
-var PRESETS = {};
+var RECIPES = {};
 
-PRESETS.default = {
+RECIPES.default = {
 	tweakJson: {},
 	webfontsJson: []
 };
 
-PRESETS.katana = {
+RECIPES.bravo = {
 	tweakJson: {
 		"mainContentWidth": "1200px",
 		"mainSpacingSide": "5%",
@@ -45,7 +45,7 @@ PRESETS.katana = {
 	]
 };
 
-PRESETS.squaremart = {
+RECIPES.alfa = {
 	tweakJson: {
 		"altContentWidth": "100%",
 		"altSpacingSide": "5%",
@@ -94,7 +94,7 @@ PRESETS.squaremart = {
 };
 
 
-PRESETS.galleryscroll = {
+RECIPES.charlie = {
 	tweakJson: {
 		"main-bgColor": "#fff",
 		"main-textColor": "#323639",
@@ -120,7 +120,7 @@ PRESETS.galleryscroll = {
 	]
 };
 
-PRESETS.artassign = {
+RECIPES.delta = {
 	tweakJson: {
 		"Banner - Display": "Overlaid",
 		"Banner - Background": "Transparent",
@@ -137,26 +137,26 @@ PRESETS.artassign = {
 	
 var mode = document.currentScript.getAttribute('src').split('mode=')[1];
 
-if (!mode || !PRESETS[mode]) mode = 'default';
+if (!mode || !RECIPES[mode]) mode = 'default';
 
 // process tweak names
 var newObj = {};
-for(var name in PRESETS[mode].tweakJson) {
+for(var name in RECIPES[mode].tweakJson) {
 	var newName = name.match(/\s/) ? name.replace(/\s/g,'-').toLowerCase() : name;
-	newObj[newName] = PRESETS[mode].tweakJson[name];
+	newObj[newName] = RECIPES[mode].tweakJson[name];
 }
-PRESETS[mode].tweakJson = newObj;
+RECIPES[mode].tweakJson = newObj;
 
 Y.use('squarespace-util', function(Y) {
 
 	Y.Data.post({
 	        url: '/api/template/SetTemplateTweakSettings',
 	        data: {
-	          tweakJson: Y.JSON.stringify(PRESETS[mode]['tweakJson']),
-	          webfontsJson: Y.JSON.stringify(PRESETS[mode]['webfontsJson'])
+	          tweakJson: Y.JSON.stringify(RECIPES[mode]['tweakJson']),
+	          webfontsJson: Y.JSON.stringify(RECIPES[mode]['webfontsJson'])
 	        },
 	        success: function() {
-	        	alert('Preset ' + mode + ' applied!');
+	        	alert('Recipe ' + mode.toUpperCase() + ' applied!');
 	        }
 	});
 });
