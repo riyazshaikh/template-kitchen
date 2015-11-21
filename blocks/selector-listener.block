@@ -101,7 +101,7 @@
 			parts[0] = parts[0].replace(/--/g,' .'); // make double space into class
 
 			if (tweaks[key] !== "") { // skip empty tweak values
-				selector = parts[0]; 
+				selector = '#' + parts[0]; 
 				attr = parts[1]; 
 				value = tweaks[key].toLowerCase().replace(/\s/g,"-");
 
