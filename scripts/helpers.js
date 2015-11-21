@@ -15,7 +15,9 @@ Y.use('squarespace-ui-base', function () {
 			this.dataLightbox();
 			this.dataTextShrink();
 
-			this.sensor = new ResizeSensor(document.querySelector('#site'), Y.bind(this.debounce, this, this.imgLoad));;
+			this.sensor = new ResizeSensor(document.querySelector('#site'), Y.bind(this.debounce, this, this.imgLoad));
+
+			this.imgLoad();
 		},
 
 
@@ -204,6 +206,8 @@ Y.use('squarespace-ui-base', function () {
 
 		imgLoad: function (el) {
 			console.log('imgload called');
+
+			window.handleTweak();
 			/*
 				Pass an image selector to this function and
 				Squarespace will load up the proper image
