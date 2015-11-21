@@ -17,35 +17,44 @@
   {@|apply slidebar.block}
 </header>
 <script>
-var node = document.currentScript.parentNode;
-var selector = '.header-overlap';
+(function(){
 
-var handleTweak = function() {
-  // mutations.forEach(function(mutation) {
+  this.header = document.currentScript.parentNode;
+  this.head = document.getElementsByTagName('head')[0];
 
-    var banner = document.querySelector(selector);
-    if (!banner) {
-      document.onSelector(selector, handleTweak.bind(this));
-      return;
+  this.observer = new MutationObserver(function() {
+
+    // Add header height as a padding to overlap content below
+    if (this.header.dataset.display === 'overlaid') {
+      this.stylesheet = document.createElement('style');
+      this.stylesheet.type = "text/css";
+      this.rule = document.createTextNode('.header-overlap { padding-top:' + this.header.offsetHeight + 'px; }');
+
+      this.head.appendChild(stylesheet);
+      this.stylesheet.appendChild(this.rule);
+
+      console.log('header init', this.header.offsetHeight);
+      // refresh padding on header resize
+      this.resize = new ResizeSensor(this.header, function() {
+        console.log('header', this.header.offsetHeight);
+        this.stylesheet.removeChild(this.rule);
+        this.rule = document.createTextNode('.header-overlap { padding-top:' + this.header.offsetHeight + 'px; }');
+        this.stylesheet.appendChild(this.rule);
+      });
+    } else { // remove anything added
+      this.resize && this.resize.detach();
+      this.stylesheet && this.head.removeChild(this.stylesheet);
+      delete this.resize;
+      delete this.stylesheet;
+      delete this.rule;
     }
 
-    if (node.dataset.display === 'overlaid') {
-      var height = node.offsetHeight;
-      banner.style.paddingTop = height + 'px';
-    } else {
-      banner.style.paddingTop = '';    
-    }
+  }.bind(this));
 
-  // });
+  this.observer.observe(this.header, {
+    attributes: true,
+    attributeFilter: ['data-display']
+  });
 
-};
-
-// var observer = new MutationObserver(handleTweak);
-// observer.observe(node, {
-//   attributes: true,
-//   attributeFilter: ['data-display']
-// });
-
-// window.addEventListener('resize', handleTweak.bind(this, [{attributeName: 'data-display'}])); // simulate a mutation
-
+})();
 </script>

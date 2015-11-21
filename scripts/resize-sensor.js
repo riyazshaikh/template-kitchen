@@ -34,6 +34,21 @@
             };
         }
 
+        function debounce(func, wait, immediate) {
+            var timeout;
+            return function() {
+                var context = this, args = arguments;
+                var later = function() {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
+        }
+
         /**
          * @param {HTMLElement} element
          * @param {String}      prop
@@ -128,8 +143,8 @@
                 reset();
             }
 
-            addEvent(expand, 'scroll', onScroll);
-            addEvent(shrink, 'scroll', onScroll);
+            addEvent(expand, 'scroll', debounce(onScroll, 100));
+            addEvent(shrink, 'scroll', debounce(onScroll, 100));
         }
 
         var elementType = Object.prototype.toString.call(element);

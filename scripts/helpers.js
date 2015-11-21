@@ -15,7 +15,8 @@ Y.use('squarespace-ui-base', function () {
 			this.dataLightbox();
 			this.dataTextShrink();
 
-			this.sensor = new ResizeSensor(document.querySelector('#site'), Y.bind(this.debounce, this, this.imgLoad));
+			this.sensor = new ResizeSensor(document.querySelector('#site'), this.imgLoad);
+			this.imgLoad();
 		},
 
 
