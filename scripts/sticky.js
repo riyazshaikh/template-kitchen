@@ -52,25 +52,14 @@ Y.use('node', function (Y) {
 
 		bindUI: function () {
 
-			this.resizeHandler = Y.one(window).on('resize', function () {
-				this.syncUI();
-			}, this);
-
-			// this.scrolling = false;
-			this.scrollHandler = Y.one(window).on('scroll', function () {
-				// if (this.scrolling === false) {
-					// this.scrolling = true;
-					this.scrollLogic();
-					// helper.debounce(function () {
-						// this.scrolling = false;
-					// }, 10, this);
-				// }
-			}, this);
+			this.scrollHandler = new rafscroll(Y.bind(this.scrollLogic, this));
+      this.resizeHandler = new ResizeSensor(Y.one('#site')._node, Y.bind(this.syncUI,this));
 
 		},
 
 
 		syncUI: function () {
+			console.log('sticky sync');
 
 			this.stickyNodes.forEach(function(node) {
 				var elContainer = node.getData('elContainer');

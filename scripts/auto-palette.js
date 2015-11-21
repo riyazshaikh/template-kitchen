@@ -30,17 +30,13 @@ Y.use('node', function (Y) {
 		},
 
 		bindUI: function() {
-			var throttleSync = Y.throttle(Y.bind(this.syncUI, this), 100);
-			var throttleLogic = Y.throttle(Y.bind(this.scrollLogic, this));
-
-			this.resizeHandler = Y.one(window).on('resize', throttleSync);
-
-			this.scrollHandler = Y.one(window).on('scroll', throttleLogic);
-
+			this.scrollHandler = new rafscroll(Y.bind(this.scrollLogic, this));
+      this.resizeHandler = new ResizeSensor(Y.one('#site')._node, Y.bind(this.syncUI,this));
 		},
 
 		syncUI: function() {
-
+			console.log('palette sync');
+			
 			// cache region values
 			this.paletteNodes.each(function(node) {
 				var region = node.get('region');
