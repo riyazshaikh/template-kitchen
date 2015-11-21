@@ -5,45 +5,6 @@ RECIPES.default = {
 	webfontsJson: []
 };
 
-RECIPES.bravo = {
-	tweakJson: {
-		"mainContentWidth": "1200px",
-		"mainSpacingSide": "5%",
-		"mainSpacingTop": "2.5%",
-		"mainMetaWidth": "500px",
-
-		"body-font": "{font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:300;line-height:1.5em;}",
-		"banner-body-font": "{font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:24px;font-weight:300;line-height:1.3em;}",
-		"banner-heading1-font": "{font-family:inherit;font-size:60px;font-weight:300;line-height:1.3em;}",
-
-		"main-bgColor": "#fff",
-		"main-textColor": "#333",
-		// "main-linkColor": "#cf3f02",
-		"main-metaColor": "rgba(15,15,15,0.5)",
-
-		"alt-bgColor": "#f5f5f5",
-		"alt-textColor": "#333",
-
-		"banner-bgColor": "rgba(0,0,0,0.5)",
-		"banner-textColor": "rgb(255,255,255)",
-
-		"Header - Display": "Overlaid",
-		"Header - Background": "Transparent",
-		"Header  Content - Layout": "Main",
-		"Header  Block - Display": "Hide",
-
-		"Banner - Background": "Transparent",
-		"Banner  Description - Display": "Overlaid Caption",
-		"Banner  Description - Background": "Translucent",
-		"Banner  Description  Content - Layout": "Main",
-		"Banner  Description  Content - Align": "Center Left",
-
-		"Page  Content - Italic": "Dash"
-	},
-	webfontsJson: [
-		"Open+Sans:300,300italic,700normal,700italic,500undefined"
-	]
-};
 
 RECIPES.alfa = {
 	tweakJson: {
@@ -93,6 +54,46 @@ RECIPES.alfa = {
 	]
 };
 
+RECIPES.bravo = {
+	tweakJson: {
+		"mainContentWidth": "1200px",
+		"mainSpacingSide": "5%",
+		"mainSpacingTop": "2.5%",
+		"mainMetaWidth": "500px",
+
+		"body-font": "{font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:16px;font-weight:300;line-height:1.5em;}",
+		"banner-body-font": "{font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:24px;font-weight:300;line-height:1.3em;}",
+		"banner-heading1-font": "{font-family:inherit;font-size:40px;font-weight:700;line-height:1.2em;}",
+
+		"main-bgColor": "#fff",
+		"main-textColor": "#333",
+		// "main-linkColor": "#cf3f02",
+		"main-metaColor": "rgba(15,15,15,0.5)",
+
+		"alt-bgColor": "#f5f5f5",
+		"alt-textColor": "#333",
+
+		"banner-bgColor": "rgba(0,0,0,0.5)",
+		"banner-textColor": "rgb(255,255,255)",
+		"banner-metaColor": "rgb(255,255,255,0.5)",
+
+		"Header - Display": "Overlaid",
+		"Header - Background": "Transparent",
+		"Header  Content - Layout": "Main",
+		"Header  Block - Display": "Hide",
+
+		"Banner - Background": "Transparent",
+		"Banner  Description - Display": "Overlaid Caption",
+		"Banner  Description - Background": "Translucent",
+		"Banner  Description  Content - Layout": "Main",
+		"Banner  Description  Content - Align": "Center Left",
+
+		"Page  Content - Italic": "Dash"
+	},
+	webfontsJson: [
+		"Open+Sans:300,300italic,700normal,700italic,500undefined"
+	]
+};
 
 RECIPES.charlie = {
 	tweakJson: {

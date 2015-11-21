@@ -1,4 +1,4 @@
-//tweak: { "type" : "font", "title" : "Site Title Font", "category" : "Site Header", "showOnlyWhenPresent" : "#siteTitle", "target" : "#siteTitle", "loadAllVariants" : "true" }
+//tweak: { "type" : "font", "title" : "Site Title Font", "category" : "Header", "showOnlyWhenPresent" : "#siteTitle", "target" : "#siteTitle" }
 .site-title-font {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 600;
@@ -8,7 +8,7 @@
   text-transform: uppercase;
 }
 
-//tweak: { "type" : "font", "title" : "Nav Link Font", "category" : "Site Header", "target" : "body:not(.force-mobile-nav) #mainNavWrapper, #slidebar-nav" }
+//tweak: { "type" : "font", "title" : "Nav Link Font", "category" : "Header", "target" : "body:not(.force-mobile-nav) #mainNavWrapper, #slidebar-nav" }
 .nav-font {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 600;
@@ -20,7 +20,7 @@
   text-decoration: none;
 }
 
-//tweak: { "type" : "font", "title" : "Page Text Font", "category" : "Main - Typeset", "target" : "body", "loadAllVariants" : "true" }
+//tweak: { "type" : "font", "title" : "Text Font", "category" : "Main - Typeset", "target" : "body" }
 .body-font {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -73,6 +73,16 @@
   text-decoration: none;  
 }
 
+//tweak: { "type" : "font", "title" : "Meta Font", "category" : "Main - Typeset", "target" : "body" }
+.meta-font {
+  font-family: inherit;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 1.6em;
+}
+
 //tweak: { "type" : "font", "title" : "Quote Font", "category" : "Main - Typeset", "target" : ".quote-block", "showOnlyWhenPresent" : ".quote-block" }
 .quote-font {
   font-family: Georgia, "Times New Roman", serif;
@@ -83,7 +93,7 @@
   line-height: 1.65em;
 }
 
-//tweak: { "type" : "font", "title" : "Normal Text Font", "category" : "Alternate - Typeset", "target" : "body", "loadAllVariants" : "true" }
+//tweak: { "type" : "font", "title" : "Normal Text Font", "category" : "Alternate - Typeset", "target" : "body" }
 .alt-body-font {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
@@ -132,6 +142,16 @@
   font-weight: 500;
   text-transform: uppercase;
   text-decoration: none;  
+}
+
+//tweak: { "type" : "font", "title" : "Meta Font", "category" : "Alternate - Typeset", "target" : "body" }
+.alt-meta-font {
+  font-family: inherit;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 1.6em;
 }
 
 
@@ -184,6 +204,16 @@
   font-weight: 500;
   text-transform: uppercase;
   text-decoration: none;  
+}
+
+//tweak: { "type" : "font", "title" : "Meta Font", "category" : "Banner - Typeset", "target" : "body" }
+.banner-meta-font {
+  font-family: inherit;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 1.6em;
 }
 
 /** Make font mixins responsive */
