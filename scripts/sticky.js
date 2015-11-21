@@ -11,43 +11,31 @@ Y.use('node', function (Y) {
 		},
 
 		init: function() {
-			this.stickyNodes = [];
+			this.stickyNodes = Y.all('[data-sticky]');
 
-			Y.all('[data-sticky]:not([data-sticky="disable"]').each(function(node) {
+			if (this.stickyNodes.size()) {
+				this.stickyNodes.each(function(node) {
 
-				// Config is data-sticky=<mode>-<selector>-<top/bottom>-<underlaid>
-				var config = node.getData('sticky').split('-');
-				config.length && node.setData('mode', config.shift());	
+					// Config is data-sticky=<mode>-<selector>-<top/bottom>-<underlaid>
+					var config = node.getData('sticky').split('-');
+					config.length && node.setData('mode', config.shift());	
 
-				var target = Y.one('#' + config.shift()) || node.get('parentNode');
-				node.setData('elTarget', target);
+					var target = Y.one('#' + config.shift()) || node.get('parentNode');
+					node.setData('elTarget', target);
 
-				target.addClass('js-sticky-target'); // mostly for debugging
+					target.addClass('js-sticky-target'); // mostly for debugging
 
-				// for deciding whether to check viewport crossing from top or bottom
-				node.setData('direction', config.length ? config.shift() : 'top'); // default is top
+					// for deciding whether to check viewport crossing from top or bottom
+					node.setData('direction', config.length ? config.shift() : 'top'); // default is top
 
-				this.wrapItUp(node);
+					this.wrapItUp(node);
 
-				this.stickyNodes.push(node);
 
-			}, this);
-
-			if (this.stickyNodes.length) {
-				console.log('stickyNodes', this.stickyNodes);
+				}, this);
+				
 				this.bindUI();
 				this.syncUI();
 			}
-		},
-
-		destroy: function() {
-			// unwrap
-			// remove sticky classes
-			// unset data
-			this.resizeHandler.detach();
-			this.scrollHandler.detach();
-
-			this.stickyNodes = [];
 		},
 
 		bindUI: function () {
@@ -61,7 +49,7 @@ Y.use('node', function (Y) {
 		syncUI: function () {
 			console.log('sticky sync');
 
-			this.stickyNodes.forEach(function(node) {
+			this.stickyNodes.each(function(node) {
 				var elContainer = node.getData('elContainer');
 				var elWrapper = node.getData('elWrapper');
 
@@ -111,7 +99,7 @@ Y.use('node', function (Y) {
 			this.viewportRegion.top = window.scrollY;
 			this.viewportRegion.bottom = this.viewportRegion.top + this.viewportRegion.height;
 
-			this.stickyNodes.forEach(function(node) {
+			this.stickyNodes.each(function(node) {
 
 				var elContainer = node.getData('elContainer');
 				var elTargetRegion = node.getData('elTargetRegion');
@@ -174,10 +162,8 @@ Y.use('node', function (Y) {
 
 		tweakHandler: function() {
 			Y.Global.on('tweak:save', function (f) {
-				this.destroy();
-				this.init();
-			}, this);
-
+				document.location.reload(true);
+			});
 		}		
 
 	});

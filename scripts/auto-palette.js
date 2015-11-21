@@ -10,15 +10,6 @@ Y.use('node', function (Y) {
 
 		},
 
-		destroy: function() {
-			delete this.paletteNodes;
-			delete this.transparentNodes;
-
-			this.resizeHandler.detach();
-			this.scrollHandler.detach();
-
-		},
-
 		init: function() {
 			this.paletteNodes = Y.all('[data-palette]:not([data-display="overlaid"])');
 			this.transparentNodes = Y.all('[data-display="overlaid"]');
@@ -36,7 +27,7 @@ Y.use('node', function (Y) {
 
 		syncUI: function() {
 			console.log('palette sync');
-			
+
 			// cache region values
 			this.paletteNodes.each(function(node) {
 				var region = node.get('region');
@@ -70,10 +61,8 @@ Y.use('node', function (Y) {
 
 		tweakHandler: function() {
 			Y.Global.on('tweak:save', function (f) {
-				this.destroy();
-				this.init();
-			}, this);
-
+				document.location.reload(true);
+			});
 		}		
 
 

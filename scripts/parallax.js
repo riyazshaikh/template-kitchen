@@ -4,14 +4,21 @@ Y.use('node', function () {
 		ready: function() {
 
 			Y.on('domready', function() {
-				this.bindUI();
-				this.syncUI();
+				this.init();
+				Y.Global && this.tweakHandler();
 			}, this);
 
 		},
 
+		init: function() {
+			this.parallaxNodes = Y.all('[data-parallax]');
+			if (this.parallaxNodes.size()) {
+				this.bindUI();
+				this.syncUI();
+			}
+		},
+
 		syncUI: function() {
-			this.parallaxNodes = Y.all('[data-parallax="enable"]');
 			console.log('parallax sync');
 
 			this.parallaxNodes.each(function(node) {
@@ -45,7 +52,13 @@ Y.use('node', function () {
           node.setStyle('transform', 'translate3d(0,' + imageY + 'px,0)');
         }
       }, this);
-		}
+		},
+
+		tweakHandler: function() {
+			Y.Global.on('tweak:save', function (f) {
+				document.location.reload(true);
+			});
+		}		
 
 	});
 });
