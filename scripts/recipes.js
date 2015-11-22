@@ -35,6 +35,7 @@ RECIPES.alfa = {
 		"Header - Background": "Transparent",
 		"Header  Content - Layout": "Alternate",
 		"Header  Block - Display": "Hide",
+		"Header  Nav - Display": "Auto",
 
 		"Banner - Background": "Transparent",
 		"Banner  Image - Parallax": "Enable",
@@ -44,10 +45,11 @@ RECIPES.alfa = {
 
 		"Page Footer - Palette": "Banner",
 		"Page Footer  Image - Parallax": "Enable",
-		"Page Footer  Content - Layout": "Alternate",
+		"Page Footer  Content - Layout": "Banner",
 		"Page Footer  Content - Sticky": "within-site-bottom",
 		"Page Footer  Blocks - Background": "Translucent",
 
+		"Footer - Display": "Hide",
 	},
 	webfontsJson: [
 		
@@ -83,6 +85,7 @@ RECIPES.bravo = {
 		"Header - Background": "Transparent",
 		"Header  Content - Layout": "Main",
 		"Header  Block - Display": "Hide",
+		"Header  Nav - Display": "Auto",
 
 		"Banner - Background": "Transparent",
 		"Banner  Description - Display": "Overlaid Caption",

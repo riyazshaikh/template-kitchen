@@ -2,9 +2,7 @@ Y.use('squarespace-ui-base', function () {
 	window.helper = Singleton.create({
 
 		ready: function() {
-			// Y.on('domready', function() {
-				this.bindUI();
-			// }, this);
+			this.bindUI();
 		},
 
 
@@ -16,18 +14,8 @@ Y.use('squarespace-ui-base', function () {
 			this.dataTextShrink();
 
 			this.sensor = new ResizeSensor(document.querySelector('#site'), this.imgLoad);
-			this.imgLoad();
+			// this.imgLoad();
 		},
-
-
-		syncUI: function () {
-
-			helper.debounce(function () {
-				helper.imgLoad();
-			});
-
-		},
-
 
 		radioCheckboxes: function (wrapper, checkbox, label) {
 

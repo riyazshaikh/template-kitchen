@@ -91,9 +91,8 @@
 		this.addSelectorListener(selector, function(event) { fn(event); return false; });
 	};
 
-
 	// Set tweak attributes on element selector as available
-	var tweaks = Static.SQUARESPACE_CONTEXT.tweakJSON, parts, key, value, selector, attr;
+	var tweaks = Static.SQUARESPACE_CONTEXT.tweakJSON, parts, key, value, selector, attr, tweakMap = {};
 	for (key in tweaks) {
 		parts = key.split('---');
 		
@@ -105,14 +104,27 @@
 				attr = parts[1]; 
 				value = tweaks[key].toLowerCase().replace(/\s/g,"-");
 
-				document.addSelectorListener(selector, function(selector, attr, value, event) {
-					console.log('adding tweak', selector, attr, value);
-			    event.target.setAttribute('data-' + attr, value);
-			    event.target.style.visibility = 'visible';
-			  }.bind(this, selector, attr, value));	
+			  tweakMap[selector] = window.tweakMap[selector] || {};
+			  tweakMap[selector][attr] = value;
 			}
 		}
 	}
+
+	for(var selector in tweakMap) {
+		document.addSelectorListener(selector, function(dataset, event) {
+			console.log('adding tweaks', event.target, dataset);
+			event.target.dataset = dataset;
+	    event.target.style.visibility = 'visible';
+	  }.bind(this, tweakMap[selector]));	
+	}
+				
+	// to handle edge case where selector-listener has not loaded selectors before domready
+	document.addEventListener("DOMContentLoaded", function(event) {
+		for(var selector in tweakMap) {
+			var el = document.querySelector(selector);
+			el && el.dataset = tweakMap[selector];
+		}
+	});
 
 	// dynamically inject font awesome if needed
 	document.onSelector('.fa', function(event) {
