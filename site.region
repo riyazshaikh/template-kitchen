@@ -31,7 +31,7 @@
 
       <main id="{collection.typeName}" role="main" data-content-field="main-content">
         <div class="content" data-layout="main">
-          <div id="categories">
+          <div id="category-nav">
             {@|apply nav-category.block}
           </div>
           {squarespace.main-content}

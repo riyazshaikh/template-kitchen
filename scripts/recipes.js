@@ -154,7 +154,7 @@ RECIPES.echo = { // product grid - Products
 		"Banner  Blocks  Content - Italic": "Dash",
 		"Banner  Description  Title - Display": "Hide",
 
-		"Categories - Sticky": "Within Site",
+		"Category Nav - Sticky": "Within Site",
 
 		"Product Item Size": "2:3 Standard (Vertical)",
 		"Product Image Auto Crop": "False",
