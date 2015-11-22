@@ -104,7 +104,7 @@
 				attr = parts[1]; 
 				value = tweaks[key].toLowerCase().replace(/\s/g,"-");
 
-			  tweakMap[selector] = window.tweakMap[selector] || {};
+			  tweakMap[selector] = tweakMap[selector] || {};
 			  tweakMap[selector][attr] = value;
 			}
 		}
