@@ -35,6 +35,7 @@
 
       console.log('header init', this.header.offsetHeight);
       // refresh padding on header resize
+      this.resize && this.resize.detach();
       this.resize = new ResizeSensor(this.header, function() {
         console.log('header', this.header.offsetHeight);
         this.stylesheet.removeChild(this.rule);

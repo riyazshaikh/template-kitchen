@@ -6,7 +6,7 @@ RECIPES.default = {
 };
 
 
-RECIPES.alfa = {
+RECIPES.alfa = { // parallax header/footer - regular page
 	tweakJson: {
 		"altContentWidth": "100%",
 		"altSpacingSide": "5%",
@@ -56,7 +56,7 @@ RECIPES.alfa = {
 	]
 };
 
-RECIPES.bravo = {
+RECIPES.bravo = { // sliding gallery - Index
 	tweakJson: {
 		"mainContentWidth": "1200px",
 		"mainSpacingSide": "5%",
@@ -103,7 +103,7 @@ RECIPES.bravo = {
 	]
 };
 
-RECIPES.charlie = {
+RECIPES.charlie = { // scrolling gallery - custom gallery
 	tweakJson: {
 		"main-bgColor": "#fff",
 		"main-textColor": "#323639",
@@ -115,7 +115,6 @@ RECIPES.charlie = {
 		"Header - Sticky": "Within Site",
 		"Header  Content - Layout": "Alternate",
 		"Header  Block - Display": "Hide",
-		"Header  Slidebar - Display": "Always",
 		"Header  Nav - Display": "Hide",
 
 		"Banner - Palette": "Main",
@@ -129,7 +128,7 @@ RECIPES.charlie = {
 	]
 };
 
-RECIPES.delta = {
+RECIPES.delta = { // fixed sliding gallery - Index
 	tweakJson: {
 		"Banner - Display": "Overlaid",
 		"Banner - Background": "Transparent",
@@ -138,6 +137,55 @@ RECIPES.delta = {
 		"Banner  Blocks  Content - Italic": "Highlight",
 
 		"Gallery  Content - Layout": "Banner"
+	},
+	webfontsJson: [
+		
+	]
+};
+
+RECIPES.echo = { // product grid - Products
+	tweakJson: {
+		"Header  Nav - Display": "Hide",
+		
+		"Banner - Background": "Transparent",
+		"Banner - Palette": "Main",
+		"Banner  Blocks  Content - Layout": "Main",
+		"Banner  Blocks  Content - Italic": "Dash",
+
+		"Product  Content - Layout": "Alternate",
+		"Products  Product Meta - Flex": "Space Between"
+	},
+	webfontsJson: [
+		
+	]
+};
+
+RECIPES.foxtrot = { // blog map - Blog
+	tweakJson: {
+	},
+	webfontsJson: [
+		
+	]
+};
+
+RECIPES.golf = { // medium blog - Blog
+	tweakJson: {
+	},
+	webfontsJson: [
+		
+	]
+};
+
+RECIPES.hotel = { // 
+	tweakJson: {
+	},
+	webfontsJson: [
+		
+	]
+};
+
+RECIPES.india = { // support blog - custom Blog
+	tweakJson: {
 	},
 	webfontsJson: [
 		
