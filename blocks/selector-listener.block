@@ -122,7 +122,7 @@
 	document.addEventListener("DOMContentLoaded", function(event) {
 		for(var selector in tweakMap) {
 			var el = document.querySelector(selector);
-			el && el.dataset = tweakMap[selector];
+			if (el) el.dataset = tweakMap[selector];
 		}
 	});
 
