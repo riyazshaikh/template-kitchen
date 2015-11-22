@@ -146,12 +146,18 @@ RECIPES.delta = { // fixed sliding gallery - Index
 RECIPES.echo = { // product grid - Products
 	tweakJson: {
 		"Header  Nav - Display": "Hide",
-		
+		"Header - Palette": "Main",
+
 		"Banner - Background": "Transparent",
 		"Banner - Palette": "Main",
 		"Banner  Blocks  Content - Layout": "Main",
 		"Banner  Blocks  Content - Italic": "Dash",
+		"Banner  Description  Title - Display": "Hide",
 
+		"Categories - Sticky": "Within Site",
+
+		"Product Item Size": "2:3 Standard (Vertical)",
+		"Product Image Auto Crop": "False",
 		"Product  Content - Layout": "Alternate",
 		"Products  Product Meta - Flex": "Space Between"
 	},
