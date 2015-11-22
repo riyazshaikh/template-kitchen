@@ -112,9 +112,11 @@
 
 	for(var selector in tweakMap) {
 		document.addSelectorListener(selector, function(dataset, event) {
-			console.log('adding tweaks', event.target, dataset);
-			event.target.dataset = dataset;
+			for (var attr in dataset) {
+				event.target.setAttribute('data-'+attr, dataset[attr]);
+			}
 	    event.target.style.visibility = 'visible';
+			console.log('added tweaks', event.target, dataset);
 	  }.bind(this, tweakMap[selector]));	
 	}
 				
@@ -122,7 +124,14 @@
 	document.addEventListener("DOMContentLoaded", function(event) {
 		for(var selector in tweakMap) {
 			var el = document.querySelector(selector);
-			if (el) el.dataset = tweakMap[selector];
+			if (!el) continue;
+
+			var dataset = tweakMap[selector];
+			for (var attr in dataset) {
+				el.setAttribute('data-'+attr, dataset[attr]);
+			}
+			el.style.visibility = 'visible';
+			console.log('domready added tweaks', el, dataset);
 		}
 	});
 
