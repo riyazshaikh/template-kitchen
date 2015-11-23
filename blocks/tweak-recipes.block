@@ -1,0 +1,65 @@
+{@|apply selector-listener.block}
+<script>
+(function(){
+	
+	// Merge custom recipes
+	if (window.CUSTOM_RECIPE) {
+		for(var name in window.CUSTOM_RECIPE) {
+			Static.SQUARESPACE_CONTEXT.tweakJSON[name.replace(/\s/g,'-').toLowerCase()] = window.CUSTOM_RECIPE[name];
+		}
+	}
+
+	var tweaks = Static.SQUARESPACE_CONTEXT.tweakJSON, parts, key, value, selector, attr, tweakMap = {};
+	for (key in tweaks) {
+		parts = key.split('---');
+		
+		if ( parts.length > 1 ) { // only for tweaks intended to be set as attributes
+			parts[0] = parts[0].replace(/--/g,' .'); // make double space into class
+
+			if (tweaks[key] !== "") { // skip empty tweak values
+				selector = parts[0].startsWith('#') ? parts[0] : '#' + parts[0]; // allow explicit selectors
+				attr = parts[1]; 
+				value = tweaks[key].toLowerCase().replace(/\s/g,"-");
+
+			  tweakMap[selector] = tweakMap[selector] || {};
+			  tweakMap[selector][attr] = value;
+			}
+		}
+	}
+
+	for(var selector in tweakMap) {
+		/** Set tweak attributes on element selector as available **/
+		document.addSelectorListener(selector, function(dataset, event) {
+			for (var attr in dataset) {
+				event.target.setAttribute('data-'+attr, dataset[attr]);
+			}
+	    event.target.style.visibility = 'visible';
+			console.log('added tweaks', event.target, dataset);
+	  }.bind(this, tweakMap[selector]));	
+	}
+				
+	// to handle edge case where selector-listener has not loaded selectors before domready
+	document.addEventListener("DOMContentLoaded", function(event) {
+		for(var selector in tweakMap) {
+			var el = document.querySelector(selector);
+			if (!el) continue;
+
+			var dataset = tweakMap[selector];
+			for (var attr in dataset) {
+				el.setAttribute('data-'+attr, dataset[attr]);
+			}
+			el.style.visibility = 'visible';
+			console.log('domready added tweaks', el, dataset);
+		}
+	});
+
+	// dynamically inject font awesome if needed
+	document.onSelector('.fa', function(event) {
+		var link = document.createElement('link');
+		link.setAttribute('rel', 'stylesheet');
+		link.setAttribute('href', '//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
+		document.getElementsByTagName('head')[0].appendChild(link);
+	});
+
+})();
+</script>

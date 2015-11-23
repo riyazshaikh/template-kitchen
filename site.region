@@ -6,14 +6,12 @@
 
     <!--Include sqs scripts, meta tags, and user content from the code injection tab.-->
     {squarespace-headers}
-    
     <script>/* Must be below {squarespace-headers} */(function(){var e='ontouchstart'in window||navigator.msMaxTouchPoints;var t=document.documentElement;if(!e&&t){t.className=t.className.replace(/touch-styles/,'')}})()
     </script>
 
-    {@|apply selector-listener.block}
-
     <squarespace:script src="resize-sensor.js" combo="false" />
 
+    {@|apply tweak-recipes.block}
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
 

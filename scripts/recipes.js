@@ -6,7 +6,7 @@ RECIPES.default = {
 };
 
 
-RECIPES.alfa = { // parallax header/footer - regular page
+RECIPES.alfa = { // parallax header/footer - regular page (use as support page)
 	tweakJson: {
 		"altContentWidth": "100%",
 		"altSpacingSide": "5%",
@@ -56,7 +56,7 @@ RECIPES.alfa = { // parallax header/footer - regular page
 	]
 };
 
-RECIPES.bravo = { // sliding gallery - Index
+RECIPES.bravo = { // sliding gallery - Index - 
 	tweakJson: {
 		"mainContentWidth": "1200px",
 		"mainSpacingSide": "5%",
@@ -103,7 +103,7 @@ RECIPES.bravo = { // sliding gallery - Index
 	]
 };
 
-RECIPES.charlie = { // scrolling gallery - custom gallery
+RECIPES.charlie = { // scrolling gallery - custom gallery - Katana
 	tweakJson: {
 		"main-bgColor": "#fff",
 		"main-textColor": "#323639",
@@ -128,7 +128,7 @@ RECIPES.charlie = { // scrolling gallery - custom gallery
 	]
 };
 
-RECIPES.delta = { // fixed sliding gallery - Index
+RECIPES.delta = { // fixed sliding gallery - Index - 
 	tweakJson: {
 		"Banner - Display": "Overlaid",
 		"Banner - Background": "Transparent",
@@ -167,7 +167,7 @@ RECIPES.echo = { // product grid - Products
 	]
 };
 
-RECIPES.foxtrot = { // blog map - Blog
+RECIPES.foxtrot = { // support blog - custom Blog
 	tweakJson: {
 	},
 	webfontsJson: [
@@ -191,7 +191,7 @@ RECIPES.hotel = { //
 	]
 };
 
-RECIPES.india = { // support blog - custom Blog
+RECIPES.india = { // blog map - Blog
 	tweakJson: {
 	},
 	webfontsJson: [
