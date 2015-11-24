@@ -38,9 +38,6 @@ RECIPES.alfa = { // parallax header/footer - regular page (use as support page)
 
 RECIPES.bravo = { // sliding gallery - Index - 
 	tweakJson: {
-		"mainContentWidth": "1200px",
-		"mainSpacingSide": "5%",
-		"mainSpacingTop": "2.5%",
 		"mainMetaWidth": "500px",
 
 		"body-font": "{font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;font-weight:300;line-height:1.5em;}",
@@ -49,17 +46,11 @@ RECIPES.bravo = { // sliding gallery - Index -
 		"banner-body-font": "{font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:24px;font-weight:300;line-height:1.3em;}",
 		"banner-heading1-font": "{font-family:inherit;font-size:40px;font-weight:700;line-height:1.2em;}",
 
-		"main-bgColor": "#fff",
-		"main-textColor": "#333",
 		// "main-linkColor": "#cf3f02",
 		"main-metaColor": "rgba(15,15,15,0.5)",
 
 		"alt-bgColor": "#f5f5f5",
 		"alt-textColor": "#333",
-
-		"banner-bgColor": "rgba(0,0,0,0.5)",
-		"banner-textColor": "rgb(255,255,255)",
-		"banner-metaColor": "rgb(255,255,255,0.5)",
 	},
 	webfontsJson: [
 		"Open+Sans:300,300italic,700normal,700italic,500undefined"
@@ -87,6 +78,7 @@ RECIPES.delta = { // fixed sliding gallery - Index -
 
 RECIPES.echo = { // product grid - Products
 	tweakJson: {
+		"main-bgColor": "#f3efee"
 	},
 	webfontsJson: [
 		
