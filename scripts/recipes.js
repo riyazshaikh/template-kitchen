@@ -60,23 +60,6 @@ RECIPES.bravo = { // sliding gallery - Index -
 		"banner-bgColor": "rgba(0,0,0,0.5)",
 		"banner-textColor": "rgb(255,255,255)",
 		"banner-metaColor": "rgb(255,255,255,0.5)",
-
-		"Header - Display": "Overlaid",
-		"Header - Background": "Transparent",
-		"Header  Content - Layout": "Main",
-		"Header  Block - Display": "Hide",
-		"Header  Nav - Display": "Auto",
-
-		"Banner - Background": "Transparent",
-		"Banner  Description - Display": "Overlaid Caption",
-		"Banner  Description - Background": "Translucent",
-		"Banner  Description  Content - Layout": "Main",
-		"Banner  Description  Content - Align": "Center Left",
-		"Banner  Description  Content - Italic": "Dash",
-		"Banner  Description  Content - Button": "Overlay",
-		"Banner  Description  Content - Button Corner": "Pill",
-
-		"Page  Content - Italic": "Dash"
 	},
 	webfontsJson: [
 		"Open+Sans:300,300italic,700normal,700italic,500undefined"

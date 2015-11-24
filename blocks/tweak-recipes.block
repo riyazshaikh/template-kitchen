@@ -2,13 +2,25 @@
 <script>
 (function(){
 	
-	// Merge custom recipes
-	if (window.CUSTOM_RECIPE) {
-		for(var name in window.CUSTOM_RECIPE) {
-			Static.SQUARESPACE_CONTEXT.tweakJSON[name.replace(/\s/g,'-').toLowerCase()] = window.CUSTOM_RECIPE[name];
+	var collectionType = "{collection.typeName}";
+	var mergeRecipe = function(obj) {
+		if(obj) for(var name in obj) {
+			Static.SQUARESPACE_CONTEXT.tweakJSON[name.replace(/\s/g,'-').toLowerCase()] = obj[name];
 		}
+	};
+
+	// Merge default recipe for this template
+	if (window.RECIPE_DEFAULT) {
+		mergeRecipe(window.RECIPE_DEFAULT['main']);
+		mergeRecipe(window.RECIPE_DEFAULT[collectionType]);
+	} 
+
+	// Merge custom recipes if any defined for this collection instance
+	if (window.RECIPE_CUSTOM) {
+		mergeRecipe(window.RECIPE_CUSTOM);
 	}
 
+	// Attach recipe to dom
 	var tweaks = Static.SQUARESPACE_CONTEXT.tweakJSON, parts, key, value, selector, attr, tweakMap = {};
 	for (key in tweaks) {
 		parts = key.split('---');
