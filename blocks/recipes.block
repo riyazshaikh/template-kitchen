@@ -40,7 +40,7 @@ window.RECIPES = {
 			"Banner  Description  Content - Button": "Overlay",
 			"Banner  Description  Content - Button Corner": "Pill",
 			"Banner  Blocks  Content - Layout": "Main",
-			"Banner  Blocks  Content - Parallax": "Enable"			
+			"Banner  Blocks  Content - Parallax": "Enable",			
 
 			"Page  Content - Italic": "Dash"
 		},
