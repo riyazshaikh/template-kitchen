@@ -49,8 +49,8 @@ RECIPES.bravo = { // sliding gallery - Index -
 		// "main-linkColor": "#cf3f02",
 		"main-metaColor": "rgba(15,15,15,0.5)",
 
-		"alt-bgColor": "#f5f5f5",
-		"alt-textColor": "#333",
+		// "alt-bgColor": "#f5f5f5",
+		// "alt-textColor": "#333",
 	},
 	webfontsJson: [
 		"Open+Sans:300,300italic,700normal,700italic,500undefined"
