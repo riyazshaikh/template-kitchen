@@ -93,6 +93,7 @@ window.RECIPES = {
 		},
 		products: {
 			"Products  Category Nav - Sticky": "Within Site",
+			"Products  Category Nav - Layout": "Main",
 
 			"Products  Content - Layout": "Alternate",
 			"Products - Palette": "Main",
