@@ -50,8 +50,8 @@ RECIPES.bravo = { // sliding gallery - Index -
 		"bannerSpacingTop": "0",
 		"bannerSpacingSide": "5%",
 
-		"altContentWidth": "1100px",
-		"altSpacingTop": "20px",
+		"altContentWidth": "100%",
+		"altSpacingTop": "0",
 		"altSpacingSide": "5%",
 
 
