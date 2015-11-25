@@ -1,9 +1,22 @@
-//tweak: { "type" : "value", "title" : "Logo Container Width", "min" : 50, "max" : 500, "step" : 5, "category" : "Site Header", "target" : "#logoImage", "showOnlyWhenPresent" : "#logoImage", "js": "true" }
+// tweak: { title: "Header - Palette", options: ["Main", "Banner", "Alternate"], default: "Alternate", category: "Header", type: "dropdown", js:true }
+// tweak: { title: "Header - Display", options: ["", "Overlaid"], default: "", category: "Header", type: "dropdown", js:true }
+// tweak: { title: "Header - Background", options: ["", "Solid", "Transparent", "Translucent"], default: "", category: "Header", type: "dropdown", js:true }
+// tweak: { title: "Header - Sticky", options: ["", "Within Site", "After Banner" ], default: "", category: "Header", type: "dropdown", js:true }
+// tweak: { title: "Header  Content - Layout", options: ["Main", "Banner", "Alternate"], default: "Alternate", category: "Header", type: "dropdown", js:true }
+// tweak: { title: "Header - Direction", options: ["", "Reverse"], default: "", category: "Header", type: "dropdown", js:true }
+// tweak: { title: "Header  Block - Display", options: ["", "Hide"], default: "", category: "Header", type: "dropdown", js:true }
+// tweak: { title: "Header  Slidebar - Display", options: ["", "Hide"], default: "", category: "Header", type: "dropdown", js:true }
+// tweak: { title: "Header  Nav - Display", options: ["", "Hide", "Auto"], default: "", category: "Header", type: "dropdown", js:true }
+// tweak: { title: "Header  Nav - Align", options: ["Left", "Right", "Center", "Space Around", "Space Between"], default: "Right", showOnlyWhenPresent: "body:not(.header--nav---display-hide)", category: "Header", type: "dropdown", js:true }
+// tweak: { title: "Header  Nav - Active", options: ["None", "Contrast", "Underline"], default: "Contrast", showOnlyWhenPresent: "body:not(.header--nav---display-hide)", category: "Header", type: "dropdown", js:true }
+
+
+
+//tweak: { "type" : "value", "title" : "Logo Container Width", "min" : 50, "max" : 500, "step" : 5, "category" : "Header", "target" : "#logoImage", "showOnlyWhenPresent" : "#logoImage", "js": "true" }
 @logoContainerWidth: 150px;
 
-//tweak: { "type" : "value", "title" : "Site Title Container Width", "min" : 50, "max" : 500, "step" : 5, "category" : "Site Header", "target" : "#siteTitle", "showOnlyWhenPresent" : "#siteTitle", "js": "true" }
+//tweak: { "type" : "value", "title" : "Title Container Width", "min" : 50, "max" : 500, "step" : 5, "category" : "Header", "target" : "#siteTitle", "showOnlyWhenPresent" : "#siteTitle", "js": "true" }
 @siteTitleContainerWidth: 255px;
-
 
 
 .header {

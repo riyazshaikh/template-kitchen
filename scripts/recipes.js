@@ -40,7 +40,20 @@ RECIPES.bravo = { // sliding gallery - Index -
 	tweakJson: {
 		"mainMetaWidth": "47%",
 		"mainSpacingTop": "20px",
-		"logoContainerWidth": "60px",
+		"logoContainerWidth": "70px",
+
+		"mainContentWidth": "100%",
+		"mainSpacingTop": "5%",
+		"mainSpacingSide": "5%",
+
+		"bannerContentWidth": "1100px",
+		"bannerSpacingTop": "0",
+		"bannerSpacingSide": "5%",
+
+		"altContentWidth": "1100px";
+		"altSpacingTop": "20px",
+		"altSpacingSide": "5%",
+
 
 		"body-font": "{font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;font-weight:300;line-height:1.5em;}",
 		"heading2-font": "{font-family:inherit;font-size:36px;font-weight:700;line-height:1.2em;}",

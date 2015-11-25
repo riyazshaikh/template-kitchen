@@ -29,19 +29,24 @@ window.RECIPES = {
 			"Header - Background": "Transparent",
 			"Header - Display": "Overlaid",
 			"Header  Content - Layout": "Alternate",
-			"Header  Block - Display": "Hide",
 			"Header  Nav - Display": "Auto",
 
+	    "Banner - Palette": "Main",
 			"Banner - Background": "Transparent",
 			"Banner  Description - Display": "Overlaid Caption",
+			"Banner  Description  Content - Layout": "Banner",
 			"Banner  Description  Content - Align": "Center Left",
 			"Banner  Description  Content - Italic": "Dash",
-			"Banner  Description  Content - Button": "Overlay",
+			"Banner  Description  Content - Button": "Solid",
 			"Banner  Description  Content - Button Corner": "Pill",
-			"Banner  Blocks  Content - Layout": "Main",
+			"Banner  Blocks  Content - Layout": "Banner",
 			"Banner  Blocks  Content - Parallax": "Enable",			
 
 			"Page  Content - Italic": "Dash"
+	    "Page - Palette": "Alternate",
+
+	    "Footer - Palette": "Main",
+	    "Footer  Content - Layout": "Alternate"
 		},
 
 	},
