@@ -97,7 +97,8 @@ window.RECIPES = {
 
 			"Products  Content - Layout": "Alternate",
 			"Products - Palette": "Main",
-			"Products  Product Meta - Flex": "Space Between"
+			"Products  Product Meta - Flex": "Space Between",
+			"Products  Product Image - Effect": "Pop"
 		}
 
 	}

@@ -1,7 +1,5 @@
-// tweak: { title: "Products  Product Meta - Flex", options: ["", "Left", "Right", "Center", "Space Around", "Space Between"], showOnlyWhenPresent: "#products .product-meta", category: "Products", type: "dropdown", js:true }
 
-
-.product-image {
+[data-effect=pop] {
 	margin-bottom: 1em;
 	box-shadow: fade(@main-textColor, 14%) 0px 0px 3px;
 
@@ -10,5 +8,9 @@
 	img { opacity: 1 !important; }
 	&:hover {
 		.transform(scale(1.03));
+	}
+
+	.product-title {
+		font-size: 19px;
 	}
 }
