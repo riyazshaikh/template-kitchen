@@ -38,7 +38,7 @@ RECIPES.alfa = { // parallax header/footer - regular page (use as support page)
 
 RECIPES.bravo = { // sliding gallery - Index - 
 	tweakJson: {
-		"mainMetaWidth": "45%",
+		"mainMetaWidth": "47%",
 		"mainSpacingTop": "20px",
 		"logoContainerWidth": "60px",
 
