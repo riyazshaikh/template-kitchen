@@ -42,7 +42,7 @@ window.RECIPES = {
 			"Banner  Blocks  Content - Layout": "Banner",
 			"Banner  Blocks  Content - Parallax": "Enable",			
 
-			"Page  Content - Italic": "Dash"
+			"Page  Content - Italic": "Dash",
 	    "Page - Palette": "Alternate",
 
 	    "Footer - Palette": "Main",
