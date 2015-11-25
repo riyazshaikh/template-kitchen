@@ -1,1 +1,19 @@
 // tweak: { title: "Products  Product Meta - Flex", options: ["", "Left", "Right", "Center", "Space Around", "Space Between"], showOnlyWhenPresent: "#products .product-meta", category: "Products", type: "dropdown", js:true }
+
+
+.product-image {
+	margin-bottom: 1em;
+	img {
+		box-shadow: fade(@main-textColor, 14%) 0px 0px 3px;
+
+		&.loading {
+			border-top: 1px solid @main-textColor;
+			box-shadow: fade(@main-textColor, 14%) 0px 0px 1px;
+		}
+	}
+
+	.transition(transform 0.2s ease-out);
+	&:hover {
+		.transform(scale(1.03));
+	}
+}

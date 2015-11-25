@@ -157,6 +157,7 @@ Y.use('squarespace-util', function(Y) {
 	        },
 	        success: function() {
 	        	alert('Recipe ' + mode.toUpperCase() + ' applied!');
+	        	document.location.reload(true);
 	        }
 	});
 });
