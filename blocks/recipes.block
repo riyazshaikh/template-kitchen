@@ -34,7 +34,6 @@ window.RECIPES = {
 
 			"Banner - Background": "Transparent",
 			"Banner  Description - Display": "Overlaid Caption",
-			"Banner  Description  Content - Layout": "Main",
 			"Banner  Description  Content - Align": "Center Left",
 			"Banner  Description  Content - Italic": "Dash",
 			"Banner  Description  Content - Button": "Overlay",
