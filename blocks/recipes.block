@@ -94,8 +94,6 @@ window.RECIPES = {
 		products: {
 			"Products  Category Nav - Sticky": "Within Site",
 
-			"Product Item Size": "2:3 Standard (Vertical)",
-			"Product Image Auto Crop": "False",
 			"Products  Content - Layout": "Alternate",
 			"Products  Product Meta - Flex": "Space Between"
 		}
