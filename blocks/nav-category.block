@@ -1,12 +1,12 @@
 	{.section collection}
 		{.section categories}
-    <div class="category-nav" data-background="solid" data-align="center">
+    <div class="category-nav" data-background="solid" data-align="center" data-active="underline">
 			<nav class="navigation" role="navigation">
-				<div class="{.if categoryFilter}{.or} active-link{.end}">
+				<div class="{.if categoryFilter}{.or} active{.end}">
 					<a href="{fullUrl}">All</a>
 				</div>
 				{.repeated section @}
-				<div class="{.equal? categoryFilter @} active-link{.end}">
+				<div class="{.equal? categoryFilter @} active{.end}">
 						<a href="{fullUrl}?category={@|url-encode}">{@}</a>
 				</div>
 				{.end}
