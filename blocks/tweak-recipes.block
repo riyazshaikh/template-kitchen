@@ -2,7 +2,7 @@
 <script>
 (function(){
 	
-	var collectionType = "{collection.typeName}";
+	var collectionType = "{collection.typeName}" + (Static.SQUARESPACE_CONTEXT.item ? '-item': '');
 	var mergeRecipe = function(obj) {
 		if(obj) for(var name in obj) {
 			Static.SQUARESPACE_CONTEXT.tweakJSON[name.replace(/\s/g,'-').toLowerCase()] = obj[name];

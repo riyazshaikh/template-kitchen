@@ -99,7 +99,13 @@ window.RECIPES = {
 			"Products - Palette": "Main",
 			"Products  Product Meta - Flex": "Space Between",
 			"Products  Product Image - Effect": "Pop"
+		},
+		'products-item': {
+			"Products  Category Nav - Display": "Hide",
+			"Products  Content - Layout": "Main",
+			"Products  Banner - Display": "Hide"
 		}
+
 
 	}
 };
