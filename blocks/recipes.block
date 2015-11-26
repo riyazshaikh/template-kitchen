@@ -102,8 +102,8 @@ window.RECIPES = {
 		},
 		'products-item': {
 			"Products  Category Nav - Display": "Hide",
-			"Products  Content - Layout": "Main",
-			"Products  Banner - Display": "Hide"
+			"Products  Content - Layout": "Alternate",
+			"Banner - Display": "Hide"
 		}
 
 
