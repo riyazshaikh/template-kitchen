@@ -69,7 +69,9 @@ window.RECIPES = {
 			"Banner  Image - Parallax": "Enable",
 			"Banner  Description - Display": "Hide",
 			"Banner  Blocks  Content - Layout Width": "Main",
-			"Banner  Blocks  Content - Parallax": "Enable"			
+			"Banner  Blocks  Content - Parallax": "Enable",
+
+			"Gallery Scroll  Content - Layout Width", "Main"			
 		},
 	},
 	delta: {

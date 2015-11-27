@@ -24,13 +24,17 @@
 	// Attach recipe to dom
 	var tweaks = Static.SQUARESPACE_CONTEXT.tweakJSON, parts, key, value, selector, attr, tweakMap = {};
 	for (key in tweaks) {
-		parts = key.split('---');
+		parts = key.split('---'); // attribute marker
 		
 		if ( parts.length > 1 ) { // only for tweaks intended to be set as attributes
-			parts[0] = parts[0].replace(/--/g,' .'); // make double space into class
 
 			if (tweaks[key] !== "") { // skip empty tweak values
-				selector = parts[0].startsWith('#') ? parts[0] : '#' + parts[0]; // allow explicit selectors
+
+				if (parts[0].charAt(0) == '#') { // allow explicit selectors
+					selector = parts[0];
+				} else {
+					selector = '#' + parts[0].replace(/--/g,' .'); // convert double space into class selector
+				}
 				attr = parts[1]; 
 				value = tweaks[key].toLowerCase().replace(/\s/g,"-");
 
