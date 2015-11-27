@@ -1,4 +1,4 @@
-<div class="footer content">
+<div class="footer content" data-layout-width="main">
   <div class="nav" data-content-field="navigation-secondaryNav" data-folder="dropup" data-align>
     <squarespace:navigation navigationId="secondaryNav" template="navigation"/>
   </div>
