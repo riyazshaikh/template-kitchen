@@ -1,5 +1,5 @@
 /* Layout variables */
-@altSpacing: 35px;
+@altSpacing: 30px;
 @mainSpacing: 5%;
 
 // tweak: { category: 'Main - Layout', "title" : "Content Width", "type" : "value", "target" : "#content" }
@@ -65,36 +65,47 @@
   margin: auto;
 }
 
+
+/** New Layout **/
 [data-layout-width=main] {
   width: @mainContentWidth;
+  .border-box;
   max-width: 100%;
   margin: auto; /* default is center */
+  padding: @mainSpacing; /* default is mainSpacing */
 }
 
 [data-layout-width=meta] {
   width: @mainMetaWidth;
+  .border-box;
   max-width: 100%;
   margin: auto; /* default is center */
+  padding: @mainSpacing; /* default is mainSpacing */
 }
 
-[data-layout-spacing=standard] {
-  .border-box;
+[data-layout-spacing=main] {
   padding: @mainSpacing;
 }
 
+[data-layout-spacing=none] {
+  padding: 0;
+}
+
 [data-layout-spacing=alternate] {
-  .border-box;
   padding: @altSpacing;
 }
 
 [data-layout-spacing=mixed] {
-  .border-box;
   padding: @altSpacing @mainSpacing;
 }
 
 [data-layout-spacing=sides] {
   .border-box;
   padding: 0 @mainSpacing;
+}
+
+[data-layout-align=center] {
+  margin: auto;
 }
 
 [data-layout-align=left] {

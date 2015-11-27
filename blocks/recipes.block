@@ -4,7 +4,7 @@ window.RECIPES = {
 		main: {
   		"Header - Display": "Overlaid",
 			"Header - Background": "Transparent",
-			"Header  Content - Layout": "Alternate",
+			"Header  Content - Layout Spacing": "Mixed",
 			"Header  Block - Display": "Hide",
 			"Header  Nav - Display": "Auto",
 
@@ -12,11 +12,11 @@ window.RECIPES = {
 			"Banner  Image - Parallax": "Enable",
 			"Banner  Description - Display": "Hide",
 			"Banner  Blocks - Background": "Translucent",
-			"Banner  Blocks  Content - Layout": "Banner",
+			"Banner  Blocks  Content - Layout Spacing": "Main",
 
 			"Page Footer - Palette": "Banner",
 			"Page Footer  Image - Parallax": "Enable",
-			"Page Footer  Content - Layout": "Banner",
+			"Page Footer  Content - Layout Spacing": "Main",
 			"Page Footer  Content - Sticky": "within-site-bottom",
 			"Page Footer  Blocks - Background": "Translucent",
 
@@ -28,25 +28,27 @@ window.RECIPES = {
 			"Header - Palette": "Main",
 			"Header - Background": "Transparent",
 			"Header - Display": "Overlaid",
-			"Header  Content - Layout": "Alternate",
+			"Header  Content - Layout Spacing": "Mixed",
 			"Header  Nav - Display": "Auto",
 
 	    "Banner - Palette": "Main",
 			"Banner - Background": "Transparent",
 			"Banner  Description - Display": "Overlaid Caption",
-			"Banner  Description  Content - Layout": "Banner",
+			"Banner  Description  Content - Layout Width": "Main",
+			"Banner  Description  Content - Layout Spacing": "Sides",
 			"Banner  Description  Content - Align": "Center Left",
 			"Banner  Description  Content - Italic": "Dash",
 			"Banner  Description  Content - Button": "Solid",
 			"Banner  Description  Content - Button Corner": "Pill",
-			"Banner  Blocks  Content - Layout": "Banner",
+			"Banner  Blocks  Content - Layout Width": "Main",
+			"Banner  Blocks  Content - Layout Spacing": "Sides",
 			"Banner  Blocks  Content - Parallax": "Enable",			
 
 			"Page  Content - Italic": "Dash",
 	    "Page - Palette": "Alternate",
 
 	    "Footer - Palette": "Main",
-	    "Footer  Content - Layout": "Alternate"
+	    "Footer  Content - Layout Spacing": "Mixed"
 		},
 
 	},
@@ -56,14 +58,14 @@ window.RECIPES = {
 			"Header - Background": "Transparent",
 			"Header - Display": "Overlaid",
 			"Header - Sticky": "Within Site",
-			"Header  Content - Layout": "Alternate",
+			"Header  Content - Layout Spacing": "Mixed",
 			"Header  Block - Display": "Hide",
 			"Header  Nav - Display": "Hide",
 
 			"Banner - Palette": "Main",
 			"Banner  Image - Parallax": "Enable",
 			"Banner  Description - Display": "Hide",
-			"Banner  Blocks  Content - Layout": "Main",
+			"Banner  Blocks  Content - Layout Width": "Main",
 			"Banner  Blocks  Content - Parallax": "Enable"			
 		},
 	},
@@ -72,11 +74,10 @@ window.RECIPES = {
   		"Banner - Display": "Overlaid",
 			"Banner - Background": "Transparent",
 			"Banner - Palette": "Main",
-			"Banner  Blocks  Content - Layout": "Main",
+			"Banner  Blocks  Content - Layout Width": "Main",
 			"Banner  Blocks  Content - Italic": "Highlight",
 		},
 		gallery: {
-			"Gallery  Content - Layout": "Banner"
 		}
 	},
 	echo: {
@@ -89,7 +90,6 @@ window.RECIPES = {
 			"Banner - Background": "Transparent",
 			"Banner - Palette": "Main",
 			"Banner  Blocks  Content - Layout Width": "Main",
-			"Banner  Blocks  Content - Layout Spacing": "Standard",
 			"Banner  Blocks  Content - Italic": "Dash",
 			"Banner  Description  Title - Display": "Hide",
 
