@@ -12,8 +12,8 @@
 	}
 }
 
-[data-intrinsic=cinema] {
-	background-image: url(/assets/white-devices-noscreen-cinema.webp);		
+[data-intrinsic=desktop] {
+	background-image: url(/assets/desktop.png);		
   background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 50%;
@@ -30,3 +30,38 @@
 	}
 }
 
+[data-intrinsic=phone] {
+	background-image: url(/assets/phone.png);		
+  background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	padding-bottom: 188%; 
+
+	position: relative;
+	> :first-child {
+		position: absolute;
+		overflow: hidden;
+		top: 28.9%;
+		bottom: 28.9%;
+    left: 4.5%;
+    right: 4.5%;
+	}
+}
+
+[data-intrinsic=tablet] {
+	background-image: url(/assets/tablet.png);		
+  background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	padding-bottom: 140%; 
+
+	position: relative;
+	> :first-child {
+		position: absolute;
+		overflow: hidden;
+		top: 28.9%;
+		bottom: 28.9%;
+    left: 4.5%;
+    right: 4.5%;
+	}
+}
