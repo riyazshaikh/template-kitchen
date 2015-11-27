@@ -1,5 +1,5 @@
 /* Layout variables */
-@minSpacing: 20px;
+@altSpacing: 35px;
 @mainSpacing: 5%;
 
 // tweak: { category: 'Main - Layout', "title" : "Content Width", "type" : "value", "target" : "#content" }
@@ -82,14 +82,19 @@
   padding: @mainSpacing;
 }
 
-[data-layout-spacing=minimal] {
+[data-layout-spacing=alternate] {
   .border-box;
-  padding: @minSpacing;
+  padding: @altSpacing;
 }
 
 [data-layout-spacing=mixed] {
   .border-box;
-  padding: @minSpacing @mainSpacing;
+  padding: @altSpacing @mainSpacing;
+}
+
+[data-layout-spacing=sides] {
+  .border-box;
+  padding: 0 @mainSpacing;
 }
 
 [data-layout-align=left] {
