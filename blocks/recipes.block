@@ -5,7 +5,7 @@ window.RECIPES = {
   		"Header - Display": "Overlaid",
 			"Header - Background": "Transparent",
 			"Header  Content - Layout Spacing": "Mixed",
-			"Header  Slidebar Nav - Layout Spacing": "Mixed",
+			"Slidebar Nav - Layout Spacing": "Mixed",
 			"Header  Block - Display": "Hide",
 			"Header  Nav - Display": "Auto",
 
@@ -30,7 +30,7 @@ window.RECIPES = {
 			"Header - Background": "Transparent",
 			"Header - Display": "Overlaid",
 			"Header  Content - Layout Spacing": "Mixed",
-			"Header  Slidebar Nav - Layout Spacing": "Mixed",
+			"Slidebar Nav - Layout Spacing": "Mixed",
 			"Header  Nav - Display": "Auto",
 
 	    "Banner - Palette": "Main",
@@ -61,7 +61,7 @@ window.RECIPES = {
 			"Header - Display": "Overlaid",
 			"Header - Sticky": "Within Site",
 			"Header  Content - Layout Spacing": "Mixed",
-			"Header  Slidebar Nav - Layout Spacing": "Mixed",
+			"Slidebar Nav - Layout Spacing": "Mixed",
 			"Header  Block - Display": "Hide",
 			"Header  Nav - Display": "Hide",
 
@@ -76,7 +76,7 @@ window.RECIPES = {
 		main: {
 			"Header  Nav - Display": "Auto",
 			"Header  Content - Layout Spacing": "Mixed",
-			"Header  Slidebar Nav - Layout Spacing": "Mixed",
+			"Slidebar Nav - Layout Spacing": "Mixed",
 
   		"Banner - Display": "Overlaid",
 			"Banner - Background": "Transparent",
@@ -92,7 +92,7 @@ window.RECIPES = {
   		"Header  Nav - Display": "Hide",
 			"Header - Palette": "Main",
 			"Header  Content - Layout Spacing": "Mixed",
-			"Header  Slidebar Nav - Layout Spacing": "Mixed",
+			"Slidebar Nav - Layout Spacing": "Mixed",
 		},
 		products: {
 			"Banner - Background": "Transparent",
