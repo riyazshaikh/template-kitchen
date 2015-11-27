@@ -71,7 +71,7 @@ window.RECIPES = {
 			"Banner  Blocks  Content - Layout Width": "Main",
 			"Banner  Blocks  Content - Parallax": "Enable",
 
-			"Gallery Scroll  Content - Layout Width", "Main"			
+			"Gallery Scroll  Content - Layout Width": "Main"			
 		},
 	},
 	delta: {

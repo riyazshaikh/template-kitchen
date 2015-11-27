@@ -68,6 +68,15 @@
 			el.style.visibility = 'visible';
 			console.log('domready added tweaks', el, dataset);
 		}
+
+		// also make links goto correct recipe (if applicable)
+		var recipe = window.location.search.split('recipe=')[1];
+		if (recipe) {
+			var nodes = document.querySelectorAll('a[href^="/"]')
+			for(var i=0; i<nodes.length; i++) {
+				nodes[i].setAttribute('href', nodes[i].getAttribute('href') + '?recipe=' + recipe);
+			}
+		}
 	});
 
 	// dynamically inject font awesome if needed
