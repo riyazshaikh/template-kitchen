@@ -10,7 +10,7 @@
 
             
             {.if title || body}
-            <div class="slide-meta" data-layout=main>
+            <div class="slide-meta" data-layout-width=main>
               <div class="meta-inside">
                 <p class="meta-title"><strong>{title}</strong></p>              
                 <div class="meta-description">{body}</div>

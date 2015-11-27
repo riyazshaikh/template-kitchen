@@ -1,6 +1,5 @@
 #slidebar-nav {
   position: fixed;
-  .border-box;
   width: 260px;
   z-index: -1;
   top: 0;
@@ -12,9 +11,8 @@
   overflow: auto;
   visibility: hidden;
 
-  [data-layout=main] & { padding: @mainSpacingTop @mainSpacingSide; }
-  [data-layout=alternate] & { padding: @altSpacingTop @altSpacingSide; }
-  [data-layout=banner] & { padding: @bannerSpacingTop @bannerSpacingSide; }
+  .border-box;
+  padding: @mainSpacing; /* default */
 
   .colors(@textColor, @bgColor) {
     .background-color(@textColor);
