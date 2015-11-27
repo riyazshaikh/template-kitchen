@@ -10,10 +10,10 @@
 	};
 
 	// Merge default recipe for this template
-	window.RECIPE_DEFAULT = window.RECIPE_DEFAULT || window.location.search.split('recipe=')[1];
-	if (window.RECIPE_DEFAULT) {
-		mergeRecipe(window.RECIPE_DEFAULT['main']);
-		mergeRecipe(window.RECIPE_DEFAULT[collectionType]);
+	window.RECIPE_NAME = window.RECIPE_NAME || window.location.search.split('recipe=')[1];
+	if (window.RECIPE_NAME && window.RECIPES[RECIPE_NAME]) {
+		mergeRecipe(window.RECIPES[RECIPE_NAME]['main']);
+		mergeRecipe(window.RECIPES[RECIPE_NAME][collectionType]);
 	} 
 
 	// Merge custom recipes if any defined for this collection instance
