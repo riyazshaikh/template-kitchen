@@ -74,7 +74,7 @@ window.RECIPES = {
   		"Banner - Display": "Overlaid",
 			"Banner - Background": "Transparent",
 			"Banner - Palette": "Main",
-			"Banner  Blocks  Content - Layout Width": "Main",
+			"Banner  Blocks  Content - Layout Spacing": "Main",
 			"Banner  Blocks  Content - Italic": "Highlight",
 		},
 		gallery: {

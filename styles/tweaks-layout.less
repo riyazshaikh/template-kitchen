@@ -66,7 +66,7 @@
 }
 
 
-/** New Layout **/
+/* Default layout width is 100% */
 [data-layout-width=main] {
   width: @mainContentWidth;
   .border-box;
@@ -85,6 +85,7 @@
 
 [data-layout-spacing=main] {
   padding: @mainSpacing;
+  .border-box;
 }
 
 [data-layout-spacing=none] {
@@ -93,15 +94,17 @@
 
 [data-layout-spacing=alternate] {
   padding: @altSpacing;
+  .border-box;
 }
 
 [data-layout-spacing=mixed] {
   padding: @altSpacing @mainSpacing;
+  .border-box;
 }
 
 [data-layout-spacing=sides] {
-  .border-box;
   padding: 0 @mainSpacing;
+  .border-box;
 }
 
 [data-layout-align=center] {
