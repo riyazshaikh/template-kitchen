@@ -17,7 +17,7 @@ window.RECIPES = {
 			"Page Footer - Palette": "Banner",
 			"Page Footer  Image - Parallax": "Enable",
 			"Page Footer  Content - Layout Spacing": "Main",
-			"Page Footer  Content - Sticky": "within-site-bottom",
+			"Page Footer  Content - Sticky": "Within Site Bottom",
 			"Page Footer  Blocks - Background": "Translucent",
 
 			"Footer - Display": "Hide",
