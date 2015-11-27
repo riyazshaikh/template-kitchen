@@ -68,11 +68,13 @@
 [data-layout-width=main] {
   width: @mainContentWidth;
   max-width: 100%;
+  margin: auto; /* default is center */
 }
 
 [data-layout-width=meta] {
   width: @mainMetaWidth;
   max-width: 100%;
+  margin: auto; /* default is center */
 }
 
 [data-layout-spacing=standard] {
@@ -90,12 +92,12 @@
   padding: @minSpacing @mainSpacing;
 }
 
-[data-layout-align=center] {
-  margin: auto;
+[data-layout-align=left] {
+  margin-left: 0;
 }
 
-[data-layout-align=right] { /* default is left */
-  margin-left: auto;
+[data-layout-align=right] {
+  margin-right: 0;
 }
 
 .layout-meta() {

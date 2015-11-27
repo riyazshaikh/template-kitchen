@@ -89,6 +89,7 @@ window.RECIPES = {
 			"Banner - Background": "Transparent",
 			"Banner - Palette": "Main",
 			"Banner  Blocks  Content - Layout Width": "Main",
+			"Banner  Blocks  Content - Layout Spacing": "Standard",
 			"Banner  Blocks  Content - Italic": "Dash",
 			"Banner  Description  Title - Display": "Hide",
 

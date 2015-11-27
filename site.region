@@ -30,9 +30,8 @@
       </div>
 
       <main id="{collection.typeName}" role="main" data-palette="main" data-content-field="main-content">
+        {@|apply nav-category.block}
         <div class="content">
-          {@|apply nav-category.block}
-
           {squarespace.main-content}
         </div>
       </main>
