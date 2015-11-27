@@ -10,6 +10,7 @@
 	};
 
 	// Merge default recipe for this template
+	window.RECIPE_DEFAULT = window.RECIPE_DEFAULT || window.location.search.split('recipe=')[1];
 	if (window.RECIPE_DEFAULT) {
 		mergeRecipe(window.RECIPE_DEFAULT['main']);
 		mergeRecipe(window.RECIPE_DEFAULT[collectionType]);
