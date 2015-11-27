@@ -95,7 +95,6 @@ RECIPES.delta = { // fixed sliding gallery - Index -
 RECIPES.echo = { // product grid - Products
 	tweakJson: {
 		"main-bgColor": "#f3efee",
-		"mainSpacingTop": "20px",
 		"main-metaColor": "#767676",
 
 		"body-font": "{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;line-height:1.5em;}",
