@@ -31,43 +31,46 @@
 </div>
 
 <script>
-var parent = document.currentScript.parentNode;
+(function(){
 
-Y.use('squarespace-gallery-ng', function (Y) {
-  
-  window.Galleries = window.Galleries || {}; // to store references;
+  var parent = document.currentScript.parentNode;
 
-  window.Galleries[parent.id] = Singleton.create({
+  Y.use('squarespace-gallery-ng', function (Y) {
+    
+    window.Galleries = window.Galleries || {}; // to store references;
 
-    ready: function() {
-      this.parentEl = Y.one(parent);
-      Y.on('domready', this.init, this)
-    },
+    window.Galleries[parent.id] = Singleton.create({
 
-    init: function() {
-      this.gallery = new Y.Squarespace.Gallery2({       
-          container: this.parentEl.one('.sqs-gallery'),
-          slides: this.parentEl.all('.slide'),
-          elements: {
-            next: this.parentEl.one('.sqs-gallery-controls .next'),
-            previous: this.parentEl.one('.sqs-gallery-controls .previous')
-          },
-          loaderOptions: {
-            load: true
-          },
-          design: 'stacked',
-          designOptions: {
-            autoHeight: false,
-            transition: 'scroll'
-          },
-          refreshOnResize: true
-      });   
-    },
+      ready: function() {
+        this.parentEl = Y.one(parent);
+        Y.on('domready', this.init, this)
+      },
 
-    destroy: function() {
-      this.gallery.destroy();
-    },
+      init: function() {
+        this.gallery = new Y.Squarespace.Gallery2({       
+            container: this.parentEl.one('.sqs-gallery'),
+            slides: this.parentEl.all('.slide'),
+            elements: {
+              next: this.parentEl.one('.sqs-gallery-controls .next'),
+              previous: this.parentEl.one('.sqs-gallery-controls .previous')
+            },
+            loaderOptions: {
+              load: true
+            },
+            design: 'stacked',
+            designOptions: {
+              autoHeight: false,
+              transition: 'scroll'
+            },
+            refreshOnResize: true
+        });   
+      },
 
+      destroy: function() {
+        this.gallery.destroy();
+      },
+
+    });
   });
-});
+})();
 </script>
