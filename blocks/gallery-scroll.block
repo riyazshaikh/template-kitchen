@@ -1,30 +1,28 @@
 <div class="gallery-scroll">
-  <div class="content">
-    <div class="sticky-container" data-sticky="within" data-background="normal">
-      <div class="background" data-intrinsic="cinema">
-        <div class="foreground">    
-          <div class="sqs-gallery sqs-gallery-design-stacked">
-          {.repeated section items}        
-              <div class="slide content-fill" data-type="image" data-slide-id="{id}">
-                {.main-image?}
-                <img {@|image-meta color-data} class="loading" data-load="false" />
-                {.end}
-              </div>
-          {.end}    
-          </div>
+  <div class="sticky-container" data-sticky="within" data-background="normal">
+    <div class="background" data-intrinsic="cinema">
+      <div class="foreground">    
+        <div class="sqs-gallery sqs-gallery-design-stacked">
+        {.repeated section items}        
+            <div class="slide content-fill" data-type="image" data-slide-id="{id}">
+              {.main-image?}
+              <img {@|image-meta color-data} class="loading" data-load="false" />
+              {.end}
+            </div>
+        {.end}    
         </div>
       </div>
     </div>
-    <div class="gallery-meta">
-    {.repeated section items}       
-      <div class="meta">
-        <div class="meta-inside">
-          <p class="meta-title"><strong>{title}</strong></p>              
-          <div class="meta-description">{body}</div>
-        </div>
+  </div>
+  <div class="gallery-meta">
+  {.repeated section items}       
+    <div class="meta">
+      <div class="meta-inside">
+        <p class="meta-title"><strong>{title}</strong></p>              
+        <div class="meta-description">{body}</div>
       </div>
-    {.end}    
     </div>
+  {.end}    
   </div>
 </div>
 
