@@ -29,7 +29,7 @@
 <script>
 var parent = document.currentScript.parentNode;
 
-Y.use('squarespace-gallery-ng', function (Y) {
+Y.use('node', function (Y) {
   
   window.Galleries = window.Galleries || {}; // to store references;
 
