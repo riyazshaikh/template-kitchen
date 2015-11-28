@@ -3,22 +3,15 @@
   <div class="sticky-container" data-sticky="within" data-background="normal" data-intrinsic="desktop">
     <div class="background">
       <div class="foreground content-fill">   
-			  <a class="preview-link" target=_blank href="//{urlId}.squarespace.com">
-			    <div class="demo-overlay">
-					  <div class="demo-overlay__table">
-					    <div class="demo-overlay__inner">
-					      <span class="demo-overlay__button">View demo</span>
-					    </div>
-					  </div>
-					</div>
-			  </a>
-				{.main-image?}
-					<img {@|image-meta} data-load="true" class="loading" />
+			  {.section items.2}
+					{.image?}
+						<img {@|image-meta} data-load="true" class="loading" />
+					{.end}
 				{.end}
       </div>
     </div>
   </div>
-  <div class="product-meta" data-layout-width="meta" data-layout-align="right">
+  <div class="product-meta" data-layout-width="meta" data-layout-align="left">
     <h1 class="product-title" data-content-field="title">{title}</h1>
 
     <div class="price-demo">
@@ -65,7 +58,7 @@
 
 	  	{@|apply dynamic-summary.block}
 	  </div>
-		  
+
 	</div>
 </div>
 {.end}
