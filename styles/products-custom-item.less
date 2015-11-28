@@ -163,8 +163,9 @@
 }*/
 
 .products-custom {
+	position: relative;
+	
 	.sticky-container {
-		.viewport-center;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -172,6 +173,14 @@
 		[data-meta-align=right] & {
 			left: @mainMetaWidth;
 			right: 0;
+		}
+	}
+
+	.product-meta {
+		@media screen and (max-width: 640px) {
+			width: 100%;
+			padding-top: 75vh;
+			margin: 0;
 		}
 	}
 

@@ -10,6 +10,33 @@
 				{.end}
       </div>
     </div>
+
+    <div class="overlap-container" data-display="overlaid-caption" data-align="bottom">
+      <div class="overlap-inner">
+		    <div data-intrinsic="tablet">
+			    <div class="background">
+			      <div class="foreground content-fill">   
+						  {.repeated section items}
+							  {.equal? @index 1}
+									<img {@|image-meta} data-load="true" class="loading" />
+							  {.end}
+							{.end}
+			      </div>
+			    </div>
+		    </div>
+		    <div data-intrinsic="phone">
+			    <div class="background">
+			      <div class="foreground content-fill">   
+						  {.repeated section items}
+							  {.equal? @index 3}
+									<img {@|image-meta} data-load="true" class="loading" />
+							  {.end}
+							{.end}
+			      </div>
+			    </div>
+		    </div>
+		   </div>
+    </div>
   </div>
   <div class="product-meta" data-layout-width="meta" data-layout-align="left">
     <h1 class="product-title" data-content-field="title">{title}</h1>

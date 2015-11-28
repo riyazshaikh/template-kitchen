@@ -96,12 +96,12 @@ RECIPES.echo = { // product grid - Products
 	tweakJson: {
 		"main-bgColor": "#f3efee",
 		"main-metaColor": "#767676",
+		"mainMetaWidth": "45%",
 
 		"body-font": "{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;line-height:1.5em;}",
 		"heading1-font": "{font-family:'Brandon',Helvetica,Arial,sans-serif;font-size:42px;font-weight:500;line-height:1.3em;}",
 		"heading2-font": "{font-family:'Brandon',Helvetica,Arial,sans-serif;font-size:24px;font-weight:500;line-height:1.3em;}",
 		"heading3-font": "{font-family:'Brandon',Helvetica,Arial,sans-serif;font-size:18px;font-weight:500;line-height:1.3em;}",
-
 
 		"Product Item Size": "2:3 Standard (Vertical)",
 		"Product Image Auto Crop": "False",
