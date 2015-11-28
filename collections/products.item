@@ -3,8 +3,10 @@
   <div class="sticky-container" data-sticky="within" data-background="normal" data-intrinsic="desktop">
     <div class="background">
       <div class="foreground content-fill">   
-			  {.section items.2}
-					<img {@|image-meta} data-load="true" class="loading" />
+			  {.repeated section items}
+				  {.equal? @index 2}
+						<img {@|image-meta} data-load="true" class="loading" />
+				  {.end}
 				{.end}
       </div>
     </div>
