@@ -38,6 +38,9 @@
 				attr = parts[1]; 
 				value = tweaks[key];
 
+				// single instance if no class selector
+				if (typeof(value) === 'string' && selector.indexOf(' .') === -1) value = [value]; 
+
 			  tweakMap[selector] = tweakMap[selector] || {};
 			  tweakMap[selector][attr] = value;
 			}

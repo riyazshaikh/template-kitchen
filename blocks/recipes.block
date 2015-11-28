@@ -60,18 +60,18 @@ window.RECIPES = {
 			"Header - Background": "Transparent",
 			"Header - Display": "Overlaid",
 			"Header - Sticky": "Within Site",
-			"Header  Content - Layout Spacing": "Mixed",
+			"Header  Content - Layout Spacing": ["Mixed"],
 			"Slidebar Nav - Layout Spacing": "Mixed",
-			"Header  Block - Display": "Hide",
-			"Header  Nav - Display": "Hide",
+			"Header  Block - Display": ["Hide"],
+			"Header  Nav - Display": ["Hide"],
 
 			"Banner - Palette": "Main",
-			"Banner  Image - Parallax": "Enable",
-			"Banner  Description - Display": "Hide",
-			"Banner  Blocks  Content - Layout Width": "Main",
-			"Banner  Blocks  Content - Parallax": "Enable",
+			"Banner  Image - Parallax": ["Enable"],
+			"Banner  Description - Display": ["Hide"],
+			"Banner  Blocks  Content - Layout Width": ["Main"],
+			"Banner  Blocks  Content - Parallax": ["Enable"],
 
-			"Gallery Scroll  Content - Layout Width": "Main"			
+			"Gallery Scroll  Content - Layout Width": ["Main"]
 		},
 	},
 	delta: {
