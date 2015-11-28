@@ -66,13 +66,16 @@ window.RECIPES = {
 			"Header  Nav - Display": ["Hide"],
 
 			"Banner - Palette": "Main",
+			"Banner - Display": "Overlaid",
+			"Banner - Background": "Transparent",
 			"Banner  Image - Parallax": ["Enable"],
 			"Banner  Description - Display": ["Hide"],
 			"Banner  Blocks  Content - Layout Width": ["Main"],
 			"Banner  Blocks  Content - Parallax": ["Enable"],
 			"Banner  Blocks  Image block outer wrapper - Intrinsic": ["Tablet", "Phone"],
 
-			"Gallery Scroll  Content - Layout Width": ["Main"]
+			"Gallery Scroll  Content - Layout Width": ["Main"],
+			"Gallery Scroll  Content - Gallery Align": ["Right"]
 		},
 	},
 	delta: {

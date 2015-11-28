@@ -8,6 +8,10 @@
 		top: 0;
 		left: 0;
 		right: @mainMetaWidth;
+		[data-gallery-align=right] & {
+			left: @mainMetaWidth;
+			right: 0;
+		}
 	}
 
 	.sqs-gallery {
@@ -19,6 +23,13 @@
 		margin-left: auto;
 		padding-left: @mainSpacingSide;
 		.border-box;
+
+		[data-gallery-align=right] & {
+			margin-right: auto;
+			margin-left: 0;
+			padding-left: 0;
+			padding-right: @mainSpacingSide;
+		}
 
 		@media screen and (max-width: 640px) {
 			width: 100%;
