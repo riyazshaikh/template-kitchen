@@ -1,3 +1,13 @@
+.reset-styles() {
+	[data-type=block-field] & {
+		> :first-child {
+			max-width: none !important;
+			> :first-child {
+				padding-bottom: 0 !important;
+		}
+	}
+}
+
 [data-intrinsic=half] {
 	padding-bottom: 50%;
 
@@ -56,6 +66,8 @@
 	    right: 4.5%;
 		}
 	}
+
+	.reset-styles;
 }
 
 [data-intrinsic=tablet] {
@@ -79,4 +91,6 @@
 	    right: 21%;
 		}
 	}
+
+	.reset-styles;
 }

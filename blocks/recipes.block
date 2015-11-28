@@ -70,6 +70,7 @@ window.RECIPES = {
 			"Banner  Description - Display": ["Hide"],
 			"Banner  Blocks  Content - Layout Width": ["Main"],
 			"Banner  Blocks  Content - Parallax": ["Enable"],
+			"Banner  Blocks  Image block outer wrapper - Intrinsic": ["Tablet", "Phone"],
 
 			"Gallery Scroll  Content - Layout Width": ["Main"]
 		},
