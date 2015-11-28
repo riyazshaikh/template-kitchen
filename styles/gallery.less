@@ -13,55 +13,67 @@
 }
 
 [data-intrinsic=desktop] {
-	background-image: url(/assets/desktop.png);		
-  background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 50%;
-	padding-bottom: 75%; 
+	max-width: 800px;
 
-	position: relative;
 	> :first-child {
-		position: absolute;
-		overflow: hidden;
-		top: 10.4%;
-    left: 8.6%;
-    width: 82.9%;
-    height: 65.7%;    	
+		background-image: url(/assets/desktop.png);		
+	  background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50%;
+		padding-bottom: 75%; 
+
+		position: relative;
+		> :first-child {
+			position: absolute;
+			overflow: hidden;
+			top: 10.4%;
+	    left: 8.6%;
+	    width: 82.9%;
+	    height: 65.7%;    	
+		}
 	}
 }
 
 [data-intrinsic=phone] {
-	background-image: url(/assets/phone.png);		
-  background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 50%;
-	padding-bottom: 188%; 
+	max-width: 250px;
 
-	position: relative;
 	> :first-child {
-		position: absolute;
-		overflow: hidden;
-    top: 15.5%;
-    bottom: 15.5%;
-    left: 5%;
-    right: 4.5%;
+		background-image: url(/assets/phone.png);		
+	  background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50%;
+		padding-bottom: 188%; 
+
+		position: relative;
+		> :first-child {
+			position: absolute;
+			overflow: hidden;
+	    top: 15.5%;
+	    bottom: 15.5%;
+	    left: 5%;
+	    right: 4.5%;
+		}
 	}
 }
 
 [data-intrinsic=tablet] {
-	background-image: url(/assets/tablet.png);		
-  background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 50%;
-	padding-bottom: 140%; 
+	max-width: 400px;
 
-	position: relative;
 	> :first-child {
-		position: absolute;
-		overflow: hidden;
-    top: 22.2%;
-    bottom: 22.8%;
-    left: 21%;
-    right: 21%;
+		background-image: url(/assets/tablet.png);		
+	  background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50%;
+		padding-bottom: 140%; 
+
+		position: relative;
+		> :first-child {
+			position: absolute;
+			overflow: hidden;
+	    top: 22.2%;
+	    bottom: 22.8%;
+	    left: 21%;
+	    right: 21%;
+		}
 	}
 }

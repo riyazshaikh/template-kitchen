@@ -29,18 +29,18 @@
 	}
 
 	&.js-sticky-end .js-sticky-wrapper {
-		position: absolute;
-
 		> [data-sticky] {
-			position: relative; /* In case it was absolute */
+			position: absolute;
 		}
 
-		&.top {
+		&.top > [data-sticky] {
 			bottom: 0;	
+			top: auto;
 		}
 
-		&.bottom {
+		&.bottom > [data-sticky] {
 			top: 0;
+			bottom: auto;
 		}
 		
 	}
