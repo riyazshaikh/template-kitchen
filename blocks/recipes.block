@@ -114,7 +114,8 @@ window.RECIPES = {
 		'products-item': {
 			"Products  Category Nav - Display": ["Hide"],
 			"Products  Content - Layout Spacing": ["Mixed"],
-			"Banner - Display": "Hide"
+			"Banner - Display": "Hide",
+			"Products  Content - Meta Align": ["Right"]
 		},
 		'gallery-scroll': {
 			"Gallery Scroll  Content - Layout Width": ["Main"],
