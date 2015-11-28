@@ -72,10 +72,8 @@ window.RECIPES = {
 			"Banner  Description - Display": ["Hide"],
 			"Banner  Blocks  Content - Layout Width": ["Main"],
 			"Banner  Blocks  Content - Parallax": ["Enable"],
-			"Banner  Blocks  Image block outer wrapper - Intrinsic": ["Tablet", "Phone"],
 
 			"Gallery Scroll  Content - Layout Width": ["Main"],
-			"Gallery Scroll  Content - Gallery Align": ["Right"]
 		},
 	},
 	delta: {
@@ -95,30 +93,34 @@ window.RECIPES = {
 	},
 	echo: {
 		main: {
-  		"Header  Nav - Display": "Hide",
+  		"Header  Nav - Display": ["Hide"],
 			"Header - Palette": "Main",
-			"Header  Content - Layout Spacing": "Mixed",
+			"Header  Content - Layout Spacing": ["Mixed"],
 			"Slidebar Nav - Layout Spacing": "Mixed",
 		},
 		products: {
 			"Banner - Background": "Transparent",
 			"Banner - Palette": "Main",
-			"Banner  Blocks  Content - Layout Width": "Main",
-			"Banner  Blocks  Content - Italic": "Dash",
-			"Banner  Description  Title - Display": "Hide",
+			"Banner  Blocks  Content - Layout Width": ["Main"],
+			"Banner  Blocks  Content - Italic": ["Dash"],
+			"Banner  Description  Title - Display": ["Hide"],
 
-			"Products  Category Nav - Sticky": "Within Site",
-			"Products  Category Nav - Layout Spacing": "Mixed",
+			"Products  Category Nav - Sticky": ["Within Site"],
+			"Products  Category Nav - Layout Spacing": ["Mixed"],
 
-			"Products  Content - Layout Spacing": "Sides",
-			"Products - Palette": "Main",
-			"Products  Product Meta - Flex": "Space Between",
-			"Products  Product Image - Effect": "Pop"
+			"Products  Content - Layout Spacing": ["Sides"],
+			"Products - Palette": ["Main"],
+			"Products  Product Meta - Flex": ["Space Between"],
+			"Products  Product Image - Effect": ["Pop"]
 		},
 		'products-item': {
-			"Products  Category Nav - Display": "Hide",
-			"Products  Content - Layout Spacing": "Mixed",
+			"Products  Category Nav - Display": ["Hide"],
+			"Products  Content - Layout Spacing": ["Mixed"],
 			"Banner - Display": "Hide"
+		},
+		'gallery-scroll': {
+			"Gallery Scroll  Content - Layout Width": ["Main"],
+			"Gallery Scroll  Content - Gallery Align": ["Right"]
 		}
 	}
 };
