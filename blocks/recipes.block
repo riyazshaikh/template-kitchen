@@ -66,8 +66,6 @@ window.RECIPES = {
 			"Header  Nav - Display": ["Hide"],
 
 			"Banner - Palette": "Main",
-			"Banner - Display": "Overlaid",
-			"Banner - Background": "Transparent",
 			"Banner  Image - Parallax": ["Enable"],
 			"Banner  Description - Display": ["Hide"],
 			"Banner  Blocks  Content - Layout Width": ["Main"],
@@ -110,8 +108,8 @@ window.RECIPES = {
 
 			"Products  Content - Layout Spacing": ["Sides"],
 			"Products - Palette": ["Main"],
-			"Products  Product Meta - Flex": ["Space Between"],
-			"Products  Product Image - Effect": ["Pop"]
+			"Products  Product Meta - Flex": "Space Between",
+			"Products  Product Image - Effect": "Pop"
 		},
 		'products-item': {
 			"Products  Category Nav - Display": ["Hide"],
