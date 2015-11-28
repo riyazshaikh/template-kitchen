@@ -4,9 +4,7 @@
     <div class="background">
       <div class="foreground content-fill">   
 			  {.section items.2}
-					{.image?}
-						<img {@|image-meta} data-load="true" class="loading" />
-					{.end}
+					<img {@|image-meta} data-load="true" class="loading" />
 				{.end}
       </div>
     </div>
