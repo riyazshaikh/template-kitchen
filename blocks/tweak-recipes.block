@@ -47,6 +47,8 @@
 		}
 	}
 
+	console.log(tweakMap);
+	
 	var setTweakAttr = function(event) {
 		var dataset = tweakMap[event.selector];
 		if (!dataset) return false; // nothing to do
@@ -80,7 +82,7 @@
 		for(var selector in tweakMap) {
 			var els = document.querySelectorAll(selector);
 			for (var i=0; i<els.length; i++) {
-				console.log('adding ondomready', els[i], tweakMap[selector]);
+				console.log('adding ondomready', els[i], tweakMap[selector], tweakMap);
 				if (setTweakAttr({ selector: selector, target: els[i] }) === false)
 					break;
 			}
