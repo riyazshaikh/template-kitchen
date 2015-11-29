@@ -53,10 +53,6 @@ Y.use('node', function (Y) {
 
         	if (palette && tNode.getData('palette') !== palette) {
         		tNode.setAttribute('data-palette',palette);
-
-        		var img = tNode.one('.site-logo img');
-        		if (img && Static.SQUARESPACE_CONTEXT.website.socialLogoImageUrl) 
-        			img.setAttribute('src', Static.SQUARESPACE_CONTEXT.website.socialLogoImageUrl + '?format=1500w');
         	}
         }
       }, this);

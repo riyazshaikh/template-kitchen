@@ -45,6 +45,17 @@
       max-height: 100px;
       max-width: 100%;
     }
+
+    .logo-image { /* usually show logo-image unless within alternate palette */
+      ~ .social-image { display: none; }
+      [data-palette=alternate] & { 
+        display: none;
+        ~ .social-image {
+          display: inline;   
+        }
+      }
+    }
+    
   }
 
   .nav[data-display=auto] {

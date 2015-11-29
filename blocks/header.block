@@ -1,8 +1,13 @@
 <header class="header content">
   {.section website}
-    {.section logoImageUrl}
+    {.if logoImageUrl}
       <div class="site-logo" data-content-field="site-title">
-        <a href="/"><img src="{logoImageUrl}?format=1500w" alt="{siteTitle}" /></a>
+        <a href="/">
+          <img class="logo-image" src="{logoImageUrl}?format=1500w" alt="{siteTitle}" />
+          {.if socialLogoImageUrl}
+            <img class="social-image" src="{socialLogoImageUrl}?format=1500w" alt="{siteTitle}" />
+          {.end}
+        </a>
       </div>
     {.or}
       <div class="site-title" data-content-field="site-title">
