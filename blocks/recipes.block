@@ -95,14 +95,13 @@ window.RECIPES = {
 			"Header - Palette": "Main",
 			"Header  Content - Layout Spacing": ["Mixed"],
 			"Slidebar Nav - Layout Spacing": "Mixed",
-		},
-		products: {
 			"Banner - Background": "Transparent",
 			"Banner - Palette": "Main",
+			"Banner  Description  Title - Display": ["Hide"],
 			"Banner  Blocks  Content - Layout Width": ["Main"],
 			"Banner  Blocks  Content - Italic": ["Dash"],
-			"Banner  Description  Title - Display": ["Hide"],
-
+		},
+		products: {
 			"Products  Category Nav - Sticky": ["Within Site"],
 			"Products  Category Nav - Layout Spacing": ["Mixed"],
 
@@ -112,12 +111,14 @@ window.RECIPES = {
 			"Products  Product Image - Effect": "Pop"
 		},
 		'products-item': {
+			"Banner - Display": "Hide",
 			"Products  Category Nav - Display": ["Hide"],
 			"Products  Content - Layout Spacing": ["Sides"],
-			"Banner - Display": "Hide",
 			"Products  Content - Meta Align": ["Right"]
 		},
 		'gallery-scroll': {
+			"Banner  Blocks  Content - Meta Align": ["Right"],
+			"Banner  Blocks  Desktop - Background": ["Transparent"],
 			"Gallery Scroll  Content - Layout Width": ["Main"],
 			"Gallery Scroll  Content - Gallery Align": ["Right"]
 		}

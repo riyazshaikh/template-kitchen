@@ -51,9 +51,9 @@
     <div class="product-excerpt" data-content-field="excerpt">{excerpt}</div>
 
 	  <div class="product-info">
-	  	<h2 class="">Features</h2>
+	  	<h2 class="">Special Features</h2>
 	  	{body}
-	  	<h2 class="">Support</h2>
+	  	<h2 class="">About</h2>
 	  	<div class="">
 		  	<div >
 		  		<span class="label">Made By</span>
