@@ -67,8 +67,6 @@
 	    right: 4%;
 		}
 	}
-
-	.reset-styles;
 }
 
 [data-intrinsic=tablet] {
@@ -92,6 +90,27 @@
 	    right: 36%;
 		}
 	}
+}
 
-	.reset-styles;
+[data-intrinsic=laptop] {
+	max-width: 100vh;
+	margin: auto;
+
+	> :first-child {
+		background-image: url(/assets/laptop-light.png);		
+	  background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50%;
+		padding-bottom: 87.4%; 
+
+		position: relative;
+		> :first-child {
+			position: absolute;
+			overflow: hidden;
+			top: 10.4%;
+	    left: 8.6%;
+	    width: 82.9%;
+	    height: 65.7%;    	
+		}
+	}
 }
