@@ -8,14 +8,15 @@
 		top: 0;
 		left: 0;
 		right: @mainMetaWidth;
+		
 		[data-gallery-align=right] & {
 			left: @mainMetaWidth;
 			right: 0;
 		}
 
 		@media screen and (max-width: 640px) {
-			left: 0;
-			right: 0;
+			left: 0 !important;
+			right: 0 !important;
 		}
 	}
 
