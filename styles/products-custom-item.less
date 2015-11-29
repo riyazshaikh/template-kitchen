@@ -199,13 +199,16 @@
 	    	margin: 0;
 	    }
 		}
+
+		&[data-intrinsic=laptop] ~ .overlap-container {
+			bottom: 26.5%;
+		}
 	}
 
 	.overlap-container {
 		position: absolute;
 		z-index: 2;
-		top: 0; left: 0; right: 0; 
-		bottom: 26.5%;
+		top: 0; left: 0; right: 0; bottom: 0;
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
