@@ -117,6 +117,9 @@ window.RECIPES = {
 			"Products  Content - Meta Align": ["Right"]
 		},
 		'gallery-scroll': {
+  		"Header - Display": "Overlaid",
+			"Header - Background": "Transparent",
+			
 			"Banner - Display": ["Overlaid"],
 			"Banner - Background": "Transparent",
 			"Banner  Blocks  Content - Meta Align": ["Right"],
