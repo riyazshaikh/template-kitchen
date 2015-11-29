@@ -32,7 +32,7 @@
     [data-palette=banner] & { .colors(@banner-linkColor) }
   }
 
-  p:last-child > a:first-child {
+  p > strong > a {
     .border-box;
     display: inline-block;
     /** Default font values **/
@@ -58,7 +58,7 @@
     [data-palette=banner] & { .colors(@banner-linkColor, @banner-bgColor) }
   }
 
-  p:last-child > a + a { margin-left: 1rem; }
+  p > strong > a + a { margin-left: 1rem; }
   p:empty {
     display: none;
   }
