@@ -51,8 +51,12 @@ Y.use('node', function (Y) {
         		}
         	}, this);
 
-        	if (palette) {
+        	if (palette && tNode.dataset.palette !== palette) {
         		tNode.setAttribute('data-palette',palette);
+
+        		var img = tNode.one('.site-logo img');
+        		if (img && Static.SQUARESPACE_CONTEXT.website.socialLogoImageUrl) 
+        			img.setAttribute('src', Static.SQUARESPACE_CONTEXT.website.socialLogoImageUrl + '?format=1500w');
         	}
         }
       }, this);
