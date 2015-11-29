@@ -16,7 +16,7 @@
   </div>
   <div class="gallery-meta">
   {.repeated section items}       
-    <div class="meta">
+    <div class="meta" data-content=fancy-text data-italic=meta>
       <div class="meta-inside">
         <p class="meta-title"><strong>{title}</strong></p>              
         <div class="meta-description">{body}</div>
