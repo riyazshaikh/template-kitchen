@@ -125,7 +125,8 @@ window.RECIPES = {
 			"Banner - Background": "Transparent",
 			"Banner  Blocks  Content - Layout Spacing": ["Sides"],
 
-			"Gallery Scroll  Content - Layout Spacing": ["Sides"]
+			"Gallery Scroll  Content - Layout Spacing": ["Sides"],
+			"Page Footer - Palette": "Alternate"
 		}
 	}
 };
