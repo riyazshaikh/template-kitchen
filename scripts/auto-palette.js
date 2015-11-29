@@ -51,7 +51,7 @@ Y.use('node', function (Y) {
         		}
         	}, this);
 
-        	if (palette && tNode.dataset.palette !== palette) {
+        	if (palette && tNode.getData('palette') !== palette) {
         		tNode.setAttribute('data-palette',palette);
 
         		var img = tNode.one('.site-logo img');
