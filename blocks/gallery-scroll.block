@@ -1,5 +1,5 @@
 <div class="gallery-scroll">
-  <div class="sticky-container" data-sticky="within" data-background="normal" data-intrinsic="desktop">
+  <div class="sticky-container" data-sticky="within" data-background="solid" data-intrinsic="desktop">
     <div class="background">
       <div class="foreground">    
         <div class="sqs-gallery sqs-gallery-design-stacked">
