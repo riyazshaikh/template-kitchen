@@ -37,7 +37,7 @@
     </div>
 
     <div class="actions">
-    	<a target=_blank href="//{urlId}.squarespace.com">View Demo</a>
+    	<a target=_blank href="//{urlId}.squarespace.com">PREVIEW</a>
 
 	  	{@|product-checkout}
     	{@|product-price}
