@@ -13,7 +13,7 @@
 <script>
 Y.use('node', function(Y) {
 	Y.one('#mobileNavToggle').on('click', function() {
-		window.helper.smoothScrollTo(0);
+		window.scrollTo(0,0);
 	});
 });
 </script>
