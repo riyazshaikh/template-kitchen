@@ -35,7 +35,10 @@
 		    </div>
 	    </div>
     </div>
+
+	  {@|product-checkout}
   </div>
+  
   <div class="product-meta" data-layout-width="meta" data-layout-align="left">
     <h1 class="product-title" data-content-field="title">{title}</h1>
 
@@ -46,8 +49,6 @@
     </div>
 
     <div class="product-excerpt" data-content-field="excerpt">{excerpt}</div>
-
-	  {@|product-checkout}
 
 	  <div class="product-info">
 	  	<h2 class="">Support</h2>
