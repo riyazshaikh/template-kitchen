@@ -24,7 +24,7 @@
 
   this.observer = new MutationObserver(function() {
 
-    // Add header height as a padding to overlap content below
+    // Add header height as a padding to avoid overlapping content below
     if (this.header.dataset.display === 'overlaid') {
       this.stylesheet = document.createElement('style');
       this.stylesheet.type = "text/css";
