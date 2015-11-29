@@ -95,8 +95,8 @@ window.RECIPES = {
 			"Header - Palette": "Main",
 			"Header  Content - Layout Spacing": ["Mixed"],
 			"Slidebar Nav - Layout Spacing": "Mixed",
-			"Banner - Background": "Transparent",
 			"Banner - Palette": "Main",
+
 			"Banner  Description  Title - Display": ["Hide"],
 			"Banner  Blocks  Content - Layout Width": ["Main"],
 			"Banner  Blocks  Content - Italic": ["Dash"],
@@ -117,8 +117,9 @@ window.RECIPES = {
 			"Products  Content - Meta Align": ["Right"]
 		},
 		'gallery-scroll': {
+			"Banner - Display": ["Overlaid"],
+			"Banner - Background": "Transparent",
 			"Banner  Blocks  Content - Meta Align": ["Right"],
-			"Banner  Blocks  Desktop - Background": ["Transparent"],
 			"Gallery Scroll  Content - Layout Width": ["Main"],
 			"Gallery Scroll  Content - Gallery Align": ["Right"]
 		}
