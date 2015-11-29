@@ -98,10 +98,10 @@ window.RECIPES = {
 			"Banner - Palette": "Main",
 
 			"Banner  Description  Title - Display": ["Hide"],
-			"Banner  Blocks  Content - Layout Width": ["Main"],
 			"Banner  Blocks  Content - Italic": ["Dash"],
 		},
 		products: {
+			"Banner  Blocks  Content - Layout Width": ["Main"],
 			"Products  Category Nav - Sticky": ["Within Site"],
 			"Products  Category Nav - Layout Spacing": ["Mixed"],
 
@@ -125,7 +125,6 @@ window.RECIPES = {
 			"Banner - Background": "Transparent",
 			"Banner  Blocks  Content - Layout Spacing": ["Sides"],
 
-			"Gallery Scroll  Content - Layout Width": ["Main"],
 			"Gallery Scroll  Content - Layout Spacing": ["Sides"]
 		}
 	}
