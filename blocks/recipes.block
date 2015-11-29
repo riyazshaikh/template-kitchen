@@ -99,6 +99,7 @@ window.RECIPES = {
 
 			"Banner  Description  Title - Display": ["Hide"],
 			"Banner  Blocks  Content - Italic": ["Dash"],
+			"Page Footer  Content - Spacing": ["Main"]
 		},
 		products: {
 			"Banner  Blocks  Content - Layout Width": ["Main"],
