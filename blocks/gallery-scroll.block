@@ -60,8 +60,11 @@
 
         this.metaOffsets = [];
 
+        // start switching a bit early
+        var earlyOffset = Y.DOM.viewportRegion().height * 0.1;
+
         this.parentEl.all('.meta').each(function(node) {
-          this.metaOffsets.push(node.getXY()[1]);
+          this.metaOffsets.push(Math.max(node.getXY()[1] - earlyOffset,0)); 
         },this);
 
         this.scrollLogic();
