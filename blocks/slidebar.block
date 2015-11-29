@@ -9,3 +9,11 @@
     	<squarespace:navigation navigationId="mainNav" template="navigation"/>
     </div>
 </div>
+
+<script>
+Y.use('node', function(Y) {
+	Y.one('#mobileNavToggle').on('click', function() {
+		window.helper.smoothScrollTo(0);
+	});
+});
+</script>
