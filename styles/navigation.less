@@ -12,7 +12,7 @@
       .nav-font;
       .transition(color 0.1s 0s ease-in-out);
 
-      [data-palette=main] & { color: @main-textColor; }
+      color: @main-textColor;
       [data-palette=banner] & { color: @banner-textColor; }
       [data-palette=alternate] & { color: @alt-textColor; }
     }
@@ -77,7 +77,7 @@
 }
 
 [data-background=translucent] {
-  &[data-palette=main] [data-folder*=drop] .folder .subnav { .background-color(fade(@main-bgColor,60%)) }
+  [data-folder*=drop] .folder .subnav { .background-color(fade(@main-bgColor,60%)) }
   &[data-palette=alternate] [data-folder*=drop] .folder .subnav { .background-color(fade(@alt-bgColor,60%)) }
   &[data-palette=banner] [data-folder*=drop] .folder .subnav { .background-color(fade(@banner-bgColor,60%)) }
 }
@@ -95,7 +95,7 @@
       left: -1em;
       z-index: 1000;
 
-      [data-palette=main] & { background-color: @main-bgColor }
+      background-color: @main-bgColor;
       [data-palette=alternate] & { background-color: @alt-bgColor }
       [data-palette=banner] & { background-color: @banner-bgColor }
 
@@ -160,7 +160,7 @@
       left: -1em;
       z-index: 1000;
 
-      [data-palette=main] & { background-color: @main-bgColor }
+      background-color: @main-bgColor;
       [data-palette=alternate] & { background-color: @alt-bgColor }
       [data-palette=banner] & { background-color: @banner-bgColor }
 
@@ -212,7 +212,7 @@
     top: 0.5em;
     height: 1px;
 
-    [data-palette=main] & { background-color: @main-metaColor }
+    background-color: @main-metaColor;
     [data-palette=alternate] & { background-color: @alt-metaColor }
     [data-palette=banner] & { background-color: @banner-metaColor }
   }
@@ -224,7 +224,7 @@
       color: darken(@textColor, 30%);
     }
   }
-  [data-palette=main] & { .colors(@main-textColor) }
+  .colors(@main-textColor);
   [data-palette=alternate] & { .colors(@alt-textColor) }
   [data-palette=banner] & { .colors(@banner-textColor) }
 }
@@ -235,7 +235,7 @@
       border-bottom: 1px solid @textColor;
     }
   }
-  [data-palette=main] & { .colors(@main-textColor) }
+  .colors(@main-textColor);
   [data-palette=alternate] & { .colors(@alt-textColor) }
   [data-palette=banner] & { .colors(@banner-textColor) }
 }

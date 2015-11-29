@@ -2,7 +2,7 @@
   p {
     margin: 1rem auto;
   
-    [data-typeset=main] & { .body-font }
+    .body-font;
     [data-typeset=alternate] & { .alt-body-font-responsive }
     [data-typeset=banner] & { .banner-body-font-responsive }
   }
@@ -12,11 +12,11 @@
     display: block;
     margin: 0;
 
-    [data-palette=main] & { color: @main-headingColor; }
+    color: @main-headingColor;
     [data-palette=alternate] & { color: @alt-headingColor; }
     [data-palette=banner] & { color: @banner-headingColor; }
 
-    [data-typeset=main] & { .heading1-font }
+    .heading1-font;
     [data-typeset=alternate] & { .alt-heading1-font-responsive }
     [data-typeset=banner] & { .banner-heading1-font-responsive }
 	}
@@ -27,7 +27,7 @@
       border-bottom: 1px solid @linkColor;
     }
 
-    [data-palette=main] & { .colors(@main-linkColor) }
+    .colors(@main-linkColor);
     [data-palette=alternate] & { .colors(@alt-linkColor) }
     [data-palette=banner] & { .colors(@banner-linkColor) }
   }
@@ -39,7 +39,7 @@
     padding: 1rem 1.75rem;
     margin: 1rem 0;
 
-    [data-typeset=main] & { .button-font }
+    .button-font;
     [data-typeset=alternate] & { .alt-button-font }
     [data-typeset=banner] & { .banner-button-font }
 
@@ -53,7 +53,7 @@
         background-color: fade(@linkColor, 80%);
       }
     }    
-    [data-palette=main] & { .colors(@main-linkColor, @main-bgColor) }
+    .colors(@main-linkColor, @main-bgColor);
     [data-palette=alternate] & { .colors(@alt-linkColor, @alt-bgColor) }
     [data-palette=banner] & { .colors(@banner-linkColor, @banner-bgColor) }
   }
@@ -92,7 +92,7 @@
     }
   }
 
-  [data-palette="main"] & { .colors(@main-metaColor) }
+  .colors(@main-metaColor);
   [data-palette="banner"] & { .colors(@banner-metaColor) }
   [data-palette="alternate"] & { .colors(@alt-metaColor) }
 
@@ -114,11 +114,11 @@
   em {
     font-style: normal;
 
-    [data-typeset=main] & { .meta-font; }
+    .meta-font;
     [data-typeset=alternate] & { .alt-meta-font; }
     [data-typeset=banner] & { .banner-meta-font; }
     
-    [data-palette=main] & { color: @main-metaColor; }
+    color: @main-metaColor;
     [data-palette=alternate] & { color: @alt-metaColor; }
     [data-palette=banner] & { color: @banner-metaColor; }
   }    
@@ -137,7 +137,7 @@
       .prefix("box-decoration-break", "clone");
     }
     
-    [data-palette=main] & { .colors(@main-bgColor) }
+    .colors(@main-bgColor);
     [data-palette=alternate] & { .colors(@alt-bgColor) }
     [data-palette=banner] & { .colors(@banner-bgColor) }
   }    
@@ -157,7 +157,7 @@
 }
 
 [data-button=outline] {
-  [data-palette="main"] &  {  .button-outline(@main-textColor, @main-bgColor) }
+  .button-outline(@main-textColor, @main-bgColor);
   [data-palette="banner"] &  {  .button-outline(@banner-textColor, @banner-bgColor) }
   [data-palette="alternate"] &  {  .button-outline(@alt-textColor, @alt-bgColor) }
 }
@@ -178,7 +178,7 @@
 }
 
 [data-button=overlay] {
-  [data-palette="main"] &  {  .button-overlay(@main-textColor, @main-bgColor); }
+  .button-overlay(@main-textColor, @main-bgColor);
   [data-palette="banner"] &  {  .button-overlay(@banner-textColor, @banner-bgColor); }
   [data-palette="alternate"] &  {  .button-overlay(@alt-textColor, @alt-bgColor); }
 }

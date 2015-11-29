@@ -18,7 +18,7 @@
     }
   }
 
-  [data-palette=main] & { .colors(@main-textColor, @main-bgColor) }
+  .colors(@main-textColor, @main-bgColor);
   [data-palette=banner] & { .colors(@banner-textColor, @banner-bgColor) }
   [data-palette=alternate] & { .colors(@alt-textColor, @alt-bgColor) }
 
@@ -52,7 +52,7 @@ body {
   width: 22px;
   height: 16px;
 
-  [data-palette=main] & { color: @main-textColor }
+  color: @main-textColor;
   [data-palette=alternate] & { color: @alt-textColor }
   [data-palette=banner] & { color: @banner-textColor }
 
@@ -62,7 +62,7 @@ body {
     width: 22px;
     height: 2px;
 
-    [data-palette=main] & { background-color: @main-textColor }
+    background-color: @main-textColor;
     [data-palette=alternate] & { background-color: @alt-textColor }
     [data-palette=banner] & { background-color: @banner-textColor }
 

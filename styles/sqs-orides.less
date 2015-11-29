@@ -21,7 +21,7 @@
   a:not(.sqs-block-button-element):visited {
     text-decoration: none;
 
-    [data-palette=main] & { color: @main-linkColor; }
+    color: @main-linkColor;
     [data-palette=alternate] & { color: @alt-linkColor; }
     [data-palette=banner] & { color: @banner-linkColor; }
   }
@@ -68,12 +68,12 @@ blockquote {
 .sqs-audio-playlist .tracks .track-info .artist,
 .summary-info-item
 {
-  [data-palette=main] & { color: @main-metaColor; }
+  color: @main-metaColor;
   [data-palette=alternate] & { color: @alt-metaColor; }
   [data-palette=banner] & { color: @banner-metaColor; }
 
   a {
-    [data-palette=main] & { color: @main-metaColor; }
+    color: @main-metaColor;
     [data-palette=alternate] & { color: @alt-metaColor; }
     [data-palette=banner] & { color: @banner-metaColor; }
   }
@@ -87,7 +87,7 @@ blockquote {
 // Quote Block blockquote
 
 .comment-count{
-  [data-palette=main] & { color: @main-textColor; }
+  color: @main-textColor;
   [data-palette=alternate] & { color: @alt-textColor; }
   [data-palette=banner] & { color: @banner-textColor; }
 }
@@ -135,7 +135,7 @@ blockquote {
     color: fade(@textColor, 15%);
   }    
 
-  [data-palette=main] & { .colors(@main-textColor) }
+  .colors(@main-textColor);
   [data-palette=alternate] & { .colors(@alt-textColor) }
   [data-palette=banner] & { .colors(@banner-textColor) }
 }
@@ -227,7 +227,7 @@ blockquote {
     .background-color(fade(@bgColor,60%));  
   }
 
-  [data-palette=main] & { .colors(@main-bgColor) }
+  .colors(@main-bgColor);
   [data-palette=alternate] & { .colors(@alt-bgColor) }
   [data-palette=banner] & { .colors(@banner-bgColor) }
 }
@@ -237,7 +237,7 @@ blockquote {
 }
 
 .sqs-block-button-element {
-  [data-typeset=main] & { .button-font }
+  .button-font;
   [data-typeset=alternate] & { .alt-button-font }
   [data-typeset=banner] & { .banner-button-font }
 }
