@@ -113,7 +113,7 @@ window.RECIPES = {
 		},
 		'products-item': {
 			"Products  Category Nav - Display": ["Hide"],
-			"Products  Content - Layout Spacing": ["Mixed"],
+			"Products  Content - Layout Spacing": ["Sides"],
 			"Banner - Display": "Hide",
 			"Products  Content - Meta Align": ["Right"]
 		},
