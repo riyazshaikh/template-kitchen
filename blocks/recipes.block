@@ -103,7 +103,8 @@ window.RECIPES = {
 			"Footer  Nav - Align": ["Center"],
 			"Footer - Palette": ["Alternate"],
 			"Footer  Content - Layout Spacing": ["Sides"],
-			"Footer  Content - Layout Width": ["Full"]
+			"Footer  Content - Layout Width": ["Full"],
+			"Footer  SQS Block - Oride": "Spacing"
 		},
 		products: {
 			"Banner  Blocks  Content - Layout Width": ["Main"],
