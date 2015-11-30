@@ -102,7 +102,7 @@ window.RECIPES = {
 			"Page Footer  Content - Layout Spacing": ["Main"],
 			"Footer  Nav - Align": ["Center"],
 			"Footer - Palette": ["Main"],
-			"Footer  Content - Layout Spacing": ["Sides"],
+			"Footer  Content - Layout Spacing": ["Mixed"],
 			"Footer  Content - Layout Width": ["Full"],
 			"Footer  SQS Block - Oride": "Spacing"
 		},
