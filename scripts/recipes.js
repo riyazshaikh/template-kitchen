@@ -98,7 +98,7 @@ RECIPES.echo = { // product grid - Products
 		"main-metaColor": "#767676",
 		"mainMetaWidth": "40%",
 
-		"body-font": "{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:14px;font-weight:400;line-height:1.5em;}",
+		"body-font": "{font-family:'Raleway';font-size:16px;font-weight:400;line-height:1.5em;}",
 		"heading1-font": "{font-family:'Brandon',Helvetica,Arial,sans-serif;font-size:42px;font-weight:500;line-height:1.3em;}",
 		"heading2-font": "{font-family:'Brandon',Helvetica,Arial,sans-serif;font-size:24px;font-weight:500;line-height:1.3em;}",
 		"heading3-font": "{font-family:'Brandon',Helvetica,Arial,sans-serif;font-size:18px;font-weight:500;line-height:1.3em;}",
@@ -107,7 +107,7 @@ RECIPES.echo = { // product grid - Products
 		"Product Image Auto Crop": "False",
 	},
 	webfontsJson: [
-		
+		"Brandon:300,500normal"
 	]
 };
 
