@@ -4,6 +4,15 @@
 // tweak: { title: "Header  Nav - Align", options: ["Left", "Right", "Center", "Space Around", "Space Between"], default: "Right", showOnlyWhenPresent: "body:not(.header--nav---display-hide)", category: "Header", type: "dropdown", js:true }
 // tweak: { title: "Header  Nav - Active", options: ["None", "Contrast", "Underline"], default: "Contrast", showOnlyWhenPresent: "body:not(.header--nav---display-hide)", category: "Header", type: "dropdown", js:true }
 
+// tweak: { title: "Header - Alternate Logo", options: ["", "Main", "Banner", "Alternate"], default: "", category: "Header", type: "dropdown", js:true }
+// tweak: { category : "Header", type : "image", title : "Alternate Logo", target : ".site-logo" }
+.alt-logo-image {
+  background-image: none;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+}
 
 
 //tweak: { "type" : "value", "title" : "Logo Container Width", "min" : 50, "max" : 500, "step" : 5, "category" : "Header", "target" : "#logoImage", "showOnlyWhenPresent" : "#logoImage", "js": "true" }
@@ -46,16 +55,18 @@
       max-width: 100%;
     }
 
-    .logo-image { /* usually show logo-image unless within alternate palette */
-      ~ .social-image { display: none; }
-      [data-palette=alternate] & { 
-        display: none;
-        ~ .social-image {
-          display: inline;   
-        }
+    [data-alternate-logo=main][data-palette=main] &,
+    [data-alternate-logo=banner][data-palette=banner] &,
+    [data-alternate-logo=alternate][data-palette=alternate] & {
+      position: relative;
+      img { visibility: hidden; }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        .alt-logo-image;
       }
     }
-    
   }
 
   .nav[data-display=auto] {

@@ -4,9 +4,6 @@
       <div class="site-logo" data-content-field="site-title">
         <a href="/">
           <img class="logo-image" src="{logoImageUrl}?format=1500w" alt="{siteTitle}" />
-          {.if socialLogoImageUrl}
-            <img class="social-image" src="{socialLogoImageUrl}?format=1500w" alt="{siteTitle}" />
-          {.end}
         </a>
       </div>
     {.or}
