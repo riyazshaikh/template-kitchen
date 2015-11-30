@@ -101,7 +101,7 @@ window.RECIPES = {
 			"Banner  Blocks  Content - Italic": ["Dash"],
 			"Page Footer  Content - Layout Spacing": ["Main"],
 			"Footer  Nav - Align": ["Center"],
-			"Footer - Palette": ["Alternate"],
+			"Footer - Palette": ["Main"],
 			"Footer  Content - Layout Spacing": ["Sides"],
 			"Footer  Content - Layout Width": ["Full"],
 			"Footer  SQS Block - Oride": "Spacing"
