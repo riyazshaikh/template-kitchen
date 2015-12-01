@@ -135,6 +135,7 @@ window.RECIPES = {
 			"Gallery Scroll  Content - Layout Spacing": ["Sides"],
 			"Gallery Scroll  Meta - Typeset": "Alternate",
 			"Gallery Scroll  Meta - Typeset": ["Banner"], // first is banner
+			"Gallery Scroll  Meta - Italic": "Dash", 
 			"Page Footer - Typeset": "Main",
 			"Page Footer - Palette": "Alternate"
 		}
