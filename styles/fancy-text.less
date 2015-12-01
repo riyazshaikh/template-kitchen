@@ -81,20 +81,20 @@
 
       left: 0;
       bottom: -1rem;
-      height: 3px;
+      height: 1px;
       width: 2rem;
     }
   }
 
-  .colors(@metaColor) {
+  .colors(@color) {
     em:after {
-      background-color: @metaColor;
+      background-color: @color;
     }
   }
 
-  .colors(@main-metaColor);
-  [data-palette="banner"] & { .colors(@banner-metaColor) }
-  [data-palette="alternate"] & { .colors(@alt-metaColor) }
+  .colors(@main-headingColor);
+  [data-palette="banner"] & { .colors(@banner-headingColor) }
+  [data-palette="alternate"] & { .colors(@alt-headingColor) }
 
   [data-align~=center] &, & .text-align-center {
     em:after {
