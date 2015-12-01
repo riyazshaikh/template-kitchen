@@ -61,7 +61,7 @@
 		Singleton.create({
 
 			ready: function () {
-					this.init();
+					Y.on('domready', this.init, this);
 			},
 
 			init: function() {
