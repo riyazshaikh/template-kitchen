@@ -99,6 +99,7 @@ RECIPES.echo = { // product grid - Products
 		"main-headingColor": "#333",
 		"main-linkColor": "#000",
 		"main-metaColor": "#767676",
+		"logoContainerWidth": "50px",
 
 		"mainMetaWidth": "40%",
 
