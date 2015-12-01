@@ -131,6 +131,7 @@ window.RECIPES = {
 			"Banner - Display": ["Overlaid"],
 			"Banner - Background": "Transparent",
 			"Banner  Blocks  Content - Layout Spacing": ["Sides"],
+			"Banner  Loading - Display": ["Hide"],
 
 			"Gallery Scroll  Content - Layout Spacing": ["Sides"],
 			"Gallery Scroll  Meta - Typeset": "Alternate",
