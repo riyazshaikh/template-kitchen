@@ -97,7 +97,7 @@ RECIPES.echo = { // product grid - Products
 		"main-bgColor": "#f3efee",
 		"main-textColor": "#000",
 		"main-headingColor": "#333",
-		"main-linkColor": "#08c",
+		"main-linkColor": "#000",
 		"main-metaColor": "#767676",
 
 		"mainMetaWidth": "40%",
@@ -107,16 +107,16 @@ RECIPES.echo = { // product grid - Products
 		"heading2-font": "{font-family:inherit;font-size:32px;font-weight:200;line-height:1.5em;}",
 		"heading3-font": "{font-family:inherit;font-size:18px;font-weight:400;line-height:1.16em;}",
 		"meta-font": "{font-family:inherit;font-size:12px;font-weight:400;line-height:1.5em;}",
-		"nav-font": "{font-family:inherit;font-size:13px;font-weight:400;line-height:1em;}",
+		"nav-font": "{font-family:inherit;font-size:14px;font-weight:400;line-height:2em;}",
 
 		"banner-body-font": "{font-family:'myriad-pro', Helvetica, Arial, Verdana, sans-serif;font-size:18px;font-weight:400;line-height:1.5em;}",
 		"banner-heading1-font": "{font-family:inherit;font-size:72px;font-weight:200;line-height:1.05em;}",
 		"banner-heading2-font": "{font-family:inherit;font-size:52px;font-weight:200;line-height:1.42em;}",
 		"banner-heading3-font": "{font-family:inherit;font-size:42px;font-weight:400;line-height:1.5em;}",
 
-		"alternate-body-font": "{font-family:'myriad-pro', Helvetica, Arial, Verdana, sans-serif;font-size:18px;font-weight:400;line-height:1.5em;}",
-		"alternate-heading1-font": "{font-family:inherit;font-size:32px;font-weight:200;line-height:1.05em;}",
-		"alternate-heading2-font": "{font-family:inherit;font-size:24px;font-weight:200;line-height:1.42em;}",
+		"alt-body-font": "{font-family:'myriad-pro', Helvetica, Arial, Verdana, sans-serif;font-size:18px;font-weight:400;line-height:1.5em;}",
+		"alt-heading1-font": "{font-family:inherit;font-size:32px;font-weight:200;line-height:1.05em;}",
+		"alt-heading2-font": "{font-family:inherit;font-size:24px;font-weight:200;line-height:1.42em;}",
 
 		"Product Item Size": "2:3 Standard (Vertical)",
 		"Product Image Auto Crop": "False",
