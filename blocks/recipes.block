@@ -120,7 +120,8 @@ window.RECIPES = {
 			"Banner - Display": "Hide",
 			"Products  Category Nav - Display": ["Hide"],
 			"Products  Content - Layout Spacing": ["Sides"],
-			"Products  Content - Meta Align": ["Right"]
+			"Products  Content - Meta Align": ["Right"],
+			"Products - Typeset": "Alternate"
 		},
 		'gallery-scroll': {
   		"Header - Display": "Overlaid Overlap",
@@ -134,7 +135,7 @@ window.RECIPES = {
 			"Gallery Scroll  Content - Layout Spacing": ["Sides"],
 			"Gallery Scroll  Meta - Typeset": "Alternate",
 			"Gallery Scroll  Meta - Typeset": ["Banner"], // first is banner
-			"Page Footer - Typeset": "Alternate",
+			"Page Footer - Typeset": "Main",
 			"Page Footer - Palette": "Alternate"
 		}
 	}

@@ -262,6 +262,10 @@ i.fa {
   font-size: @fontIconSize;
 }
 
-[data-text-shrink]:not([data-shrink-original-size]) {
-  visibility: hidden;
+[data-text-shrink] {
+  display: inline-block;
+  white-space: nowrap;
+  &:not([data-shrink-original-size]) {
+    visibility: hidden;
+  }
 }
