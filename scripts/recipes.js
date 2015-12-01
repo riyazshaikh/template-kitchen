@@ -114,7 +114,7 @@ RECIPES.echo = { // product grid - Products
 		"banner-heading2-font": "{font-family:inherit;font-size:52px;font-weight:200;line-height:1.42em;}",
 		"banner-heading3-font": "{font-family:inherit;font-size:42px;font-weight:400;line-height:1.5em;}",
 
-		"alt-body-font": "{font-family:'myriad-pro', Helvetica, Arial, Verdana, sans-serif;font-size:18px;font-weight:400;line-height:1.5em;}",
+		"alt-body-font": "{font-family:'myriad-pro', Helvetica, Arial, Verdana, sans-serif;font-size:18px;font-weight:200;line-height:1.5em;}",
 		"alt-heading1-font": "{font-family:inherit;font-size:32px;font-weight:200;line-height:1.05em;}",
 		"alt-heading2-font": "{font-family:inherit;font-size:24px;font-weight:200;line-height:1.42em;}",
 

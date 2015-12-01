@@ -132,8 +132,8 @@ window.RECIPES = {
 			"Banner  Blocks  Content - Layout Spacing": ["Sides"],
 
 			"Gallery Scroll  Content - Layout Spacing": ["Sides"],
-			"Gallery Scroll - Typeset": "Alternate",
-			"Gallery Scroll  Meta - Typeset": ["Banner"],
+			"Gallery Scroll  Meta - Typeset": "Alternate",
+			"Gallery Scroll  Meta - Typeset": ["Banner"], // first is banner
 			"Page Footer - Typeset": "Alternate",
 			"Page Footer - Palette": "Alternate"
 		}
