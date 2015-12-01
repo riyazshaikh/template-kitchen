@@ -118,10 +118,10 @@ window.RECIPES = {
 		},
 		'products-item': {
 			"Banner - Display": "Hide",
-			"Products  Category Nav - Display": ["Hide"],
-			"Products  Content - Layout Spacing": ["Sides"],
-			"Products  Content - Meta Align": ["Right"],
-			"Products - Typeset": "Alternate"
+			"Products Item  Category Nav - Display": ["Hide"],
+			"Products Item  Content - Layout Spacing": ["Sides"],
+			"Products Item  Content - Meta Align": ["Right"],
+			"Products Item - Typeset": "Alternate"
 		},
 		'gallery-scroll': {
   		"Header - Display": "Overlaid Overlap",
