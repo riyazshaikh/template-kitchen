@@ -53,8 +53,11 @@
 body, [data-palette=main] { /* Default */
 	color: @main-textColor;
 	.background-color(@main-bgColor);
-	h1,h2,h3 {
+	h1,h2 {
 		color: @main-headingColor;
+	}
+	h3 {
+		color: @main-metaColor;
 	}
 	a {
 		color: @main-linkColor;
@@ -64,8 +67,11 @@ body, [data-palette=main] { /* Default */
 [data-palette=alternate] {
 	color: @alt-textColor;
 	.background-color(@alt-bgColor);
-	h1,h2,h3 {
+	h1,h2 {
 		color: @alt-headingColor;
+	}
+	h3 {
+		color: @alt-metaColor;
 	}
 	a {
 		color: @alt-linkColor;
@@ -75,8 +81,11 @@ body, [data-palette=main] { /* Default */
 [data-palette=banner] {
 	color: @banner-textColor;
 	.background-color(@banner-bgColor);
-	h1,h2,h3 {
+	h1,h2 {
 		color: @banner-headingColor;
+	}
+	h3 {
+		color: @banner-metaColor;
 	}
 	a {
 		color: @banner-linkColor;
@@ -84,9 +93,9 @@ body, [data-palette=main] { /* Default */
 }
 
 [data-background=solid] {
-  &[data-palette=main], [data-palette=main] & { .background-color(@main-bgColor) }
-  &[data-palette=alternate], [data-palette=alternate] & { .background-color(@alt-bgColor) }
-  &[data-palette=banner], [data-palette=banner] & { .background-color(@banner-bgColor) }
+  [data-palette=main] & { .background-color(@main-bgColor) }
+  [data-palette=alternate] & { .background-color(@alt-bgColor) }
+  [data-palette=banner] & { .background-color(@banner-bgColor) }
 }
 
 [data-background=translucent] {
@@ -96,5 +105,5 @@ body, [data-palette=main] { /* Default */
 }
 
 [data-background=transparent] {
-  &[data-palette], [data-palette] & { background: transparent; }
+  background: transparent;
 }

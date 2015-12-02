@@ -57,10 +57,10 @@
   font-family: inherit;
   font-weight: 400;
   font-style: normal;
-  font-size: 21px;
+  font-size: 14px;
   letter-spacing: 0px;
   text-transform: none;
-  line-height: 1.2em;
+  line-height: 1.6em;
 }
 
 //tweak: { "type" : "font", "title" : "Button Font", "category" : "Main - Typeset", "target" : ".button", "showOnlyWhenPresent" : ".button" }
@@ -70,17 +70,9 @@
   line-height: 1em;
   font-weight: 500;
   text-transform: uppercase;
-  text-decoration: none;  
-}
-
-//tweak: { "type" : "font", "title" : "Meta Font", "category" : "Main - Typeset", "target" : "body" }
-.meta-font {
-  font-family: inherit;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 14px;
-  letter-spacing: 0px;
-  line-height: 1.6em;
+  text-decoration: none; 
+  padding: 1em 2em; 
+  margin: 1em;
 }
 
 //tweak: { "type" : "font", "title" : "Quote Font", "category" : "Main - Typeset", "target" : ".quote-block", "showOnlyWhenPresent" : ".quote-block" }
@@ -128,10 +120,10 @@
 .alt-heading3-font {
   font-family: inherit;
   font-weight: 300;
-  font-size: 20px;
-  line-height: 28px;
   font-style: normal;
+  font-size: 14px;
   letter-spacing: 0px;
+  line-height: 1.6em;
 }
 
 //tweak: { "type" : "font", "title" : "Button Font", "category" : "Alternate - Typeset", "target" : ".button" }
@@ -142,16 +134,8 @@
   font-weight: 500;
   text-transform: uppercase;
   text-decoration: none;  
-}
-
-//tweak: { "type" : "font", "title" : "Meta Font", "category" : "Alternate - Typeset", "target" : "body" }
-.alt-meta-font {
-  font-family: inherit;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 14px;
-  letter-spacing: 0px;
-  line-height: 1.6em;
+  padding: 1em 2em; 
+  margin: 1em;
 }
 
 
@@ -188,11 +172,11 @@
 //tweak: { "type" : "font", "title" : "Heading 3 Font", "category" : "Banner - Typeset", "target" : "#banner", showOnlyWhenPresent: "#banner" }
 .banner-heading3-font {
   font-family: inherit;
-  font-weight: 100;
-  font-size: 28px;
-  line-height: 20px;
+  font-weight: 300;
   font-style: normal;
+  font-size: 16px;
   letter-spacing: 0px;
+  line-height: 1.6em;
 }
 
 //tweak: { "type" : "font", "title" : "Button Font", "category" : "Banner - Typeset", "target" : ".button" }
@@ -203,70 +187,50 @@
   font-weight: 500;
   text-transform: uppercase;
   text-decoration: none;  
-}
-
-//tweak: { "type" : "font", "title" : "Meta Font", "category" : "Banner - Typeset", "target" : "body" }
-.banner-meta-font {
-  font-family: inherit;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 16px;
-  letter-spacing: 0px;
-  line-height: 1.6em;
+  padding: 1em 2em; 
+  margin: 1em;
 }
 
 /** Make font mixins responsive */
 .alt-body-font-responsive {
   .alt-body-font;
-
   @media (max-width: 600px)  {
     font-size: @alt-body-font-font-size * 0.8;
   }
 }
 .alt-heading1-font-responsive() {
   .alt-heading1-font;
-  /*margin: 0.67em 0;*/
-
   @media (max-width: 600px)  {
     font-size: @alt-heading1-font-font-size * 0.67;
   }
 }
 .alt-heading2-font-responsive() {
   .alt-heading2-font;
-
   @media (max-width: 600px)  {
     font-size: @alt-heading2-font-font-size * 0.7;
   }
 }
-.alt-heading3-font-responsive() {
-  .alt-heading3-font;
-
-  @media (max-width: 600px)  {
-    font-size: @alt-heading3-font-font-size * 0.8;
-  }    
-}
-.banner-body-font-responsive {
+.banner-body-font-responsive() {
   .banner-body-font;
-
   @media (max-width: 600px)  {
     font-size: @banner-body-font-font-size * 0.8;
   }
 }
-.banner-heading1-font-responsive {
+.banner-heading1-font-responsive() {
   .banner-heading1-font;
-
   @media (max-width: 1200px) {
     font-size: @banner-heading1-font-font-size * 0.7;
   }  
-
   @media (max-width: 600px)  {
     font-size: @banner-heading1-font-font-size * 0.5;
     font-weight: lighter;
   }
-
 }
-.banner-heading2-font-responsive {
+.banner-heading2-font-responsive() {
   .banner-heading2-font;
+  @media (max-width: 600px)  {
+    font-size: @banner-heading2-font-font-size * 0.7;
+  }
 }
 
 
@@ -281,19 +245,23 @@ body, [data-typeset=main] { /* Default */
   .alt-body-font-responsive;
   h1 { .alt-heading1-font-responsive; }
   h2 { .alt-heading2-font-responsive; }
+  h3 { .alt-heading3-font; }
 }
 
 [data-typeset=banner] {
   .banner-body-font-responsive;
   h1 { 
     .banner-heading1-font-responsive; 
-    margin: 0;
+    margin: 0; /* line height is more than enough */
   }
   h2 { 
     .banner-heading2-font-responsive; 
   }
+  h3 {
+    .banner-heading3-font;
+  }
   p {
-    margin: 0;
+    margin: 0; /* Banners typically need minimal spacing */
   }  
 }
 
