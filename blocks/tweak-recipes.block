@@ -12,7 +12,7 @@
 	};
 
 	// Merge default recipe for this template
-	window.RECIPE_NAME = window.RECIPE_NAME || window.location.search.split('recipe=')[1];
+	window.RECIPE_NAME = window.location.search.split('recipe=')[1] || window.RECIPE_NAME;
 	if (window.RECIPE_NAME && window.RECIPES[RECIPE_NAME]) {
 		mergeRecipe(window.RECIPES[RECIPE_NAME]['main']);
 		mergeRecipe(window.RECIPES[RECIPE_NAME][collectionType]);
