@@ -67,7 +67,7 @@
   [data-typeset=banner] & { .banner-button-font !important; }
 }
 
-[data-appearance=button-solid] {
+[data-appearance*=button-solid] {
   .colors(@linkColor, @bgColor) {
     .background-color(@linkColor);    
     color: @bgColor;
@@ -80,7 +80,7 @@
   [data-palette=banner] & { .colors(@banner-linkColor, @banner-bgColor) !important; }
 }
 
-[data-appearance=button-outline] {
+[data-appearance*=button-outline] {
   .colors(@linkColor, @bgColor) {
     background-color: transparent;
     .font-smoothing(@bgColor);
@@ -98,7 +98,7 @@
 }
 
 
-[data-appearance=button-overlay] {
+[data-appearance*=button-overlay] {
   .colors(@linkColor, @bgColor) {
     background-color: fade(@bgColor,10%);
     color: @linkColor;
@@ -114,11 +114,11 @@
   [data-palette=banner] &  {  .colors(@banner-linkColor, @banner-bgColor); }
 }
 
-[data-button=rounded] {
+[data-appearance*=rounded] {
   border-radius: 3px;
 }
 
-[data-button=pill] {
+[data-appearance*=pill] {
   border-radius: 300px;
 }
 

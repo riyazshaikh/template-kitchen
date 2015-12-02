@@ -29,7 +29,7 @@ window.RECIPES = {
 			"Header - Palette": "Main",
 			"Header - Background": "Transparent",
 			"Header - Display": "Overlaid",
-			"Header  Content - Layout Spacing": "Mixed",
+			"Header  Content - Layout Spacing": "Sides",
 			"Slidebar Nav - Layout Spacing": "Mixed",
 			"Header  Nav - Display": "Auto",
 
@@ -45,8 +45,7 @@ window.RECIPES = {
 			"Banner  Description  Title - Appearance": "Meta",
 			"#banner .description strong---appearance": "Heading1",
 			"#banner .description strong---font-effect": ["Dash"],
-			"#banner .description a---appearance": "Button Solid",
-			"#banner .description a---button": "Pill",
+			"#banner .description a---appearance": "Button Solid Pill",
 
 			"Page  Content - Layout Spacing": ["Main"],
 			"#page .content h2---font-effect": "dash",
@@ -139,6 +138,7 @@ window.RECIPES = {
 			"Gallery Scroll  Meta - Typeset": "Alternate",
 			"Gallery Scroll  Meta - Typeset": ["Banner"], // first is banner
 			"Gallery Scroll  Meta  Title - Font Effect": "Dash", 
+			"#gallery-scroll  .meta a---Appearance": ["Button Solid Pill"], 
 			"Page Footer - Typeset": "Main",
 			"Page Footer - Palette": "Alternate"
 		}
