@@ -106,7 +106,7 @@ window.RECIPES = {
 			"Footer - Palette": ["Main"],
 			"Footer  Content - Layout Spacing": ["Mixed"],
 			"Footer  Content - Layout Width": ["Full"],
-			"Footer  SQS Block - Oride": "Spacing"
+			"Footer  SQS Block - Layout Spacing": "Tops Minimal"
 		},
 		products: {
 			"Banner  Blocks  Content - Layout Width": ["Main"],
