@@ -44,10 +44,11 @@
 }
 
 [data-appearance=link-arrow] {
+  position: relative;
   &:after {
     content: ">";
-    position: relative;
-    left: 0.4em;
+    position: absolute;
+    right: -20px;
   }
   &:hover {
     border-bottom: 1px solid @main-linkColor !important;
