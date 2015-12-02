@@ -127,7 +127,6 @@ window.RECIPES = {
 			"Products Item - Typeset": "Alternate"
 		},
 		'gallery-scroll': {
-  		"Header - Display": "Overlaid Overlap",
 			"Header - Background": "Transparent",
 			"Header - Sticky": "Within Site",
 
