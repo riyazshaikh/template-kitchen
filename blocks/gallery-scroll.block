@@ -18,7 +18,7 @@
   {.repeated section items}       
     <div class="meta">
       <div class="meta-inside">
-        <p class="meta-title" data-appearance=heading1>{title}</p>              
+        <p class="title" data-appearance=heading1>{title}</p>              
         <div class="meta-description">{body}</div>
       </div>
     </div>

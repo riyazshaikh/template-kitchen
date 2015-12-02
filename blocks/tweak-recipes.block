@@ -5,7 +5,9 @@
 	var collectionType = "{collection.typeName}" + (Static.SQUARESPACE_CONTEXT.item ? '-item': '');
 	var mergeRecipe = function(obj) {
 		if(obj) for(var name in obj) {
-			Static.SQUARESPACE_CONTEXT.tweakJSON[name.replace(/\s/g,'-').toLowerCase()] = obj[name];
+			// convert to tweakJSON format (only for non-selector tweaks)
+			var tweakName = name.charAt(0) === '#' ? name : name.replace(/\s/g,'-').toLowerCase();
+			Static.SQUARESPACE_CONTEXT.tweakJSON[tweakName] = obj[name];
 		}
 	};
 
@@ -38,7 +40,7 @@
 				attr = parts[1]; 
 				value = tweaks[key];
 
-				// single instance if no class selector
+				// (optimization) single instance if no class selector
 				if (typeof(value) === 'string' && selector.indexOf(' .') === -1) value = [value]; 
 
 			  tweakMap[selector] = tweakMap[selector] || {};

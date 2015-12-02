@@ -39,14 +39,14 @@ window.RECIPES = {
 			"Banner  Description  Content - Layout Width": "Main",
 			"Banner  Description  Content - Layout Spacing": "Sides",
 			"Banner  Description  Content - Align": "Center Left",
-			"Banner  Description  Content - Italic": "Dash",
+			"Banner  Description  Title - Font Effect": "Dash",
 			"Banner  Description  Content - Button": "Solid",
 			"Banner  Description  Content - Button Corner": "Pill",
 			"Banner  Blocks  Content - Layout Width": "Main",
 			"Banner  Blocks  Content - Layout Spacing": "Sides",
 			"Banner  Blocks  Content - Parallax": "Enable",			
 
-			"Page  Content - Italic": "Dash",
+			"#page .content h2---font-effect": "dash",
 	    "Page - Palette": "Alternate",
 
 	    "Footer - Palette": "Main",
@@ -84,7 +84,7 @@ window.RECIPES = {
 			"Banner - Background": "Transparent",
 			"Banner - Palette": "Main",
 			"Banner  Blocks  Content - Layout Spacing": "Main",
-			"Banner  Blocks  Content - Italic": "Highlight",
+			"#banner .blocks em---font-effect": "highlight",
 		},
 		gallery: {
 		}
@@ -98,7 +98,7 @@ window.RECIPES = {
 			"Banner - Palette": "Main",
 
 			"Banner  Description  Title - Display": ["Hide"],
-			"Banner  Blocks  Content - Italic": ["Dash"],
+			"#banner  .blocks  .content h1---font-effect": ["Dash"],
 			"Page Footer  Content - Layout Spacing": ["Main"],
 			"Footer  Nav - Align": ["Center"],
 			"Footer - Palette": ["Main"],
@@ -135,7 +135,7 @@ window.RECIPES = {
 			"Gallery Scroll  Content - Layout Spacing": ["Sides"],
 			"Gallery Scroll  Meta - Typeset": "Alternate",
 			"Gallery Scroll  Meta - Typeset": ["Banner"], // first is banner
-			"Gallery Scroll  Meta - Italic": "Dash", 
+			"Gallery Scroll  Meta  Title - Font Effect": "Dash", 
 			"Page Footer - Typeset": "Main",
 			"Page Footer - Palette": "Alternate"
 		}
