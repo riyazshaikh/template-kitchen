@@ -30,7 +30,7 @@
     if (this.header.dataset.display === 'overlaid') {
       this.stylesheet = document.createElement('style');
       this.stylesheet.type = "text/css";
-      this.rule = document.createTextNode('.header-overlap { padding-top:' + this.header.offsetHeight + 'px; }');
+      this.rule = document.createTextNode('[data-overlap=header] { padding-top:' + this.header.offsetHeight + 'px; }');
 
       this.head.appendChild(stylesheet);
       this.stylesheet.appendChild(this.rule);
@@ -41,7 +41,7 @@
       this.resize = new ResizeSensor(this.header, function() {
         console.log('header', this.header.offsetHeight);
         this.stylesheet.removeChild(this.rule);
-        this.rule = document.createTextNode('.header-overlap { padding-top:' + this.header.offsetHeight + 'px; }');
+        this.rule = document.createTextNode('[data-overlap=header] { padding-top:' + this.header.offsetHeight + 'px; }');
         this.stylesheet.appendChild(this.rule);
       });
     } else { // remove anything added

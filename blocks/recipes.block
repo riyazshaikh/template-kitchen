@@ -13,6 +13,7 @@ window.RECIPES = {
 			"Banner  Image - Parallax": "Enable",
 			"Banner  Description - Display": "Hide",
 			"Banner  Blocks - Background": "Translucent",
+			"Banner  Blocks - Overlap": "Header",
 			"Banner  Blocks  Content - Layout Spacing": "Main",
 
 			"Page Footer - Palette": "Banner",
@@ -127,6 +128,7 @@ window.RECIPES = {
 			"Products Item - Typeset": "Alternate"
 		},
 		'gallery-scroll': {
+			"Header - Display": "Overlaid",
 			"Header - Background": "Transparent",
 			"Header - Sticky": "Within Site",
 
