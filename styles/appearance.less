@@ -45,9 +45,14 @@
 
 [data-appearance=link-arrow] {
   &:after {
-    content: "\f105";
+    content: ">";
     position: relative;
     left: 0.4em;
+  }
+  &:hover {
+    border-bottom: 1px solid @main-linkColor !important;
+    [data-palette=alternate] & { border-bottom: 1px solid @alt-linkColor !important; }
+    [data-palette=banner] & { border-bottom: 1px solid @banner-linkColor !important; }
   }
 }
 
