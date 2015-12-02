@@ -132,13 +132,17 @@
     background-color:  @main-headingColor;
     [data-palette=alternate] &  {  background-color:  @alt-headingColor; }
     [data-palette=banner] &  {  background-color:  @banner-headingColor; }
+  }
 
-    [data-align~=center] &, &.text-align-center {
+  [data-align~=center] &, &.text-align-center {
+    &:after {
       left: 50%;
       margin-left: -1rem;
     }
-
-    [data-align~=right] &, &.text-align-right {
+  }
+  
+  [data-align~=right] &, &.text-align-right {
+    &:after {
       right: 0;
     }
   }
