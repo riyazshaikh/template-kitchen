@@ -14,7 +14,12 @@ Y.use('node', function (Y) {
 			};
 
 			Y.Global.on('tweak:change', function (f) {
-				setTweak(f.getName(), f.getValue());
+				try {
+					setTweak(f.getName(), f.getValue());	
+				} catch(e) {
+					console.log('error in tweaking.js', e);
+				}
+				
 
 			});
 
