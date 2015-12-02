@@ -98,7 +98,6 @@ window.RECIPES = {
 			"Banner - Palette": "Main",
 
 			"Banner  Description  Title - Display": ["Hide"],
-			"#banner  .blocks  .content h1---font-effect": ["Dash"],
 			"Page Footer  Content - Layout Spacing": ["Main"],
 			"Footer  Nav - Align": ["Center"],
 			"Footer - Palette": ["Main"],
@@ -108,6 +107,8 @@ window.RECIPES = {
 		},
 		products: {
 			"Banner  Blocks  Content - Layout Width": ["Main"],
+			"#banner .blocks .content h2, #banner  .blocks  .content h1---font-effect": ["Dash"],
+			"#banner .blocks .content p---appearance": ["Meta"],
 			"Products  Category Nav - Sticky": ["Within Site"],
 			"Products  Category Nav - Layout Spacing": ["Mixed"],
 

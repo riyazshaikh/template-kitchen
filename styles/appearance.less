@@ -115,10 +115,8 @@
 }
 
 [data-font-effect=dash] {
-  margin-bottom: 0;
-    
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem !important;
   display: inline-block;
 
   &:after {
@@ -135,12 +133,12 @@
     [data-palette=alternate] &  {  background-color:  @alt-headingColor; }
     [data-palette=banner] &  {  background-color:  @banner-headingColor; }
 
-    [data-align~=center] &, .text-align-center & {
+    [data-align~=center] &, &.text-align-center {
       left: 50%;
       margin-left: -1rem;
     }
 
-    [data-align~=right] &, .text-align-right & {
+    [data-align~=right] &, &.text-align-right {
       right: 0;
     }
   }
