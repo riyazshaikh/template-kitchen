@@ -48,6 +48,7 @@ window.RECIPES = {
 			"#banner .description a---appearance": "Button Solid",
 			"#banner .description a---button": "Pill",
 
+			"Page  Content - Layout Spacing": ["Main"],
 			"#page .content h2---font-effect": "dash",
 	    "Page - Palette": "Alternate",
 
