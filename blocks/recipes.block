@@ -117,6 +117,9 @@ window.RECIPES = {
 
 			"Products  Content - Layout Spacing": ["Sides"],
 			"Products - Palette": ["Main"],
+			"Products - Typeset": ["Alternate"],
+			"Products  Product Title - Appearance": "Unset",
+			"Products  Product Price - Appearance": "Meta",
 			"Products  Product Meta - Flex": "Space Between",
 			"Products  Product Image - Effect": "Pop"
 		},
