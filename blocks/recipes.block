@@ -44,6 +44,7 @@ window.RECIPES = {
 			"Banner  Blocks  Content - Parallax": "Enable",			
 			"Banner  Description  Title - Appearance": "Meta",
 			"#banner .description strong---appearance": "Heading1",
+			"#banner .description strong---font-effect": ["Dash"],
 			"#banner .description a---appearance": "Button Solid",
 			"#banner .description a---button": "Pill",
 
