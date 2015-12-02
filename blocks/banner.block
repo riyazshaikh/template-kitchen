@@ -7,10 +7,10 @@
   </div>
   <div class="description">
     <div class="content">
-      <div class="title" data-content-field="title" data-appearance=heading1>
-        {title}
-      </div>            
       <div data-content-field="description">
+        <div class="title" data-content-field="title" data-appearance=heading1>
+          {title}
+        </div>            
       {description}
       </div>
     </div>
