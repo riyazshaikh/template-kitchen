@@ -10,25 +10,3 @@
 		.transform(scale(1.03));
 	}
 }
-
-#products {
-	.product-title {
-		.heading3-font !important;
-		[data-typeset=banner]	& { .banner-heading3-font !important; }
-		[data-typeset=alternate]	& { .alt-heading3-font !important; }
-
-		color: @main-headingColor !important;
-		[data-palette=banner]	& { color: @banner-headingColor !important; }
-		[data-palette=alternate]	& { color: @alt-headingColor !important; }
-	}
-
-	.product-price {
-		.body-font !important;
-		[data-typeset=banner]	& { .banner-body-font !important; }
-		[data-typeset=alternate]	& { .alt-body-font !important; }
-
-		color: @main-metaColor !important;
-		[data-palette=banner]	& { color: @banner-metaColor !important; }
-		[data-palette=alternate]	& { color: @alt-metaColor !important; }
-	}	
-}
