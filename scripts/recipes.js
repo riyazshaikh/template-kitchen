@@ -39,21 +39,7 @@ RECIPES.alfa = { // parallax header/footer - regular page (use as support page)
 RECIPES.bravo = { // sliding gallery - Index - 
 	tweakJson: {
 		"mainMetaWidth": "47%",
-		"mainSpacingTop": "20px",
-		"logoContainerWidth": "70px",
-
-		"mainContentWidth": "100%",
-		"mainSpacingTop": "5%",
-		"mainSpacingSide": "5%",
-
-		"bannerContentWidth": "1100px",
-		"bannerSpacingTop": "0",
-		"bannerSpacingSide": "5%",
-
-		"altContentWidth": "100%",
-		"altSpacingTop": "0",
-		"altSpacingSide": "5%",
-
+		"logoContainerWidth": "60px",
 
 		"body-font": "{font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;font-weight:300;line-height:1.5em;}",
 		"heading2-font": "{font-family:inherit;font-size:36px;font-weight:700;line-height:1.2em;}",
@@ -64,9 +50,6 @@ RECIPES.bravo = { // sliding gallery - Index -
 		"main-bgColor": "#f3efee",
 		// "main-linkColor": "#cf3f02",
 		"main-metaColor": "rgba(15,15,15,0.5)",
-
-		// "alt-bgColor": "#f5f5f5",
-		// "alt-textColor": "#333",
 	},
 	webfontsJson: [
 		"Open+Sans:300,300italic,700normal,700italic,500undefined"
