@@ -1,7 +1,8 @@
 {@|apply selector-listener.block}
 <script>
-(function(){
-	
+(function(){	
+	window.RECIPES = {@|apply recipes.block};
+
 	var collectionType = "{collection.typeName}" + (Static.SQUARESPACE_CONTEXT.item ? '-item': '');
 	var mergeRecipe = function(obj) {
 		if(obj) for(var name in obj) {

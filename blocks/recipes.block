@@ -1,5 +1,4 @@
-<script>
-window.RECIPES = {
+{
 	alfa: {
 		main: {
   		"Header - Display": "Overlaid",
@@ -148,5 +147,4 @@ window.RECIPES = {
 			"Page Footer - Palette": "Alternate"
 		}
 	}
-};
-</script>
+}
