@@ -112,11 +112,11 @@
 
 			"#products .content": ["layout-spacing=sides"],
 			"#products": ["palette=main"],
-			"#products - Typeset": ["Alternate"],
-			"#products .product-title": "appearance=unset",
-			"#products .product-price": "appearance=meta",
-			"#products .product-meta": "flex=space-between",
-			"#products .product-image": "effect=pop"
+			"#products": ["typeset=alternate"],
+			"#products .product-title ": "appearance=unset",
+			"#products .product-price ": "appearance=meta",
+			"#products .product-meta ": "flex=space-between",
+			"#products .product-image ": "effect=pop"
 		},
 		'products-item': {
 			"#banner": "display=hide",
