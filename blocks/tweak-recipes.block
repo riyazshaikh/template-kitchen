@@ -13,23 +13,30 @@
 			}	
 		},
 		attach: function(event) {
-			console.log('RecipeManager adding ingredient', event.target, this.recipe[event.selector]);
+			var selector = event.selector;
+			var el = event.target;
 
-			var values = this.recipe[event.selector];
-			if (values) values.forEach(function(val) {
+			console.log('triggered', selector, el);
+
+			var values = this.recipe[selector];
+			if (!values) return; // nothing to do
+
+			console.log('RecipeManager adding ingredient', values, el);
+
+			values.forEach(function(val) {
 				var parts = val.split('='); // indicates an attribute
-				if (parts.length == 2) event.target.setAttribute('data-'+parts[0],parts[1]);
-				else event.target.classList.add(val); // else class
+				if (parts.length == 2) el.setAttribute('data-'+parts[0],parts[1]);
+				else el.classList.add(val); // else class
 			});
 
-			// stop listening if this is marked as once, or has no descendant selector
-			if (selector.indexOf(':first-of-type') > -1 || selector.indexOf(' ') === -1) {
-				delete this.recipe[event.selector];
+			// stop listening if this is not marked to be continuous
+			if (selector.charAt(selector.length-1) !== ' ') {
+				delete this.recipe[selector];
 				return false; // stop listening to selector
 			}
 
 			// else keep going
-	    event.target.style.visibility = 'visible';
+	    el.style.visibility = 'visible';
 			return true; 
 		},
 		listen: function() { 
@@ -55,8 +62,15 @@
 	for (key in tweaks) {
 		parts = key.split('---'); // attribute marker
 		if (parts.length == 2 && tweaks[key] !== "") { // only process if there is something to be set
-			// convert tweak name into selector, with class path if present, marked for single instance only
-			selector = '#' + parts[0].replace(/--/g,' .') + ':first-of-type'; 
+			
+			// convert tweak name into selector, with double space as class name
+			selector = '#' + parts[0].replace(/--/g,' .'); 
+
+			if (parts[1].charAt(0) === '-') { // marker for generic selector
+				parts[1] = parts[1].substr(1);
+				selector += ' '; // mark it generic
+			}
+			
 			// make attribute from tweak attribute and value
 			value = parts[1]+'='+tweaks[key].toLowerCase().replace(/\s/g,"-");
 			var obj = {};

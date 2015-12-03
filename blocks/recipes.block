@@ -2,22 +2,22 @@
 	alfa: {
 		main: {
   		"#header": ["display=overlaid","background=transparent"],
-			"#header .content:first-of-type": "layout-spacing=mixed",
+			"#header .content": "layout-spacing=mixed",
 			"#slidebar-nav": "layout-spacing=mixed",
-			"#header .block:first-of-type": "display=hide",
-			"#header .nav:first-of-type": "display=auto",
+			"#header .block": "display=hide",
+			"#header .nav": "display=auto",
 
 			"#banner": "background=transparent",
-			"#banner .image:first-of-type": "parallax=enable",
-			"#banner .description:first-of-type": "display=hide",
-			"#banner .blocks:first-of-type": ["background=translucent","overlap=header"],
-			"#banner .blocks .content:first-of-type": "layout-spacing=main",
+			"#banner .image": "parallax=enable",
+			"#banner .description": "display=hide",
+			"#banner .blocks": ["background=translucent","overlap=header"],
+			"#banner .blocks .content": "layout-spacing=main",
 
 			"#page-footer": "palette-banner",
-			"#page-footer .image:first-of-type": "parallax=enable",
-			"#page-footer .content:first-of-type": "layout-spacing=main",
-			"#page-footer .content:first-of-type": "sticky=within-site-bottom",
-			"#page-footer .blocks:first-of-type": "background=translucent",
+			"#page-footer .image": "parallax=enable",
+			"#page-footer .content": "layout-spacing=main",
+			"#page-footer .content": "sticky=within-site-bottom",
+			"#page-footer .blocks": "background=translucent",
 
 			"#footer": "display=hide",
 		}
