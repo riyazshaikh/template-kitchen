@@ -35,7 +35,7 @@
 		listen: function() { 
 			this.attachFn = this.attach.bind(this);
 			for(var selector in this.recipe) {
-				document.addSelectorListener(selector, attachFn);	
+				document.addSelectorListener(selector, this.attachFn);	
 			}
 		},
 		force: function() { // force detection of loaded selectors
