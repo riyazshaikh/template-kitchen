@@ -70,16 +70,17 @@
 		},
 	},
 	delta: {
-		main: {
+		tweaks: {
 			"Header  Nav - Display": "Auto",
-			"Header  Content - Layout Spacing": "Mixed",
-			"Slidebar Nav - Layout Spacing": "Mixed",
+			"Banner - Palette": "Main",
+		},
+		main: {
+			"#header .content": "layout-spacing=mixed",
+			"#slidebar-nav": "layout-spacing=mixed",
 
-  		"#banner - Display": "Overlaid",
-			"#banner - Background": "Transparent",
-			"#banner - Palette": "Main",
-			"#banner  Blocks  Content - Layout Spacing": "Main",
-			"#banner .blocks em---font-effect": "highlight",
+  		"#banner": ["display=overlaid","background=transparent"],
+			"#banner .blocks .content": "layout-spacing=main",
+			"#banner .blocks em ": "font-effect=highlight",
 		},
 		gallery: {
 		}
