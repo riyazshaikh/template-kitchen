@@ -16,13 +16,10 @@
 			var selector = event.selector;
 			var el = event.target;
 
-			console.log('triggered', selector, el);
-
 			var values = this.recipe[selector];
 			if (!values) return; // nothing to do
 
 			console.log('RecipeManager adding ingredient', values, el);
-
 			values.forEach(function(val) {
 				var parts = val.split('='); // indicates an attribute
 				if (parts.length == 2) el.setAttribute('data-'+parts[0],parts[1]);
@@ -54,6 +51,41 @@
 					}
 				}
 			}
+		},
+		getFormatted: function(tweaks) {
+			// process tweak names
+			var formatted = {};
+			for(var name in tweaks) {
+				var newName = name.match(/\s/) ? name.replace(/\s/g,'-').toLowerCase() : name;
+				formatted[newName] = tweaks[name];
+			}
+			return formatted;
+		},
+		resetTweaks: function(name) {
+			if (!Static.SQUARESPACE_CONTEXT.authenticatedAccount) return;
+
+			name = name || window.RECIPE_NAME;
+			var recipe = RECIPES[name];
+
+			Y.use('squarespace-util', function(Y) {
+				Y.Data.post({
+	        url: '/api/template/SetTemplateTweakSettings',
+	        data: {
+	          tweakJson: Y.JSON.stringify(this.getFormatted(recipe['tweaks'])),
+	          webfontsJson: Y.JSON.stringify(recipe['webfonts'])
+	        },
+	        success: function() {
+						Y.Data.get({
+							url:"/api/templates/"+Static.SQUARESPACE_CONTEXT.templateId+"/reprocess-tweaks", 
+							success: function() { 
+			        	alert('Recipe ' + name.toUpperCase() + ' applied!');
+			        	window.location.href = window.location.pathname + '?recipe='+name;
+							} 
+						});	        	
+	        }
+				});
+			});
+
 		}
 	};
 
@@ -70,7 +102,7 @@
 				parts[1] = parts[1].substr(1);
 				selector += ' '; // mark it generic
 			}
-			
+
 			// make attribute from tweak attribute and value
 			value = parts[1]+'='+tweaks[key].toLowerCase().replace(/\s/g,"-");
 			var obj = {};
@@ -89,7 +121,7 @@
 	// Merge custom recipe (if any)
 	RecipeManager.add(window.RECIPE_CUSTOM);
 
-	RecipeManager.listen();
+	RecipeManager.listen(); // start listening for selectors
 
 	// to handle edge case where selector-listener has not loaded selectors before domready
 	document.addEventListener("DOMContentLoaded", function(event) {
