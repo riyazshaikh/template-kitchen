@@ -39,7 +39,7 @@
 			"#banner .blocks .content": ["layout-width=main","layout-spacing=sides","parallax-enable"],
 			"#banner .description .title": "appearance=meta",
 			"#banner .description strong": ["appearance=heading1","font-effect=dash"],
-			"#banner .description a ": "appearance=button-solid-pill",
+			"#banner .description a": "appearance=button-solid-pill",
 
 			"#page .content": "layout-spacing=main",
 			"#page .content h2": "font-effect=dash",
@@ -51,23 +51,22 @@
 
 	},
 	charlie: {
-		main: {
+		tweaks: {
 			"Header - Palette": "Main",
-			"Header - Background": "Transparent",
-			"Header - Display": "Overlaid",
-			"Header - Sticky": "Within Site",
-			"Header  Content - Layout Spacing": ["Mixed"],
-			"Slidebar Nav - Layout Spacing": "Mixed",
-			"Header  Block - Display": ["Hide"],
-			"Header  Nav - Display": ["Hide"],
+			"Header  Nav - Display": "Hide",
+			"Banner - Palette": "Main",
+		},
+		'gallery-scroll': {
+			"#header": ["background=transparent","display=overlaid","sticky=within-site"],
+			"#header .content": "layout-spacing=mixed",
+			"#slidebar-nav": "layout-spacing=mixed",
+			"#header .block": "display=hide",
 
-			"#banner - Palette": "Main",
-			"#banner  Image - Parallax": ["Enable"],
-			"#banner  Description - Display": ["Hide"],
-			"#banner  Blocks  Content - Layout Width": ["Main"],
-			"#banner  Blocks  Content - Parallax": ["Enable"],
+			"#banner .image": "parallax=enable",
+			"#banner .description": "display=hide",
+			"#banner .blocks .content": ["layout-width=main","Parallax=enable"],
 
-			"Gallery Scroll  Content - Layout Width": ["Main"],
+			"#gallery-scroll .content": "layout-width=main",
 		},
 	},
 	delta: {
