@@ -1,99 +1,98 @@
 {@|apply selector-listener.block}
 <script>
-(function(){	
-	window.RECIPES = {@|apply recipes.block};
-
+(function(){
 	var collectionType = "{collection.typeName}" + (Static.SQUARESPACE_CONTEXT.item ? '-item': '');
-	var mergeRecipe = function(obj) {
-		if(obj) for(var name in obj) {
-			// convert to tweakJSON format (only for non-selector tweaks)
-			var tweakName = name.charAt(0) === '#' ? name : name.replace(/\s/g,'-').toLowerCase();
-			Static.SQUARESPACE_CONTEXT.tweakJSON[tweakName] = obj[name];
+	var RECIPES = {@|apply recipes.block};
+	
+	window.RecipeManager = {
+		recipe: {},
+		singles: [],
+		add: function(obj) {
+			var parts;
+			if(obj) for(var selector in obj) {
+				parts = selector.split(':1');
+				// identify single instance selector
+				if (parts.length == 2 || selector.indexOf(' ') === -1) {
+					selector = parts[0];
+					this.singles.push(selector);
+				}
+				this.recipe[selector] = this.recipe[selector] || [];
+				Array.prototype.push.apply(this.recipe[selector], Array.isArray(obj[selector]) ? obj[selector] : [obj[selector]]);
+			}	
+		},
+		attach: function(event) {
+			console.log('RecipeManager adding ingredient', event.target, this.recipe[event.selector]);
+
+			var values = this.recipe[event.selector];
+			if (values) values.forEach(function(val) {
+				var parts = val.split('='); // indicates an attribute
+				if (parts.length == 2) event.target.setAttribute('data-'+parts[0],parts[1]);
+				else event.target.classList.add(val); // else class
+			});
+
+			// stop listening if this is a single instance
+			if (this.singles.indexOf(event.selector)) {
+				delete this.recipe[event.selector];
+				return false; // stop listening to selector
+			}
+
+			// else keep going
+	    event.target.style.visibility = 'visible';
+			return true; 
+		},
+		listen: function() { 
+			for(var selector in this.recipe) {
+				document.addSelectorListener(selector, this.attach.bind(this));	
+			}
+		},
+		force: function() {
+			for(var selector in this.recipe) {
+				var els = document.querySelectorAll(selector);
+				for (var i=0; i<els.length; i++) {
+					if (this.attach({ selector: selector, target: els[i] }) === false)
+						break;
+				}
+			}
 		}
 	};
 
-	// Merge default recipe for this template
-	window.RECIPE_NAME = window.location.search.split('recipe=')[1] || window.RECIPE_NAME;
-	if (window.RECIPE_NAME && window.RECIPES[RECIPE_NAME]) {
-		mergeRecipe(window.RECIPES[RECIPE_NAME]['main']);
-		mergeRecipe(window.RECIPES[RECIPE_NAME][collectionType]);
-	} 
-
-	// Merge custom recipes if any defined for this collection instance
-	if (window.RECIPE_CUSTOM) {
-		mergeRecipe(window.RECIPE_CUSTOM);
-	}
-
-	// Attach recipe to dom
-	var tweaks = Static.SQUARESPACE_CONTEXT.tweakJSON, parts, key, value, selector, attr, tweakMap = {};
+	// Start with base tweaks as recipe
+	var tweaks = Static.SQUARESPACE_CONTEXT.tweakJSON, parts, key, selector, value;
 	for (key in tweaks) {
 		parts = key.split('---'); // attribute marker
-		
-		if ( parts.length == 2 ) { // only process if attribute to be set
-
-			if (tweaks[key] !== "") { // skip empty tweak values
-
-				if (parts[0].charAt(0) == '#') { // allow explicit selectors
-					selector = parts[0];
-				} else {
-					selector = '#' + parts[0].replace(/--/g,' .'); // convert double space into class selector
-				}
-				attr = parts[1]; 
-				value = tweaks[key];
-
-				// (optimization) single instance if no class selector
-				if (typeof(value) === 'string' && selector.indexOf(' .') === -1) value = [value]; 
-
-			  tweakMap[selector] = tweakMap[selector] || {};
-			  tweakMap[selector][attr] = value;
-			}
+		if (parts.length == 2 && tweaks[key] !== "") { // only process if there is something to be set
+			// convert tweak name into selector, with class path if present, marked for single instance only
+			selector = '#' + parts[0].replace(/--/g,' .') + ':1'; 
+			// make attribute from tweak attribute and value
+			value = parts[1]+'='+tweaks[key].toLowerCase().replace(/\s/g,"-");
+			var obj = {};
+			obj[selector] = value;
+		  RecipeManager.add(obj);
 		}
 	}
 
-	var setTweakAttr = function(event) {
-		var dataset = tweakMap[event.selector];
-		if (!dataset) return false; // nothing to do
+	// Merge template and collection specific recipe
+	var recipe = RECIPES[window.location.search.split('recipe=')[1] || window.RECIPE_NAME];
+	if (recipe) {
+		RecipeManager.add(recipe['main']);
+		RecipeManager.add(recipe[collectionType]);
+	} 
 
-		console.log('adding tweaks', event.target, dataset);
-		for (var attr in dataset) {
-			var value = Array.isArray(dataset[attr]) ? dataset[attr].shift() : dataset[attr];
-			event.target.setAttribute('data-'+attr, value.toLowerCase().replace(/\s/g,"-"));
+	// Merge custom recipe (if any)
+	RecipeManager.add(window.RECIPE_CUSTOM);
 
-			if (Array.isArray(dataset[attr]) && dataset[attr].length === 0) 
-				delete dataset[attr];
-		}
+	RecipeManager.listen();
 
-		if (Object.keys(dataset).length === 0) {
-			delete tweakMap[event.selector];
-			return false; // stop listening to selector
-		}
-
-		// keep going
-    event.target.style.visibility = 'visible';
-		return true; 
-	};
-
-	for(var selector in tweakMap) {
-		/** Set tweak attributes on element selector as available **/
-		document.addSelectorListener(selector, setTweakAttr);	
-	}
-				
 	// to handle edge case where selector-listener has not loaded selectors before domready
 	document.addEventListener("DOMContentLoaded", function(event) {
-		for(var selector in tweakMap) {
-			var els = document.querySelectorAll(selector);
-			for (var i=0; i<els.length; i++) {
-				if (setTweakAttr({ selector: selector, target: els[i] }) === false)
-					break;
-			}
-		}
+		RecipeManager.force();
 
 		// also make links goto correct recipe (if applicable)
-		var recipe = window.location.search.split('recipe=')[1];
-		if (recipe) {
+		var recipeName = window.location.search.split('recipe=')[1];
+		if (recipeName) {
 			var nodes = document.querySelectorAll('a[href^="/"]')
 			for(var i=0; i<nodes.length; i++) {
-				nodes[i].setAttribute('href', nodes[i].getAttribute('href') + '?recipe=' + recipe);
+				nodes[i].setAttribute('href', nodes[i].getAttribute('href') + '?recipe=' + recipeName);
 			}
 		}
 	});

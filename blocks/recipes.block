@@ -1,27 +1,25 @@
 {
 	alfa: {
 		main: {
-  		"Header - Display": "Overlaid",
-			"Header - Background": "Transparent",
-			"Header  Content - Layout Spacing": "Mixed",
-			"Slidebar Nav - Layout Spacing": "Mixed",
-			"Header  Block - Display": "Hide",
-			"Header  Nav - Display": "Auto",
+  		"#header": ["display=overlaid","background=transparent"],
+			"#header .content:1": "layout-spacing=mixed",
+			"#slidebar-nav": "layout-spacing=mixed",
+			"#header .block:1": "display=hide",
+			"#header .nav:1": "display=auto",
 
-			"Banner - Background": "Transparent",
-			"Banner  Image - Parallax": "Enable",
-			"Banner  Description - Display": "Hide",
-			"Banner  Blocks - Background": "Translucent",
-			"Banner  Blocks - Overlap": "Header",
-			"Banner  Blocks  Content - Layout Spacing": "Main",
+			"#banner": "background=transparent",
+			"#banner .image:1": "parallax-enable",
+			"#banner .description:1": "display=hide",
+			"#banner .blocks:1": ["background=translucent","overlap=header"]
+			"#banner .blocks .content:1": "layout-spacing=main",
 
-			"Page Footer - Palette": "Banner",
-			"Page Footer  Image - Parallax": "Enable",
-			"Page Footer  Content - Layout Spacing": "Main",
-			"Page Footer  Content - Sticky": "Within Site Bottom",
-			"Page Footer  Blocks - Background": "Translucent",
+			"#page-footer": "palette-banner",
+			"#page-footer .image:1": "parallax=enable",
+			"#page-footer .content:1": "layout-spacing=main",
+			"#page-footer .content:1": "sticky=within-site-bottom",
+			"#page-footer .blocks:1": "background=translucent",
 
-			"Footer - Display": "Hide",
+			"#footer": "display=hide",
 		}
 	},
 	bravo: {
