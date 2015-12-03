@@ -66,13 +66,15 @@
 
 			name = name || window.RECIPE_NAME;
 			var recipe = RECIPES[name];
+			var tweaks = this.getFormatted(recipe['tweaks']);
+			var webfonts = recipe['webfonts'];
 
 			Y.use('squarespace-util', function(Y) {
 				Y.Data.post({
 	        url: '/api/template/SetTemplateTweakSettings',
 	        data: {
-	          tweakJson: Y.JSON.stringify(this.getFormatted(recipe['tweaks'])),
-	          webfontsJson: Y.JSON.stringify(recipe['webfonts'])
+	          tweakJson: Y.JSON.stringify(tweaks),
+	          webfontsJson: Y.JSON.stringify(webfonts)
 	        },
 	        success: function() {
 						Y.Data.get({
