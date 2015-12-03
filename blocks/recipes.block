@@ -10,7 +10,7 @@
 			"#banner": "background=transparent",
 			"#banner .image:1": "parallax-enable",
 			"#banner .description:1": "display=hide",
-			"#banner .blocks:1": ["background=translucent","overlap=header"]
+			"#banner .blocks:1": ["background=translucent","overlap=header"],
 			"#banner .blocks .content:1": "layout-spacing=main",
 
 			"#page-footer": "palette-banner",
