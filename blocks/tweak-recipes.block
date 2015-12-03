@@ -6,19 +6,10 @@
 	
 	window.RecipeManager = {
 		recipe: {},
-		singles: [],
 		add: function(obj) {
-			var parts, values;
 			if(obj) for(var selector in obj) {
-				parts = selector.split(':1');
-				// identify single instance selector
-				if (parts.length == 2 || selector.indexOf(' ') === -1) {
-					selector = parts[0];
-					this.singles.push(selector);
-				}
 				this.recipe[selector] = this.recipe[selector] || [];
-				values = Array.isArray(obj[selector]) ? obj[selector] : [obj[selector]];
-				Array.prototype.push.apply(this.recipe[selector], values);
+				Array.prototype.push.apply(this.recipe[selector], Array.isArray(obj[selector]) ? obj[selector] : [obj[selector]]);
 			}	
 		},
 		attach: function(event) {
@@ -31,8 +22,8 @@
 				else event.target.classList.add(val); // else class
 			});
 
-			// stop listening if this is a single instance
-			if (this.singles.indexOf(event.selector)) {
+			// stop listening if this is marked as once, or has no descendant selector
+			if (selector.indexOf(':first-of-type') > -1 || selector.indexOf(' ') === -1) {
 				delete this.recipe[event.selector];
 				return false; // stop listening to selector
 			}
@@ -63,7 +54,7 @@
 		parts = key.split('---'); // attribute marker
 		if (parts.length == 2 && tweaks[key] !== "") { // only process if there is something to be set
 			// convert tweak name into selector, with class path if present, marked for single instance only
-			selector = '#' + parts[0].replace(/--/g,' .') + ':1'; 
+			selector = '#' + parts[0].replace(/--/g,' .') + ':first-of-type'; 
 			// make attribute from tweak attribute and value
 			value = parts[1]+'='+tweaks[key].toLowerCase().replace(/\s/g,"-");
 			var obj = {};

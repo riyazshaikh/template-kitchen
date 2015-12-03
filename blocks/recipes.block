@@ -2,22 +2,22 @@
 	alfa: {
 		main: {
   		"#header": ["display=overlaid","background=transparent"],
-			"#header .content:1": "layout-spacing=mixed",
+			"#header .content:first-of-type": "layout-spacing=mixed",
 			"#slidebar-nav": "layout-spacing=mixed",
-			"#header .block:1": "display=hide",
-			"#header .nav:1": "display=auto",
+			"#header .block:first-of-type": "display=hide",
+			"#header .nav:first-of-type": "display=auto",
 
 			"#banner": "background=transparent",
-			"#banner .image:1": "parallax-enable",
-			"#banner .description:1": "display=hide",
-			"#banner .blocks:1": ["background=translucent","overlap=header"],
-			"#banner .blocks .content:1": "layout-spacing=main",
+			"#banner .image:first-of-type": "parallax-enable",
+			"#banner .description:first-of-type": "display=hide",
+			"#banner .blocks:first-of-type": ["background=translucent","overlap=header"],
+			"#banner .blocks .content:first-of-type": "layout-spacing=main",
 
 			"#page-footer": "palette-banner",
-			"#page-footer .image:1": "parallax=enable",
-			"#page-footer .content:1": "layout-spacing=main",
-			"#page-footer .content:1": "sticky=within-site-bottom",
-			"#page-footer .blocks:1": "background=translucent",
+			"#page-footer .image:first-of-type": "parallax=enable",
+			"#page-footer .content:first-of-type": "layout-spacing=main",
+			"#page-footer .content:first-of-type": "sticky=within-site-bottom",
+			"#page-footer .blocks:first-of-type": "background=translucent",
 
 			"#footer": "display=hide",
 		}
