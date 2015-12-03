@@ -23,34 +23,31 @@
 		}
 	},
 	bravo: {
-		main: {
+		tweaks: {
 			"Header - Palette": "Main",
-			"Header - Background": "Transparent",
-			"Header - Display": "Overlaid",
-			"Header  Content - Layout Spacing": "Sides",
-			"Slidebar Nav - Layout Spacing": "Mixed",
 			"Header  Nav - Display": "Auto",
-
+			"Slidebar Nav - Layout Spacing": "Mixed",
 	    "Banner - Palette": "Main",
-			"Banner - Background": "Transparent",
-			"Banner  Description - Display": "Overlaid Caption",
-			"Banner  Description  Content - Layout Width": "Main",
-			"Banner  Description  Content - Layout Spacing": "Sides",
-			"Banner  Description  Content - Align": "Center Left",
-			"Banner  Blocks  Content - Layout Width": "Main",
-			"Banner  Blocks  Content - Layout Spacing": "Sides",
-			"Banner  Blocks  Content - Parallax": "Enable",			
-			"Banner  Description  Title - Appearance": "Meta",
-			"#banner .description strong---appearance": "Heading1",
-			"#banner .description strong---font-effect": ["Dash"],
-			"#banner .description a---appearance": "Button Solid Pill",
+		},
+		main: {
+			"#header": "background=transparent",
+			"#header": "display=overlaid",
+			"#header .content": "layout-spacing=sides",
 
-			"Page  Content - Layout Spacing": ["Main"],
-			"#page .content h2---font-effect": "dash",
-	    "Page - Palette": "Alternate",
+			"#banner": "background=transparent",
+			"#banner .description": "display=overlaid-caption",
+			"#banner .description .content": ["layout-width=main","layout-spacing=sides","align=center-left"],
+			"#banner .blocks .content": ["layout-width=main","layout-spacing=sides","parallax-enable"],
+			"#banner .description .title": "appearance=meta",
+			"#banner .description strong": ["appearance=heading1","font-effect=dash"],
+			"#banner .description a": "appearance=button-solid-pill",
 
-	    "Footer - Palette": "Main",
-	    "Footer  Content - Layout Spacing": "Mixed"
+			"#page .content": "layout-spacing=main",
+			"#page .content h2": "font-effect=dash",
+	    "#page": "palette=alternate",
+
+	    "#footer": "palette=main",
+	    "#footer .content": "layout-spacing=mixed"
 		},
 
 	},
@@ -65,11 +62,11 @@
 			"Header  Block - Display": ["Hide"],
 			"Header  Nav - Display": ["Hide"],
 
-			"Banner - Palette": "Main",
-			"Banner  Image - Parallax": ["Enable"],
-			"Banner  Description - Display": ["Hide"],
-			"Banner  Blocks  Content - Layout Width": ["Main"],
-			"Banner  Blocks  Content - Parallax": ["Enable"],
+			"#banner - Palette": "Main",
+			"#banner  Image - Parallax": ["Enable"],
+			"#banner  Description - Display": ["Hide"],
+			"#banner  Blocks  Content - Layout Width": ["Main"],
+			"#banner  Blocks  Content - Parallax": ["Enable"],
 
 			"Gallery Scroll  Content - Layout Width": ["Main"],
 		},
@@ -80,10 +77,10 @@
 			"Header  Content - Layout Spacing": "Mixed",
 			"Slidebar Nav - Layout Spacing": "Mixed",
 
-  		"Banner - Display": "Overlaid",
-			"Banner - Background": "Transparent",
-			"Banner - Palette": "Main",
-			"Banner  Blocks  Content - Layout Spacing": "Main",
+  		"#banner - Display": "Overlaid",
+			"#banner - Background": "Transparent",
+			"#banner - Palette": "Main",
+			"#banner  Blocks  Content - Layout Spacing": "Main",
 			"#banner .blocks em---font-effect": "highlight",
 		},
 		gallery: {
@@ -95,9 +92,9 @@
 			"Header - Palette": "Main",
 			"Header  Content - Layout Spacing": ["Mixed"],
 			"Slidebar Nav - Layout Spacing": "Alternate",
-			"Banner - Palette": "Main",
+			"#banner - Palette": "Main",
 
-			"Banner  Description  Title - Display": ["Hide"],
+			"#banner  Description  Title - Display": ["Hide"],
 			"Page Footer  Content - Layout Spacing": ["Main"],
 			"Footer  Nav - Align": ["Center"],
 			"Footer - Palette": ["Main"],
@@ -106,7 +103,7 @@
 			"Footer  SQS Block - Layout Spacing": "Tops Minimal"
 		},
 		products: {
-			"Banner  Blocks  Content - Layout Width": ["Main"],
+			"#banner  Blocks  Content - Layout Width": ["Main"],
 			"#banner .blocks .content h2, #banner  .blocks  .content h1---font-effect": ["Dash"],
 			"#banner .blocks .content p---appearance": ["Meta"],
 			"Products  Category Nav - Sticky": ["Within Site"],
@@ -121,7 +118,7 @@
 			"Products  Product Image - Effect": "Pop"
 		},
 		'products-item': {
-			"Banner - Display": "Hide",
+			"#banner - Display": "Hide",
 			"Products Item  Category Nav - Display": ["Hide"],
 			"Products Item  Content - Layout Spacing": ["Sides"],
 			"Products Item  Content - Meta Align": ["Right"],
@@ -132,13 +129,13 @@
 			"Header - Background": "Transparent",
 			"Header - Sticky": "Within Site",
 
-			"Banner - Display": ["Overlaid"],
-			"Banner - Background": "Transparent",
-			"Banner  Blocks  Content - Layout Spacing": ["Sides"],
+			"#banner - Display": ["Overlaid"],
+			"#banner - Background": "Transparent",
+			"#banner  Blocks  Content - Layout Spacing": ["Sides"],
 
 			"Gallery Scroll  Content - Layout Spacing": ["Sides"],
 			"Gallery Scroll  Meta - Typeset": "Alternate",
-			"Gallery Scroll  Meta - Typeset": ["Banner"], // first is banner
+			"Gallery Scroll  Meta - Typeset": ["banner"], // first is banner
 			"Gallery Scroll  Meta  Title - Font Effect": "Dash", 
 			"#gallery-scroll  .meta a---Appearance": ["Button Solid Pill"], 
 			"Page Footer - Typeset": "Main",
