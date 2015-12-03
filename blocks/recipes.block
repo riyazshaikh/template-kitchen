@@ -28,6 +28,8 @@
 			"Header  Nav - Display": "Auto",
 			"Slidebar Nav - Layout Spacing": "Mixed",
 	    "Banner - Palette": "Main",
+	    "Footer - Palette": "Main",
+
 		},
 		main: {
 			"#header": ["background=transparent","display=overlaid"],
@@ -45,7 +47,6 @@
 			"#page .content h2": "font-effect=dash",
 	    "#page": "palette=alternate",
 
-	    "#footer": "palette=main",
 	    "#footer .content": "layout-spacing=mixed"
 		},
 
@@ -86,59 +87,56 @@
 		}
 	},
 	echo: {
-		main: {
+		tweaks: {
   		"Header  Nav - Display": ["Hide"],
 			"Header - Palette": "Main",
-			"Header  Content - Layout Spacing": ["Mixed"],
-			"Slidebar Nav - Layout Spacing": "Alternate",
-			"#banner - Palette": "Main",
-
-			"#banner  Description  Title - Display": ["Hide"],
-			"Page Footer  Content - Layout Spacing": ["Main"],
-			"Footer  Nav - Align": ["Center"],
+			"Banner - Palette": "Main",
 			"Footer - Palette": ["Main"],
-			"Footer  Content - Layout Spacing": ["Mixed"],
-			"Footer  Content - Layout Width": ["Full"],
-			"Footer  SQS Block - Layout Spacing": "Tops Minimal"
+		},
+		main: {
+			"#header .content": "layout-spacing=mixed",
+			"#slidebar-nav": "layout-spacing=alternate",
+
+			"#banner .description .title": "display=hide",
+			"#page-footer .content": "layout-spacing=main",
+			"#footer .nav": "align=center",
+			"#footer .content": ["layout-spacing=mixed","layout-width=full"],
+			"#footer .sqs-block ": "layout-spacing=tops-minimal"
 		},
 		products: {
-			"#banner  Blocks  Content - Layout Width": ["Main"],
-			"#banner .blocks .content h2, #banner  .blocks  .content h1---font-effect": ["Dash"],
-			"#banner .blocks .content p---appearance": ["Meta"],
-			"Products  Category Nav - Sticky": ["Within Site"],
-			"Products  Category Nav - Layout Spacing": ["Mixed"],
+			"#banner .blocks .content": ["layout-width=main"],
+			"#banner .blocks .content h2, #banner  .blocks  .content h1": ["font-effect=dash"],
+			"#banner .blocks .content p": ["appearance=meta"],
+			"#products .category-nav": ["sticky=within-site"],
+			"#products .category-nav": ["layout-spacing=mixed"],
 
-			"Products  Content - Layout Spacing": ["Sides"],
-			"Products - Palette": ["Main"],
-			"Products - Typeset": ["Alternate"],
-			"Products  Product Title - Appearance": "Unset",
-			"Products  Product Price - Appearance": "Meta",
-			"Products  Product Meta - Flex": "Space Between",
-			"Products  Product Image - Effect": "Pop"
+			"#products .content": ["layout-spacing=sides"],
+			"#products": ["palette=main"],
+			"#products - Typeset": ["Alternate"],
+			"#products .product-title": "appearance=unset",
+			"#products .product-price": "appearance=meta",
+			"#products .product-meta": "flex=space-between",
+			"#products .product-image": "effect=pop"
 		},
 		'products-item': {
-			"#banner - Display": "Hide",
-			"Products Item  Category Nav - Display": ["Hide"],
-			"Products Item  Content - Layout Spacing": ["Sides"],
-			"Products Item  Content - Meta Align": ["Right"],
-			"Products Item - Typeset": "Alternate"
+			"#banner": "display=hide",
+			"#products-item .category-nav - Display": ["Hide"],
+			"#products-item .content": ["layout-spacing=sides", "meta-align=right"],
+			"#products-item": "typeset=alternate"
 		},
 		'gallery-scroll': {
-			"Header - Display": "Overlaid",
-			"Header - Background": "Transparent",
-			"Header - Sticky": "Within Site",
+			"#header": ["display=overlaid","background=transparent","sticky=within-site"],
 
-			"#banner - Display": ["Overlaid"],
-			"#banner - Background": "Transparent",
-			"#banner  Blocks  Content - Layout Spacing": ["Sides"],
+			"#banner": ["display=overlaid","background=transparent"],
+			"#banner .blocks .content": ["layout-spacing=sides"],
 
-			"Gallery Scroll  Content - Layout Spacing": ["Sides"],
-			"Gallery Scroll  Meta - Typeset": "Alternate",
-			"Gallery Scroll  Meta - Typeset": ["banner"], // first is banner
-			"Gallery Scroll  Meta  Title - Font Effect": "Dash", 
-			"#gallery-scroll  .meta a---Appearance": ["Button Solid Pill"], 
-			"Page Footer - Typeset": "Main",
-			"Page Footer - Palette": "Alternate"
+			"#gallery-scroll .content": ["layout-spacing=sides"],
+			"#gallery-scroll .meta ": "typeset=alternate",
+			"#gallery-scroll .meta": "typeset=banner", // first is banner
+			"#gallery-scroll .meta .title ": "font-effect=dash", 
+			"#gallery-scroll .meta a ": ["appearance=button-solid-pill"], 
+			"#page-footer": "typeset=main",
+			"#page-footer": "palette=alternate"
 		}
 	}
 }
