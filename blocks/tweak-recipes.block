@@ -33,16 +33,18 @@
 			return true; 
 		},
 		listen: function() { 
+			this.attachFn = this.attach.bind(this);
 			for(var selector in this.recipe) {
-				document.addSelectorListener(selector, this.attach.bind(this));	
+				document.addSelectorListener(selector, attachFn);	
 			}
 		},
-		force: function() {
+		force: function() { // force detection of loaded selectors
 			for(var selector in this.recipe) {
 				var els = document.querySelectorAll(selector);
 				for (var i=0; i<els.length; i++) {
-					if (this.attach({ selector: selector, target: els[i] }) === false)
-						break;
+					if (this.attach({ selector: selector, target: els[i] }) === false) {
+						document.removeSelectorListener(selector, this.attachFn);
+					}
 				}
 			}
 		}

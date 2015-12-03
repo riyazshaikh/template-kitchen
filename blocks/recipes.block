@@ -8,7 +8,7 @@
 			"#header .nav:first-of-type": "display=auto",
 
 			"#banner": "background=transparent",
-			"#banner .image:first-of-type": "parallax-enable",
+			"#banner .image:first-of-type": "parallax=enable",
 			"#banner .description:first-of-type": "display=hide",
 			"#banner .blocks:first-of-type": ["background=translucent","overlap=header"],
 			"#banner .blocks .content:first-of-type": "layout-spacing=main",
