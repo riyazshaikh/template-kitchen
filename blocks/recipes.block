@@ -162,7 +162,7 @@
 		},
 		'products-item': {
 			"#banner": "display=hide",
-			"#products-item .category-nav - Display": ["Hide"],
+			"#products-item .category-nav": ["display=hide"],
 			"#products-item .content": ["layout-spacing=sides", "meta-align=right"],
 			"#products-item": "typeset=alternate"
 		},
