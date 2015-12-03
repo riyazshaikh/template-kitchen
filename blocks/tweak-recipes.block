@@ -8,7 +8,7 @@
 		recipe: {},
 		singles: [],
 		add: function(obj) {
-			var parts;
+			var parts, values;
 			if(obj) for(var selector in obj) {
 				parts = selector.split(':1');
 				// identify single instance selector
@@ -17,7 +17,8 @@
 					this.singles.push(selector);
 				}
 				this.recipe[selector] = this.recipe[selector] || [];
-				Array.prototype.push.apply(this.recipe[selector], Array.isArray(obj[selector]) ? obj[selector] : [obj[selector]]);
+				values = Array.isArray(obj[selector]) ? obj[selector] : [obj[selector]];
+				Array.prototype.push.apply(this.recipe[selector], values);
 			}	
 		},
 		attach: function(event) {
