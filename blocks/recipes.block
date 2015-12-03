@@ -149,12 +149,10 @@
 			"#banner .blocks .content": ["layout-width=main"],
 			"#banner .blocks .content h2, #banner  .blocks  .content h1": ["font-effect=dash"],
 			"#banner .blocks .content p": ["appearance=meta"],
-			"#products .category-nav": ["sticky=within-site"],
-			"#products .category-nav": ["layout-spacing=mixed"],
+			"#products .category-nav": ["sticky=within-site","layout-spacing=mixed"],
 
 			"#products .content": ["layout-spacing=sides"],
-			"#products": ["palette=main"],
-			"#products": ["typeset=alternate"],
+			"#products": ["palette=main","typeset=alternate"],
 			"#products .product-title ": "appearance=unset",
 			"#products .product-price ": "appearance=meta",
 			"#products .product-meta ": "flex=space-between",
@@ -177,8 +175,7 @@
 			"#gallery-scroll .meta": "typeset=banner", // first is banner
 			"#gallery-scroll .meta .title ": "font-effect=dash", 
 			"#gallery-scroll .meta a ": ["appearance=button-solid-pill"], 
-			"#page-footer": "typeset=main",
-			"#page-footer": "palette=alternate"
+			"#page-footer": ["typeset=main","palette=alternate"],
 		}
 	}
 }
