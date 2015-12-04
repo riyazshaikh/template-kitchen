@@ -30,6 +30,7 @@
 		tweaks: {
 			"Header - Palette": "Main",
 			"Header  Main Nav - Display": "Auto",
+			"Header  Navigation - Align": "Right",
 	    "Banner - Palette": "Main",
 	    "Footer - Palette": "Main",
 			"mainMetaWidth": "47%",
