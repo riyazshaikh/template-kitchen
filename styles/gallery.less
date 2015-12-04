@@ -11,16 +11,21 @@
 }
 
 [data-intrinsic=half] {
-	padding-bottom: 50%;
+	max-width: 100vh;
+	margin: auto;
 
-	position: relative;
 	> :first-child {
-		position: absolute;
-		overflow: hidden;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
+		padding-bottom: 50%;
+
+		position: relative;
+		> :first-child {
+			position: absolute;
+			overflow: hidden;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
 	}
 }
 
