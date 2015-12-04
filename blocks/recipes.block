@@ -1,5 +1,7 @@
 {
 	alfa: {
+		tweaks: {},
+		webfonts: [],
 		main: {
   		"#header": ["display=overlaid","background=transparent"],
 			"#header .content": "layout-spacing=mixed",
@@ -67,6 +69,7 @@
 
 	},
 	charlie: {
+		webfonts: [],
 		tweaks: {
 			"Header - Palette": "Main",
 			"Header  Main Nav - Display": "Hide",
@@ -86,6 +89,7 @@
 		},
 	},
 	delta: {
+		webfonts: [],
 		tweaks: {
 			"Header  Main Nav - Display": "Auto",
 			"Banner - Palette": "Main",
