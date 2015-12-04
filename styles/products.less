@@ -28,11 +28,19 @@
     left: @padding;
     right: @padding;
     bottom: @padding;
-    box-shadow: 0 0 @padding fade(@color, 8%);
+    box-shadow: 0 0 30px fade(@color, 8%);
     border: 1px solid #e6e6e6;
   }
   > div {
-  	padding: @padding;
+  	padding: @padding !important;
+  }
+
+  cursor: pointer;
+  &:hover {
+  	&:before {
+  		border-color: #d6d6d6;
+  		box-shadow: 0 0 15px #e4e4e4;
+  	}
   }
 }
 
