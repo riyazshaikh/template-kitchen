@@ -75,9 +75,4 @@
 	  </div>  
 	</div>
 </div>
-<div id="productsRelated" class="products-related">
-	<a href="{collection.fullUrl}?tag={.repeated section tags}{@}{.alternates with},{.end}" data-dynamic-summary="carousel">More Templates like {title}</a>
-
-	{@|apply dynamic-summary.block}
-</div>
 {.end}
