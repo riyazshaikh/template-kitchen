@@ -52,7 +52,7 @@
 			"#banner": "background=transparent",
 			"#banner .description": "display=overlaid-caption",
 			"#banner .description .content": ["layout-width=main","layout-spacing=sides","align=center-left"],
-			"#banner .blocks .content": ["layout-width=main","layout-spacing=sides","parallax-enable"],
+			"#banner .blocks .content": ["layout-width=main","layout-spacing=sides","parallax=enable"],
 			"#banner .description .title": "appearance=meta",
 			"#banner .description strong": ["appearance=heading1","font-effect=dash"],
 			"#banner .description a": "appearance=button-solid-pill",
