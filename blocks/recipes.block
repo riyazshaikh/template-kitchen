@@ -171,10 +171,11 @@
 			"#banner .blocks .content": ["layout-spacing=sides"],
 
 			"#gallery-scroll .content": ["layout-spacing=sides"],
-			"#gallery-scroll .meta ": "typeset=alternate",
-			"#gallery-scroll .meta": "typeset=banner", // first is banner
+			"#gallery-scroll .meta + .meta ": "typeset=alternate",
+			"#gallery-scroll .meta:first-child": "typeset=banner", // first is banner
 			"#gallery-scroll .meta .title ": "font-effect=dash", 
-			"#gallery-scroll .meta a ": ["appearance=button-solid-pill"], 
+			"#gallery-scroll .meta:first-child a": ["appearance=button-solid-pill"], 
+			"#gallery-scroll .meta + .meta a ": ["appearance=link-arrow"], 
 			"#page-footer": ["typeset=main","palette=alternate"],
 		}
 	}
