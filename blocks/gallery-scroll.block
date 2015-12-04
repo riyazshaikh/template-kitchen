@@ -38,7 +38,7 @@
 
       ready: function() {
         this.parentEl = Y.one(parent);
-        Y.on('domready', this.init, this);
+        this.init();
       },
 
       init: function() {

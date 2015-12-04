@@ -10,6 +10,7 @@
     
     <script>/* Must be below {squarespace-headers} */(function(){var e='ontouchstart'in window||navigator.msMaxTouchPoints;var t=document.documentElement;if(!e&&t){t.className=t.className.replace(/touch-styles/,'')}})()
     </script>
+    <squarespace:script src="rafscroll.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
 
     <squarespace:script src="resize-sensor.js" combo="false" />
 
@@ -45,7 +46,6 @@
     </div>
 
     <!--Combo and minify the scripts when you're not logged in.-->
-    <squarespace:script src="rafscroll.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     <squarespace:script src="helpers.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     <squarespace:script src="sticky.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     <squarespace:script src="parallax.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
