@@ -3,10 +3,8 @@ Y.use('node', function (Y) {
 
 		ready: function() {
 
-			Y.on('domready', function() {
-				this.init();
-				Y.Global && this.tweakHandler();
-			}, this);
+			this.init();
+			Y.Global && this.tweakHandler();
 
 		},
 

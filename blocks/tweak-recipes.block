@@ -1,4 +1,4 @@
-{@|apply selector-listener.block}
+{@|apply js-utils.block}
 <script>
 (function(){
 	var collectionType = "{collection.typeName}" + (Static.SQUARESPACE_CONTEXT.item ? '-item': '');
@@ -42,6 +42,7 @@
 				document.addSelectorListener(selector, this.attachFn);	
 			}
 		},
+		// to handle edge case where selector-listener has not loaded selectors before domready
 		force: function() { // force detection of loaded selectors
 			for(var selector in this.recipe) {
 				var els = document.querySelectorAll(selector);
@@ -125,10 +126,7 @@
 
 	RecipeManager.listen(); // start listening for selectors
 
-	// to handle edge case where selector-listener has not loaded selectors before domready
 	document.addEventListener("DOMContentLoaded", function(event) {
-		RecipeManager.force();
-
 		// also make links goto correct recipe (if applicable)
 		var recipeName = window.location.search.split('recipe=')[1];
 		if (recipeName) {

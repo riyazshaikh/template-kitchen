@@ -10,10 +10,6 @@
     
     <script>/* Must be below {squarespace-headers} */(function(){var e='ontouchstart'in window||navigator.msMaxTouchPoints;var t=document.documentElement;if(!e&&t){t.className=t.className.replace(/touch-styles/,'')}})()
     </script>
-    <squarespace:script src="rafscroll.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
-
-    <squarespace:script src="resize-sensor.js" combo="false" />
-
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
 
@@ -44,6 +40,11 @@
         {@|apply footer.block}
       </footer>
     </div>
+
+    <script>
+    window.RecipeManager.force(); // make sure dom is ready for scripts to use
+    </script>
+
 
     <!--Combo and minify the scripts when you're not logged in.-->
     <squarespace:script src="helpers.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
