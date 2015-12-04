@@ -5,7 +5,6 @@
 		main: {
   		"#header": ["display=overlaid","background=transparent"],
 			"#header .content": "layout-spacing=mixed",
-			"#slidebar-nav": "layout-spacing=mixed",
 			"#header .block": "display=hide",
 			"#header .main-nav": "display=auto",
 
@@ -49,7 +48,6 @@
 		main: {
 			"#header": ["background=transparent","display=overlaid"],
 			"#header .content": "layout-spacing=sides",
-			"#slidebar-nav": "layout-spacing=mixed",
 
 			"#banner": "background=transparent",
 			"#banner .description": "display=overlaid-caption",
@@ -78,7 +76,6 @@
 		'gallery-scroll': {
 			"#header": ["background=transparent","display=overlaid","sticky=within-site"],
 			"#header .content": "layout-spacing=mixed",
-			"#slidebar-nav": "layout-spacing=mixed",
 			"#header .block": "display=hide",
 
 			"#banner .image": "parallax=enable",
@@ -98,7 +95,6 @@
 		},
 		main: {
 			"#header .content": "layout-spacing=mixed",
-			"#slidebar-nav": "layout-spacing=mixed",
 
   		"#banner": ["display=overlaid","background=transparent"],
 			"#banner .blocks .content": "layout-spacing=main",
@@ -144,7 +140,6 @@
 		},
 		main: {
 			"#header .content": "layout-spacing=mixed",
-			"#slidebar-nav": "layout-spacing=alternate",
 
 			"#banner .description .title": "display=hide",
 			"#page-footer .content": "layout-spacing=main",
@@ -183,7 +178,6 @@
 			"#gallery-scroll .meta .title ": ["font-effect=dash", "text-align-left"],
 			"#gallery-scroll .meta:first-child a": ["appearance=button-solid-pill"], 
 			"#gallery-scroll .meta + .meta a ": ["appearance=link-arrow"], 
-			"#page-footer": ["typeset=main","palette=alternate"],
 		}
 	}
 }

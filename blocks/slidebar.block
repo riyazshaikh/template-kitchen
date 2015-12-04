@@ -5,9 +5,9 @@
  	
  	<input type="checkbox" name="mobile-nav-toggle" id="mobileNavToggle" class="mobile-nav-toggle-box hidden" />
  	<a href="#" class="body-overlay"></a>
-    <div id="slidebar-nav" data-content-field="navigation-mainNav" data-folder="visible" data-active="contrast" data-folder-label="invisible" >
-    	<squarespace:navigation navigationId="mainNav" template="navigation"/>
-    </div>
+  <div id="slidebar-nav" data-content-field="navigation-mainNav" data-folder="visible" data-active="contrast" data-folder-label="invisible" data-layout-spacing=mixed>
+  	<squarespace:navigation navigationId="mainNav" template="navigation"/>
+  </div>
 </div>
 
 <script>
