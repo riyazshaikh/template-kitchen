@@ -155,7 +155,7 @@
 			"#products": ["palette=main","typeset=alternate"],
 			"#products .product-title ": "appearance=unset",
 			"#products .product-price ": "appearance=meta",
-			"#products .product-meta ": "align=space-between",
+			"#products .product-meta ": "align=space-between-oneline",
 			"#products .product-image ": "effect=pop"
 		},
 		'products-item': {

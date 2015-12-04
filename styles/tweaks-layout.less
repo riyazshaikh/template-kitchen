@@ -52,14 +52,19 @@
 [data-align] {
   .flex-box;
   flex-wrap: wrap;
+  
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+[data-align*=oneline] { 
+  flex-wrap: nowrap; 
   > * {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
   }
-  align-items: center;
-  justify-content: center;
-  text-align: center;
 }
 
 [data-align*=left] { justify-content: flex-start; text-align: left; }
