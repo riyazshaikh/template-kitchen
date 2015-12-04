@@ -164,6 +164,7 @@
 			"#banner": "display=hide",
 			"#products-item .category-nav": ["display=hide"],
 			"#products-item .content": ["layout-spacing=sides", "meta-align=right"],
+			"#products-item .product-meta": "layout-spacing=mixed",
 			"#products-item": "typeset=alternate"
 		},
 		'gallery-scroll': {
