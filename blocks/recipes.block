@@ -5,7 +5,7 @@
 			"#header .content": "layout-spacing=mixed",
 			"#slidebar-nav": "layout-spacing=mixed",
 			"#header .block": "display=hide",
-			"#header .nav": "display=auto",
+			"#header .main-nav": "display=auto",
 
 			"#banner": "background=transparent",
 			"#banner .image": "parallax=enable",
@@ -28,8 +28,7 @@
 		],
 		tweaks: {
 			"Header - Palette": "Main",
-			"Header  Nav - Display": "Auto",
-			"Slidebar Nav - Layout Spacing": "Mixed",
+			"Header  Main Nav - Display": "Auto",
 	    "Banner - Palette": "Main",
 	    "Footer - Palette": "Main",
 			"mainMetaWidth": "47%",
@@ -48,10 +47,11 @@
 		main: {
 			"#header": ["background=transparent","display=overlaid"],
 			"#header .content": "layout-spacing=sides",
+			"#slidebar-nav": "layout-spacing=mixed",
 
 			"#banner": "background=transparent",
 			"#banner .description": "display=overlaid-caption",
-			"#banner .description .content": ["layout-width=main","layout-spacing=sides","align=center-left"],
+			"#banner .description .content": ["layout-width=main","layout-spacing=sides","align=center-left-parent"],
 			"#banner .blocks .content": ["layout-width=main","layout-spacing=sides","parallax=enable"],
 			"#banner .description .title": "appearance=meta",
 			"#banner .description strong": ["appearance=heading1","font-effect=dash"],
@@ -68,7 +68,7 @@
 	charlie: {
 		tweaks: {
 			"Header - Palette": "Main",
-			"Header  Nav - Display": "Hide",
+			"Header  Main Nav - Display": "Hide",
 			"Banner - Palette": "Main",
 		},
 		'gallery-scroll': {
@@ -86,7 +86,7 @@
 	},
 	delta: {
 		tweaks: {
-			"Header  Nav - Display": "Auto",
+			"Header  Main Nav - Display": "Auto",
 			"Banner - Palette": "Main",
 		},
 		main: {
@@ -105,7 +105,7 @@
 			"myriad-pro:400,200,700"
 		],
 		tweaks: {
-  		"Header  Nav - Display": "Hide",
+  		"Header  Main Nav - Display": "Hide",
 			"Header - Palette": "Main",
 			"Banner - Palette": "Main",
 			"Footer - Palette": "Main",
@@ -141,7 +141,6 @@
 
 			"#banner .description .title": "display=hide",
 			"#page-footer .content": "layout-spacing=main",
-			"#footer .nav": "align=center",
 			"#footer .content": ["layout-spacing=mixed","layout-width=full"],
 			"#footer .sqs-block ": "layout-spacing=tops-minimal"
 		},
@@ -155,7 +154,7 @@
 			"#products": ["palette=main","typeset=alternate"],
 			"#products .product-title ": "appearance=unset",
 			"#products .product-price ": "appearance=meta",
-			"#products .product-meta ": "flex=space-between",
+			"#products .product-meta ": "align=space-between",
 			"#products .product-image ": "effect=pop"
 		},
 		'products-item': {

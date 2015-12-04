@@ -1,4 +1,4 @@
- <div class="slidebar">
+<div class="slidebar">
  	<label for="mobileNavToggle" class="mobile-nav-toggle-label" data-toggle-body="mobile-nav-enabled">
  		<div class="top-bar"></div><div class="middle-bar"></div><div class="bottom-bar"></div>
  	</label>

@@ -12,7 +12,7 @@
       </div>
     {.end}
   {.end}
-  <div class="nav" data-content-field="navigation-mainNav" data-folder="dropdown" data-align>
+  <div class="main-nav" data-content-field="navigation-mainNav" data-folder="dropdown" data-align>
     <squarespace:navigation navigationId="mainNav" template="navigation"/>
   </div>
   <squarespace:block-field class="block" id="header-block" columns="1" label="Header Block Content"/>

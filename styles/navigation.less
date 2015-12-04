@@ -33,48 +33,56 @@
       white-space: nowrap;
     }
   }
-}
+  
+  &[data-align=left] {
+    > div {
+      &:first-child {
+        padding-left: 0;
+      }  
+    }
+  }
 
-[data-align] .navigation {
-  display: flex;
-  flex-wrap: wrap;
-}
+  &[data-align=right] {
+    > div {
+      &:last-child {
+        padding-right: 0;
+      }
+    }    
+  }
 
-[data-align=space-around] .navigation { justify-content: space-around; }
-
-[data-align=center] .navigation {  justify-content: center; }
-
-[data-align=left] .navigation {
-  justify-content: flex-start;
-
-  > div {
-    &:first-child {
-      padding-left: 0;
+  &[data-align=space-between] {
+    > div {
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
     }  
   }
-}
 
-[data-align=right] .navigation {
-  justify-content: flex-end;
-
-  > div {
-    &:last-child {
-      padding-right: 0;
+  &[data-active=contrast] {
+    .colors(@textColor) {
+      a:hover, .active > a, .active > label {
+        color: darken(@textColor, 30%);
+      }
     }
-  }    
-}
+    .colors(@main-textColor);
+    [data-palette=alternate] & { .colors(@alt-textColor) }
+    [data-palette=banner] & { .colors(@banner-textColor) }
+  }
 
-[data-align=space-between] .navigation {
-  justify-content: space-between;
+  &[data-active=underline] {
+    .colors(@textColor) {
+      .active > a, .active > label {
+        border-bottom: 1px solid @textColor;
+      }
+    }
+    .colors(@main-textColor);
+    [data-palette=alternate] & { .colors(@alt-textColor) }
+    [data-palette=banner] & { .colors(@banner-textColor) }
+  }
 
-  > div {
-    &:first-child {
-      padding-left: 0;
-    }
-    &:last-child {
-      padding-right: 0;
-    }
-  }  
 }
 
 [data-background=translucent] {
@@ -87,7 +95,7 @@
   [data-folder*=drop] .folder .subnav { background: transparent; }
 }
 
-[data-folder=dropdown] .navigation {
+[data-folder=dropdown] {
   .folder {
     position: relative;
     .subnav {
@@ -152,7 +160,7 @@
 }
 
 
-[data-folder=dropup] .navigation {
+[data-folder=dropup] {
   .folder {
     position: relative;
     .subnav {
@@ -190,20 +198,20 @@
   }  
 }
 
-[data-folder=visible] .navigation {
+[data-folder=visible] {
   .folder {
     margin-bottom: 1em;
   }
 }
 
-[data-folder-label=invisible] .navigation {
+[data-folder-label=invisible] {
   .folder label {
     visibility: hidden;
   }
 }
 
-[data-folder-label=underline] .navigation {
-  .subnav:before {
+[data-folder-label=underline] {
+  .folder .subnav:before {
     content: '';
     display: block;
     position: absolute;
@@ -217,27 +225,5 @@
     [data-palette=alternate] & { background-color: @alt-metaColor }
     [data-palette=banner] & { background-color: @banner-metaColor }
   }
-}
-
-[data-active=contrast] .navigation {
-  .colors(@textColor) {
-    a:hover, .active > a, .active > label {
-      color: darken(@textColor, 30%);
-    }
-  }
-  .colors(@main-textColor);
-  [data-palette=alternate] & { .colors(@alt-textColor) }
-  [data-palette=banner] & { .colors(@banner-textColor) }
-}
-
-[data-active=underline] .navigation {
-  .colors(@textColor) {
-    .active > a, .active > label {
-      border-bottom: 1px solid @textColor;
-    }
-  }
-  .colors(@main-textColor);
-  [data-palette=alternate] & { .colors(@alt-textColor) }
-  [data-palette=banner] & { .colors(@banner-textColor) }
 }
 

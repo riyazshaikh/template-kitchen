@@ -1,11 +1,17 @@
 // tweak: { title: "Header - Palette", options: ["Main", "Banner", "Alternate"], default: "Alternate", category: "Header", type: "dropdown", js:true }
 // tweak: { title: "Header - Direction", options: ["", "Reverse"], default: "", category: "Header", type: "dropdown", js:true }
-// tweak: { title: "Header  Nav - Display", options: ["", "Hide", "Auto"], default: "", category: "Header", type: "dropdown", js:true }
-// tweak: { title: "Header  Nav - Align", options: ["Left", "Right", "Center", "Space Around", "Space Between"], default: "Right", showOnlyWhenPresent: "body:not(.header--nav---display-hide)", category: "Header", type: "dropdown", js:true }
-// tweak: { title: "Header  Nav - Active", options: ["None", "Contrast", "Underline"], default: "Contrast", showOnlyWhenPresent: "body:not(.header--nav---display-hide)", category: "Header", type: "dropdown", js:true }
+// tweak: { title: "Header  Main Nav - Display", options: ["", "Hide", "Auto"], default: "", category: "Header", type: "dropdown", js:true }
+// tweak: { title: "Header  Navigation - Align", options: ["Left", "Right", "Center", "Space Around", "Space Between"], default: "Center", showOnlyWhenPresent: "body:not(.header--main-nav---display-hide)", category: "Header", type: "dropdown", js:true }
+// tweak: { title: "Header  Navigation - Active", options: ["None", "Contrast", "Underline"], default: "Contrast", showOnlyWhenPresent: "body:not(.header--main-nav---display-hide)", category: "Header", type: "dropdown", js:true }
+
+//tweak: { "type" : "value", "title" : "Logo Container Width", "min" : 50, "max" : 500, "step" : 5, "category" : "Header", "target" : "#logoImage", "showOnlyWhenPresent" : "#logoImage", "js": "true" }
+@logoContainerWidth: 150px;
+
+//tweak: { "type" : "value", "title" : "Title Container Width", "min" : 50, "max" : 500, "step" : 5, "category" : "Header", "target" : "#siteTitle", "showOnlyWhenPresent" : "#siteTitle", "js": "true" }
+@siteTitleContainerWidth: 255px;
 
 // tweak: { title: "Header - Alternate Logo", options: ["", "Main", "Banner", "Alternate"], default: "", showOnlyWhenPresent: ".site-logo", category: "Header", type: "dropdown", js:true }
-// tweak: { category : "Header", type : "image", title : "Alternate Logo", target : ".site-logo", showOnlyWhenPresent: ".site-logo" }
+// tweak: { title : "Alternate Logo", target : ".site-logo", showOnlyWhenPresent: ".site-logo", category : "Header", type : "image" }
 .alt-logo-image {
   background-image: none;
   background-position: center;
@@ -13,13 +19,6 @@
   background-attachment: scroll;
   background-repeat: no-repeat;
 }
-
-
-//tweak: { "type" : "value", "title" : "Logo Container Width", "min" : 50, "max" : 500, "step" : 5, "category" : "Header", "target" : "#logoImage", "showOnlyWhenPresent" : "#logoImage", "js": "true" }
-@logoContainerWidth: 150px;
-
-//tweak: { "type" : "value", "title" : "Title Container Width", "min" : 50, "max" : 500, "step" : 5, "category" : "Header", "target" : "#siteTitle", "showOnlyWhenPresent" : "#siteTitle", "js": "true" }
-@siteTitleContainerWidth: 255px;
 
 
 .header {
@@ -31,7 +30,7 @@
   align-items: center;
   justify-content: space-between;
 
-  .nav {
+  .main-nav {
     width: 100%;
   }
 
@@ -67,7 +66,7 @@
     }
   }
 
-  .nav[data-display=auto] {
+  .main-nav[data-display=auto] {
     ~ .slidebar { display: none; }
     @media only screen and (max-width: 640px) {
       display: none;

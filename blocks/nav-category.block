@@ -1,7 +1,7 @@
 	{.section collection}
 		{.section categories}
-    <div class="category-nav" data-background="solid" data-align="center" data-active="underline">
-			<nav class="navigation" role="navigation">
+    <div class="category-nav" data-background="solid">
+			<nav class="navigation" role="navigation" data-align="center" data-active="underline">
 				<div class="{.if categoryFilter}{.or} active{.end}">
 					<a href="{fullUrl}">All</a>
 				</div>
