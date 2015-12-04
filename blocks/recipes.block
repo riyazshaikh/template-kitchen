@@ -20,7 +20,7 @@
 			"#page-footer .content": "sticky=within-site-bottom",
 			"#page-footer .blocks": "background=translucent",
 
-			"#footer": "display=hide",
+			"#footer": "background=transparent",
 		}
 	},
 	bravo: {

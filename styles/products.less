@@ -11,6 +11,31 @@
 	}
 }
 
+[data-effect=boxed] {
+	@padding: 25px;
+	@color: #fff;
+
+	position: relative;
+  box-sizing: border-box;
+  padding: @padding;
+
+  &:before {
+  	content: '';
+    display: block;
+    position: absolute;
+    background-color: @color;
+    top: @padding;
+    left: @padding;
+    right: @padding;
+    bottom: @padding;
+    box-shadow: 0 0 @padding fade(@color, 8%);
+    border: 1px solid #e6e6e6;
+  }
+  > div {
+  	padding: @padding;
+  }
+}
+
 #products {
 	[data-align] .product-title { margin: 0 !important; }
 }
