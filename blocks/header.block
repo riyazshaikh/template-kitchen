@@ -1,4 +1,4 @@
-<header class="header content">
+<header class="header content" data-align=space-between>
   {.section website}
     {.if logoImageUrl}
       <div class="site-logo" data-content-field="site-title">
