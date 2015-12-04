@@ -105,10 +105,10 @@
 			"myriad-pro:400,200,700"
 		],
 		tweaks: {
-  		"Header  Nav - Display": ["Hide"],
+  		"Header  Nav - Display": "Hide",
 			"Header - Palette": "Main",
 			"Banner - Palette": "Main",
-			"Footer - Palette": ["Main"],
+			"Footer - Palette": "Main",
 
 			"main-bgColor": "#f3efee",
 			"main-textColor": "#000",
