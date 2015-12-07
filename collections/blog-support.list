@@ -1,4 +1,4 @@
-<div class="blog-content">
+<div class="blog-support" data-layout-width=main>
 
   <div class="blog-list">
   {.section categoryFilter}
