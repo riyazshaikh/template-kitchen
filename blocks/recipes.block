@@ -48,7 +48,7 @@
 		},
 		main: {
 			"#header": ["background=transparent","display=overlaid"],
-			"#header .content": "layout-spacing=sides",
+			"#header .content": "layout-spacing=mixed",
 
 			"#banner": "background=transparent",
 			"#banner .description": "display=overlaid-caption",
