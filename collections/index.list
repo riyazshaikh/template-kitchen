@@ -12,11 +12,7 @@
     {.equal? typeName "gallery-scroll"}
       {@|apply gallery-scroll.block}
     {.or}  
-      {.equal? typeName "gallery"}
-        {@|apply gallery-slide.block}
-      {.or}
-        {mainContent}
-      {.end}
+      {mainContent}
     {.end}
     </div>
   </div>
