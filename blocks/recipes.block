@@ -99,7 +99,9 @@
 
   		"#banner": ["display=overlaid","background=transparent"],
 			"#banner .blocks .content": "layout-spacing=main",
-			"#banner .blocks em ": "font-effect=highlight",
+			"#banner .blocks .html-block .sqs-block-content > * ": "font-effect=highlight",
+			"#banner .description .title": "display=hide",
+
 		},
 		gallery: {
 		}

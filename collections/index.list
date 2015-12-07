@@ -8,9 +8,6 @@
 
   {.repeated section collections}
   <div id="index-{@index}" class="index-section" data-url-id="{urlId}">
-    <div id="index-{@index}-banner">
-      {@|apply banner.block}
-    </div>
     <div id="index-{@index}-{typeName}" class="index-{typeName} content" data-content-field="main-content">
     {.equal? typeName "gallery-scroll"}
       {@|apply gallery-scroll.block}
