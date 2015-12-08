@@ -1,0 +1,3 @@
+site.region merge=ours
+/assets/desktop-light.png merge=ours
+/styles/products-custom-item.less merge=ours
