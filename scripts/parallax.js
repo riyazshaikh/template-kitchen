@@ -1,4 +1,4 @@
-Y.use('node', function () {
+Y.use('node', function (Y) {
 	window.Parallax = Singleton.create({
 
 		ready: function() {
