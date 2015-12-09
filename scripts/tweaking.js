@@ -25,10 +25,6 @@ Y.use('node', function (Y) {
 				window.RecipeManager.resetTweaks();
 			});
 
-
-			Y.Global.on('tweak:save', function (f) {
-				window.location.reload(true);
-			});
 		}
 	});
 });
