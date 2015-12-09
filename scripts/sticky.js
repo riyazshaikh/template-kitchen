@@ -3,8 +3,8 @@ Y.use('node', function (Y) {
 
 		ready: function() {
 
-			// this.init();
-			// Y.Global && this.tweakHandler();
+			this.init();
+			if (Y.Global) this.tweakHandler();
 
 		},
 
