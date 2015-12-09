@@ -70,6 +70,8 @@
 			var tweaks = this.getFormatted(recipe['tweaks']);
 			var webfonts = recipe['webfonts'];
 
+			console.log('resetting to ', name);
+			
 			Y.use('squarespace-util', function(Y) {
 				Y.Data.post({
 	        url: '/api/template/SetTemplateTweakSettings',
