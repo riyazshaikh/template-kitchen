@@ -2,13 +2,6 @@ Y.use('node', function (Y) {
 	window.Parallax = Singleton.create({
 
 		ready: function() {
-
-			this.init();
-			Y.Global && this.tweakHandler();
-
-		},
-
-		init: function() {
 			this.parallaxNodes = Y.all('[data-parallax]');
 			if (this.parallaxNodes.size()) {
 				this.bindUI();

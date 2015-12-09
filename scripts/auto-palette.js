@@ -2,13 +2,6 @@ Y.use('node', function (Y) {
 	window.AutoPalette = Singleton.create({
 
 		ready: function() {
-
-			this.init();
-			Y.Global && this.tweakHandler();
-
-		},
-
-		init: function() {
 			this.paletteNodes = Y.all('[data-palette]:not([data-display="overlaid"])');
 			this.transparentNodes = Y.all('[data-display="overlaid"]');
 

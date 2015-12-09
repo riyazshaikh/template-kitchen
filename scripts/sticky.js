@@ -2,13 +2,6 @@ Y.use('node', function (Y) {
 	window.Sticky = Singleton.create({
 
 		ready: function() {
-
-			this.init();
-			if (Y.Global) this.tweakHandler();
-
-		},
-
-		init: function() {
 			this.stickyNodes = Y.all('[data-sticky]');
 
 			if (this.stickyNodes.size()) {
