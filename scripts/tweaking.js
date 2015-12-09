@@ -27,7 +27,7 @@ Y.use('node', function (Y) {
 
 
 			Y.Global.on('tweak:save', function (f) {
-				document.location.reload(true);
+				window.location.reload(true);
 			});
 		}
 	});

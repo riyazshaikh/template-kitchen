@@ -56,6 +56,7 @@
     {squarespace-footers}
 
     {.if authenticatedAccount}
+    <squarespace:script src="tweaking.js" />
     {.end}
   </body>
 </html> 
