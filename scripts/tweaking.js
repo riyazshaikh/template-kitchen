@@ -19,15 +19,10 @@ Y.use('node', function (Y) {
 				} catch(e) {
 					console.log('error in tweaking.js', e);
 				}
-				
-
 			});
 
 			Y.Global.on('tweak:reset', function (f) {
-				var tweaks = Static.SQUARESPACE_CONTEXT.tweakJSON, parts, value, key;
-				for (key in tweaks) {
-					setTweak(key, tweaks[key]);
-				}    		
+				window.RecipeManager.resetTweaks();
 			});
 		}
 	});

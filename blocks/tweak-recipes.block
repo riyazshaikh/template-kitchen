@@ -62,7 +62,7 @@
 			}
 			return formatted;
 		},
-		resetTweaks: function(name) {
+		resetTweaks: function(name, callback) {
 			if (!Static.SQUARESPACE_CONTEXT.authenticatedAccount) return;
 
 			name = name || window.RECIPE_NAME;
@@ -80,10 +80,7 @@
 	        success: function() {
 						Y.Data.get({
 							url:"/api/templates/"+Static.SQUARESPACE_CONTEXT.templateId+"/reprocess-tweaks", 
-							success: function() { 
-			        	alert('Recipe ' + name.toUpperCase() + ' applied!');
-			        	window.location.href = window.location.pathname + '?recipe='+name;
-							} 
+							success: callback && callback.bind(this, name)
 						});	        	
 	        }
 				});

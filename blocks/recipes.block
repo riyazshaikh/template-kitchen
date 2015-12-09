@@ -140,6 +140,11 @@
 
 			"Product Item Size": "2:3 Standard (Vertical)",
 			"Product Image Auto Crop": "False",
+
+			"tweak-blog-list-style": "Grid",
+			"tweak-blog-list-columns": "3",
+			"tweak-blog-list-item-image-aspect-ratio-grid": "4:3 Four-Three",
+			"tweak-blog-list-item-show-excerpt": "false",
 		},
 		main: {
 			"#header .content": "layout-spacing=mixed",
@@ -182,6 +187,40 @@
 			"#gallery-scroll .meta .title ": ["font-effect=dash", "text-align-left"],
 			"#gallery-scroll .meta:first-child a": ["appearance=button-solid-pill"], 
 			"#gallery-scroll .meta + .meta a ": ["appearance=link-arrow"], 
-		}
+		},
+		blog: {
+			"#header": ["display=overlaid","background=transparent"],
+	    "#banner .blocks .content": ["layout-width=main"],
+	    "#banner": "palette=alternate",
+	 		"#banner .blocks": ["background=translucent","overlap=header"],
+	    "#banner .image": "parallax=enable",
+	    "#blog .category-nav": ["sticky=within-site","layout-spacing=mixed"],
+	    "#blog article ": ["effect=pop","palette=banner"],
+	    "#blog article .BlogList-item-title ": "layout-spacing=sides",
+	    "#blog article .BlogList-item-meta ": "display=hide",
+	    "#blog-item .category-nav": ["display=hide"],
+	    "#blog .content": "layout-width=main",
+	    "#page-footer": "palette=alternate",
+	    "#page-footer .image": "parallax=enable",
+	    "#page-footer .content": "layout-width=main",
+	    "#page-footer .content": "sticky=within-site-bottom",
+	    "#page-footer .blocks": "background=translucent",
+	    "#footer":"display=hide"		
+		},
+		'blog-item': {
+			"#header": ["display=overlaid","background=transparent"],
+	    "#banner .blocks .content": ["layout-width=main"],
+	    "#banner": "palette=alternate",
+	 		"#banner .blocks": ["background=translucent","overlap=header"],
+	    "#banner .image": "parallax=enable",
+	    "#blog-item .category-nav": ["display=hide"],
+	    "#blog-item .content": "layout-width=main",
+	    "#page-footer": "palette=alternate",
+	    "#page-footer .image": "parallax=enable",
+	    "#page-footer .content": "layout-width=main",
+	    "#page-footer .content": "sticky=within-site-bottom",
+	    "#page-footer .blocks": "background=translucent",
+	    "#footer":"display=hide"		
+	  }
 	}
 }
