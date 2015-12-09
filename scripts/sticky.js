@@ -4,7 +4,7 @@ Y.use('node', function (Y) {
 		ready: function() {
 
 			// this.init();
-			Y.Global && this.tweakHandler();
+			// Y.Global && this.tweakHandler();
 
 		},
 
