@@ -83,7 +83,7 @@
 						Y.Data.get({
 							url:"/api/templates/"+Static.SQUARESPACE_CONTEXT.templateId+"/reprocess-tweaks", 
 							success: function() {
-								window.location.reload();
+								window.top.location.reload();
 							}
 						});	        	
 	        }
