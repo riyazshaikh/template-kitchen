@@ -62,7 +62,7 @@
 			}
 			return formatted;
 		},
-		resetTweaks: function(name, callback) {
+		resetTweaks: function(name) {
 			if (!Static.SQUARESPACE_CONTEXT.authenticatedAccount) return;
 
 			name = name || window.RECIPE_NAME;
@@ -71,7 +71,7 @@
 			var webfonts = recipe['webfonts'];
 
 			console.log('resetting to ', name);
-			
+
 			Y.use('squarespace-util', function(Y) {
 				Y.Data.post({
 	        url: '/api/template/SetTemplateTweakSettings',
@@ -82,7 +82,9 @@
 	        success: function() {
 						Y.Data.get({
 							url:"/api/templates/"+Static.SQUARESPACE_CONTEXT.templateId+"/reprocess-tweaks", 
-							success: callback && callback.bind(this, name)
+							success: function() {
+								window.location.reload();
+							}
 						});	        	
 	        }
 				});

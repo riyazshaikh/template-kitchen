@@ -48,12 +48,6 @@ Y.use('node', function (Y) {
         }
       }, this);
 
-		},
-
-		tweakHandler: function() {
-			Y.Global.on('tweak:save', function (f) {
-				document.location.reload(true);
-			});
 		}		
 
 

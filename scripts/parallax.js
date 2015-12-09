@@ -43,12 +43,6 @@ Y.use('node', function (Y) {
           node.setStyle('transform', 'translate3d(0,' + imageY + 'px,0)');
         }
       }, this);
-		},
-
-		tweakHandler: function() {
-			Y.Global.on('tweak:save', function (f) {
-				document.location.reload(true);
-			});
 		}		
 
 	});
