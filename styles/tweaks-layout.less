@@ -32,8 +32,8 @@
 [data-layout-width=meta] { .layout-width-meta; }
 
 [data-layout-spacing] { .border-box; }
-[data-layout-spacing=main] { padding: @mainSpacing; }
 [data-layout-spacing=none] { padding: 0; }
+[data-layout-spacing=main] { padding: @mainSpacing; }
 [data-layout-spacing=alternate] { padding: @altSpacing; }
 [data-layout-spacing=mixed] { padding: @altSpacing @mainSpacing; }
 [data-layout-spacing=sides] { padding: 0 @mainSpacing; }
@@ -51,15 +51,13 @@
 
 [data-align] {
   .flex-box;
-  flex-wrap: wrap;
-  
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
-[data-align*=oneline] { 
-  flex-wrap: nowrap; 
+[data-align*=wrap] { flex-wrap: wrap; }
+[data-align*=truncate] { 
   > * {
     white-space: nowrap;
     text-overflow: ellipsis;

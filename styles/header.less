@@ -1,4 +1,4 @@
-//tweak: { category: "Header", title: "Site Title Font", target: ".site-logo a", showOnlyWhenPresent: ".site-logo a[data-text-shrink]", type: "font" }
+//tweak: { category: "Header", title: "Site Title Font", target: "#header .site-logo", showOnlyWhenPresent: ".site-logo a[data-text-shrink]", type: "font" }
 .site-title-font {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 600;
@@ -45,8 +45,12 @@
     text-decoration: none;
   }
 
+  /* Hardcoded flex preferences */
   .main-nav {
     width: 100%;
+    .navigation {
+      flex-wrap: wrap;
+    }
   }
 
   .site-logo {
