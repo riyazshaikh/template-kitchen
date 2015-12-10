@@ -1,16 +1,12 @@
 <header class="header content" data-align=space-between-oneline>
   {.section website}
-    {.if logoImageUrl}
-      <div class="site-logo" data-content-field="site-title">
-        <a href="/">
-          <img class="logo-image" src="{logoImageUrl}?format=1500w" alt="{siteTitle}" />
-        </a>
-      </div>
-    {.or}
-      <div class="site-title" data-content-field="site-title">
+    <div class="site-logo" data-content-field="site-title">
+      {.if logoImageUrl}
+        <a href="/"><img class="logo-image" src="{logoImageUrl}?format=1500w" alt="{siteTitle}" /></a>
+      {.or}
         <a href="/" data-text-shrink>{siteTitle}</a>
-      </div>
-    {.end}
+      {.end}
+    </div>
   {.end}
   <div class="main-nav" data-content-field="navigation-mainNav" data-folder="dropdown">
     <squarespace:navigation navigationId="mainNav" template="navigation"/>

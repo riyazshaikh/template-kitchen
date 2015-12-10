@@ -1,17 +1,13 @@
-// tweak: { title: "Header - Palette", options: ["Main", "Banner", "Alternate"], default: "Alternate", category: "Header", type: "dropdown", js:true }
-// tweak: { title: "Header - Direction", options: ["", "Reverse"], default: "", category: "Header", type: "dropdown", js:true }
-// tweak: { title: "Header  Main Nav - Display", options: ["", "Hide", "Auto"], default: "", category: "Header", type: "dropdown", js:true }
-// tweak: { title: "Header  Navigation - Align", options: ["Left", "Right", "Center", "Space Around", "Space Between"], default: "Center", showOnlyWhenPresent: "body:not(.header--main-nav---display-hide)", category: "Header", type: "dropdown", js:true }
-// tweak: { title: "Header  Navigation - Active", options: ["None", "Contrast", "Underline"], default: "Contrast", showOnlyWhenPresent: "body:not(.header--main-nav---display-hide)", category: "Header", type: "dropdown", js:true }
+// tweak: { category: "Header", label: "Palette", default: "Alternate", options: ["Main", "Banner", "Alternate"], title: "header---palette", target: "#header", type: "dropdown", js:true }
+// tweak: { category: "Header", label: "Direction", default: "", options: ["", "Reverse"], title: "header---direction", target: "#header", type: "dropdown", js:true }
+// tweak: { category: "Header", label: "Navigation Display", default: "Always", options: ["Always", "Hide", "Auto"], title: "header--main-nav---display", target: "#header .main-nav", type: "dropdown", js:true }
+// tweak: { category: "Header", label: "Navigation Align", default: "Center", options: ["Left", "Right", "Center", "Space Around", "Space Between"], title: "header--main-nav---align", target: "#header .main-nav", showOnlyWhenPresent: "body:not(.header--main-nav---display-hide)", type: "dropdown", js:true }
+// tweak: { category: "Header", label: "Navigation Active", default: "Contrast", options: ["None", "Contrast", "Underline"], title:"header--main-nav---active", target: "#header .main-nav", showOnlyWhenPresent: "body:not(.header--main-nav---display-hide)", type: "dropdown", js:true }
 
-//tweak: { type : "value", title : "Logo Container Width", min : 50, max : 500, step : 5, category : "Header", target : ".site-logo", showOnlyWhenPresent : ".site-logo", js: "true" }
+//tweak: { category : "Header", label: "Logo / Title Width", min : 50, max : 500, step : 5, title: "Logo Container Width", target : "#header .site-logo", type : "value", js: "true" }
 @logoContainerWidth: 150px;
 
-//tweak: { type : "value", title : "Title Container Width", min : 50, max : 500, step : 5, category : "Header", target : ".site-title", showOnlyWhenPresent : ".site-title", js: "true" }
-@siteTitleContainerWidth: 255px;
-
-// tweak: { title: "Header - Alternate Logo", options: ["", "Main", "Banner", "Alternate"], default: "", showOnlyWhenPresent: ".site-logo", category: "Header", type: "dropdown", js:true }
-// tweak: { title : "Alternate Logo", target : ".site-logo", showOnlyWhenPresent: ".site-logo", category : "Header", type : "image" }
+// tweak: { category: "Header", label : "Alternate Logo", title: "alt-logo-image", target: "#header .site-logo", showOnlyWhenPresent: "#header .site-logo img", type : "image" }
 .alt-logo-image {
   background-image: none;
   background-position: center;
@@ -19,6 +15,7 @@
   background-attachment: scroll;
   background-repeat: no-repeat;
 }
+// tweak: { category: "Header", label: "Show Alternate Logo", default: "", options: ["", "Main", "Banner", "Alternate"], title: "header---alternate-logo", target: "#header .site-logo", showOnlyWhenPresent: "#header .site-logo img", type: "dropdown", js:true }
 
 
 .header {
@@ -30,16 +27,11 @@
     width: 100%;
   }
 
-  .site-title {
-    max-width: @siteTitleContainerWidth;
-    a {
-      .site-title-font;
-    }
-  }
   .site-logo {
     max-width: @logoContainerWidth;
     a {
-      display: block;
+      .site-title-font;
+      display: inline-block;
     }
     img {
       height: auto;
