@@ -1,3 +1,25 @@
+//tweak: { category: "Header", title: "Site Title Font", target: ".site-logo a", showOnlyWhenPresent: ".site-logo a[data-text-shrink]", type: "font" }
+.site-title-font {
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+//tweak: { category: "Header", title: "Navigation Font", target: "#header .main-nav", showOnlyWhenPresent: "body:not(.header--main-nav---display-hide)", type: "font" }
+.nav-font {
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 2em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
 // tweak: { category: "Header", label: "Palette", default: "Alternate", options: ["Main", "Banner", "Alternate"], title: "header---palette", target: "#header", type: "dropdown", js:true }
 // tweak: { category: "Header", label: "Direction", default: "", options: ["", "Reverse"], title: "header---direction", target: "#header", type: "dropdown", js:true }
 // tweak: { category: "Header", label: "Navigation Display", default: "Always", options: ["Always", "Hide", "Auto"], title: "header--main-nav---display", target: "#header .main-nav, #header .slidebar", type: "dropdown", js:true }
@@ -7,7 +29,8 @@
 //tweak: { category : "Header", label: "Logo / Title Width", min : 50, max : 500, step : 5, title: "Logo Container Width", target : "#header .site-logo a", type : "value", js: "true" }
 @logoContainerWidth: 150px;
 
-// tweak: { category: "Header", label : "Alternate Logo", title: "alt-logo-image", target: "#header .site-logo", showOnlyWhenPresent: "#header .site-logo img", type : "image" }
+// tweak: { category: "Header", label: "Alternate Logo", default: "None", options: ["None", "Main", "Banner", "Alternate"], title: "header---alternate-logo", target: "#header .site-logo", showOnlyWhenPresent: "#header .site-logo img", type: "dropdown", js:true }
+// tweak: { category: "Header", label: "Alternate Logo Image", title: "alt-logo-image", target: "#header .site-logo", showOnlyWhenPresent: "body:not(.header---alternate-logo-none) #header .site-logo img", type : "image" }
 .alt-logo-image {
   background-image: none;
   background-position: center;
@@ -15,7 +38,6 @@
   background-attachment: scroll;
   background-repeat: no-repeat;
 }
-// tweak: { category: "Header", label: "Show Alternate Logo", default: "", options: ["", "Main", "Banner", "Alternate"], title: "header---alternate-logo", target: "#header .site-logo", showOnlyWhenPresent: "#header .site-logo img", type: "dropdown", js:true }
 
 
 .header {
