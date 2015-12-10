@@ -33,7 +33,7 @@
 			"Header  Navigation - Align": "Right",
 	    "Banner - Palette": "Main",
 	    "Footer - Palette": "Main",
-			"mainMetaWidth": "47%",
+			"metaWidth": "47%",
 			"logoContainerWidth": "60px",
 
 			"body-font": "{font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;font-weight:300;line-height:1.5em;}",

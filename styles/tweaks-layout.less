@@ -1,15 +1,16 @@
 /* Layout variables */
 
-// tweak: { category: 'Layout', title : "Main Width", type : "value", target : "div[data-layout-width=main]" }
+// tweak: { category: "Layout", title: "Main Width", target: "div[data-layout-width=main]", property: "width", type: "value" }
 @mainContentWidth: 1100px;
 
-// tweak: { category: 'Layout', title : "Main Spacing", type : "value", target : "div[data-layout-spacing=main]" }
+// tweak: { category: "Layout", title: "Meta Width", target: "div[data-layout-width=meta]", property: "width", type: "value" }
+@metaWidth: 400px;
+
+
+// tweak: { category: "Layout", title: "Regular Spacing", target: "div[data-layout-spacing=main]", property: ["padding-top", "padding-left"], type: "value" }
 @mainSpacing: 5%;
 
-// tweak: { category: 'Layout', title : "Meta Width", type : "value", target : "div[data-layout-spacing=meta]" }
-@mainMetaWidth: 400px;
-
-// tweak: { category: 'Layout', title : "Alternate Spacing", type : "value", target : "div[data-layout-spacing=alternate]" }
+// tweak: { category: "Layout", title: "Alternate Spacing", target: "div[data-layout-spacing=alternate]", property: ["padding-top", "padding-left"], type: "value" }
 @altSpacing: 30px;
 
 /* Default layout width is 100% */
@@ -22,10 +23,9 @@
 }
 
 .layout-width-meta() {
-  width: @mainMetaWidth;
+  width: @metaWidth;
   .border-box;
   max-width: 100%;
-  /*margin: auto;*/ /* default is center */
   padding: @mainSpacing; /* default is mainSpacing */
 }
 

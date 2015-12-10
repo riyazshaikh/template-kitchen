@@ -1,14 +1,9 @@
-// tweak: { title: "Banner - Typeset", options: ["Main", "Banner", "Alternate"], default: "Banner", category: "Banner", type: "dropdown", js:true }
-// tweak: { title: "Banner - Palette", options: ["Main", "Banner", "Alternate"], default: "Banner", category: "Banner", type: "dropdown", js:true }
-
+// tweak: { category: "Banner", label: "Typography", default: "Banner", options: ["Main", "Banner", "Alternate"], title: "banner---typeset", target: "#banner", type: "dropdown", js:true }
+// tweak: { category: "Banner", label: "Palette", default: "Banner", options: ["Main", "Banner", "Alternate"], title: "banner---palette", target: "#banner", type: "dropdown", js:true }
 
 .banner {  
   position: relative;
-/*  overflow: hidden;
-*/
   &.has-image {
-    /*min-height: 320px;  */
-
     > figure {
       position: absolute;
       top: 0;
@@ -34,12 +29,10 @@
     .sqs-block:last-child {
       padding-bottom: 0 !important;
     }
-
   }
 
   .description:not([data-display*=overlaid]) {
     position: relative;
     z-index: 1;
   }
-
 }
