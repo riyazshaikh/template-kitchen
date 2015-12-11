@@ -149,7 +149,7 @@
 			"#banner .blocks .content p": ["appearance=meta"],
 			"#products .category-nav": ["sticky=within-site"],
 
-			"#products .content": ["layout-spacing=sides"],
+			"#products .content": ["layout-spacing=alternate"],
 			"#products": ["palette=main","typeset=alternate"],
 			"#products .product-title ": "appearance=unset",
 			"#products .product-price ": "appearance=meta",
@@ -205,6 +205,7 @@
 	    "#banner .image": "parallax=enable",
 	    "#blog-item .category-nav": ["display=hide"],
 	    "#blog-item .content": "layout-width=main",
+	    "#blog-item .BlogItem .image-block-outer-wrapper": "intrinsic=desktop",
 	    "#page-footer": "palette=alternate",
 	    "#page-footer .image": "parallax=enable",
 	    "#page-footer .content": "layout-width=main",
