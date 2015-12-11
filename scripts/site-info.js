@@ -16,7 +16,7 @@ Y.use('io', function(Y) {
         success: function(result, response) {
           var matches, output = "Squarespace 6 website";
 
-          matches = response.responseText.match(new RegExp('templateWebsite(ownerWebsiteId): (.*)'));
+          matches = response.responseText.match(new RegExp('templateWebsite\\(ownerWebsiteId\\): (.*)'));
           
           output += "\nTemplate : " + (matches ? matches[1] : 'Unknown');
 
