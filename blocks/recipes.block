@@ -3,24 +3,21 @@
 		tweaks: {},
 		webfonts: [],
 		main: {
-  		"#header": ["display=overlaid","background=transparent"],
-			"#header .content": "layout-spacing=mixed",
-			"#header .block": "display=hide",
-			"#header .main-nav": "display=auto",
+			"#header": ["display=overlaid","background=transparent"],
 
-			"#banner": "background=transparent",
-			"#banner .image": "parallax=enable",
+	    "#banner": "palette=alternate",
+	    "#banner .image": "parallax=enable",
+	 		"#banner .blocks": ["background=translucent","overlap=header"],
+	    "#banner .blocks .content": ["layout-width=main"],
 			"#banner .description": "display=hide",
-			"#banner .blocks": ["background=translucent","overlap=header"],
-			"#banner .blocks .content": "layout-spacing=main",
 
-			"#page-footer": "palette-banner",
-			"#page-footer .image": "parallax=enable",
-			"#page-footer .content": "layout-spacing=main",
-			"#page-footer .content": "sticky=within-site-bottom",
-			"#page-footer .blocks": "background=translucent",
+	    "#page-footer": "palette=alternate",
+	    "#page-footer .image": "parallax=enable",
+	    "#page-footer .content": "layout-width=main",
+	    "#page-footer .content": "sticky=within-site-bottom",
+	    "#page-footer .blocks": "background=translucent",
 
-			"#footer": "background=transparent",
+	    "#footer":"display=hide"		
 		}
 	},
 	bravo: {
@@ -52,7 +49,7 @@
 
 			"#banner": "background=transparent",
 			"#banner .description": "display=overlaid-caption",
-			"#banner .description .content": ["layout-width=main","layout-spacing=sides","align=center-left-parent"],
+			"#banner .description .content": ["layout-spacing=sides","align=center-left-parent"],
 			"#banner .description .content > div": ["layout-width=meta","layout-spacing=none"],
 			"#banner .blocks .content": ["layout-width=main","layout-spacing=sides","parallax=enable"],
 			"#banner .description .title": "appearance=meta",
@@ -149,7 +146,7 @@
 		main: {
 			"#header .content": "layout-spacing=mixed",
 
-			"#banner .description .title": "display=hide",
+			"#banner .description": "display=hide",
 			"#page-footer .content": "layout-spacing=main",
 			"#footer .content": ["layout-spacing=mixed","layout-width=full"],
 			"#footer .sqs-block ": "layout-spacing=tops-minimal"
