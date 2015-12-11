@@ -17,42 +17,57 @@
 <script>
 (function(){
 
-  this.header = document.currentScript.parentNode;
-  this.head = document.getElementsByTagName('head')[0];
+  var header = document.currentScript.parentNode;
+  var head = document.getElementsByTagName('head')[0];
+  var stylesheet, resizeOverlaid, resizeOverflow, rule;
 
-  this.observer = new MutationObserver(function() {
+  var overflowCheck = function() {
+    if (header.scrollWidth > header.offsetWidth) header.classList.add('header-overflow');
+    else header.classList.remove('header-overflow');
+  };
+
+  var observer = new MutationObserver(function() {
 
     // Add header height as a padding to avoid overlapping content below
-    if (this.header.dataset.display === 'overlaid') {
-      this.stylesheet = document.createElement('style');
-      this.stylesheet.type = "text/css";
-      this.rule = document.createTextNode('[data-overlap=header] { padding-top:' + this.header.offsetHeight + 'px; }');
+    if (header.dataset.display === 'overlaid') {
+      stylesheet = document.createElement('style');
+      stylesheet.type = "text/css";
+      rule = document.createTextNode('[data-overlap=header] { padding-top:' + header.offsetHeight + 'px; }');
 
-      this.head.appendChild(stylesheet);
-      this.stylesheet.appendChild(this.rule);
+      head.appendChild(stylesheet);
+      stylesheet.appendChild(rule);
 
-      console.log('header init', this.header.offsetHeight);
+      console.log('header init', header.offsetHeight);
       // refresh padding on header resize
-      this.resize && this.resize.detach();
-      this.resize = new ResizeSensor(this.header, function() {
-        console.log('header', this.header.offsetHeight);
-        this.stylesheet.removeChild(this.rule);
-        this.rule = document.createTextNode('[data-overlap=header] { padding-top:' + this.header.offsetHeight + 'px; }');
-        this.stylesheet.appendChild(this.rule);
+      resizeOverlaid && resizeOverlaid.detach();
+      resizeOverlaid = new ResizeSensor(header, function() {
+        console.log('header', header.offsetHeight);
+        stylesheet.removeChild(rule);
+        rule = document.createTextNode('[data-overlap=header] { padding-top:' + header.offsetHeight + 'px; }');
+        stylesheet.appendChild(rule);
       });
     } else { // remove anything added
-      this.resize && this.resize.detach();
-      this.stylesheet && this.head.removeChild(this.stylesheet);
-      delete this.resize;
-      delete this.stylesheet;
-      delete this.rule;
+      resizeOverlaid && resizeOverlaid.detach();
+      stylesheet && head.removeChild(stylesheet);
+      resizeOverlaid = null;
+      stylesheet = null;
+      rule = null;
     }
 
-  }.bind(this));
+    if (header.dataset.nav === 'auto') {
+      overflowCheck();
+      resizeOverflow = new ResizeSensor(header, overflowCheck);
+    } else {
+      header.classList.remove('header-overflow');
+      resizeOverflow && resizeOverflow.detach();
+      resizeOverflow = null;
+    }
 
-  this.observer.observe(this.header, {
+  });
+
+  observer.observe(header, {
     attributes: true,
-    attributeFilter: ['data-display']
+    attributeFilter: ['data-display', 'data-nav']
   });
 
 })();
