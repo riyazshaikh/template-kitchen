@@ -7,7 +7,7 @@
   <!-- Create index sections -->
 
   {.repeated section collections}
-  <div id="index-{@index}" class="index-section" data-url-id="{urlId}">
+  <div id="index-{@index}" class="index-section" data-url-id="{urlId}" data-collection-id="{id}">
     <div id="index-{@index}-banner">
       {@|apply banner.block}
     </div>

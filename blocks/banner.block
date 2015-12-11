@@ -6,7 +6,7 @@
     <squarespace:block-field class="content" id="banner-content-{id}" columns="12" label="Banner Content"/>
   </div>
   <div class="description">
-    <div class="content">
+    <div class="content" data-layout-width=main>
       <div data-content-field="description">
         <div class="title" data-content-field="title" data-appearance=heading1>
           {title}
