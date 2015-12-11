@@ -206,6 +206,7 @@
 	    "#blog-item .category-nav": ["display=hide"],
 	    "#blog-item .content": "layout-width=main",
 	    "#blog-item .BlogItem .image-block-outer-wrapper": "intrinsic=desktop",
+	    "#blog-item .BlogItem-share, .BlogItem-meta ": "display=hide",
 	    "#page-footer": "palette=alternate",
 	    "#page-footer .image": "parallax=enable",
 	    "#page-footer .content": "layout-width=main",
