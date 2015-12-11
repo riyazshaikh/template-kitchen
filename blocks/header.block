@@ -22,8 +22,8 @@
   var stylesheet, resizeOverlaid, resizeOverflow, rule;
 
   var overflowCheck = function() {
-    if (header.scrollWidth > header.offsetWidth) header.classList.add('header-overflow');
-    else header.classList.remove('header-overflow');
+    if (header.scrollWidth > header.offsetWidth) header.querySelector('.main-nav').classList.add('header-overflow');
+    else header.querySelector('.main-nav').classList.remove('header-overflow');
   };
 
   var observer = new MutationObserver(function() {
@@ -58,7 +58,7 @@
       overflowCheck();
       resizeOverflow = new ResizeSensor(header, overflowCheck);
     } else {
-      header.classList.remove('header-overflow');
+      header.querySelector('.main-nav').classList.remove('header-overflow');
       resizeOverflow && resizeOverflow.detach();
       resizeOverflow = null;
     }
