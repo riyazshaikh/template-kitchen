@@ -8,7 +8,7 @@
       {.end}
     </div>
   {.end}
-  <div class="main-nav invisible" data-content-field="navigation-mainNav" data-folder="dropdown">
+  <div class="main-nav" data-content-field="navigation-mainNav" data-folder="dropdown">
     <squarespace:navigation navigationId="mainNav" template="navigation"/>
   </div>
   <squarespace:block-field class="block" id="header-block" columns="1" label="Header Block Content"/>
@@ -20,13 +20,13 @@
   var header = document.currentScript.parentNode;
   var head = document.getElementsByTagName('head')[0];
   var stylesheet, resizeOverlaid, resizeOverflow, rule;
-  var nav = header.querySelector('.main-nav');
+  // var nav = header.querySelector('.main-nav');
 
-  var overflowCheck = function() {
-    nav.classList.remove('header-overflow');
+  // var overflowCheck = function() {
+  //   nav.classList.remove('header-overflow');
 
-    if (header.scrollWidth > header.offsetWidth) nav.classList.add('header-overflow');
-  };
+  //   if (header.scrollWidth > header.offsetWidth) nav.classList.add('header-overflow');
+  // };
 
   var observer = new MutationObserver(function() {
 
@@ -56,21 +56,20 @@
       rule = null;
     }
 
-    if (header.dataset.nav === 'auto') {
-      overflowCheck();
-      resizeOverflow = new ResizeSensor(header, overflowCheck);
-    } else {
-      nav.classList.remove('header-overflow');
-      resizeOverflow && resizeOverflow.detach();
-      resizeOverflow = null;
-    }
+    // if (header.dataset.nav === 'auto') {
+    //   overflowCheck();
+    //   resizeOverflow = new ResizeSensor(header, overflowCheck);
+    // } else {
+    //   nav.classList.remove('header-overflow');
+    //   resizeOverflow && resizeOverflow.detach();
+    //   resizeOverflow = null;
+    // }
 
-    nav.classList.remove('invisible');
   });
 
   observer.observe(header, {
     attributes: true,
-    attributeFilter: ['data-display', 'data-nav']
+    attributeFilter: ['data-display']
   });
 
 })();
