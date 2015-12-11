@@ -23,8 +23,10 @@
 			bottom: 0;
 		}
 		
-		&.shadow {
-			box-shadow: 0 0 1px rgba(0,0,0,0.15);	
+		[data-sticky][data-background=solid] {
+			[data-palette=main] & { box-shadow: 0 0 3px fade(@main-textColor,15%); }
+			[data-palette=alternate] & { box-shadow: 0 0 3px fade(@alt-textColor,15%); }
+			[data-palette=banner] & { box-shadow: 0 0 3px fade(@banner-textColor,15%); }
 		}
 	}
 
