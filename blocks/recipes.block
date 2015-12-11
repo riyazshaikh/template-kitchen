@@ -164,7 +164,7 @@
 			"#products": ["palette=main","typeset=alternate"],
 			"#products .product-title ": "appearance=unset",
 			"#products .product-price ": "appearance=meta",
-			"#products .product-meta ": "align=space-between-truncate",
+			"#products .product-meta ": ["align=space-between","align-overflow=truncate"],
 			"#products .product-image ": "effect=pop"
 		},
 		'products-item': {
