@@ -20,10 +20,12 @@
   var header = document.currentScript.parentNode;
   var head = document.getElementsByTagName('head')[0];
   var stylesheet, resizeOverlaid, resizeOverflow, rule;
+  var nav = header.querySelector('.main-nav');
 
   var overflowCheck = function() {
-    if (header.scrollWidth > header.offsetWidth) header.querySelector('.main-nav').classList.add('header-overflow');
-    else header.querySelector('.main-nav').classList.remove('header-overflow');
+    nav.classList.remove('header-overflow');
+
+    if (header.scrollWidth > header.offsetWidth) nav.classList.add('header-overflow');
   };
 
   var observer = new MutationObserver(function() {
@@ -58,7 +60,7 @@
       overflowCheck();
       resizeOverflow = new ResizeSensor(header, overflowCheck);
     } else {
-      header.querySelector('.main-nav').classList.remove('header-overflow');
+      nav.classList.remove('header-overflow');
       resizeOverflow && resizeOverflow.detach();
       resizeOverflow = null;
     }
