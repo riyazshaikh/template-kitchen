@@ -61,7 +61,7 @@
         this.metaOffsets = [];
 
         // start switching a bit early
-        var earlyOffset = Y.DOM.viewportRegion().height * 0.2;
+        var earlyOffset = 0; // Y.DOM.viewportRegion().height * 0.2;
 
         this.parentEl.all('.meta').each(function(node) {
           this.metaOffsets.push(Math.max(node.getXY()[1] - earlyOffset,0)); 
