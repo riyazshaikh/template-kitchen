@@ -7,7 +7,7 @@
 @metaWidth: 40%;
 
 
-// tweak: { category: "Layout", title: "Regular Spacing", min: 0, max: 20, step: 1, target: "div[data-layout-spacing=main]", type: "value" }
+// tweak: { category: "Layout", title: "Regular Spacing", min: 0, max: 20, step: 1, target: "div[data-layout-spacing=regular]", type: "value" }
 @mainSpacing: 5%;
 
 // tweak: { category: "Layout", title: "Alternate Spacing", min: 0, max: 100, step: 5, target: "div[data-layout-spacing=alternate]", type: "value" }
@@ -33,16 +33,11 @@
 
 [data-layout-spacing] { .border-box; }
 [data-layout-spacing=none] { padding: 0; }
-[data-layout-spacing=main] { padding: @mainSpacing; }
-[data-layout-spacing=alternate] { padding: @altSpacing; }
-[data-layout-spacing=mixed] { padding: @altSpacing @mainSpacing; }
+[data-layout-spacing=minimal] { padding: 0.4em; }
+[data-layout-spacing=regular] { padding: @mainSpacing; }
+[data-layout-spacing=alternate] { padding: @altSpacing @mainSpacing; }
 [data-layout-spacing=sides] { padding: 0 @mainSpacing; }
 [data-layout-spacing=tops] { padding: @mainSpacing 0; }
-
-[data-layout-spacing=tops-minimal] {
-  padding: 0.5em 0;
-  .sqs-block & { padding: 0.5em 0 !important; }
-}
 
 
 [data-layout-align=center] { margin: auto; }
