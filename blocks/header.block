@@ -59,6 +59,7 @@
     if (header.dataset.nav === 'auto') {
       overflowCheck();
       resizeOverflow = new ResizeSensor(header, overflowCheck);
+      nav.style.visibility = 'visible';
     } else {
       nav.classList.remove('header-overflow');
       resizeOverflow && resizeOverflow.detach();
