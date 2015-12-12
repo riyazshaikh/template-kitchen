@@ -100,10 +100,10 @@ Y.use('node', function (Y) {
 				switch(node.getData('mode')) {
 					case 'after':
 						if (direction == 'bottom') {
-							if (this.viewportRegion.bottom <= elTargetRegion.bottom) this.setSticky(elContainer, true);
+							if (this.viewportRegion.bottom <= elTargetRegion.top) this.setSticky(elContainer, true);
 							else this.setSticky(elContainer, false);
 						} else {
-							if (this.viewportRegion.top >= elTargetRegion.top) this.setSticky(elContainer, true);
+							if (this.viewportRegion.top >= elTargetRegion.bottom) this.setSticky(elContainer, true);
 							else this.setSticky(elContainer, false);
 						}
 						break;
