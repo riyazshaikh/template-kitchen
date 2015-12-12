@@ -124,11 +124,13 @@ body {
   }
 }
 
-[data-direction=reverse] #slidebar-nav {
+[data-logo-position=right] #slidebar-nav, 
+[data-logo-position=center-reverse] #slidebar-nav {
   right: auto;
   left: 0;
   .transform(translate3d(-260px,0,0));
 }
-body.header---direction-reverse.mobile-nav-enabled { /* Cannot find a cleaner way */
+body.header---logo-position-right.mobile-nav-enabled, 
+body.header---logo-position-center-reverse.mobile-nav-enabled { /* Cannot find a cleaner way */
   #site, .slidebar .body-overlay { .transform(translate3d(260px,0,0));  }
 }

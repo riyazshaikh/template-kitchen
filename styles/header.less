@@ -1,14 +1,16 @@
-//tweak: { category: "Header", title: "Site Title Font", target: "#header .site-logo", showOnlyWhenPresent: ".site-logo a[data-text-shrink]", type: "font" }
-.site-title-font {
-  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 20px;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-}
 
-//tweak: { category: "Header", title: "Navigation Font", target: "#header .main-nav", showOnlyWhenPresent: "body:not(.header--main-nav---display-hide)", type: "font" }
+// tweak: { category: "Header", label: "Palette", default: "Alternate", options: ["Main", "Banner", "Alternate"], title: "header---palette", target: "#header", type: "dropdown", js:true }
+// tweak: { category: "Header", label: "Width", default: "Full", options: ["Full", "Main"], title: "header--content---layout-width", target: "#header", type: "dropdown", js:true }
+// tweak: { category: "Header", label: "Spacing", default: "Alternate", options: ["Regular", "Alternate", "Sides"], title: "header--content---layout-spacing", target: "#header", type: "dropdown", js:true }
+// tweak: { category: "Header", label: "Sticky", default: "", options: ["", "Always", "After Banner"], title: "header---sticky", target: "#header", type: "dropdown", js:true }
+// tweak: { category: "Header", label: "Background", default: "Transparent", options: ["Solid", "Translucent", "Transparent"], title: "header---background", target: "#header", type: "dropdown", js:true }
+// tweak: { category: "Header", label: "Overlaid", active: "false", title: "header---display-overlaid", target: "#header", type: "checkbox", js:true }
+
+
+// tweak: { category: "Header: Navigation", label: "Behavior", default: "Auto", options: ["Regular", "Slidebar", "Auto"], title: "header---nav", target: "#header .main-nav, #header .slidebar", type: "dropdown", js:true }
+// tweak: { category: "Header: Navigation", label: "Align", default: "Right", options: ["Left", "Right", "Center", "Space Around", "Space Between"], title: "header--navigation---align", target: "#header .main-nav", showOnlyWhenPresent: "body:not(.header---nav-slidebar)", type: "dropdown", js:true }
+// tweak: { category: "Header: Navigation", label: "Active", default: "Underline", options: ["None", "Contrast", "Underline"], title:"header--navigation---active", target: "#header .main-nav", showOnlyWhenPresent: "body:not(.header---nav-slidebar)", type: "dropdown", js:true }
+// tweak: { category: "Header: Navigation", title: "Font", target: "#header .main-nav", showOnlyWhenPresent: "body:not(.header--main-nav---display-hide)", type: "font" }
 .nav-font {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 600;
@@ -20,17 +22,22 @@
   text-decoration: none;
 }
 
-// tweak: { category: "Header", label: "Palette", default: "Alternate", options: ["Main", "Banner", "Alternate"], title: "header---palette", target: "#header", type: "dropdown", js:true }
-// tweak: { category: "Header", label: "Direction", default: "", options: ["", "Reverse"], title: "header---direction", target: "#header", type: "dropdown", js:true }
-// tweak: { category: "Header", label: "Navigation Behavior", default: "Auto", options: ["Regular", "Slidebar", "Auto"], title: "header---nav", target: "#header .main-nav, #header .slidebar", type: "dropdown", js:true }
-// tweak: { category: "Header", label: "Navigation Align", default: "Right", options: ["Left", "Right", "Center", "Space Around", "Space Between"], title: "header--navigation---align", target: "#header .main-nav", showOnlyWhenPresent: "body:not(.header---nav-slidebar)", type: "dropdown", js:true }
-// tweak: { category: "Header", label: "Navigation Active", default: "Underline", options: ["None", "Contrast", "Underline"], title:"header--navigation---active", target: "#header .main-nav", showOnlyWhenPresent: "body:not(.header---nav-slidebar)", type: "dropdown", js:true }
-
-//tweak: { category : "Header", label: "Logo / Title Width", min : 50, max : 500, step : 5, title: "Logo Container Width", target : "#header .site-logo", type : "value" }
+// tweak: { category: "Header: Logo", label: "Position", default: "Left", options: ["Left","Right","Center","Center Reverse"], title: "header---logo-position", target: "#header", type: "dropdown", js:true }
+// tweak: { category: "Header: Logo", label: "Max Width", min : 50, max : 500, step : 5, title: "Logo Container Width", target : "#header .site-logo", type : "value" }
 @logoContainerWidth: 150px;
 
-// tweak: { category: "Header", label: "Alternate Logo", default: "None", options: ["None", "Main", "Banner", "Alternate"], title: "header---alternate-logo", target: "#header .site-logo", showOnlyWhenPresent: "#header .site-logo img", type: "dropdown", js:true }
-// tweak: { category: "Header", label: "Alternate Logo Image", title: "alt-logo-image", target: "#header .site-logo", showOnlyWhenPresent: "body:not(.header---alternate-logo-none) #header .site-logo img", type : "image" }
+// tweak: { category: "Header: Logo", title: "Site Title Font", target: "#header .site-logo", showOnlyWhenPresent: ".site-logo a[data-text-shrink]", type: "font" }
+.site-title-font {
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+// tweak: { category: "Header: Logo", label: "Alternate Logo", default: "None", options: ["None", "Main", "Banner", "Alternate"], title: "header---alternate-logo", target: "#header .site-logo", showOnlyWhenPresent: "#header .site-logo img", type: "dropdown", js:true }
+// tweak: { category: "Header: Logo", label: "Alternate Logo Image", title: "alt-logo-image", target: "#header .site-logo", showOnlyWhenPresent: "body:not(.header---alternate-logo-none) #header .site-logo img", type : "image" }
 .alt-logo-image {
   background-image: none;
   background-position: center;
@@ -38,6 +45,7 @@
   background-attachment: scroll;
   background-repeat: no-repeat;
 }
+
 
 
 .header {
@@ -98,9 +106,12 @@
   .block:not([data-display=hide]) {
     padding-left: 1.5em;
   }
-  [data-direction=reverse] & {
+  [data-logo-position=right] &, [data-logo-position=center-reverse] &  {
     flex-direction: row-reverse;
   }  
+  [data-logo-position*=center] & .block {
+    order: -1;
+  }
 }
 
 
