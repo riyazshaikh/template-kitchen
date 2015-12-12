@@ -204,7 +204,7 @@
 	 		"#banner .blocks": ["background=translucent","overlap=header"],
 	    "#banner .image": "parallax=enable",
 	    "#blog-item .category-nav": ["display=hide"],
-	    "#blog-item .content": "layout-width=main",
+	    "#blog-item .content": "layout-spacing=regular",
 	    "#blog-item .BlogItem .image-block-outer-wrapper": "intrinsic=desktop",
 	    "#blog-item .BlogItem-share, .BlogItem-meta ": "display=hide",
 	    "#page-footer": "palette=alternate",
