@@ -1,4 +1,4 @@
-<div class="banner{.if mainImage} has-image{.end}" data-collection-id="{id}" data-edit-main-image="Background">    
+<div class="banner{.if mainImage} has-image{.end}" data-collection-id="{id}" data-edit-main-image="Background" data-annotation-alignment="bottom left">    
 	{.section mainImage}
     <figure class="loading content-fill"><img class="image" {@|image-meta} /></figure>
   {.end}
