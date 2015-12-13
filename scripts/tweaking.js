@@ -22,7 +22,7 @@ Y.use('node', function (Y) {
 			});
 
 			Y.Global.on('tweak:reset', function (f) {
-				window.RecipeManager.resetTweaks();
+				// window.RecipeManager.resetTweaks();
 			});
 
 		}

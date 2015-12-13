@@ -1,20 +1,21 @@
 {
 	alfa: {
-		tweaks: {},
+		tweaks: {
+			"header---display": "Overlaid",
+			"header---background": "Transparent",
+			"banner---palette": "Alternate",
+			"banner--image---parallax": "Enable",
+			"page-footer---palette": "Alternate",
+			"page-footer--image---parallax": "Enable",
+			"page-footer--content---sticky": "Within Site Bottom"
+		},
 		webfonts: [],
 		main: {
-			"#header": ["display=overlaid","background=transparent"],
-
-	    "#banner": "palette=alternate",
-	    "#banner .image": "parallax=enable",
-	 		"#banner .blocks": ["background=translucent","overlap=header"],
+	    "#banner .blocks": ["background=translucent","overlap=header"],
 	    "#banner .blocks .content": ["layout-width=main"],
 			"#banner .description": "display=hide",
 
-	    "#page-footer": "palette=alternate",
-	    "#page-footer .image": "parallax=enable",
 	    "#page-footer .content": "layout-width=main",
-	    "#page-footer .content": "sticky=within-site-bottom",
 	    "#page-footer .blocks": "background=translucent",
 
 	    "#footer":"display=hide"		
@@ -25,13 +26,15 @@
 			"Open+Sans:300,300italic,700normal,700italic,500undefined"
 		],
 		tweaks: {
-			"Header - Palette": "Main",
-			"Header  Main Nav - Display": "Auto",
-			"Header  Navigation - Align": "Right",
-	    "Banner - Palette": "Main",
-	    "Footer - Palette": "Main",
+			"header---display": "Overlaid",
+			"header---background": "Transparent",
+			"header---nav": "Auto",
+			"header--navigation---align": "Center",
+			"header--content---layout-width": "Main",
+
+	    "banner---palette": "Alternate",
+	    "footer---palette": "Main",
 			"metaWidth": "47%",
-			"logoContainerWidth": "60px",
 
 			"body-font": "{font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;font-weight:300;line-height:1.5em;}",
 			"heading2-font": "{font-family:inherit;font-size:36px;font-weight:700;line-height:1.2em;}",
@@ -44,9 +47,6 @@
 			"main-metaColor": "rgba(15,15,15,0.5)",
 		},
 		main: {
-			"#header": ["background=transparent","display=overlaid"],
-
-			"#banner": "background=transparent",
 			"#banner .description": "display=overlaid-caption",
 			"#banner .description .content": ["layout-spacing=sides","align=center-left-parent"],
 			"#banner .description .content > div": ["layout-width=meta","layout-spacing=none"],
@@ -64,15 +64,16 @@
 	charlie: {
 		webfonts: [],
 		tweaks: {
-			"Header - Palette": "Main",
-			"Header  Main Nav - Display": "Hide",
-			"Banner - Palette": "Main",
+			"header---palette": "Main",
+			"header---nav": "Slidebar",
+			"banner---palette": "Main",
+			"banner--image---parallax": "Enable",
+
 		},
 		'gallery-scroll': {
 			"#header": ["background=transparent","display=overlaid","sticky=within-site"],
 			"#header .block": "display=hide",
 
-			"#banner .image": "parallax=enable",
 			"#banner .description": "display=hide",
 			"#banner .blocks .content": ["layout-width=main","Parallax=enable"],
 			"#banner .blocks": ["overlap=header"],
@@ -84,8 +85,8 @@
 	delta: {
 		webfonts: [],
 		tweaks: {
-			"Header  Main Nav - Display": "Auto",
-			"Banner - Palette": "Main",
+			"header---nav": "Auto",
+			"banner---palette": "Main",
 		},
 		main: {
   		"#banner": ["display=overlaid","background=transparent"],
