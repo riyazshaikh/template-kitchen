@@ -18,9 +18,8 @@
 			"banner-heading1-font": "{font-family:inherit;font-size:40px;font-weight:700;line-height:1.2em;}",
 
 			"main-bgColor": "#f3efee",
-			"main-metaColor": "rgba(15,15,15,0.5)"
-	},
-	"recipes": {
+			"main-metaColor": "rgba(15,15,15,0.5)",
+			
 			"#banner .description": "display=overlaid-caption",
 			"#banner .description .content": ["layout-spacing=sides","align=center-left-parent"],
 			"#banner .description .content > div": ["layout-width=meta","layout-spacing=none"],
