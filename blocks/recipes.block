@@ -122,7 +122,7 @@
 			"heading2-font": "{font-family:inherit;font-size:32px;font-weight:200;line-height:1.5em;}",
 			"nav-font": "{font-family:inherit;font-size:14px;font-weight:400;line-height:2em;}",
 
-			"banner-body-font": "{font-family:'myriad-pro', Helvetica, Arial, Verdana, sans-serif;font-size:24px;font-weight:200;line-height:1.5em;}",
+			"banner-body-font": "{font-family:'myriad-pro', Helvetica, Arial, Verdana, sans-serif;font-size:22px;font-weight:200;line-height:1.5em;}",
 			"banner-heading1-font": "{font-family:inherit;font-size:60px;font-weight:200;line-height:1.05em;}",
 			"banner-heading2-font": "{font-family:inherit;font-size:42px;font-weight:200;line-height:1.42em;}",
 
@@ -136,7 +136,8 @@
 			"tweak-blog-list-style": "Grid",
 			"tweak-blog-list-columns": "3",
 			"tweak-blog-list-item-image-aspect-ratio-grid": "4:3 Four-Three",
-			"tweak-blog-list-item-show-excerpt": "false",
+			"tweak-blog-list-item-excerpt-show": "false"
+
 		},
 		main: {
 			"#banner .description": "display=hide",
@@ -187,7 +188,7 @@
 	    "#banner .image": "parallax=enable",
 	    "#blog .category-nav": ["sticky=within-site"],
 	    "#blog article ": ["effect=pop","palette=banner"],
-	    "#blog article .BlogList-item-title ": "layout-spacing=sides",
+	    "#blog article .BlogList-item-title ": ["layout-spacing=sides","appearance=unset"],
 	    "#blog article .BlogList-item-meta ": "display=hide",
 	    "#blog-item .category-nav": ["display=hide"],
 	    "#blog .content": "layout-width=main",
