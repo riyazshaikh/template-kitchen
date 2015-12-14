@@ -80,12 +80,12 @@
 	          webfontsJson: Y.JSON.stringify(webfonts)
 	        },
 	        success: function() {
-						Y.Data.get({
-							url:"/api/templates/"+Static.SQUARESPACE_CONTEXT.templateId+"/reprocess-tweaks", 
-							success: function() {
+						// Y.Data.get({
+						// 	url:"/api/templates/"+Static.SQUARESPACE_CONTEXT.templateId+"/reprocess-tweaks", 
+						// 	success: function() {
 								window.top.location.reload();
-							}
-						});	        	
+						// 	}
+						// });	        	
 	        }
 				});
 			});
