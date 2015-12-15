@@ -166,7 +166,9 @@
 			"#products .product-title ": "appearance=unset",
 			"#products .product-price ": "appearance=meta",
 			"#products .product-meta ": ["align=space-between","align-overflow=truncate"],
-			"#products .product-image ": "effect=pop"
+			"#products .product-image ": "effect=pop",
+			"#page-footer": ["palette=main", "typeset=banner"],
+			"#page-footer .content": "layout-width=main"
 		},
 		'products-item': {
 			"#banner": "display=hide",
