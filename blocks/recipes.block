@@ -161,7 +161,7 @@
 			"#banner .blocks .content p": ["appearance=meta"],
 			"#products .category-nav": ["sticky=within-site"],
 
-			"#products .content": ["layout-spacing=alternate"],
+			"#products .content": ["layout-width=full", "layout-spacing=alternate"],
 			"#products": ["palette=main","typeset=alternate"],
 			"#products .product-title ": "appearance=unset",
 			"#products .product-price ": "appearance=meta",
@@ -183,7 +183,7 @@
 			"#banner": ["display=overlaid","background=transparent"],
 			"#banner .blocks .content": ["layout-spacing=sides"],
 
-			"#gallery-scroll .content": ["layout-spacing=sides"],
+			"#gallery-scroll .content": ["layout-width=full", "layout-spacing=sides"],
 			"#gallery-scroll .sticky-container": "intrinsic=desktop",
 			"#gallery-scroll .meta + .meta ": "typeset=alternate",
 			"#gallery-scroll .meta:first-child": "typeset=banner", // first is banner
