@@ -1,7 +1,7 @@
 {
 	alfa: {
 		tweaks: {
-			"mainContentWidth": "1500px",
+			"mainContentWidth": "1100px",
 
 			"header---display": "Overlaid",
 			"header---background": "Transparent",
@@ -13,6 +13,7 @@
 
 			"tweak-blog-list-style": "Grid",
 			"tweak-blog-list-columns": "3",
+			"tweak-blog-list-spacing": "5%",
 			"tweak-blog-list-item-image-aspect-ratio-grid": "3:2 Standard",
 			"tweak-blog-list-item-meta-position": "Below Title",
 			"tweak-blog-list-item-readmore": "Hide"
@@ -23,6 +24,7 @@
 	    "#banner .blocks .content": ["layout-width=main"],
 			"#banner .description": "display=hide",
 
+			"#blog .content": ["layout-width=full","layout-spacing=regular"],
 	    "#page-footer .content": "layout-width=main",
 	    "#page-footer .blocks": "background=translucent",
 
