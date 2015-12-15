@@ -1,13 +1,21 @@
 {
 	alfa: {
 		tweaks: {
+			"mainContentWidth": "1500px",
+
 			"header---display": "Overlaid",
 			"header---background": "Transparent",
 			"banner---palette": "Alternate",
 			"banner--image---parallax": "Enable",
 			"page-footer---palette": "Alternate",
 			"page-footer--image---parallax": "Enable",
-			"page-footer--content---sticky": "Within Site Bottom"
+			"page-footer--content---sticky": "Within Site Bottom",
+
+			"tweak-blog-list-style": "Grid",
+			"tweak-blog-list-columns": "3",
+			"tweak-blog-list-item-image-aspect-ratio-grid": "3:2 Standard",
+			"tweak-blog-list-item-meta-position": "Below Title",
+			"tweak-blog-list-item-readmore": "Hide"
 		},
 		webfonts: [],
 		main: {
