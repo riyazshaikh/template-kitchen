@@ -13,6 +13,16 @@
 // tweak: { category: "Layout", title: "Alternate Spacing", min: 0, max: 100, step: 5, target: "div[data-layout-spacing=alternate]", type: "value" }
 @altSpacing: 30px;
 
+
+[role] { /* Make them stack */
+  position: relative;
+  z-index: 1;
+}
+
+[role="complementary"] { /* Make prefooter go under by default */
+  z-index: 0;
+}
+
 /* Default layout width is 100% */
 [data-layout-width=main] {
   width: @mainContentWidth;
@@ -76,18 +86,22 @@
   display: none;
 }
 
-[data-display*=overlaid] {
+[data-display=overlaid] {
   position: absolute;
   left: 0;
   right: 0;
-  z-index: 2; 
+  z-index: 3; 
   /*pointer-events: none;  Allow clicks to pass through to bottom layer */
 }
 
 [data-display=overlaid-caption] { /* Triggers caption positioning */
+  position: absolute;
+  left: 0;
+  right: 0;
   top: 0;
   bottom: 0;
   padding: 0;
+  z-index: 2; 
 
   .sqs-layout & {
     position: absolute !important;
@@ -103,11 +117,3 @@
   }
 }
 
-[role] { /* Make them stack */
-  position: relative;
-  z-index: 1;
-}
-
-[role="complementary"] { /* Make prefooter go under by default */
-  z-index: 0;
-}
