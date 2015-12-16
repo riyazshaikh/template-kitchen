@@ -102,3 +102,12 @@
     height: 100% !important;
   }
 }
+
+[role] { /* Make them stack */
+  position: relative;
+  z-index: 1;
+}
+
+[role="complementary"] { /* Make prefooter go under by default */
+  z-index: 0;
+}

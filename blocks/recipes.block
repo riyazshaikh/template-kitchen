@@ -58,16 +58,15 @@
 		},
 		main: {
 			"#banner .description": "display=overlaid-caption",
-			"#banner .description .content": ["layout-spacing=sides","align=center-left-parent"],
+			"#banner .description .content": ["layout-spacing=sides","align=center-right-parent"],
 			"#banner .description .content > div": ["layout-width=meta","layout-spacing=none"],
-			"#banner .blocks .content": ["layout-width=main","layout-spacing=sides","parallax=enable"],
 			"#banner .description .title": "appearance=meta",
 			"#banner .description strong": ["appearance=heading1","font-effect=dash"],
 			"#banner .description a": "appearance=button-solid-pill",
 
 			"#page .content": ["layout-width=full","layout-spacing=regular"],
 			"#page .content h2": "font-effect=dash",
-	    "#page": "palette=alternate",
+	    "#page": "palette=main",
 		},
 
 	},
