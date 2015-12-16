@@ -57,8 +57,8 @@
 			"main-metaColor": "rgba(15,15,15,0.5)",
 		},
 		main: {
-			"#banner .description": ["display=overlaid-caption","background=translucent"],
-			"#banner .description .content": ["layout-spacing=sides","align=center-right-parent"],
+			"#banner .description": ["display=overlaid-caption","background=translucent","overlapped=header"],
+			"#banner .description .content": ["layout-spacing=sides","align=center-left-parent"],
 			"#banner .description .content > div": ["layout-width=meta","layout-spacing=none"],
 			"#banner .description .title": "appearance=meta",
 			"#banner .description strong": ["appearance=heading1","font-effect=dash"],
