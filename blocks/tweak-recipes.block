@@ -119,13 +119,15 @@
 	var region = "{collection.regionName}";
 	var rTweaks = "{squarespace.page-classes}".match(/\br-[\S]+/g);
 	rTweaks.forEach(function(tweak) {
-		var matches = /r-(\w*)(#.*)-(.*)/.exec(window.RecipeManager.decode(tweak));
+		var decoded = window.RecipeManager.decode(tweak);
+		var matches = /r-(\w*)(#.*)-(.*)/.exec(decoded);
+		console.log(decoded, matches);
 		if (matches[1] === region || matches[1] === "") {
 			window.RecipeManager.addItem(matches[2],matches[3]);
 		}
 	});
 	return;
-	
+
 	// Start with base tweaks as recipe
 	// var tweaks = Static.SQUARESPACE_CONTEXT.tweakJSON, parts, key, selector, value;
 	// for (key in tweaks) {
