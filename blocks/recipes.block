@@ -19,14 +19,13 @@
 			"#header": ["display=overlaid","background=transparent"],
 			"#banner .image": "parallax=enable",
 			"#page-footer .image": "parallax=enable",
-			"#page-footer .content": "sticky=within-site-bottom",
 
 	    "#banner .blocks": ["background=translucent","overlap=header"],
 	    "#banner .blocks .content": ["layout-width=main"],
 			"#banner .description": "display=hide",
 
 			"#blog .content": ["layout-width=full","layout-spacing=regular"],
-	    "#page-footer .content": "layout-width=main",
+	    "#page-footer .content": ["layout-width=main","sticky=within-site-bottom"],
 	    "#page-footer .blocks": "background=translucent",
 
 	    "#footer":"display=hide"		
