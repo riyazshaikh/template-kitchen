@@ -184,4 +184,9 @@
   .colors(@main-bgColor);
   [data-palette=alternate] & { .colors(@alt-bgColor) }
   [data-palette=banner] & { .colors(@banner-bgColor) }
+
+  &:after {
+    content: '\A';
+    white-space: pre;
+  }
 }

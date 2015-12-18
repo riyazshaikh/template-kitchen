@@ -97,12 +97,14 @@
 		tweaks: {
 			"header---nav": "Auto",
 			"banner---palette": "Main",
+			"banner--description---text-align": "Center"
 		},
 		gallery: {
   		"#banner": ["display=overlaid","background=transparent"],
 			"#banner .blocks .content": "layout-spacing=regular",
 			"#banner .blocks .html-block .sqs-block-content > * ": "font-effect=highlight",
 			"#banner .description": "display=hide",
+			"#gallery .content": "layout-width=full"
 		},
 	},
 	echo: {
