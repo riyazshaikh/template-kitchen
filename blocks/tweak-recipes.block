@@ -5,6 +5,7 @@
 	var RECIPES = {@|apply recipes.block};
 	
 	window.RecipeManager = {
+		region = "{collection.regionName}",
 		recipe: {},
 		codec: {
 			'-00-': ' ',
@@ -16,7 +17,8 @@
 			'-06-': ':',
 			'-07-': '(',
 			'-08-': ')',
-			'-09-': '>'
+			'-09-': '>',
+			'-10-': '=' // attr marker
 		},
 		add: function(obj) {
 			if(obj) for(var selector in obj) this.addItem(selector, obj[selector]);
@@ -25,14 +27,22 @@
 			this.recipe[selector] = this.recipe[selector] || [];
 			Array.prototype.push.apply(this.recipe[selector], Array.isArray(value) ? value : [value]);
 		},
-		encode: function(selector, scope) {
+		encode: function(selector, attr, region) {
 			// add reverse lookup if necessary
 			if (!this.codec['#']) for(var key in this.codec) this.codec[this.codec[key]] = key;
 
-			return "r-" + (scope || "") + selector.replace(/[^a-z0-9\-]/g, function(match) { return this.codec[match]; }.bind(this));
+			var encoded = "-r-" + (region || "") + '=' + attr + selector;
+			return encoded.replace(/[^a-z0-9\-]/g, function(match) { return this.codec[match]; }.bind(this));
 		},
 		decode: function(title) {
-			return title.replace(/-\d\d-/g, function(match) { return this.codec[match] }.bind(this));
+
+			var decoded = title.replace(/-\d\d-/g, function(match) { return this.codec[match] }.bind(this));
+
+			var matches = /r-(\w*?)(=.*?)(#.*?)/.exec(decoded);
+			if (matches[1] === region || matches[1] === "") { // if valid scope
+				this.addItem(matches[3],matches[2]);
+			}
+
 		},
 		attach: function(event) {
 			var selector = event.selector;
@@ -115,17 +125,10 @@
 		}
 	};
 
-	var map = {};
-	var region = "{collection.regionName}";
-	var rTweaks = "{squarespace.page-classes}".match(/\br-[\S]+/g);
-	rTweaks.forEach(function(tweak) {
-		var decoded = window.RecipeManager.decode(tweak);
-		var matches = /r-(\w*)(#.*)-(.*)/.exec(decoded);
-		console.log(decoded, matches);
-		if (matches[1] === region || matches[1] === "") {
-			window.RecipeManager.addItem(matches[2],matches[3]);
-		}
-	});
+	// var rTweaks = "{squarespace.page-classes}".match(/-r-[\S]+/g);
+	// rTweaks.forEach(function(tweak) {
+	// 	window.RecipeManager.decode(tweak);
+	// });
 	return;
 
 	// Start with base tweaks as recipe
