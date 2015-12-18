@@ -5,7 +5,7 @@
 	var RECIPES = {@|apply recipes.block};
 	
 	window.RecipeManager = {
-		region = "{collection.regionName}",
+		region: "{collection.regionName}",
 		recipe: {},
 		codec: {
 			'-00-': ' ',
