@@ -66,7 +66,6 @@
 
 			"#page .content": ["layout-width=full","layout-spacing=regular"],
 			"#page .content h2": "font-effect=dash",
-	    "#page": "palette=main",
 		}
 	},
 	charlie: {
@@ -74,19 +73,18 @@
 		tweaks: {
 			"header---palette": "Main",
 			"header---nav": "Slidebar",
-			"header---display": "Overlaid",
-			"header---background": "Transparent",
-			"header---sticky": "Within Site",
 
 			"banner---palette": "Main",
-			"banner--image---parallax": "Enable",
-
 
 		},
 		'gallery-scroll': {
+			"#header": ["display=overlaid","background=transparent","sticky=within-site"],
+
 			"#banner .description": "display=hide",
 			"#banner .blocks .content": ["layout-width=main","parallax=enable"],
 			"#banner .blocks": ["overlap=header"],
+			"#banner .image": "parallax=enable",
+
 
 			"#gallery-scroll .content": "layout-width=main",
 			"#gallery-scroll .sticky-container": "intrinsic=half",
@@ -100,15 +98,12 @@
 			"header---nav": "Auto",
 			"banner---palette": "Main",
 		},
-		main: {
+		gallery: {
   		"#banner": ["display=overlaid","background=transparent"],
 			"#banner .blocks .content": "layout-spacing=regular",
 			"#banner .blocks .html-block .sqs-block-content > * ": "font-effect=highlight",
-			"#banner .description .title": "display=hide",
-
+			"#banner .description": "display=hide",
 		},
-		gallery: {
-		}
 	},
 	echo: {
 		webfonts: [
