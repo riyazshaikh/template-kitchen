@@ -39,7 +39,7 @@
 			var decoded = title.replace(/-\d\d-/g, function(match) { return this.codec[match] }.bind(this));
 
 			var matches = /r-(\w*?)(=.*?)(#.*?)/.exec(decoded);
-			if (matches[1] === region || matches[1] === "") { // if valid scope
+			if (matches[1] === this.region || matches[1] === "") { // if valid scope
 				this.addItem(matches[3],matches[2]);
 				return matches;
 			}
