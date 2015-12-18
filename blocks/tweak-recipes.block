@@ -27,11 +27,11 @@
 			this.recipe[selector] = this.recipe[selector] || [];
 			Array.prototype.push.apply(this.recipe[selector], Array.isArray(value) ? value : [value]);
 		},
-		encode: function(selector, attr, region) {
+		encode: function(obj) {
 			// add reverse lookup if necessary
 			if (!this.codec['#']) for(var key in this.codec) this.codec[this.codec[key]] = key;
 
-			var encoded = "-r-" + (region || "") + '=' + attr + selector;
+			var encoded = "-r-" + (obj.region || "") + '=' + obj.attr + obj.selector;
 			return encoded.replace(/[^a-z0-9\-]/g, function(match) { return this.codec[match]; }.bind(this));
 		},
 		decode: function(title) {
@@ -41,8 +41,8 @@
 			var matches = /-r-(\w*?)=(.+?)(#.+)/.exec(decoded);
 			if (matches[1] === this.region || matches[1] === "") { // if valid scope
 				this.addItem(matches[3],matches[2]);
-				return matches;
 			}
+			return matches;
 		},
 		attach: function(event) {
 			var selector = event.selector;
