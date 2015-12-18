@@ -111,7 +111,7 @@
 		},
 		gallery: {
   		"#banner": ["display=overlaid","background=transparent"],
-			"#banner .blocks .content": "layout-spacing=regular",
+			"#banner .blocks .content": "layout-width=main",
 			"#banner .blocks .html-block .sqs-block-content > * ": "font-effect=highlight",
 			"#banner .description": "display=hide",
 			"#gallery .content": "layout-width=full",
