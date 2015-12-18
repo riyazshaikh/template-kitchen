@@ -96,15 +96,22 @@
 		webfonts: [],
 		tweaks: {
 			"header---nav": "Auto",
-			"banner---palette": "Main",
-			"banner--description---text-align": "Center"
+			"banner---palette": "Alternate",
+			"header--content---layout-width": "Main",
+			"banner--description---text-align": "Center",
+
+			"banner-body-font": "{font-family:'raleway', Helvetica, Arial, Verdana, sans-serif;font-size:22px;font-weight:200;line-height:1.5em;}",
+			"banner-heading1-font": "{font-family:'raleway';font-size:60px;font-weight:200;line-height:1.33em;}",
+			"banner-heading2-font": "{font-family:'raleway';font-size:42px;font-weight:200;line-height:1.42em;}",
+
 		},
 		gallery: {
   		"#banner": ["display=overlaid","background=transparent"],
 			"#banner .blocks .content": "layout-spacing=regular",
 			"#banner .blocks .html-block .sqs-block-content > * ": "font-effect=highlight",
 			"#banner .description": "display=hide",
-			"#gallery .content": "layout-width=full"
+			"#gallery .content": "layout-width=full",
+			"#gallery": "palette=alternate"
 		},
 	},
 	echo: {
