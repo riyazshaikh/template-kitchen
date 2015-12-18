@@ -1,11 +1,11 @@
 {@|apply js-utils.block}
 <script>
 (function(){
+	var regionName = "{collection.regionName}";
 	var collectionType = "{collection.typeName}" + (Static.SQUARESPACE_CONTEXT.item ? '-item': '');
 	var RECIPES = {@|apply recipes.block};
 	
 	window.RecipeManager = {
-		region: "{collection.regionName}",
 		recipe: {},
 		codec: {
 			'-00-': ' ',
@@ -39,7 +39,7 @@
 			var decoded = title.replace(/-\d\d-/g, function(match) { return this.codec[match] }.bind(this));
 
 			var matches = /-r-(\w*?)=(.+?)(#.+)/.exec(decoded);
-			if (matches[1] === this.region || matches[1] === "") { // if valid scope
+			if (matches[1] === regionName || matches[1] === "") { // if valid scope
 				this.addItem(matches[3],matches[2]);
 			}
 			return matches;
@@ -158,6 +158,7 @@
 	if (recipe) {
 		RecipeManager.add(recipe['main']);
 		RecipeManager.add(recipe[collectionType]);
+		RecipeManager.add(recipe[regionName]);
 	} 
 
 	// Merge custom recipe (if any)

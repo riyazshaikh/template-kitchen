@@ -15,7 +15,7 @@
 
     <div class="sqs-announcement-bar-dropzone"></div>
 
-    <div id="site">
+    <div id="site" data-region="{collection.regionName}">
 
       <div id="header" role="banner">
         {@|apply header.block}

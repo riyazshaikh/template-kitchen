@@ -3,13 +3,9 @@
 		tweaks: {
 			"mainContentWidth": "1100px",
 
-			"header---display": "Overlaid",
-			"header---background": "Transparent",
+			"header---palette": "Banner",
 			"banner---palette": "Alternate",
-			"banner--image---parallax": "Enable",
 			"page-footer---palette": "Alternate",
-			"page-footer--image---parallax": "Enable",
-			"page-footer--content---sticky": "Within Site Bottom",
 
 			"tweak-blog-list-style": "Grid",
 			"tweak-blog-list-columns": "3",
@@ -19,7 +15,12 @@
 			"tweak-blog-list-item-readmore": "Hide"
 		},
 		webfonts: [],
-		main: {
+		alfa: {
+			"#header": ["display=overlaid","background=transparent"],
+			"#banner .image": "parallax=enable",
+			"#page-footer .image": "parallax=enable",
+			"#page-footer .content": "sticky=within-site-bottom",
+
 	    "#banner .blocks": ["background=translucent","overlap=header"],
 	    "#banner .blocks .content": ["layout-width=main"],
 			"#banner .description": "display=hide",
