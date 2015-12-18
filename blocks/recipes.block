@@ -100,6 +100,8 @@
 			"header--content---layout-width": "Main",
 			"banner--description---text-align": "Center",
 
+			"page-footer---palette": "Main",
+
 			"gallery-autoplay": "true",
 			"gallery-loop": "true",
 			"gallery-transitions": "scroll",
@@ -115,7 +117,8 @@
 			"#banner .blocks .html-block .sqs-block-content > * ": "font-effect=highlight",
 			"#banner .description": "display=hide",
 			"#gallery .content": "layout-width=full",
-			"#gallery": "palette=alternate"
+			"#gallery": "palette=alternate",
+			"#page-footer .content": "layout-width=main"
 		},
 	},
 	echo: {
