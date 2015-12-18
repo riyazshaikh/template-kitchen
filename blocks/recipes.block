@@ -36,8 +36,6 @@
 			"Open+Sans:300,300italic,700normal,700italic,500undefined"
 		],
 		tweaks: {
-			"header---display": "Overlaid",
-			"header---background": "Transparent",
 			"header---nav": "Auto",
 			"header--navigation---align": "Center",
 			"header--content---layout-width": "Main",
@@ -56,7 +54,9 @@
 			// "main-linkColor": "#cf3f02",
 			"main-metaColor": "rgba(15,15,15,0.5)",
 		},
-		page: {
+		bravo: {
+			"#header": ["display=overlaid","background=transparent"],
+
 			"#banner .description": ["display=overlaid-caption","background=translucent","overlapped=header"],
 			"#banner .description .content": ["layout-spacing=sides","align=center-left-parent"],
 			"#banner .description .content > div": ["layout-width=meta","layout-spacing=none"],
@@ -67,11 +67,7 @@
 			"#page .content": ["layout-width=full","layout-spacing=regular"],
 			"#page .content h2": "font-effect=dash",
 	    "#page": "palette=main",
-		},
-		'blog-item': {
-	    "#blog-item .BlogItem-share ": "display=hide",
-	  }
-
+		}
 	},
 	charlie: {
 		webfonts: [],
