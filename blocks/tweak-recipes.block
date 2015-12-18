@@ -41,8 +41,8 @@
 			var matches = /r-(\w*?)(=.*?)(#.*?)/.exec(decoded);
 			if (matches[1] === region || matches[1] === "") { // if valid scope
 				this.addItem(matches[3],matches[2]);
+				return matches;
 			}
-
 		},
 		attach: function(event) {
 			var selector = event.selector;
