@@ -129,29 +129,29 @@
 	// rTweaks.forEach(function(tweak) {
 	// 	window.RecipeManager.decode(tweak);
 	// });
-	return;
+	// return;
 
 	// Start with base tweaks as recipe
-	// var tweaks = Static.SQUARESPACE_CONTEXT.tweakJSON, parts, key, selector, value;
-	// for (key in tweaks) {
-	// 	parts = key.split('---'); // attribute marker
-	// 	if (parts.length == 2 && tweaks[key] !== "") { // only process if there is something to be set
+	var tweaks = Static.SQUARESPACE_CONTEXT.tweakJSON, parts, key, selector, value;
+	for (key in tweaks) {
+		parts = key.split('---'); // attribute marker
+		if (parts.length == 2 && tweaks[key] !== "") { // only process if there is something to be set
 			
-	// 		// convert tweak name into selector, with double space as class name
-	// 		selector = '#' + parts[0].replace(/--/g,' .'); 
+			// convert tweak name into selector, with double space as class name
+			selector = '#' + parts[0].replace(/--/g,' .'); 
 
-	// 		if (parts[1].charAt(0) === '-') { // marker for generic selector
-	// 			parts[1] = parts[1].substr(1);
-	// 			selector += ' '; // mark it generic
-	// 		}
+			if (parts[1].charAt(0) === '-') { // marker for generic selector
+				parts[1] = parts[1].substr(1);
+				selector += ' '; // mark it generic
+			}
 
-	// 		// make attribute from tweak attribute and value
-	// 		value = parts[1]+'='+tweaks[key].toLowerCase().replace(/\s/g,"-");
-	// 		var obj = {};
-	// 		obj[selector] = value;
-	// 	  RecipeManager.add(obj);
-	// 	}
-	// }
+			// make attribute from tweak attribute and value
+			value = parts[1]+'='+tweaks[key].toLowerCase().replace(/\s/g,"-");
+			var obj = {};
+			obj[selector] = value;
+		  RecipeManager.add(obj);
+		}
+	}
 
 	// Merge template and collection specific recipe
 	var recipe = RECIPES[window.location.search.split('recipe=')[1] || window.RECIPE_NAME];
