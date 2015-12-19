@@ -6,7 +6,7 @@
         {.repeated section items}        
             <div class="slide content-fill" data-type="image" data-slide-id="{id}">
               {.main-image?}
-              <img {@|image-meta color-data} class="loading" data-load="false" />
+              <img {@|image-meta color-data} class="loading" />
               {.end}
             </div>
         {.end}    
