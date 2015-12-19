@@ -28,7 +28,7 @@
   //   if (header.scrollWidth > header.offsetWidth) nav.classList.add('header-overflow');
   // };
 
-  var observer = new MutationObserver(function() {
+  var overlaidHandler = function() {
 
     // Add header height as a padding to avoid overlapping content below
     if (header.dataset.display === 'overlaid') {
@@ -65,12 +65,14 @@
     //   resizeOverflow = null;
     // }
 
-  });
+  };
 
-  observer.observe(header, {
+  (new MutationObserver(overlaidHandler)).observe(header, {
     attributes: true,
     attributeFilter: ['data-display']
   });
+
+  overlaidHandler();
 
 })();
 </script>
