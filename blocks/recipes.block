@@ -15,7 +15,7 @@
 			"tweak-blog-list-item-readmore": "Hide"
 		},
 		webfonts: [],
-		alfa: {
+		common: {
 			"#header": ["display=overlaid","background=transparent"],
 			"#banner .image": "parallax=enable",
 			"#page-footer .image": "parallax=enable",
@@ -32,9 +32,7 @@
 		}
 	},
 	bravo: {
-		webfonts: [
-			"Open+Sans:300,300italic,700normal,700italic,500undefined"
-		],
+		webfonts: [],
 		tweaks: {
 			"header---nav": "Auto",
 			"header--navigation---align": "Center",
@@ -54,7 +52,7 @@
 			// "main-linkColor": "#cf3f02",
 			"main-metaColor": "rgba(15,15,15,0.5)",
 		},
-		bravo: {
+		common: {
 			"#header": ["display=overlaid","background=transparent"],
 
 			"#banner .description": ["display=overlaid-caption","background=translucent","overlapped=header"],
@@ -77,7 +75,7 @@
 			"banner---palette": "Main",
 
 		},
-		'gallery-scroll': {
+		common: {
 			"#header": ["display=overlaid","background=transparent","sticky=within-site"],
 
 			"#banner .description": "display=hide",
@@ -85,11 +83,9 @@
 			"#banner .blocks": ["overlap=header"],
 			"#banner .image": "parallax=enable",
 
-
 			"#gallery-scroll .content": "layout-width=main",
 			"#gallery-scroll .sticky-container": "intrinsic=half",
 			"#gallery-scroll .meta + .meta a ": ["appearance=link-arrow"], 
-			
 		},
 	},
 	delta: {
@@ -99,6 +95,7 @@
 			"banner---palette": "Alternate",
 			"header--content---layout-width": "Main",
 			"banner--description---text-align": "Center",
+			"header--content---layout-spacing": "Sides",
 
 			"page-footer---palette": "Main",
 
@@ -111,7 +108,7 @@
 			"banner-heading2-font": "{font-family:'raleway';font-size:42px;font-weight:200;line-height:1.42em;}",
 
 		},
-		gallery: {
+		common: {
   		"#banner": ["display=overlaid","background=transparent"],
 			"#banner .blocks .content": "layout-width=main",
 			"#banner .blocks .html-block .sqs-block-content > * ": "font-effect=highlight",
@@ -121,10 +118,8 @@
 			"#page-footer .content": "layout-width=main"
 		},
 	},
-	echo: {
-		webfonts: [
-			"myriad-pro:400,200,700"
-		],
+	'square-mart': {
+		webfonts: [],
 		tweaks: {
   		"header---nav": "Slidebar",
 			"header---palette": "Main",
@@ -162,10 +157,9 @@
 			"tweak-blog-list-item-excerpt-show": "false"
 
 		},
-		main: {
+		common: {
 			"#banner .description": "display=hide",
 			"#page-footer .content": "layout-spacing=regular",
-			"#footer .content": ["layout-spacing=alternate","layout-width=full"],
 			"#footer .sqs-block ": "layout-spacing=minimal"
 		},
 		products: {

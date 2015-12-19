@@ -97,7 +97,7 @@
 		resetTweaks: function(name) {
 			if (!Static.SQUARESPACE_CONTEXT.authenticatedAccount) return;
 
-			name = name || window.RECIPE_NAME;
+			name = name || regionName;
 			var recipe = RECIPES[name];
 			var tweaks = this.getFormatted(recipe['tweaks']);
 			var webfonts = recipe['webfonts'];
@@ -154,11 +154,10 @@
 	}
 
 	// Merge template and collection specific recipe
-	var recipe = RECIPES[window.location.search.split('recipe=')[1] || window.RECIPE_NAME];
+	var recipe = RECIPES[regionName];
 	if (recipe) {
-		RecipeManager.add(recipe['main']);
+		RecipeManager.add(recipe['common']);
 		RecipeManager.add(recipe[collectionType]);
-		RecipeManager.add(recipe[regionName]);
 	} 
 
 	// Merge custom recipe (if any)
@@ -166,16 +165,16 @@
 
 	RecipeManager.listen(); // start listening for selectors
 
-	document.addEventListener("DOMContentLoaded", function(event) {
-		// also make links goto correct recipe (if applicable)
-		var recipeName = window.location.search.split('recipe=')[1];
-		if (recipeName) {
-			var nodes = document.querySelectorAll('a[href^="/"]')
-			for(var i=0; i<nodes.length; i++) {
-				nodes[i].setAttribute('href', nodes[i].getAttribute('href') + '?recipe=' + recipeName);
-			}
-		}
-	});
+	// document.addEventListener("DOMContentLoaded", function(event) {
+	// 	// also make links goto correct recipe (if applicable)
+	// 	var recipeName = window.location.search.split('recipe=')[1];
+	// 	if (recipeName) {
+	// 		var nodes = document.querySelectorAll('a[href^="/"]')
+	// 		for(var i=0; i<nodes.length; i++) {
+	// 			nodes[i].setAttribute('href', nodes[i].getAttribute('href') + '?recipe=' + recipeName);
+	// 		}
+	// 	}
+	// });
 
 	// dynamically inject font awesome if needed
 	document.onSelector('.fa', function(event) {
