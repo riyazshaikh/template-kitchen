@@ -11,7 +11,6 @@
 			"tweak-blog-list-columns": "3",
 			"tweak-blog-list-spacing": "5%",
 			"tweak-blog-list-item-image-aspect-ratio-grid": "3:2 Standard",
-			"tweak-blog-list-item-meta-position": "Below Title",
 			"tweak-blog-list-item-readmore": "Hide"
 		},
 		webfonts: [],
@@ -25,6 +24,8 @@
 			"#banner .description": "display=hide",
 
 			"#blog .content": ["layout-width=full","layout-spacing=regular"],
+	    "#blog article .BlogList-item-meta ": "display=hide",
+			
 	    "#page-footer .content": ["layout-width=main","sticky=within-site-bottom"],
 	    "#page-footer .blocks": "background=translucent",
 
