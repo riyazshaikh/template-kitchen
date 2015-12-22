@@ -57,7 +57,7 @@
 			"#header": ["display=overlaid","background=transparent"],
 
 			"#banner .description": ["display=overlaid-caption","background=translucent","overlap=header"],
-			"#banner .description .content": ["layout-spacing=sides","align=center-left-parent"],
+			"#banner .description .content": ["layout-spacing=regular-sides","align=center-left-parent"],
 			"#banner .description .content > div": ["layout-width=meta","layout-spacing=none"],
 			"#banner .description .title": "appearance=meta",
 			"#banner .description strong": ["appearance=heading1","font-effect=dash"],
@@ -96,7 +96,7 @@
 			"banner---palette": "Alternate",
 			"header--content---layout-width": "Main",
 			"banner--description---text-align": "Center",
-			"header--content---layout-spacing": "Sides",
+			"header--content---layout-spacing": "Regular Sides",
 
 			"page-footer---palette": "Main",
 
@@ -161,7 +161,7 @@
 		common: {
 			"#banner .description": "display=hide",
 			"#page-footer .content": "layout-spacing=regular",
-			"#footer .sqs-block ": "layout-spacing=minimal-tops"
+			"#footer .sqs-block ": "layout-spacing=minimal-ends"
 		},
 		products: {
 			"#banner .blocks .content": ["layout-width=main"],
@@ -182,7 +182,7 @@
 		'products-item': {
 			"#banner": "display=hide",
 			"#products-item .category-nav": ["display=hide"],
-			"#products-item .content": ["layout-spacing=sides", "meta-align=right"],
+			"#products-item .content": ["layout-spacing=regular-sides", "meta-align=right"],
 			"#products-item .product-meta": "layout-spacing=alternate",
 			"#products-item": "typeset=alternate"
 		},
@@ -190,9 +190,9 @@
 			"#header": ["display=overlaid","background=transparent","sticky=within-site"],
 
 			"#banner": ["display=overlaid","background=transparent"],
-			"#banner .blocks .content": ["layout-spacing=sides"],
+			"#banner .blocks .content": ["layout-spacing=regular-sides"],
 
-			"#gallery-scroll .content": ["layout-width=full", "layout-spacing=sides"],
+			"#gallery-scroll .content": ["layout-width=full", "layout-spacing=regular-sides"],
 			"#gallery-scroll .sticky-container": "intrinsic=desktop",
 			"#gallery-scroll .meta + .meta ": "typeset=alternate",
 			"#gallery-scroll .meta:first-child": "typeset=banner", // first is banner
@@ -209,7 +209,7 @@
 	    "#banner .image": "parallax=enable",
 	    "#blog .category-nav": ["sticky=within-site"],
 	    "#blog article ": ["effect=pop","palette=banner"],
-	    "#blog article .BlogList-item-title ": ["layout-spacing=sides","appearance=unset"],
+	    "#blog article .BlogList-item-title ": ["layout-spacing=regular-sides","appearance=unset"],
 	    "#blog article .BlogList-item-meta ": "display=hide",
 	    "#blog-item .category-nav": ["display=hide"],
 	    "#blog .content": "layout-width=main",
@@ -227,7 +227,7 @@
 	 		"#banner .blocks": ["background=translucent","overlap=header"],
 	    "#banner .image": "parallax=enable",
 	    "#blog-item .category-nav": ["display=hide"],
-	    "#blog-item .content": "layout-spacing=regular",
+	    "#blog-item .content": "layout-spacing=regular-sides",
 	    "#blog-item .BlogItem .image-block-outer-wrapper": "intrinsic=desktop",
 	    "#blog-item .BlogItem-share, .BlogItem-meta ": "display=hide",
 	    "#page-footer": "palette=alternate",
