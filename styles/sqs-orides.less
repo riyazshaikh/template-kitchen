@@ -243,6 +243,12 @@ blockquote {
   padding: 0;
 }
 
+.sqs-layout {
+  &:not([data-layout-spacing]):not([data-layout-width]) {
+    > .sqs-row { margin-left: 0; margin-right: 0; }
+  }
+}
+
 @fontIconSize: 100px;
 i.fa {
   display: block;
