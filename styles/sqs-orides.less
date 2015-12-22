@@ -243,9 +243,11 @@ blockquote {
   padding: 0;
 }
 
+/* Handle full width layouts */
 .sqs-layout {
   &:not([data-layout-spacing]):not([data-layout-width]) {
     > .sqs-row { margin-left: 0; margin-right: 0; }
+    .sqs-block { padding-left: 0 !important; padding-right: 0 !important; }
   }
 }
 
