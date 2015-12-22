@@ -19,14 +19,7 @@
 
   var header = document.currentScript.parentNode;
   var head = document.getElementsByTagName('head')[0];
-  var stylesheet, resizeOverlaid, resizeOverflow, rule;
-  // var nav = header.querySelector('.main-nav');
-
-  // var overflowCheck = function() {
-  //   nav.classList.remove('header-overflow');
-
-  //   if (header.scrollWidth > header.offsetWidth) nav.classList.add('header-overflow');
-  // };
+  var stylesheet, resizeOverlaid, rule;
 
   var overlaidHandler = function() {
 
@@ -55,15 +48,6 @@
       stylesheet = null;
       rule = null;
     }
-
-    // if (header.dataset.nav === 'auto') {
-    //   overflowCheck();
-    //   resizeOverflow = new ResizeSensor(header, overflowCheck);
-    // } else {
-    //   nav.classList.remove('header-overflow');
-    //   resizeOverflow && resizeOverflow.detach();
-    //   resizeOverflow = null;
-    // }
 
   };
 

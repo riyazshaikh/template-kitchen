@@ -161,7 +161,7 @@
 		common: {
 			"#banner .description": "display=hide",
 			"#page-footer .content": "layout-spacing=regular",
-			"#footer .sqs-block ": "layout-spacing=minimal"
+			"#footer .sqs-block ": "layout-spacing=minimal-tops"
 		},
 		products: {
 			"#banner .blocks .content": ["layout-width=main"],

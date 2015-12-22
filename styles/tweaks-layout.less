@@ -42,12 +42,12 @@
 [data-layout-width=meta] { .layout-width-meta; }
 
 [data-layout-spacing] { .border-box; }
-[data-layout-spacing=none] { padding: 0; }
-[data-layout-spacing=minimal] { padding: 0.5em; }
-[data-layout-spacing=regular] { padding: @mainSpacing; }
-[data-layout-spacing=alternate] { padding: @altSpacing @mainSpacing; }
-[data-layout-spacing=sides] { padding: 0 @mainSpacing; }
-[data-layout-spacing=tops] { padding: @mainSpacing 0; }
+[data-layout-spacing*=none] { padding: 0 !important; }
+[data-layout-spacing*=minimal] { padding: 0.5em !important; }
+[data-layout-spacing*=regular] { padding: @mainSpacing !important; }
+[data-layout-spacing*=alternate] { padding: @altSpacing @mainSpacing !important; }
+[data-layout-spacing*=sides] { padding-top: 0 !important; padding-bottom: 0 !important; }
+[data-layout-spacing*=tops] { padding-left: 0 !important; padding-right: 0 !important; }
 
 
 [data-layout-align=center] { margin: auto; }
