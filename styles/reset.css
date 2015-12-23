@@ -431,3 +431,10 @@ h1, h2, h3{
   text-rendering: optimizeLegibility;
 }
 
+h1,
+h2,
+h3 {
+  margin: 1em 0 0.5em;
+  &:first-child { margin-top: 0; }
+}
+
