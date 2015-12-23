@@ -130,6 +130,9 @@
 .max-font-size (@size,@max) when (@size > @max) {
   font-size:@max;
 }
+.max-font-size (@size,@max) when (@size <= @max) {
+  font-size:@size;
+}
 .font-smoothing (@bg) when (lightness(@bg) >= 65%) {
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: subpixel-antialiased;
