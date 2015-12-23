@@ -1,7 +1,7 @@
 #blog-item .BlogItem-share { display: none; } /* someone needs to style it */
 
 /** All the style overrides for SQS system stuff i.e. blocks and layout engine, go here **/
-#site .sqs-layout {
+.sqs-layout {
   overflow:hidden; /* To handle negative margins within */
 
   .html-block,
@@ -217,25 +217,27 @@
   }
 
   @media screen and (max-width: 640px) {
-    [class*=sqs-col] {
-      float:none;
-      width:auto;
-    }
-    .spacer-block { 
-      display:none 
-    }
-    .sqs-row .sqs-block:first-child {
-      padding-top:17px;
-    }
+    #site & { /* Make it heavier */
+      [class*=sqs-col] {
+        float:none;
+        width:auto;
+      }
+      .spacer-block { 
+        display:none 
+      }
+      .sqs-block:first-child {
+        padding-top:17px;
+      }
 
-    .sqs-row .sqs-block:last-child {
-      padding-bottom:17px;
-    }
-    .sqs-row + .sqs-row,.sqs-row + .sqs-block {
-      margin-top:0;
-    }
-    .sqs-gallery-design-grid-slide { 
-      width:50% !important; 
+      .sqs-block:last-child {
+        padding-bottom:17px;
+      }
+      .sqs-row + .sqs-row,.sqs-row + .sqs-block {
+        margin-top:0;
+      }
+      .sqs-gallery-design-grid-slide { 
+        width:50% !important; 
+      }      
     }
   }
 

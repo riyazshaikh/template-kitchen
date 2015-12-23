@@ -1,70 +1,81 @@
+/* These are mostly overrides, so giving weight by scoping under #site */
 
-#site { /* These tend to be overrides so give them importance */
-  [data-appearance=unset] {
-    .body-font;
-    [data-typeset=alternate] & { .alt-body-font-responsive; }
-    [data-typeset=banner] & { .banner-body-font-responsive; }
-
+[data-appearance=unset] {
+  #site & { 
+    .body-font; 
     color: @main-textColor;
-    [data-palette=alternate] & { color: @alt-textColor; }
-    [data-palette=banner] & { color: @banner-textColor; }
   }
+  
+  #site [data-typeset=alternate] & { .alt-body-font-responsive; }
+  #site [data-typeset=banner] & { .banner-body-font-responsive; }
 
-  [data-appearance=heading1] {
+  #site [data-palette=alternate] & { color: @alt-textColor; }
+  #site [data-palette=banner] & { color: @banner-textColor; }
+}
+
+[data-appearance=heading1] {
+  #site & {
     display: block;
-
     .heading1-font;
-    [data-typeset=alternate] & { .alt-heading1-font-responsive; }
-    [data-typeset=banner] & { .banner-heading1-font-responsive; }
-
     color: @main-headingColor;
-    [data-palette=alternate] & { color: @alt-headingColor; }
-    [data-palette=banner] & { color: @banner-headingColor; }
   }
 
-  [data-appearance=heading2] {
+  #site [data-typeset=alternate] & { .alt-heading1-font-responsive; }
+  #site [data-typeset=banner] & { .banner-heading1-font-responsive; }
+
+  #site [data-palette=alternate] & { color: @alt-headingColor; }
+  #site [data-palette=banner] & { color: @banner-headingColor; }
+}
+
+[data-appearance=heading2] {
+  #site & {
     display: block;
-
-    .heading2-font;
-    [data-typeset=alternate] & { .alt-heading2-font-responsive; }
-    [data-typeset=banner] & { .banner-heading2-font-responsive; }
-
     color: @main-headingColor;
-    [data-palette=alternate] & { color: @alt-headingColor; }
-    [data-palette=banner] & { color: @banner-headingColor; }
+    .heading2-font;
   }
 
-  [data-appearance=meta] {
-    .heading3-font;
-    [data-typeset=alternate] & { .alt-heading3-font; }
-    [data-typeset=banner] & { .banner-heading3-font; }
+  #site [data-typeset=alternate] & { .alt-heading2-font-responsive; }
+  #site [data-typeset=banner] & { .banner-heading2-font-responsive; }
 
+  #site [data-palette=alternate] & { color: @alt-headingColor; }
+  #site [data-palette=banner] & { color: @banner-headingColor; }
+}
+
+[data-appearance=meta] {
+  #site & {
     color: @main-metaColor;
-    [data-palette=alternate] & { color: @alt-metaColor; }
-    [data-palette=banner] & { color: @banner-metaColor; }
+    .heading3-font;
   }
 
-  [data-appearance=link-arrow] {
-    position: relative;
-    &:after {
-      content: ">";
-      position: absolute;
-      right: -20px;
-    }
-    &:hover {
-      border-bottom: 1px solid @main-linkColor;
-      [data-palette=alternate] & { border-bottom: 1px solid @alt-linkColor; }
-      [data-palette=banner] & { border-bottom: 1px solid @banner-linkColor; }
-    }
-  }
+  #site [data-typeset=alternate] & { .alt-heading3-font; }
+  #site [data-typeset=banner] & { .banner-heading3-font; }
 
-  [data-appearance=link-underline] {
-    border-bottom: 1px solid @main-linkColor;
-    [data-palette=alternate] & { border-bottom: 1px solid @alt-linkColor; }
-    [data-palette=banner] & { border-bottom: 1px solid @banner-linkColor; }
-  }
+  #site [data-palette=alternate] & { color: @alt-metaColor; }
+  #site [data-palette=banner] & { color: @banner-metaColor; }
+}
 
-  [data-appearance*=button] {
+[data-appearance=link-arrow] {
+  position: relative;
+  &:after {
+    content: ">";
+    position: absolute;
+    right: -20px;
+  }
+  &:hover {
+    #site & { border-bottom: 1px solid @main-linkColor; }
+    #site [data-palette=alternate] & { border-bottom: 1px solid @alt-linkColor; }
+    #site [data-palette=banner] & { border-bottom: 1px solid @banner-linkColor; }
+  }
+}
+
+[data-appearance=link-underline] {
+  #site & { border-bottom: 1px solid @main-linkColor; }
+  #site [data-palette=alternate] & { border-bottom: 1px solid @alt-linkColor; }
+  #site [data-palette=banner] & { border-bottom: 1px solid @banner-linkColor; }
+}
+
+[data-appearance*=button] {
+  #site & {
     display: inline-block;
     width: auto;
     height: auto;
@@ -76,119 +87,120 @@
     margin-right: 1em; /* for whatevers next to it */
 
     .button-font;
-    [data-typeset=alternate] & { .alt-button-font; }
-    [data-typeset=banner] & { .banner-button-font; }
   }
 
-  [data-appearance*=button-solid] {
-    .colors(@linkColor, @bgColor) {
-      .background-color(@linkColor);    
+  #site [data-typeset=alternate] & { .alt-button-font; }
+  #site [data-typeset=banner] & { .banner-button-font; }
+}
+
+[data-appearance*=button-solid] {
+  .colors(@linkColor, @bgColor) {
+    .background-color(@linkColor);    
+    color: @bgColor;
+    &:hover {
+      background-color: fade(@linkColor, 80%);
+    }
+  }    
+  #site & { .colors(@main-linkColor, @main-bgColor); }
+  #site [data-palette=alternate] & { .colors(@alt-linkColor, @alt-bgColor); }
+  #site [data-palette=banner] & { .colors(@banner-linkColor, @banner-bgColor); }
+}
+
+[data-appearance*=button-outline] {
+  .colors(@linkColor, @bgColor) {
+    background-color: transparent;
+    .font-smoothing(@bgColor);
+    border: 2px solid @linkColor;
+    color: @linkColor;
+    &:hover {
+      background-color: @linkColor;
       color: @bgColor;
-      &:hover {
-        background-color: fade(@linkColor, 80%);
-      }
-    }    
-    .colors(@main-linkColor, @main-bgColor);
-    [data-palette=alternate] & { .colors(@alt-linkColor, @alt-bgColor); }
-    [data-palette=banner] & { .colors(@banner-linkColor, @banner-bgColor); }
-  }
-
-  [data-appearance*=button-outline] {
-    .colors(@linkColor, @bgColor) {
-      background-color: transparent;
-      .font-smoothing(@bgColor);
-      border: 2px solid @linkColor;
-      color: @linkColor;
-      &:hover {
-        background-color: @linkColor;
-        color: @bgColor;
-      }
     }
-
-    .colors(@main-linkColor, @main-bgColor);
-    [data-palette=alternate] &  {  .colors(@alt-linkColor, @alt-bgColor) }
-    [data-palette=banner] &  {  .colors(@banner-linkColor, @banner-bgColor) }
   }
 
+  .colors(@main-linkColor, @main-bgColor);
+  #site [data-palette=alternate] &  {  .colors(@alt-linkColor, @alt-bgColor) }
+  #site [data-palette=banner] &  {  .colors(@banner-linkColor, @banner-bgColor) }
+}
 
-  [data-appearance*=button-overlay] {
-    .colors(@linkColor, @bgColor) {
-      background-color: fade(@bgColor,10%);
-      color: @linkColor;
-      box-shadow: inset 0 0 0 1px fade(@bgColor, 8%);
-      border-radius: 60rem;
 
-      &:hover {
-        background-color: fade(@bgColor,15%);
-      }
+[data-appearance*=button-overlay] {
+  .colors(@linkColor, @bgColor) {
+    background-color: fade(@bgColor,10%);
+    color: @linkColor;
+    box-shadow: inset 0 0 0 1px fade(@bgColor, 8%);
+    border-radius: 60rem;
+
+    &:hover {
+      background-color: fade(@bgColor,15%);
     }
-    .colors(@main-linkColor, @main-bgColor);
-    [data-palette=alternate] &  {  .colors(@alt-linkColor, @alt-bgColor); }
-    [data-palette=banner] &  {  .colors(@banner-linkColor, @banner-bgColor); }
+  }
+  .colors(@main-linkColor, @main-bgColor);
+  #site [data-palette=alternate] &  {  .colors(@alt-linkColor, @alt-bgColor); }
+  #site [data-palette=banner] &  {  .colors(@banner-linkColor, @banner-bgColor); }
+}
+
+[data-appearance*=rounded] {
+  border-radius: 3px;
+}
+
+[data-appearance*=pill] {
+  border-radius: 300px;
+}
+
+[data-font-effect=dash] {
+  position: relative;
+  margin-bottom: 2rem;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+
+    left: 50%;
+    margin-left: -1rem;
+    bottom: -1rem;
+    height: 1px;
+    width: 2rem;
+
+    background-color:  @main-headingColor;
+    #site [data-palette=alternate] &  {  background-color:  @alt-headingColor; }
+    #site [data-palette=banner] &  {  background-color:  @banner-headingColor; }
   }
 
-  [data-appearance*=rounded] {
-    border-radius: 3px;
+  [data-align*=left] &, &.text-align-left {
+    &:after {
+      left: 0;
+      margin-left: 0;
+    }
   }
 
-  [data-appearance*=pill] {
-    border-radius: 300px;
+  [data-align*=right] &, &.text-align-right {
+    &:after {
+      left: auto;
+      right: 0;
+      margin-left: 0;
+    }
   }
+}
 
-  [data-font-effect=dash] {
+[data-font-effect=highlight] {
+  display: inline;
+
+  .colors(@bgColor) {
+    .background-color(@bgColor);
     position: relative;
-    margin-bottom: 2rem;
-
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-
-      left: 50%;
-      margin-left: -1rem;
-      bottom: -1rem;
-      height: 1px;
-      width: 2rem;
-
-      background-color:  @main-headingColor;
-      [data-palette=alternate] &  {  background-color:  @alt-headingColor; }
-      [data-palette=banner] &  {  background-color:  @banner-headingColor; }
-    }
-
-    [data-align*=left] &, &.text-align-left {
-      &:after {
-        left: 0;
-        margin-left: 0;
-      }
-    }
-
-    [data-align*=right] &, &.text-align-right {
-      &:after {
-        left: auto;
-        right: 0;
-        margin-left: 0;
-      }
-    }
+    left: 10px;
+    box-shadow: 5px 0 0 5px @bgColor, -5px 0 0 5px @bgColor;      
+    .prefix("box-decoration-break", "clone");
   }
+  
+  .colors(@main-bgColor);
+  #site [data-palette=alternate] & { .colors(@alt-bgColor) }
+  #site [data-palette=banner] & { .colors(@banner-bgColor) }
 
-  [data-font-effect=highlight] {
-    display: inline;
-
-    .colors(@bgColor) {
-      .background-color(@bgColor);
-      position: relative;
-      left: 10px;
-      box-shadow: 5px 0 0 5px @bgColor, -5px 0 0 5px @bgColor;      
-      .prefix("box-decoration-break", "clone");
-    }
-    
-    .colors(@main-bgColor);
-    [data-palette=alternate] & { .colors(@alt-bgColor) }
-    [data-palette=banner] & { .colors(@banner-bgColor) }
-
-    &:after {
-      content: '\A';
-      white-space: pre;
-    }
+  &:after {
+    content: '\A';
+    white-space: pre;
   }
 }
