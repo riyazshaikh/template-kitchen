@@ -149,9 +149,11 @@
 }
 
 [data-font-effect=dash] {
-  position: relative;
-  margin-bottom: 2rem;
-
+  #site & {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
   &:after {
     content: '';
     display: block;
@@ -163,7 +165,7 @@
     height: 1px;
     width: 2rem;
 
-    background-color:  @main-headingColor;
+    #site & { background-color:  @main-headingColor; }
     #site [data-palette=alternate] &  {  background-color:  @alt-headingColor; }
     #site [data-palette=banner] &  {  background-color:  @banner-headingColor; }
   }
