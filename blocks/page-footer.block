@@ -2,6 +2,8 @@
 	{.section mainImage}
     <figure class="loading content-fill"><img class="image" {@|image-meta} /></figure>
   {.end}
-  <squarespace:block-field class="content" id="page-footer-{id}" columns="12" label="Page Footer Content"/>
+  <div class="blocks">
+    <squarespace:block-field class="content" id="page-footer-{id}" columns="12" label="Page Footer Content"/>
+  </div>
 </div>
 
