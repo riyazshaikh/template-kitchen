@@ -37,6 +37,10 @@
   .border-box;
   max-width: 100%;
   padding: @mainSpacing; /* default is mainSpacing */
+
+  @media screen and (max-width: 640px) {
+    width: auto;
+  }
 }
 
 [data-layout-width=meta] { .layout-width-meta; }
