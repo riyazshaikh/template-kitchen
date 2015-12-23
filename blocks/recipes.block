@@ -23,7 +23,7 @@
 	    "#banner .blocks .content": ["layout-width=main"],
 			"#banner .description": "display=hide",
 
-			"#blog .content": ["layout-width=full","layout-spacing=regular"],
+			"#blog .content": ["layout-width=full","layout-spacing=flexible"],
 	    "#blog article .BlogList-item-meta ": "display=hide",
 
 	    "#page-footer .content": ["layout-width=main","sticky=within-site-bottom"],
@@ -57,13 +57,13 @@
 			"#header": ["display=overlaid","background=transparent"],
 
 			"#banner .description": ["display=overlaid-caption","background=translucent","overlap=header"],
-			"#banner .description .content": ["layout-spacing=regular-sides","align=center-left-parent"],
+			"#banner .description .content": ["layout-spacing=none-flexible","align=center-left-parent"],
 			"#banner .description .content > div": ["layout-width=meta","layout-spacing=none"],
 			"#banner .description .title": "appearance=meta",
 			"#banner .description strong": ["appearance=heading1","font-effect=dash"],
 			"#banner .description a": "appearance=button-solid-pill",
 
-			"#page .content": ["layout-width=full","layout-spacing=regular"],
+			"#page .content": ["layout-width=full","layout-spacing=flexible"],
 			"#page .content h2": "font-effect=dash",
 		}
 	},
@@ -96,7 +96,7 @@
 			"banner---palette": "Alternate",
 			"header--content---layout-width": "Main",
 			"banner--description---text-align": "Center",
-			"header--content---layout-spacing": "Regular Sides",
+			"header--content---layout-spacing": "None Flexible",
 
 			"page-footer---palette": "Main",
 
@@ -160,8 +160,8 @@
 		},
 		common: {
 			"#banner .description": "display=hide",
-			"#page-footer .content": "layout-spacing=regular",
-			"#footer .sqs-block ": "layout-spacing=minimal-ends"
+			"#page-footer .content": "layout-spacing=flexible",
+			"#footer .sqs-block ": "layout-spacing=none"
 		},
 		products: {
 			"#banner .blocks .content": ["layout-width=main"],
@@ -169,7 +169,7 @@
 			"#banner .blocks .content p": ["appearance=meta"],
 			"#products .category-nav": ["sticky=within-site"],
 
-			"#products .content": ["layout-width=full", "layout-spacing=alternate"],
+			"#products .content": ["layout-width=full", "layout-spacing=flexible"],
 			"#products": ["palette=main","typeset=alternate"],
 			"#products .product-title ": "appearance=unset",
 			"#products .product-price ": "appearance=meta",
@@ -182,17 +182,17 @@
 		'products-item': {
 			"#banner": "display=hide",
 			"#products-item .category-nav": ["display=hide"],
-			"#products-item .content": ["layout-spacing=regular-sides", "meta-align=right"],
-			"#products-item .product-meta": "layout-spacing=alternate",
+			"#products-item .content": ["layout-spacing=none-flexible", "meta-align=right"],
+			"#products-item .product-meta": "layout-spacing=fixed",
 			"#products-item": "typeset=alternate"
 		},
 		'gallery-scroll': {
 			"#header": ["display=overlaid","background=transparent","sticky=within-site"],
 
 			"#banner": ["display=overlaid","background=transparent"],
-			"#banner .blocks .content": ["layout-spacing=regular-sides"],
+			"#banner .blocks .content": ["layout-spacing=none-flexible"],
 
-			"#gallery-scroll .content": ["layout-width=full", "layout-spacing=regular-sides"],
+			"#gallery-scroll .content": ["layout-width=full", "layout-spacing=none-flexible"],
 			"#gallery-scroll .sticky-container": "intrinsic=desktop",
 			"#gallery-scroll .meta + .meta ": "typeset=alternate",
 			"#gallery-scroll .meta:first-child": "typeset=banner", // first is banner
@@ -209,7 +209,7 @@
 	    "#banner .image": "parallax=enable",
 	    "#blog .category-nav": ["sticky=within-site"],
 	    "#blog article ": ["effect=pop","palette=banner"],
-	    "#blog article .BlogList-item-title ": ["layout-spacing=regular-sides","appearance=unset"],
+	    "#blog article .BlogList-item-title ": ["layout-spacing=none-flexible","appearance=unset"],
 	    "#blog article .BlogList-item-meta ": "display=hide",
 	    "#blog-item .category-nav": ["display=hide"],
 	    "#blog .content": "layout-width=main",
@@ -227,7 +227,7 @@
 	 		"#banner .blocks": ["background=translucent","overlap=header"],
 	    "#banner .image": "parallax=enable",
 	    "#blog-item .category-nav": ["display=hide"],
-	    "#blog-item .content": "layout-spacing=regular-sides",
+	    "#blog-item .content": "layout-spacing=none-flexible",
 	    "#blog-item .BlogItem .image-block-outer-wrapper": "intrinsic=desktop",
 	    "#blog-item .BlogItem-share, .BlogItem-meta ": "display=hide",
 	    "#page-footer": "palette=alternate",

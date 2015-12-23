@@ -418,3 +418,16 @@ nav ul {
   margin: 0;
   padding: 0;
 }
+
+/* ================================================
+    Template resets below
+   ================================================ */ 
+/** Make links clean **/
+a {
+  text-decoration: none;
+}  
+
+h1, h2, h3{
+  text-rendering: optimizeLegibility;
+}
+

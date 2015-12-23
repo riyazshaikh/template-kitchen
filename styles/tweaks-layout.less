@@ -7,11 +7,11 @@
 @metaWidth: 40%;
 
 
-// tweak: { category: "Layout", title: "Regular Spacing", min: 0, max: 20, step: 1, target: "div[data-layout-spacing=regular]", type: "value" }
+// tweak: { category: "Layout", title: "Flexible Spacing", min: 0, max: 20, step: 1, target: "div[data-layout-spacing=regular]", type: "value" }
 @mainSpacing: 5%;
 
-// tweak: { category: "Layout", title: "Alternate Spacing", min: 0, max: 100, step: 5, target: "div[data-layout-spacing=alternate]", type: "value" }
-@altSpacing: 30px;
+// tweak: { category: "Layout", title: "Fixed Spacing", min: 0, max: 100, step: 5, target: "div[data-layout-spacing=alternate]", type: "value" }
+@altSpacing: 17px;
 
 
 [role] { /* Make them stack */
@@ -41,9 +41,22 @@
 
 [data-layout-width=meta] { .layout-width-meta; }
 
+#layout-spacing() {
+  [data-layout-spacing] { .border-box; }
+  [data-layout-spacing=none] { padding: 0; }
+  [data-layout-spacing=flexible] { padding: @mainSpacing; }
+  [data-layout-spacing=fixed] { padding: @altSpacing; }
 
-[data-layout-spacing] { .border-box; }
+  [data-layout-spacing=flexible-fixed] { padding: @mainSpacing @altSpacing; }
+  [data-layout-spacing=flexible-none] { padding: @mainSpacing 0; }
+  [data-layout-spacing=none-flexible] { padding: 0 @mainSpacing; }
+  [data-layout-spacing=none-fixed] { padding: 0 @altSpacing; }
+  [data-layout-spacing=fixed-flexible] { padding: @altSpacing @mainSpacing; }
+  [data-layout-spacing=fixed-none] { padding: @altSpacing 0; }
+}
+#layout-spacing();
 
+/*
 [data-layout-spacing=none] { padding: 0 !important; }
 [data-layout-spacing*=none-sides] { padding-left: 0 !important; padding-right: 0 !important; }
 [data-layout-spacing*=none-ends] { padding-top: 0 !important; padding-bottom: 0 !important; }
@@ -74,7 +87,7 @@
 [data-layout-spacing*=alternate-top] { padding-top: @altSpacing !important; }
 [data-layout-spacing*=alternate-left] { padding-left: @altSpacing !important; }
 [data-layout-spacing*=alternate-right] { padding-right: @altSpacing !important; }
-[data-layout-spacing*=alternate-bottom] { padding-bottom: @altSpacing !important; }
+[data-layout-spacing*=alternate-bottom] { padding-bottom: @altSpacing !important; }*/
 
 
 [data-layout-align=center] { margin: auto; }
