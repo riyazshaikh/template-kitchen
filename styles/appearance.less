@@ -1,5 +1,6 @@
 
-.appearance-unset {
+#appearance() {
+[data-appearance=unset] {
   .body-font;
   [data-typeset=alternate] & { .alt-body-font-responsive; }
   [data-typeset=banner] & { .banner-body-font-responsive; }
@@ -8,8 +9,6 @@
   [data-palette=alternate] & { color: @alt-textColor; }
   [data-palette=banner] & { color: @banner-textColor; }
 }
-
-[data-appearance=unset] { .appearance-unset; }
 
 [data-appearance=heading1] {
   display: block;
@@ -192,3 +191,7 @@
     white-space: pre;
   }
 }
+
+}
+
+#appearance();
