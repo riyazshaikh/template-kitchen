@@ -41,7 +41,7 @@
 
 [data-layout-width=meta] { .layout-width-meta; }
 
-#layout-spacing() {
+#site { /* These tend to be overrides so give them more weight */
   [data-layout-spacing] { .border-box; }
   [data-layout-spacing=none] { padding: 0; }
   [data-layout-spacing=flexible] { padding: @mainSpacing; }
@@ -54,7 +54,6 @@
   [data-layout-spacing=fixed-flexible] { padding: @altSpacing @mainSpacing; }
   [data-layout-spacing=fixed-none] { padding: @altSpacing 0; }
 }
-#layout-spacing();
 
 /*
 [data-layout-spacing=none] { padding: 0 !important; }
