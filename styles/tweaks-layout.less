@@ -47,21 +47,21 @@
 
 #site { /* These tend to be overrides so give them more weight */
   [data-layout-spacing] { .border-box; }
-  [data-layout-spacing=none] { padding: 0; }
-  [data-layout-spacing=flexible] { padding: @mainSpacing; }
-  [data-layout-spacing=fixed] { padding: @altSpacing; }
+  [data-layout-spacing^=none] { padding: 0; }
+  [data-layout-spacing^=flexible] { padding: @mainSpacing; }
+  [data-layout-spacing^=fixed] { padding: @altSpacing; }
 
-  [data-layout-spacing=flexible-fixed] { padding: @mainSpacing @altSpacing; }
-  [data-layout-spacing=flexible-none] { padding: @mainSpacing 0; }
-  [data-layout-spacing=none-flexible] { padding: 0 @mainSpacing; }
-  [data-layout-spacing=none-fixed] { padding: 0 @altSpacing; }
-  [data-layout-spacing=fixed-flexible] { padding: @altSpacing @mainSpacing; }
-  [data-layout-spacing=fixed-none] { padding: @altSpacing 0; }
+  [data-layout-spacing^=flexible-fixed] { padding: @mainSpacing @altSpacing; }
+  [data-layout-spacing^=flexible-none] { padding: @mainSpacing 0; }
+  [data-layout-spacing^=none-flexible] { padding: 0 @mainSpacing; }
+  [data-layout-spacing^=none-fixed] { padding: 0 @altSpacing; }
+  [data-layout-spacing^=fixed-flexible] { padding: @altSpacing @mainSpacing; }
+  [data-layout-spacing^=fixed-none] { padding: @altSpacing 0; }
 
-  [data-layout-spacing*=minus-top] { padding-top: 0; }
-  [data-layout-spacing*=minus-bottom] { padding-bottom: 0; }
-  [data-layout-spacing*=minus-left] { padding-left: 0; }
-  [data-layout-spacing*=minus-right] { padding-right: 0; }
+  [data-layout-spacing$=minus-top] { padding-top: 0; }
+  [data-layout-spacing$=minus-bottom] { padding-bottom: 0; }
+  [data-layout-spacing$=minus-left] { padding-left: 0; }
+  [data-layout-spacing$=minus-right] { padding-right: 0; }
 }
 
 /*
