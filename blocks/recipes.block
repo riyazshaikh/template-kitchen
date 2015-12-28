@@ -64,6 +64,9 @@
 
 			"#page .content": ["layout-width=full","layout-spacing=flexible"],
 			"#page .content h2": "font-effect=dash",
+
+			"#footer .sqs-block ": "layout-spacing=none"
+
 		}
 	},
 	charlie: {
