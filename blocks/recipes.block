@@ -95,9 +95,8 @@
 		webfonts: [],
 		tweaks: {
 			"header---nav": "Auto",
-			"banner---palette": "Alternate",
 			"header--content---layout-width": "Main",
-			"banner--description---text-align": "Center",
+			"banner--description--content---text-align": "Center",
 
 			"page-footer---palette": "Main",
 
@@ -116,7 +115,7 @@
 			"#banner .blocks .html-block .sqs-block-content > * ": "font-effect=highlight",
 			"#banner .description": "display=hide",
 			"#gallery .content": "layout-width=full",
-			"#gallery": "palette=alternate",
+			"#gallery": "palette=banner",
 			"#page-footer .content": "layout-width=main"
 		},
 	},
