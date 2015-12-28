@@ -23,11 +23,13 @@
 	    "#banner .blocks": ["background=translucent","overlap=header"],
 	    "#banner .content": ["layout-width=main"],
 
+	    "#page-header": "typeset=main",
+
 			"#blog .content": ["layout-width=full","layout-spacing=flexible"],
 	    "#blog article .BlogList-item-meta ": "display=hide",
 
 	    "#page-footer .content": ["layout-width=main","sticky=within-site-bottom"],
-	    "#page-footer": "background=translucent",
+	    "#page-footer .blocks": "background=translucent",
 
 	    "#footer":"display=hide"		
 		}
