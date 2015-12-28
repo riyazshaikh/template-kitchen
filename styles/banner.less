@@ -17,13 +17,17 @@
     }
   }
 
-  .content {
-    &:not([data-layout-width=main]):not(data-layout-spacing) {
-      #site & .sqs-block:first-child {
-        padding-top: 0;
-      } 
-      #site & .sqs-block:last-child {
-        padding-bottom: 0;
+  .blocks { 
+    position: relative; 
+
+    .content {
+      &:not([data-layout-width=main]):not(data-layout-spacing) {
+        #site & .sqs-block:first-child {
+          padding-top: 0;
+        } 
+        #site & .sqs-block:last-child {
+          padding-bottom: 0;
+        }
       }
     }
   }
