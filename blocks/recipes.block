@@ -43,11 +43,11 @@
 	    "footer---palette": "Main",
 			"metaWidth": "47%",
 
-			"body-font": "{font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:20px;font-weight:300;line-height:1.5em;}",
-			"heading2-font": "{font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:36px;font-weight:700;line-height:1.2em;}",
+			"body-font": "{font-size:20px;font-weight:300;line-height:1.5em;}",
+			"heading2-font": "{font-size:36px;font-weight:700;line-height:1.2em;}",
 
-			"banner-body-font": "{font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:24px;font-weight:300;line-height:1.3em;}",
-			"banner-heading1-font": "{font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:40px;font-weight:700;line-height:1.2em;}",
+			"banner-body-font": "{font-size:24px;font-weight:300;line-height:1.3em;}",
+			"banner-heading1-font": "{font-size:40px;font-weight:700;line-height:1.2em;}",
 
 			// "main-linkColor": "#cf3f02",
 			"main-metaColor": "rgba(15,15,15,0.5)",
