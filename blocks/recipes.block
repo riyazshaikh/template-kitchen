@@ -56,12 +56,12 @@
 		common: {
 			"#header": ["display=overlaid","background=transparent"],
 
-			"#page-header": ["palette=alternate","typeset=banner","display=overlaid-caption","background=translucent","overlap=header"],
-			"#page-header .page-header": ["layout-spacing=none-flexible","align=center-left-parent"],
-			"#page-header .content": ["layout-width=meta","layout-spacing=none"],
-			"#page-header .title": "appearance=meta",
-			"#page-header .description strong": ["appearance=heading1","font-effect=dash"],
-			"#page-header .description a": "appearance=button-solid-pill",
+			"#banner .description": ["display=overlaid-caption","background=translucent","overlap=header"],
+			"#banner .description .content": ["layout-spacing=none-flexible","align=center-left-parent"],
+			"#banner .description .content > div": ["layout-width=meta","layout-spacing=none"],
+			"#banner .description .title": "appearance=meta",
+			"#banner .description strong": ["appearance=heading1","font-effect=dash"],
+			"#banner .description a": "appearance=button-solid-pill",
 
 			"#page .content": ["layout-width=full","layout-spacing=flexible"],
 			"#page .content h2": "font-effect=dash",
