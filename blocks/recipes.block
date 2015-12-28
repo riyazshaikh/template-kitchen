@@ -19,7 +19,8 @@
 			"#banner .image": "parallax=enable",
 			"#page-footer .image": "parallax=enable",
 
-	    "#banner": ["palette=alternate","typeset=banner","background=translucent","overlap=header"],
+	    "#banner": ["palette=alternate","typeset=banner"],
+	    "#banner .blocks": ["background=translucent","overlap=header"],
 	    "#banner .content": ["layout-width=main"],
 
 			"#blog .content": ["layout-width=full","layout-spacing=flexible"],
