@@ -5,7 +5,7 @@
 
 			"header---palette": "Banner",
 			"page-footer---palette": "Alternate",
-			"page-header--content---text-align": "Center",
+			"banner--description--content---text-align": "Center",
 
 			"tweak-blog-list-style": "Grid",
 			"tweak-blog-list-columns": "3",
@@ -19,11 +19,10 @@
 			"#banner .image": "parallax=enable",
 			"#page-footer .image": "parallax=enable",
 
-	    "#banner": ["palette=alternate","typeset=banner"],
 	    "#banner .blocks": ["background=translucent","overlap=header"],
-	    "#banner .content": ["layout-width=main"],
+	    "#banner .blocks .content": ["layout-width=main"],
 
-	    "#page-header": "typeset=main",
+	    "#banner .description": ["typeset=main","palette=main"],
 
 			"#blog .content": ["layout-width=full","layout-spacing=flexible-minus-top"],
 	    "#blog article .BlogList-item-meta ": "display=hide",

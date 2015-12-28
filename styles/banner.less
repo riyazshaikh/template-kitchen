@@ -1,3 +1,5 @@
+// tweak: { category: "Banner", label: "Description Align", default: "Left", options: ["Left", "Center", "Right"], title: "banner--description--content---text-align", target: "#banner .description", type: "dropdown", js:true }
+// tweak: { category: "Banner", label: "Description Title", default: "", options: ["", "Hide"], title: "banner--description--content---title", target: "#banner .description", type: "dropdown", js:true }
 
 .banner {  
   position: relative;
@@ -28,6 +30,20 @@
         #site & .sqs-block:last-child {
           padding-bottom: 0;
         }
+      }
+    }
+  }
+
+  .description {
+    position: relative;
+
+    .content[data-title=hide] {
+      .title { 
+        display: none; 
+      }
+
+      &:not(.has-description) {
+        padding: 0;
       }
     }
   }
