@@ -4,8 +4,8 @@
 			"mainContentWidth": "1100px",
 
 			"header---palette": "Banner",
-			"page-header--title---display": "Hide",
 			"page-footer---palette": "Alternate",
+			"page-header--content---text-align": "Center",
 
 			"tweak-blog-list-style": "Grid",
 			"tweak-blog-list-columns": "3",
@@ -25,7 +25,7 @@
 
 	    "#page-header": "typeset=main",
 
-			"#blog .content": ["layout-width=full","layout-spacing=flexible"],
+			"#blog .content": ["layout-width=full","layout-spacing=flexible-minus-top"],
 	    "#blog article .BlogList-item-meta ": "display=hide",
 
 	    "#page-footer .content": ["layout-width=main","sticky=within-site-bottom"],
