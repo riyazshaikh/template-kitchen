@@ -4,7 +4,7 @@
 			"mainContentWidth": "1100px",
 
 			"header---palette": "Banner",
-			"banner---palette": "Alternate",
+			"page-header--title---display": "Hide",
 			"page-footer---palette": "Alternate",
 
 			"tweak-blog-list-style": "Grid",
@@ -19,15 +19,14 @@
 			"#banner .image": "parallax=enable",
 			"#page-footer .image": "parallax=enable",
 
-	    "#banner .blocks": ["background=translucent","overlap=header"],
-	    "#banner .blocks .content": ["layout-width=main"],
-			"#banner .description": "display=hide",
+	    "#banner": ["palette=alternate","typeset=banner","background=translucent","overlap=header"],
+	    "#banner .content": ["layout-width=main"],
 
 			"#blog .content": ["layout-width=full","layout-spacing=flexible"],
 	    "#blog article .BlogList-item-meta ": "display=hide",
 
 	    "#page-footer .content": ["layout-width=main","sticky=within-site-bottom"],
-	    "#page-footer .blocks": "background=translucent",
+	    "#page-footer": "background=translucent",
 
 	    "#footer":"display=hide"		
 		}
@@ -39,7 +38,6 @@
 			"header--navigation---align": "Center",
 			"header--content---layout-width": "Main",
 
-	    "banner---palette": "Alternate",
 	    "footer---palette": "Main",
 			"metaWidth": "47%",
 
@@ -56,12 +54,12 @@
 		common: {
 			"#header": ["display=overlaid","background=transparent"],
 
-			"#banner .description": ["display=overlaid-caption","background=translucent","overlap=header"],
-			"#banner .description .content": ["layout-spacing=none-flexible","align=center-left-parent"],
-			"#banner .description .content > div": ["layout-width=meta","layout-spacing=none"],
-			"#banner .description .title": "appearance=meta",
-			"#banner .description strong": ["appearance=heading1","font-effect=dash"],
-			"#banner .description a": "appearance=button-solid-pill",
+			"#page-header": ["palette=alternate","typeset=banner","display=overlaid-caption","background=translucent","overlap=header"],
+			"#page-header .page-header": ["layout-spacing=none-flexible","align=center-left-parent"],
+			"#page-header .content": ["layout-width=meta","layout-spacing=none"],
+			"#page-header .title": "appearance=meta",
+			"#page-header .description strong": ["appearance=heading1","font-effect=dash"],
+			"#page-header .description a": "appearance=button-solid-pill",
 
 			"#page .content": ["layout-width=full","layout-spacing=flexible"],
 			"#page .content h2": "font-effect=dash",

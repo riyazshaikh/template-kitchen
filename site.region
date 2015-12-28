@@ -25,6 +25,10 @@
         {collection|apply banner.block}
       </div>
 
+      <div id="page-header" role="main" data-palette="main" data-typeset="banner">
+        {collection|apply page-header.block}
+      </div>
+
       <main id="{collection.typeName}{.if item}-item{.end}" role="main" data-palette="main" data-typeset="main" data-content-field="main-content">
         {@|apply nav-category.block}
         <div class="content" data-layout-width="main">

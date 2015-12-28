@@ -1,0 +1,14 @@
+// tweak: { category: "Page Header", label: "Align", default: "Left", options: ["Left", "Center", "Right"], title: "page-header--content---text-align", target: "#page-header .content", type: "dropdown", js:true }
+// tweak: { category: "Page Header", label: "Title", default: "", options: ["", "Hide"], title: "page-header--content---title", target: "#page-header .content", type: "dropdown", js:true }
+
+.page-header {
+	.content[data-title=hide] {
+		.title { 
+			display: none; 
+		}
+
+		&:not(.has-description) {
+			padding: 0;
+		}
+	}
+}

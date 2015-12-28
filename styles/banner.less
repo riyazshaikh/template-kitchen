@@ -1,9 +1,3 @@
-// tweak: { category: "Banner", label: "Typography", default: "Banner", options: ["Main", "Banner", "Alternate"], title: "banner---typeset", target: "#banner", type: "dropdown", js:true }
-// tweak: { category: "Banner", label: "Palette", default: "Banner", options: ["Main", "Banner", "Alternate"], title: "banner---palette", target: "#banner", type: "dropdown", js:true }
-
-// tweak: { category: "Banner", label: "Description Align", default: "Left", options: ["Left", "Center", "Right"], title: "banner--description---text-align", target: "#banner .description", type: "dropdown", js:true }
-
-// recipe: { title: "blah" }
 
 .banner {  
   position: relative;
@@ -24,11 +18,11 @@
     }
   }
 
-  .blocks {
+  .content {
     position: relative;
     z-index: 1;
 
-    .sqs-layout:not([data-layout-width=main]):not(data-layout-spacing) {
+    &:not([data-layout-width=main]):not(data-layout-spacing) {
       #site & .sqs-block:first-child {
         padding-top: 0;
       } 
@@ -36,10 +30,5 @@
         padding-bottom: 0;
       }
     }
-  }
-
-  .description:not([data-display*=overlaid]) {
-    position: relative;
-    z-index: 1;
   }
 }
