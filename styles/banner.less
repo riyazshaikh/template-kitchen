@@ -10,7 +10,8 @@
       left: 0;
       bottom: 0;
       right: 0;
-
+      z-index: -1;
+      
       width: 100%;
       margin: 0;
       a {
@@ -20,8 +21,6 @@
   }
 
   .blocks { 
-    position: relative; 
-
     .content {
       &:not([data-layout-width=main]):not(data-layout-spacing) {
         #site & .sqs-block:first-child {
@@ -35,8 +34,6 @@
   }
 
   .description {
-    position: relative;
-
     .content[data-title=hide] {
       .title { 
         display: none; 
