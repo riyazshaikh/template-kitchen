@@ -110,8 +110,7 @@
 
 		},
 		common: {
-  		"#banner": ["display=overlaid"],
-  		"#banner": "background=transparent",
+  		"#banner": ["display=overlaid","background=transparent"],
   		"#banner .blocks": "background=transparent",
 			"#banner .blocks .content": "layout-width=main",
 			"#banner .blocks .html-block .sqs-block-content > * ": "font-effect=highlight",
