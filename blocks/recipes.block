@@ -134,7 +134,7 @@
 			"main-metaColor": "#767676",
 			"logoContainerWidth": "100px",
 
-			"metaWidth": "40%",
+			"metaWidth": "450px",
 
 			"body-font": "{font-family:'myriad-pro', Helvetica, Arial, Verdana, sans-serif;font-size:16px;font-weight:200;line-height:1.5em;}",
 			"heading1-font": "{font-family:'myriad-pro';font-size:42px;font-weight:200;line-height:1.3em;}",
@@ -183,9 +183,10 @@
 		'products-item': {
 			"#banner": "display=hide",
 			"#products-item .category-nav": ["display=hide"],
-			"#products-item .content": ["layout-spacing=none-flexible", "meta-align=right"],
+			"#products-item .content": ["layout-width=full","layout-spacing=none-flexible", "meta-align=right"],
 			"#products-item .product-meta": "layout-spacing=fixed",
-			"#products-item": "typeset=alternate"
+			"#products-item": "typeset=alternate",
+			"#page-footer": ["palette=main", "typeset=banner"],
 		},
 		'gallery-scroll': {
 			"#header": ["display=overlaid","background=transparent","sticky=within-site"],

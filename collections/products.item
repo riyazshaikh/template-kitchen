@@ -38,10 +38,8 @@
 
     <div class="actions">
     	<a target=_blank href="//{urlId}.squarespace.com">PREVIEW</a>
-
 	  	{@|product-checkout}
-    	{@|product-price}
-
+    	<a target=_blank href="//{urlId}.squarespace.com/readme">README</a>
 	  </div>
   </div>
   
@@ -51,7 +49,7 @@
     <div class="product-excerpt" data-content-field="excerpt">{excerpt}</div>
 
 	  <div class="product-info">
-	  	<h2 class="">Special Features</h2>
+	  	<h2 class="">Design Features</h2>
 	  	{body}
 	  	<h2 class="">About</h2>
 	  	<div class="">
@@ -60,16 +58,16 @@
 		  		<span class="value"><a class="author" href="#">{author.displayName}</a></span>
 		  	</div>
 		  	<div >
-		  		<span class="label">Last Updated</span>
+		  		<span class="label">Updated</span>
 		  		<span class="value"><a><time datetime="{addedOn|date %F}">{updatedOn|date %B %d, %Y}</time></a></span>
 		  	</div>
 		  	<div >
-		  		<span class="label">Documentation</span>
-		  		<span class="value"><a>Available</a></span>
+		  		<span class="label">Support</span>
+		  		<span class="value"><a href="/terms-of-service#license">Terms</a><a href="/terms-of-service#support-policy">Conditions</a><a href="/terms-of-service#refund-policy">Refunds</a></span>
 		  	</div>
-		  	<div >
+		  	<div>
 		  		<span class="label">Compatibility</span>
-		  		<span class="value"><i class="fa fa-chrome fa-lg" title="Chrome Latest"></i><i class="fa fa-firefox fa-lg"  title="Firefox Latest"></i><i class="fa fa-internet-explorer fa-lg" title="IE 10+"></i><i class="fa fa-safari fa-lg" title="Safari 8+"></i></span>
+		  		<span class="value"><i class="fa fa-chrome fa-lg" title="Chrome Latest"></i><i class="fa fa-firefox fa-lg"  title="Firefox Latest"></i><i class="fa fa-edge fa-lg" title="IE 11+"></i><i class="fa fa-safari fa-lg" title="Safari 8+"></i><i class="fa fa-opera fa-lg" title="Opera Latest"></i></span>
 		  	</div>
 		  </div>
 	  </div>  
