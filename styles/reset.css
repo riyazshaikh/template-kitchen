@@ -425,6 +425,15 @@ nav ul {
 /** Make links clean **/
 a {
   text-decoration: none;
+  border-bottom: 1px solid;
+
+  &:hover, &:active {
+    outline: 0;
+    border-bottom: none;
+  }
+  &:focus {
+    outline: thin dotted;
+  }
 }  
 
 h1, h2, h3{

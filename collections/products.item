@@ -66,7 +66,7 @@
 	  	</div>
 	  	<div data-align="space-between">
 	  		<span class="label" data-appearance="meta">Compatibility</span>
-	  		<span class="value"><i class="fa fa-chrome fa-lg" title="Chrome Latest"></i><i class="fa fa-firefox fa-lg"  title="Firefox Latest"></i><i class="fa fa-edge fa-lg" title="IE 11+"></i><i class="fa fa-safari fa-lg" title="Safari 8+"></i><i class="fa fa-opera fa-lg" title="Opera Latest"></i></span>
+	  		<span class="value"><i class="fa fa-chrome fa-lg" title="Chrome Latest"></i><i class="fa fa-firefox fa-lg"  title="Firefox Latest"></i><i class="fa fa-edge fa-lg" title="Internet Explorer 11+"></i><i class="fa fa-safari fa-lg" title="Safari 8+"></i><i class="fa fa-opera fa-lg" title="Opera Latest"></i></span>
 	  	</div>
 	  </div>  
 	</div>
