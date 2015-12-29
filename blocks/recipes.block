@@ -125,7 +125,6 @@
 		tweaks: {
   		"header---nav": "Slidebar",
 			"header---palette": "Main",
-			"banner---palette": "Main",
 			"footer---palette": "Main",
 
 			"main-bgColor": "#f3efee",
@@ -160,6 +159,7 @@
 
 		},
 		common: {
+			"#banner": ["palette=main"],
 			"#banner .description": "display=hide",
 			"#page-footer .content": "layout-spacing=flexible",
 			"#footer .sqs-block ": "layout-spacing=none"
