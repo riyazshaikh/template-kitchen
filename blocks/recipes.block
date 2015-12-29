@@ -184,7 +184,7 @@
 			"#banner": "display=hide",
 			"#products-item .category-nav": ["display=hide"],
 			"#products-item .content": ["layout-width=full","layout-spacing=none-flexible", "meta-align=right"],
-			"#products-item .product-meta": "layout-spacing=fixed",
+			"#products-item .product-meta": "layout-spacing=none-fixed",
 			"#products-item": "typeset=alternate",
 			"#page-footer": ["palette=main", "typeset=banner"],
 		},

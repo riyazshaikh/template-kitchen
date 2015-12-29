@@ -425,7 +425,7 @@ nav ul {
 /** Make links clean **/
 a {
   text-decoration: none;
-  border-bottom: 1px solid;
+  /*border-bottom: 1px solid;*/
 
   &:hover, &:active {
     outline: 0;
