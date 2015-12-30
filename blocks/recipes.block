@@ -159,18 +159,16 @@
 
 		},
 		common: {
-			"#banner .blocks": ["background=transparent","palette=main"],
 			"#banner .description": "display=hide",
 			"#page-footer .content": ["layout-spacing=flexible","layout-width=full"],
 			"#page-footer a ": ["appearance=link-arrow"],
 			"#footer": ["palette=banner"],
-			"#footer .sqs-block ": "layout-spacing=none"
 		},
 		products: {
 			"#banner .blocks .content": ["layout-width=main"],
 			"#banner .blocks .content h2, #banner  .blocks  .content h1": ["font-effect=dash"],
 			"#banner .blocks .content p": ["appearance=meta"],
-			"#products .category-nav": ["sticky=within-site"],
+			"#products .category-nav": ["sticky=within"],
 
 			"#products .content": ["layout-width=full", "layout-spacing=flexible"],
 			"#products": ["palette=main","typeset=alternate"],
@@ -197,6 +195,8 @@
 			"#header": ["display=overlaid","background=transparent","sticky=within-site"],
 
 			"#banner": ["display=overlaid","background=transparent"],
+			"#banner .blocks": ["background=transparent","palette=main"],
+			
 			"#banner .blocks .content": ["layout-spacing=none-flexible"],
 
 			"#gallery-scroll .content": ["layout-width=full", "layout-spacing=none-flexible"],
