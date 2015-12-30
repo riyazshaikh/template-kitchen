@@ -159,14 +159,15 @@
 
 		},
 		common: {
+			"#banner .blocks": ["palette=main"],
+
 			"#banner .description": "display=hide",
 			"#page-footer .content": ["layout-spacing=flexible","layout-width=full"],
 			"#page-footer a ": ["appearance=link-arrow"],
 			"#footer": ["palette=banner"],
+			"#footer .content": ["layout-spacing=flexible"],
 		},
 		products: {
-			"#banner .blocks": ["palette=main"],
-
 			"#banner .blocks .content": ["layout-width=main"],
 			"#banner .blocks .content h2, #banner  .blocks  .content h1": ["font-effect=dash"],
 			"#banner .blocks .content p": ["appearance=meta"],
@@ -180,7 +181,6 @@
 			"#products .product-image ": "effect=pop",
 			"#page-footer": ["palette=main", "typeset=banner"],
 			"#page-footer .content": ["layout-spacing=none-flexible"],
-			"#footer .content": ["layout-spacing=flexible"],
 		},
 		'products-item': {
 			"#banner": "display=hide",
@@ -199,7 +199,7 @@
 			"#header": ["display=overlaid","background=transparent","sticky=within-site"],
 
 			"#banner": ["display=overlaid","background=transparent"],
-			"#banner .blocks": ["background=transparent","palette=main"],
+			"#banner .blocks": ["background=transparent"],
 
 			"#banner .blocks .content": ["layout-spacing=none-flexible"],
 
@@ -217,7 +217,7 @@
 		blog: {
 			"#header": ["display=overlaid","background=transparent"],
 	    "#banner .blocks .content": ["layout-width=main"],
-	 		"#banner .blocks": ["background=translucent","overlap=header"],
+	 		"#banner .blocks": ["palette=banner","background=translucent","overlap=header"],
 	    "#banner .image": "parallax=enable",
 	    "#blog .category-nav": ["sticky=within-site"],
 	    "#blog article ": ["effect=pop","palette=banner"],
@@ -225,7 +225,7 @@
 	    "#blog article .BlogList-item-meta ": "display=hide",
 	    "#blog-item .category-nav": ["display=hide"],
 	    "#blog .content": "layout-width=main",
-	    "#page-footer": "palette=alternate",
+	    "#page-footer": "palette=banner",
 	    "#page-footer .image": "parallax=enable",
 	    "#page-footer .content": "layout-width=main",
 	    "#page-footer .content": "sticky=within-site-bottom",
@@ -235,13 +235,13 @@
 		'blog-item': {
 			"#header": ["display=overlaid","background=transparent"],
 	    "#banner .blocks .content": ["layout-width=main"],
-	 		"#banner .blocks": ["background=translucent","overlap=header"],
+	 		"#banner .blocks": ["palette=banner","background=translucent","overlap=header"],
 	    "#banner .image": "parallax=enable",
 	    "#blog-item .category-nav": ["display=hide"],
 	    "#blog-item .content": "layout-spacing=none-flexible",
 	    "#blog-item .BlogItem .image-block-outer-wrapper": "intrinsic=desktop",
 	    "#blog-item .BlogItem-share, .BlogItem-meta ": "display=hide",
-	    "#page-footer": "palette=alternate",
+	    "#page-footer": "palette=banner",
 	    "#page-footer .image": "parallax=enable",
 	    "#page-footer .content": "layout-width=main",
 	    "#page-footer .content": "sticky=within-site-bottom",
