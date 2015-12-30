@@ -46,7 +46,10 @@
   <div class="product-meta" data-layout-width="meta" data-layout-align="left">
     <h1 class="product-title" data-content-field="title">{title}</h1>
 
-    <div class="product-excerpt" data-content-field="excerpt">{excerpt}</div>
+    <div class="product-excerpt" data-content-field="excerpt">
+    {excerpt}
+    <br/><a target=_blank href="//{urlId}.squarespace.com">PREVIEW</a>
+    </div>
 
 	  <div class="product-info">
 	  	<h2 class="features">Design Features</h2>
@@ -58,11 +61,11 @@
 	  	</div>
 	  	<div data-align="space-between">
 	  		<span class="label" data-appearance="meta">Last Updated</span>
-	  		<span class="value"><a><time datetime="{addedOn|date %F}">{updatedOn|date %B %d, %Y}</time></a></span>
+	  		<span class="value"><time datetime="{addedOn|date %F}">{updatedOn|date %B %d, %Y}</time></span>
 	  	</div>
 	  	<div data-align="space-between">
 	  		<span class="label" data-appearance="meta">Support</span>
-	  		<span class="value"><a href="/terms-of-service#license">Terms</a><a href="/terms-of-service#support-policy">Conditions</a><a href="/terms-of-service#refund-policy">Refunds</a></span>
+	  		<span class="value"><a target=_blank href="/terms-of-service#license">Terms</a><a target=_blank href="/terms-of-service#support-policy">Conditions</a><a target=_blank href="/terms-of-service#refund-policy">Refunds</a></span>
 	  	</div>
 	  	<div data-align="space-between">
 	  		<span class="label" data-appearance="meta">Compatibility</span>
