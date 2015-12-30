@@ -166,7 +166,7 @@
 			"#page-footer a ": ["appearance=link-arrow"],
 			"#footer": ["palette=banner"],
 			"#footer .content": ["layout-spacing=fixed-flexible"],
-			"#footer .sqs-block": "layout-spacing=none-fixed"
+			"#footer .sqs-block ": "layout-spacing=none-fixed"
 		},
 		products: {
 			"#banner .blocks .content": ["layout-width=main"],
