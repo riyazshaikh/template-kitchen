@@ -23,12 +23,14 @@
 	    "#banner .blocks .content": ["layout-width=main"],
 
 	    "#banner .description": ["typeset=main","palette=main"],
+	    "#banner .description .title": ["display=hide"],
+			"#banner .description strong ": ["appearance=heading2"],
 
 			"#blog .content": ["layout-width=full","layout-spacing=flexible-minus-top"],
 	    "#blog article .BlogList-item-meta ": "display=hide",
 
 	    "#page-footer .content": ["layout-width=main","sticky=within-site-bottom"],
-	    "#page-footer .blocks": "background=translucent",
+	    "#page-footer .blocks": ["background=translucent","palette=banner"],
 
 	    "#footer":"display=hide"		
 		}
