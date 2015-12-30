@@ -71,8 +71,8 @@
 	  </div>  
 	</div>
 
-	<div class="product-blocks">
-		<squarespace:block-field class="content" id="products-item-{id}" columns="12" label="Product Item"/>	
-	</div>
+</div>
+<div class="product-blocks">
+	<squarespace:block-field class="content" id="products-item-{id}" columns="12" label="Product Item"/>	
 </div>
 {.end}
