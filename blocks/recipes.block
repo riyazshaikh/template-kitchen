@@ -179,6 +179,7 @@
 			"#products .product-meta ": ["align=space-between","align-overflow=truncate"],
 			"#products .product-image ": "effect=pop",
 			"#page-footer": ["palette=main", "typeset=banner"],
+			"#page-footer .content": ["layout-spacing=none-flexible"]
 		},
 		'products-item': {
 			"#banner": "display=hide",
