@@ -72,9 +72,7 @@
 	</div>
 
 </div>
-<div id="productsRelated" class="products-related">
-	<a href="{collection.fullUrl}{.if tag.1}?tag={.repeated section tags}{@}{.alternates with},{.end}{.end}" data-dynamic-summary="carousel">More Templates like {title}</a>
-
-	{@|apply dynamic-summary.block}
- </div>
- {.end}
+<div class="product-similar">
+	<squarespace:block-field class="content" id="product-item" columns="12" label="Product Item"/>	
+</div>
+{.end}

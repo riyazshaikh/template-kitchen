@@ -186,7 +186,11 @@
 			"#products-item .content": ["layout-width=full","layout-spacing=none-flexible", "meta-align=right"],
 			"#products-item .product-meta": "layout-spacing=none-fixed",
 			"#products-item": "typeset=alternate",
-			"#products-item .product-blocks .content": ["layout-spacing=flexible"],
+			"#product-item": ["layout-spacing=flexible"],
+			"#product-item .product-title ": "appearance=unset",
+			"#product-item .product-price ": "appearance=meta",
+			"#product-item .product-meta ": ["align=space-between","align-overflow=truncate"],
+			"#product-item .product-image ": "effect=pop",
 			"#page-footer": ["palette=main", "typeset=banner"],
 		},
 		'gallery-scroll': {
