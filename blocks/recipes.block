@@ -161,7 +161,9 @@
 		common: {
 			"#banner .blocks": ["background=transparent","palette=main"],
 			"#banner .description": "display=hide",
-			"#page-footer .content": "layout-spacing=flexible",
+			"#page-footer .content": ["layout-spacing=flexible","layout-width=full"],
+			"#page-footer a ": ["appearance=link-arrow"],
+			"#footer": ["palette=banner"],
 			"#footer .sqs-block ": "layout-spacing=none"
 		},
 		products: {
@@ -177,8 +179,6 @@
 			"#products .product-meta ": ["align=space-between","align-overflow=truncate"],
 			"#products .product-image ": "effect=pop",
 			"#page-footer": ["palette=main", "typeset=banner"],
-			"#page-footer .content": "layout-width=main",
-			"#page-footer a ": ["appearance=link-arrow"]
 		},
 		'products-item': {
 			"#banner": "display=hide",
@@ -207,11 +207,12 @@
 			"#gallery-scroll .meta em ": ["appearance=meta"], 
 			"#gallery-scroll .meta:first-child a": ["appearance=button-solid-pill"], 
 			"#gallery-scroll .meta + .meta a ": ["appearance=link-arrow"], 
+			"#page-footer": ["palette=banner", "typeset=main"],
+
 		},
 		blog: {
 			"#header": ["display=overlaid","background=transparent"],
 	    "#banner .blocks .content": ["layout-width=main"],
-	    "#banner": "palette=alternate",
 	 		"#banner .blocks": ["background=translucent","overlap=header"],
 	    "#banner .image": "parallax=enable",
 	    "#blog .category-nav": ["sticky=within-site"],
@@ -230,7 +231,6 @@
 		'blog-item': {
 			"#header": ["display=overlaid","background=transparent"],
 	    "#banner .blocks .content": ["layout-width=main"],
-	    "#banner": "palette=alternate",
 	 		"#banner .blocks": ["background=translucent","overlap=header"],
 	    "#banner .image": "parallax=enable",
 	    "#blog-item .category-nav": ["display=hide"],
