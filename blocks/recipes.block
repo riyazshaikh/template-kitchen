@@ -186,6 +186,7 @@
 			"#products-item .content": ["layout-width=full","layout-spacing=none-flexible", "meta-align=right"],
 			"#products-item .product-meta": "layout-spacing=none-fixed",
 			"#products-item": "typeset=alternate",
+			"#products-item .product-blocks .content": ["layout-spacing=flexible"],
 			"#page-footer": ["palette=main", "typeset=banner"],
 		},
 		'gallery-scroll': {
