@@ -165,6 +165,8 @@
 			"#footer": ["palette=banner"],
 		},
 		products: {
+			"#banner .blocks": ["palette=main"],
+
 			"#banner .blocks .content": ["layout-width=main"],
 			"#banner .blocks .content h2, #banner  .blocks  .content h1": ["font-effect=dash"],
 			"#banner .blocks .content p": ["appearance=meta"],
@@ -196,7 +198,7 @@
 
 			"#banner": ["display=overlaid","background=transparent"],
 			"#banner .blocks": ["background=transparent","palette=main"],
-			
+
 			"#banner .blocks .content": ["layout-spacing=none-flexible"],
 
 			"#gallery-scroll .content": ["layout-width=full", "layout-spacing=none-flexible"],
