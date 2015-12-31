@@ -86,6 +86,8 @@
 
 			"#banner .blocks .content": ["layout-width=main"],
 			"#banner .blocks": ["palette=main"],
+			"#banner .description": ["palette=main"],
+			"#banner .description .content": "text-align=center",
 			"#banner .blocks a ": ["appearance=link-arrow"],
 			"#banner .thumb-image": "parallax=enable",
 
