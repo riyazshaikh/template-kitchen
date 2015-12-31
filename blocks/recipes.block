@@ -101,6 +101,9 @@
 			"header--content---layout-width": "Main",
 			"banner--description--content---text-align": "Center",
 
+			"footer--navigation---align": "Left",
+			"footer--navigation---folder": "Visible",
+			"footer---palette": "Alternate",
 			"page-footer---palette": "Main",
 
 			"gallery-autoplay": "true",
