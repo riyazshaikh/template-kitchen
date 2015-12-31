@@ -197,6 +197,7 @@
 			"#product-item .summary-content ": ["align=space-between","align-overflow=truncate"],
 			"#product-item .summary-thumbnail ": "effect=pop",
 			"#page-footer": ["palette=main", "typeset=banner"],
+			"#page-footer .content": ["layout-spacing=none-flexible"],
 		},
 		'gallery-scroll': {
 			"#header": ["display=overlaid","background=transparent","sticky=within-site"],
