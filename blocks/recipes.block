@@ -117,7 +117,7 @@
   		"#banner .blocks": "background=transparent",
 			"#banner .blocks .content": "layout-width=main",
 			"#banner .blocks .html-block .sqs-block-content > * ": "font-effect=highlight",
-			"#banner .description": "palette=main",
+			"#banner .description": "display=hide",
 			"#gallery .content": "layout-width=full",
 			"#gallery": "palette=banner",
 			"#page-footer .content": "layout-width=main"
