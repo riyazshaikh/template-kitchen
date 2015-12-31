@@ -25,7 +25,7 @@
 
   .folder {
     .subnav {
-      text-align: left;
+      /*text-align: left;*/
       padding: 1em 0;
       /*display: inline-block;*/
       font-size: @nav-font-font-size;
@@ -201,6 +201,15 @@
 [data-folder=visible] {
   .folder {
     margin-bottom: 1em;
+  }
+}
+
+[data-folder-label=meta] {
+  .folder label {
+    color: @main-metaColor;
+
+    [data-palette=alternate] & { color: @alt-metaColor; }
+    [data-palette=banner] & { color: @banner-metaColor; }    
   }
 }
 
