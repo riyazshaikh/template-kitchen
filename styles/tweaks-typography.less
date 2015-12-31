@@ -163,4 +163,46 @@
   text-decoration: none;  
 }
 
+/** Make font mixins responsive */
+.alt-body-font-responsive() {
+  .alt-body-font;
+  @media (max-width: 600px)  {
+    font-size: @alt-body-font-font-size * 0.8;
+  }
+}
+.alt-heading1-font-responsive() {
+  .alt-heading1-font;
+  @media (max-width: 600px)  {
+    font-size: @alt-heading1-font-font-size * 0.67;
+  }
+}
+.alt-heading2-font-responsive() {
+  .alt-heading2-font;
+  @media (max-width: 600px)  {
+    font-size: @alt-heading2-font-font-size * 0.7;
+  }
+}
+.banner-body-font-responsive() {
+  .banner-body-font;
+  @media (max-width: 600px)  {
+    .max-font-size(@banner-body-font-font-size * 0.8, 14px);
+  }
+}
+.banner-heading1-font-responsive() {
+  .banner-heading1-font;
+  @media (max-width: 1200px) {
+    .max-font-size(@banner-heading1-font-font-size * 0.7, 84px);
+  }  
+  @media (max-width: 600px)  {
+    .max-font-size(@banner-heading1-font-font-size * 0.5, 24px);
+    font-weight: lighter;
+  }
+}
+.banner-heading2-font-responsive() {
+  .banner-heading2-font;
+  @media (max-width: 600px)  {
+    .max-font-size(@banner-heading2-font-font-size * 0.7, 20px);
+  }
+}
+
 
