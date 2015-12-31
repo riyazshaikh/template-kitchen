@@ -172,7 +172,7 @@
 			"#banner .description": "display=hide",
 			"#page-footer .content": ["layout-spacing=flexible","layout-width=full"],
 			"#page-footer a ": ["appearance=link-arrow"],
-			"#footer": ["palette=banner"],
+			"#footer": ["palette=main"],
 			"#footer .content": ["layout-spacing=fixed-flexible"],
 			"#footer .sqs-block ": "layout-spacing=none-fixed"
 		},
