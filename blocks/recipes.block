@@ -87,7 +87,7 @@
 			"#banner .description": "display=hide",
 			"#banner .blocks .content": ["layout-width=main"],
 			"#banner .blocks": ["palette=main"],
-			"#banner .image": "parallax=enable",
+			"#banner .thumb-image": "parallax=enable",
 
 			"#gallery-scroll .content": "layout-width=main",
 			"#gallery-scroll .sticky-container": "intrinsic=half",
