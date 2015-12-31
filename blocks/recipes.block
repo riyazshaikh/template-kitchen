@@ -87,6 +87,7 @@
 			"#banner .description": "display=hide",
 			"#banner .blocks .content": ["layout-width=main"],
 			"#banner .blocks": ["palette=main"],
+			"#banner .blocks a ": ["appearance=link-arrow"],
 			"#banner .thumb-image": "parallax=enable",
 
 			"#gallery-scroll .content": "layout-width=main",
