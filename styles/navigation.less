@@ -205,11 +205,17 @@
 }
 
 [data-folder-label=meta] {
-  .folder label {
-    color: @main-metaColor;
+  .folder {
+    margin: 2em 0;
+    label {
+      color: @main-metaColor;
 
-    [data-palette=alternate] & { color: @alt-metaColor; }
-    [data-palette=banner] & { color: @banner-metaColor; }    
+      [data-palette=alternate] & { color: @alt-metaColor; }
+      [data-palette=banner] & { color: @banner-metaColor; }    
+    }
+    .subnav {
+      padding: 0;
+    }
   }
 }
 
