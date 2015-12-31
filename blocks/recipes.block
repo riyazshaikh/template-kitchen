@@ -64,10 +64,10 @@
 			"#banner .description strong": ["appearance=heading1","font-effect=dash"],
 			"#banner .description a": "appearance=button-solid-pill",
 
+			"#page": "palette=alternate",
 			"#page .content": ["layout-width=full","layout-spacing=flexible"],
 			"#page .content h2": "font-effect=dash",
 
-			"#footer": ["palette=alternate"],
 			"#footer .sqs-block ": "layout-spacing=none"
 
 		}
