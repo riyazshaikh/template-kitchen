@@ -85,8 +85,8 @@
 			"#header": ["display=overlaid","background=transparent","sticky=within-site"],
 
 			"#banner .description": "display=hide",
-			"#banner .blocks .content": ["layout-width=main","parallax=enable"],
-			"#banner .blocks": ["overlap=header","palette=main"],
+			"#banner .blocks .content": ["layout-width=main"],
+			"#banner .blocks": ["palette=main"],
 			"#banner .image": "parallax=enable",
 
 			"#gallery-scroll .content": "layout-width=main",
