@@ -48,7 +48,6 @@
 
     <div class="product-excerpt" data-content-field="excerpt">
     {excerpt}
-    <br/><a target=_blank href="//{urlId}.squarespace.com">PREVIEW</a>
     </div>
 
 	  <div class="product-info">

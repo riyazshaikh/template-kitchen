@@ -1,4 +1,5 @@
 <div class="footer content">
+	{.if website.siteDescription}<div class="site-description">{website.siteDescription}</div>{.end}
   <div class="secondary-nav" data-content-field="navigation-secondaryNav">
     <squarespace:navigation navigationId="secondaryNav" template="navigation"/>
   </div>
