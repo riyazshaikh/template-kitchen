@@ -23,8 +23,13 @@ Y.use('node', function (Y) {
 
 			Y.Global.on('tweak:save', function (f) {
 				var worker = new Worker("/scripts/recipe-worker.js");
-				worker.postMessage(Y.Squarespace.TweakManager.rawLess);
+				worker.onmessage = function(obj) {
+					console.log(obj);
+				}
+
+				worker.postMessage(window.top.Y.Squarespace.TweakManager.rawLess);
 				console.log('message sent');
+
 			});
 
 			Y.Global.on('tweak:reset', function (f) {
