@@ -22,14 +22,21 @@ Y.use('node', function (Y) {
 			});
 
 			Y.Global.on('tweak:save', function (f) {
-				var worker = new Worker("/scripts/recipe-worker.js");
-				worker.onmessage = function(obj) {
-					console.log(obj);
-				}
+				// var worker = new Worker("/scripts/recipe-worker.js");
+				// worker.onmessage = function(obj) {
+				// 	console.log(obj);
+				// }
 
-				worker.postMessage(window.top.Y.Squarespace.TweakManager.rawLess);
-				console.log('message sent');
+				// worker.postMessage(window.top.Y.Squarespace.TweakManager.rawLess);
+				// console.log('message sent');
 
+				window.top.Y.Squarespace.TweakManager.rawLess.split('\n').forEach(function (line) { 
+					var words = line.split("tweak:");
+					if (words[1]) {
+						var tweak = eval('('+words[1]+')');
+						console.log(tweak);
+					}
+				});
 			});
 
 			Y.Global.on('tweak:reset', function (f) {
