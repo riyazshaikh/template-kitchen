@@ -46,7 +46,7 @@ Y.use('node', function (Y) {
 				Y.Data.get({
 					url: '/api/config/GetInjectionSettings',
 					success: function(data) {
-						data.header = str + data.header.replace("<script id='recipes'.*?script>", '');
+						data.header = str + data.header.replace(/<script id='recipes'.*?script>/g, '');
 
 						Y.Data.post({
 							url: '/api/config/SaveInjectionSettings',
