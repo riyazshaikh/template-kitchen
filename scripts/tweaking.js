@@ -34,7 +34,7 @@ Y.use('node', function (Y) {
 						properties: obj.properties,
 						condition: obj.showOnlyWhenPresent
 					});
-				});
+				};
 
 				str = "<script id='recipes'>console.log('recipes',"+JSON.stringify(recipes)+");</script>";
 
