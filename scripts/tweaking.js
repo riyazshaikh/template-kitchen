@@ -28,13 +28,12 @@ Y.use('node', function (Y) {
 				var recipes = [];
 
 				while((matches = re.exec(str)) !== null) {
-						var obj = eval('('+matches[1]+')');
-						recipes.push({
-							target: obj.target,
-							properties: obj.properties,
-							condition: obj.showOnlyWhenPresent
-						});
-					}
+					var obj = eval('('+matches[1]+')');
+					recipes.push({
+						target: obj.target,
+						properties: obj.properties,
+						condition: obj.showOnlyWhenPresent
+					});
 				});
 
 				str = "<script id='recipes'>console.log('recipes',"+JSON.stringify(recipes)+");</script>";
