@@ -25,10 +25,15 @@ Y.use('node', function (Y) {
 				var re = /tweak:(.*?recipe:.*?)\n/g;
 				var matches = [];
 				var str = window.top.Y.Squarespace.TweakManager.rawLess;
+				var values = window.top.Y.Squarespace.TweakManager.dialog.getData();
 				var recipes = [];
 
 				while((matches = re.exec(str)) !== null) {
 					var obj = eval('('+matches[1]+')');
+
+					obj.properties = obj.properties || [obj.property]; // convert single property to array
+					obj.properties[0] = obj.properties[0] + values[obj.title].toLowerCase();
+
 					recipes.push({
 						target: obj.target,
 						properties: obj.properties,
