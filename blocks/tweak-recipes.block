@@ -28,15 +28,15 @@ SquareMart.RecipeManager = {
 		}
 	},
 
-	add: function() {
-		if (Array.isArray(arguments[0])) {
-			arr.forEach(function() {
-				this._add(arguments[0].target, arguments[0].properties, arguments[0].condition);
+	add: function(data) {
+		if (Array.isArray(data)) {
+			data.forEach(function() {
+				this._add(data.target, data.properties, data.condition);
 			}, this);
-		} else if (typeof arguments[0] === 'object') {
-			this._add(arguments[0].target, arguments[0].properties, arguments[0].condition);
-		} else if (arguments.length > 1) {
-			this._add(arguments[0], arguments[1], arguments[2]);
+		} else if (typeof data === 'object') {
+			this._add(data.target, data.properties, data.condition);
+		} else if (typeof data === 'string' && arguments.length > 1) {
+			this._add(data, arguments[1], arguments[2]);
 		}
 	},
 
