@@ -12,7 +12,7 @@ SquareMart.RecipeManager = {
 	_add: function(target, properties, condition) {
 		if (condition) { // predict condition
 
-			condition = false;
+			// condition = false;
 		}	
 
 		var selector = condition || target;
@@ -51,6 +51,7 @@ SquareMart.RecipeManager = {
 
 		this.recipe[selector] = this.recipe[selector].filter(function(val, i) {
 			if (typeof val === 'object') { // add conditional targets to recipe
+				console.log('moving condition');
 				this.add(val);
 				return false;
 			} else {
