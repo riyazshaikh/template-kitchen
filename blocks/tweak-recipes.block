@@ -9,7 +9,7 @@ SquareMart.RecipeManager = {
 	collection: "{collection.typeName}",
 	item: Static.SQUARESPACE_CONTEXT.item,
 
-	add: function(target, properties, condition) {
+	_add: function(target, properties, condition) {
 		if (condition) { // predict condition
 
 			condition = false;
@@ -28,12 +28,16 @@ SquareMart.RecipeManager = {
 		}
 	},
 
-	addObj: function(obj) {
-		this.add(obj.target, obj.properties, obj.condition);
-	},
-
-	addArray: function(arr) {
-		arr.forEach(this.addObj, this);
+	add: function() {
+		if (Array.isArray(arguments[0])) {
+			arr.forEach(function() {
+				this._add(arguments[0].target, arguments[0].properties, arguments[0].condition);
+			}, this);
+		} else if (typeof arguments[0] === 'object') {
+			this._add(arguments[0].target, arguments[0].properties, arguments[0].condition);
+		} else if (arguments.length > 1) {
+			this._add(arguments[0], arguments[1], arguments[2]);
+		}
 	},
 
 
@@ -47,7 +51,7 @@ SquareMart.RecipeManager = {
 
 		this.recipe[selector] = this.recipe[selector].filter(function(val, i) {
 			if (typeof val === 'object') { // add conditional targets to recipe
-				this.addObj(val);
+				this.add(val);
 				return false;
 			} else {
 				var parts = val.split('=');

@@ -41,7 +41,7 @@ Y.use('node', function (Y) {
 					});
 				};
 
-				str = "<script id='recipes'>console.log('recipes',"+JSON.stringify(recipes)+");</script>";
+				str = "<script id='recipes'>SquareMart.RecipeManager.add("+JSON.stringify(recipes)+");</script>";
 
 				Y.Data.get({
 					url: '/api/config/GetInjectionSettings',
