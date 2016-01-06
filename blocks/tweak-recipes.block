@@ -22,6 +22,7 @@ SquareMart.RecipeManager = {
 						console.log('skipping recipe', arguments);
 					}
 				}
+				condition = null; // condition exists
 			}
 		}	
 
