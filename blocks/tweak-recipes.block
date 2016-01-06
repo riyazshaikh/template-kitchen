@@ -18,8 +18,8 @@ SquareMart.RecipeManager = {
 				var classes = condition.split(' ')[0].split('.');
 				for(var i=1; i<classes.length; i++) { // first is 'body', so skip that
 					if (this.bodyClass.indexOf(classes[i]) === -1) {
-						return;
 						console.log('skipping recipe', arguments);
+						return;
 					}
 				}
 				condition = null; // condition exists
