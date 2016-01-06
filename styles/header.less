@@ -1,12 +1,12 @@
 
-// tweak: { category: "Header", label: "Palette", default: "Banner", options: ["Main", "Banner", "Alternate"], title: "header---palette", target: "#header", type: "dropdown", js:true }
-// tweak: { category: "Header", label: "Width", default: "Full", options: ["Full", "Main"], title: "header--content---layout-width", target: "#header", type: "dropdown", js:true }
-// tweak: { category: "Header", label: "Spacing", default: "Fixed Flexible", options: ["Flexible", "None Flexible", "Fixed Flexible"], title: "header--content---layout-spacing", target: "#header", type: "dropdown", js:true }
+// tweak: { category: "Header", label: "Palette", title: "Header Palette", default: "Banner", options: ["Main", "Banner", "Alternate"], property: "data-palette", target: "#header", type: "dropdown", recipe:true }
+// tweak: { category: "Header", label: "Width", title: "Header Width", default: "Full", options: ["Full", "Main"], property: "data-layout-width", target: "#header .content", type: "dropdown", recipe:true }
+// tweak: { category: "Header", label: "Spacing", title: "Header Spacing", default: "Fixed Flexible", options: ["Flexible", "None Flexible", "Fixed Flexible"], property: "data-layout-spacing", target: "#header .content", type: "dropdown", recipe:true }
 
-// tweak: { category: "Header: Navigation", label: "Behavior", default: "Auto", options: ["Regular", "Slidebar", "Auto"], title: "header---nav", target: "#header .main-nav, #header .slidebar", type: "dropdown", js:true }
-// tweak: { category: "Header: Navigation", label: "Align", default: "Right", options: ["Left", "Right", "Center", "Space Around", "Space Between"], title: "header--navigation---align", target: "#header .main-nav", showOnlyWhenPresent: "body:not(.header---nav-slidebar)", type: "dropdown", js:true }
-// tweak: { category: "Header: Navigation", label: "Active", default: "Underline", options: ["None", "Contrast", "Underline"], title:"header--navigation----active", target: "#header .main-nav", showOnlyWhenPresent: "body:not(.header---nav-slidebar)", type: "dropdown", js:true }
-// tweak: { category: "Header: Navigation", title: "Font", target: "#header .main-nav", showOnlyWhenPresent: "body:not(.header--main-nav---display-hide)", type: "font" }
+// tweak: { category: "Header: Navigation", label: "Behavior", title: "header-nav", default: "Auto", options: ["Regular", "Slidebar", "Auto"], property: "data-nav", target: "#header", type: "dropdown", recipe:true }
+// tweak: { category: "Header: Navigation", label: "Align", title: "Header: Navigation Align", default: "Right", options: ["Left", "Right", "Center", "Space Around", "Space Between"], property: "data-align", target: "#header .navigation", showOnlyWhenPresent: "body:not(.header-nav-slidebar)", type: "dropdown", recipe:true }
+// tweak: { category: "Header: Navigation", label: "Active", title: "header-nav-active", default: "Underline", options: ["None", "Contrast", "Underline"], property: "data-active", target: "#header .navigation", showOnlyWhenPresent: "body:not(.header-nav-slidebar)", type: "dropdown", recipe:true }
+// tweak: { category: "Header: Navigation", title: "Font", target: "#header .navigation", type: "font" }
 .nav-font {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 600;
@@ -19,8 +19,8 @@
   border-bottom: none;
 }
 
-// tweak: { category: "Header: Logo", label: "Position", default: "Left", options: ["Left","Right","Center","Center Reverse"], title: "header---logo-position", target: "#header", type: "dropdown", js:true }
-// tweak: { category: "Header: Logo", label: "Max Width", min : 50, max : 500, step : 5, title: "Logo Container Width", target : "#header .site-logo", type : "value" }
+// tweak: { category: "Header: Logo", label: "Position", title: "header-logo-position", default: "Left", options: ["Left","Right","Center","Center Reverse"], property: "data-logo-position", target: "#header", type: "dropdown", recipe:true }
+// tweak: { category: "Header: Logo", label: "Max Width", title: "Logo Container Width", min : 50, max : 500, step : 5, target : "#header .site-logo", type : "value" }
 @logoContainerWidth: 150px;
 
 // tweak: { category: "Header: Logo", title: "Site Title Font", target: "#header .site-logo", showOnlyWhenPresent: ".site-logo a[data-text-shrink]", type: "font" }
@@ -33,7 +33,7 @@
   text-transform: uppercase;
 }
 
-// tweak: { category: "Header: Logo", label: "Alternate Logo", default: "None", options: ["None", "Main", "Banner", "Alternate"], title: "header---alternate-logo", target: "#header .site-logo", showOnlyWhenPresent: "#header .site-logo img", type: "dropdown", js:true }
+// tweak: { category: "Header: Logo", label: "Alternate Logo", title: "header-logo-alternate", default: "None", options: ["None", "Main", "Banner", "Alternate"], property: "data-alternate-logo", target: "#header", showOnlyWhenPresent: "#header .site-logo img", type: "dropdown", recipe:true }
 // tweak: { category: "Header: Logo", label: "Alternate Logo Image", title: "alt-logo-image", target: "#header .site-logo", showOnlyWhenPresent: "body:not(.header---alternate-logo-none) #header .site-logo img", type : "image" }
 .alt-logo-image {
   background-image: none;

@@ -33,7 +33,7 @@ Y.use('node', function (Y) {
 						var obj = eval('('+matches[1]+')');
 
 						obj.properties = obj.properties || [obj.property]; // convert single property to array
-						obj.properties[0] = obj.properties[0] + values[obj.title].toLowerCase();
+						obj.properties[0] = obj.properties[0] + "=" + values[obj.title].toLowerCase();
 
 						recipes.push({
 							target: obj.target,
