@@ -29,16 +29,20 @@ Y.use('node', function (Y) {
 				var recipes = [];
 
 				while((matches = re.exec(str)) !== null) {
-					var obj = eval('('+matches[1]+')');
+					try {
+						var obj = eval('('+matches[1]+')');
 
-					obj.properties = obj.properties || [obj.property]; // convert single property to array
-					obj.properties[0] = obj.properties[0] + values[obj.title].toLowerCase();
+						obj.properties = obj.properties || [obj.property]; // convert single property to array
+						obj.properties[0] = obj.properties[0] + values[obj.title].toLowerCase();
 
-					recipes.push({
-						target: obj.target,
-						properties: obj.properties,
-						condition: obj.showOnlyWhenPresent
-					});
+						recipes.push({
+							target: obj.target,
+							properties: obj.properties,
+							condition: obj.showOnlyWhenPresent
+						});
+					} catch(e) {
+						console.error('problem with tweak-recipe', matches[1]);
+					}
 				};
 
 				str = "<script id='recipes'>SquareMart.RecipeManager.add("+JSON.stringify(recipes)+");</script>";

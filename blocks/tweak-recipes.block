@@ -5,14 +5,23 @@ var SquareMart = window.SquareMart || {};
 SquareMart.RecipeManager = {
 	recipe: {},
 
+	bodyClass: "{squarespace.page-classes}",
 	layout: "{collection.regionName}",
 	collection: "{collection.typeName}",
 	// item: Static.SQUARESPACE_CONTEXT.item,
 
 	_add: function(target, properties, condition) {
-		if (condition) { // predict condition
-
-			// condition = false;
+		if (condition) { 
+			if (condition === target) { // condition on target is redundant
+				condition = null;
+			} else if (condition.indexOf('body.') === 0) { // condition on body can be pre-checked
+				var classes = condition.split(' ')[0].split('.');
+				for(var i=1; i<classes.length; i++) { // first is 'body', so skip that
+					if (this.bodyClass.indexOf(classes[i]) === -1) {
+						return;
+					}
+				}
+			}
 		}	
 
 		var selector = condition || target;
@@ -29,14 +38,18 @@ SquareMart.RecipeManager = {
 	},
 
 	add: function(data) {
-		if (Array.isArray(data)) {
-			data.forEach(function(item) {
-				this._add(item.target, item.properties, item.condition);
-			}, this);
-		} else if (typeof data === 'object') {
-			this._add(data.target, data.properties, data.condition);
-		} else if (typeof data === 'string' && arguments.length > 1) {
-			this._add(data, arguments[1], arguments[2]);
+		try {
+			if (Array.isArray(data)) {
+				data.forEach(function(item) {
+					this._add(item.target, item.properties, item.condition);
+				}, this);
+			} else if (typeof data === 'object') {
+				this._add(data.target, data.properties, data.condition);
+			} else if (typeof data === 'string' && arguments.length > 1) {
+				this._add(data, arguments[1], arguments[2]);
+			}
+		} catch(e) {
+			console.error('problem adding recipe', arguments);
 		}
 	},
 
