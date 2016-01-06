@@ -74,6 +74,7 @@ SquareMart.RecipeManager = {
 	},
 	// to handle edge case where selector-listener has not loaded selectors before domready
 	force: function() { // force detection of loaded selectors
+		console.log('forcing recipe');
 		for(var selector in this.recipe) {
 			var els = document.querySelectorAll(selector);
 			for (var i=0; i<els.length; i++) {

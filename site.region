@@ -43,7 +43,7 @@
     </div>
 
     <script>
-      window.RecipeManager.force(); // make sure dom is ready for scripts to use
+      SquareMart.RecipeManager.force(); // make sure dom is ready for scripts to use
     </script>
 
 
