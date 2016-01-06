@@ -5,7 +5,7 @@ var SquareMart = window.SquareMart || {};
 SquareMart.RecipeManager = {
 	recipe: {},
 
-	bodyClass: "{squarespace.page-classes}",
+	// bodyClass: "{squarespace.page-classes}",
 	layout: "{collection.regionName}",
 	collection: "{collection.typeName}",
 	// item: Static.SQUARESPACE_CONTEXT.item,
@@ -14,15 +14,16 @@ SquareMart.RecipeManager = {
 		if (condition) { 
 			if (condition === target) { // condition on target is redundant
 				condition = null;
-			} else if (condition.indexOf('body.') === 0) { // condition on body can be pre-checked
-				var classes = condition.split(' ')[0].split('.');
-				for(var i=1; i<classes.length; i++) { // first is 'body', so skip that
-					if (this.bodyClass.indexOf(classes[i]) === -1) {
-						console.log('skipping recipe', arguments);
-						return;
-					}
-				}
-				condition = null; // condition exists
+			// } else if (condition.indexOf('body') === 0 && condition.indexOf(' ') === -1) { // condition on body can be pre-checked
+			// 	condition = 
+			// 	var classes = condition.split(' ')[0].split('.');
+			// 	for(var i=1; i<classes.length; i++) { // first is 'body', so skip that
+			// 		if (this.bodyClass.indexOf(classes[i]) === -1) {
+			// 			console.log('skipping recipe', arguments);
+			// 			return;
+			// 		}
+			// 	}
+			// 	condition = null; // condition exists
 			}
 		}	
 
@@ -84,7 +85,7 @@ SquareMart.RecipeManager = {
 					var className = parts[0].replace('class-','');
 					if (parts[1] === "true") el.classList.add(className);
 					else el.classList.remove(className);
-					
+
 				}
 
 				return true;
