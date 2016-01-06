@@ -1,188 +1,93 @@
 {@|apply js-utils.block}
 <script>
-(function(){
-	var regionName = "{collection.regionName}";
-	var collectionType = "{collection.typeName}" + (Static.SQUARESPACE_CONTEXT.item ? '-item': '');
-	var RECIPES = {@|apply recipes.block};
-	
-	window.RecipeManager = {
-		recipe: {},
-		codec: {
-			'-00-': ' ',
-			'-01-': '#',
-			'-02-': '.',
-			'-03-': ',',
-			'-04-': '[',
-			'-05-': ']',
-			'-06-': ':',
-			'-07-': '(',
-			'-08-': ')',
-			'-09-': '>',
-			'-10-': '=' // attr marker
-		},
-		add: function(obj) {
-			if(obj) for(var selector in obj) this.addItem(selector, obj[selector]);
-		},
-		addItem: function(selector, value) {
-			this.recipe[selector] = this.recipe[selector] || [];
-			Array.prototype.push.apply(this.recipe[selector], Array.isArray(value) ? value : [value]);
-		},
-		encode: function(obj) {
-			// add reverse lookup if necessary
-			if (!this.codec['#']) for(var key in this.codec) this.codec[this.codec[key]] = key;
+var SquareMart = window.SquareMart || {};
 
-			var encoded = "-r-" + (obj.region || "") + '=' + obj.attr + obj.selector;
-			return encoded.replace(/[^a-z0-9\-]/g, function(match) { return this.codec[match]; }.bind(this));
-		},
-		decode: function(title) {
+SquareMart.RecipeManager = {
+	recipe: {},
 
-			var decoded = title.replace(/-\d\d-/g, function(match) { return this.codec[match] }.bind(this));
+	layout: "{collection.regionName}",
+	collection: "{collection.typeName}",
+	item: Static.SQUARESPACE_CONTEXT.item,
 
-			var matches = /-r-(\w*?)=(.+?)(#.+)/.exec(decoded);
-			if (matches[1] === regionName || matches[1] === "") { // if valid scope
-				this.addItem(matches[3],matches[2]);
+	add: function(target, properties, condition) {
+		if (condition) { // predict condition
+
+			condition = false;
+		}	
+
+		var selector = condition || target;
+		if (!this.recipe[selector]) {
+			this.recipe[selector] = [];
+			document.addSelectorListener(selector, this.attach.bind(this));	
+		}
+
+		if (condition) {
+			this.recipe[condition].push({ target: target, properties: properties });
+		} else {
+			Array.prototype.push.apply(this.recipe[target], properties);
+		}
+	},
+
+	addObj: function(obj) {
+		this.add(obj.target, obj.properties, obj.condition);
+	},
+
+	addArray: function(arr) {
+		arr.forEach(this.addObj, this);
+	},
+
+
+	attach: function(event) {
+		var selector = event.selector;
+		var el = event.target;
+
+		if (!this.recipe[selector]) return false; // nothing to do
+
+		console.log('RecipeManager adding ingredient', this.recipe[selector], el);
+
+		this.recipe[selector] = this.recipe[selector].filter(function(val, i) {
+			if (typeof val === 'object') { // add conditional targets to recipe
+				this.addObj(val);
+				return false;
+			} else {
+				var parts = val.split('=');
+				if (parts[0].indexOf('data') === 0) el.setAttribute(parts[0], parts[1]);
+				else if (parts[0].indexOf('class') === 0) el.classList.add(parts[0].replace('class-','') + '-' + parts[1]);
+
+				return true;
 			}
-			return matches;
-		},
-		attach: function(event) {
-			var selector = event.selector;
-			var el = event.target;
+		}, this);
 
-			var values = this.recipe[selector];
-			if (!values) return; // nothing to do
+		// stop listening if this is not marked to be continuous
+		if (selector.charAt(selector.length-1) !== ' ') {
+			delete this.recipe[selector];
+			return false; // stop listening to selector
+		}
 
-			console.log('RecipeManager adding ingredient', values, el);
-			values.forEach(function(val) {
-				var parts = val.split('='); // indicates an attribute
-				if (parts.length == 2) el.setAttribute('data-'+parts[0],parts[1]);
-				else el.classList.add(val); // else class
-			});
-
-			// stop listening if this is not marked to be continuous
-			if (selector.charAt(selector.length-1) !== ' ') {
-				delete this.recipe[selector];
-				return false; // stop listening to selector
-			}
-
-			// else keep going
-	    el.style.visibility = 'visible';
-			return true; 
-		},
-		listen: function() { 
-			this.attachFn = this.attach.bind(this);
-			for(var selector in this.recipe) {
-				document.addSelectorListener(selector, this.attachFn);	
-			}
-		},
-		// to handle edge case where selector-listener has not loaded selectors before domready
-		force: function() { // force detection of loaded selectors
-			for(var selector in this.recipe) {
-				var els = document.querySelectorAll(selector);
-				for (var i=0; i<els.length; i++) {
-					if (this.attach({ selector: selector, target: els[i] }) === false) {
-						document.removeSelectorListener(selector, this.attachFn);
-					}
+		// else keep going
+    el.style.visibility = 'visible';
+		return true; 
+	},
+	// to handle edge case where selector-listener has not loaded selectors before domready
+	force: function() { // force detection of loaded selectors
+		for(var selector in this.recipe) {
+			var els = document.querySelectorAll(selector);
+			for (var i=0; i<els.length; i++) {
+				if (this.attach({ selector: selector, target: els[i] }) === false) {
+					document.removeSelectorListener(selector, this.attach.bind(this));
 				}
 			}
-		},
-		getFormatted: function(tweaks) {
-			// process tweak names
-			var formatted = {};
-			for(var name in tweaks) {
-				var newName = name.match(/\s/) ? name.replace(/\s/g,'-').toLowerCase() : name;
-				formatted[newName] = tweaks[name];
-			}
-			return formatted;
-		},
-		resetTweaks: function(name) {
-			if (!Static.SQUARESPACE_CONTEXT.authenticatedAccount) return;
-
-			name = name || regionName;
-			var recipe = RECIPES[name];
-			var tweaks = this.getFormatted(recipe['tweaks']);
-			var webfonts = recipe['webfonts'];
-
-			console.log('resetting to ', name);
-
-			Y.use('squarespace-util', function(Y) {
-				Y.Data.post({
-	        url: '/api/template/SetTemplateTweakSettings',
-	        data: {
-	          tweakJson: Y.JSON.stringify(tweaks),
-	          webfontsJson: Y.JSON.stringify(webfonts)
-	        },
-	        success: function() {
-						Y.Data.get({
-							url:"/api/templates/"+Static.SQUARESPACE_CONTEXT.templateId+"/reprocess-tweaks", 
-							success: function() {
-								window.top.location.reload();
-							}
-						});	        	
-	        }
-				});
-			});
-
-		}
-	};
-
-	// var rTweaks = "{squarespace.page-classes}".match(/-r-[\S]+/g);
-	// rTweaks.forEach(function(tweak) {
-	// 	window.RecipeManager.decode(tweak);
-	// });
-	// return;
-
-	// Start with base tweaks as recipe
-	var tweaks = Static.SQUARESPACE_CONTEXT.tweakJSON, parts, key, selector, value;
-	for (key in tweaks) {
-		parts = key.split('---'); // attribute marker
-		if (parts.length == 2 && tweaks[key] !== "") { // only process if there is something to be set
-			
-			// convert tweak name into selector, with double space as class name
-			selector = '#' + parts[0].replace(/--/g,' .'); 
-
-			if (parts[1].charAt(0) === '-') { // marker for generic selector
-				parts[1] = parts[1].substr(1);
-				selector += ' '; // mark it generic
-			}
-
-			// make attribute from tweak attribute and value
-			value = parts[1]+'='+tweaks[key].toLowerCase().replace(/\s/g,"-");
-			var obj = {};
-			obj[selector] = value;
-		  RecipeManager.add(obj);
 		}
 	}
+};
 
-	// Merge template and collection specific recipe
-	var recipe = RECIPES[regionName];
-	if (recipe) {
-		RecipeManager.add(recipe['common']);
-		RecipeManager.add(recipe[collectionType]);
-	} 
 
-	// Merge custom recipe (if any)
-	RecipeManager.add(window.RECIPE_CUSTOM);
+// dynamically inject font awesome if needed
+document.onSelector('.fa', function(event) {
+	var link = document.createElement('link');
+	link.setAttribute('rel', 'stylesheet');
+	link.setAttribute('href', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+	document.getElementsByTagName('head')[0].appendChild(link);
+});
 
-	RecipeManager.listen(); // start listening for selectors
-
-	// document.addEventListener("DOMContentLoaded", function(event) {
-	// 	// also make links goto correct recipe (if applicable)
-	// 	var recipeName = window.location.search.split('recipe=')[1];
-	// 	if (recipeName) {
-	// 		var nodes = document.querySelectorAll('a[href^="/"]')
-	// 		for(var i=0; i<nodes.length; i++) {
-	// 			nodes[i].setAttribute('href', nodes[i].getAttribute('href') + '?recipe=' + recipeName);
-	// 		}
-	// 	}
-	// });
-
-	// dynamically inject font awesome if needed
-	document.onSelector('.fa', function(event) {
-		var link = document.createElement('link');
-		link.setAttribute('rel', 'stylesheet');
-		link.setAttribute('href', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
-		document.getElementsByTagName('head')[0].appendChild(link);
-	});
-
-})();
 </script>
