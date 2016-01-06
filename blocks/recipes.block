@@ -1,3 +1,10 @@
+("#.*?"): (\[.*?\]),
+//OFF tweak: { target: \1, properties: \2, showOnlyWhenPresent: "body.collection-layout-bravo", recipe: true }
+
+
+("#.*?"): (".*?")
+//OFF tweak: { target: \1, properties: [\2], showOnlyWhenPresent: "body.collection-layout-bravo", recipe: true }
+
 {
 	alfa: {
 		tweaks: {
