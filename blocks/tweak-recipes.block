@@ -62,17 +62,30 @@ SquareMart.RecipeManager = {
 
 		if (!this.recipe[selector]) return false; // nothing to do
 
-		console.log('RecipeManager adding ingredient', this.recipe[selector], el);
+		console.log('Adding ingredient', this.recipe[selector], el);
 
 		this.recipe[selector] = this.recipe[selector].filter(function(val, i) {
-			if (typeof val === 'object') { // add conditional targets to recipe
+			if (typeof val === 'object') { // move conditional targets to top level
+
 				console.log('moving condition');
 				this.add(val);
 				return false;
+
 			} else {
+
 				var parts = val.split('=');
-				if (parts[0].indexOf('data') === 0) el.setAttribute(parts[0], parts[1]);
-				else if (parts[0].indexOf('class') === 0) el.classList.add(parts[0].replace('class-','') + '-' + parts[1]);
+				if (parts[0].indexOf('data') === 0) {
+
+					if (parts[1]) el.setAttribute(parts[0], parts[1]);
+					else el.removeAttribute(parts[0]);
+
+				} else if (parts[0].indexOf('class') === 0) {
+
+					var className = parts[0].replace('class-','');
+					if (parts[1] === "true") el.classList.add(className);
+					else el.classList.remove(className);
+					
+				}
 
 				return true;
 			}
