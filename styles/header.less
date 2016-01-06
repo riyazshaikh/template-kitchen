@@ -1,12 +1,12 @@
 
-// tweak: { category: "Header", label: "Palette", title: "header-palette", default: "Banner", options: ["Main", "Banner", "Alternate"], property: "data-palette", target: "#header", type: "dropdown", recipe:true }
-// tweak: { category: "Header", label: "Width", title: "header-width", default: "Full", options: ["Full", "Main"], property: "data-layout-width", target: "#header .content", type: "dropdown", recipe:true }
-// tweak: { category: "Header", label: "Spacing", title: "header-spacing", default: "Fixed Flexible", options: ["Flexible", "None Flexible", "Fixed Flexible"], property: "data-layout-spacing", target: "#header .content", type: "dropdown", recipe:true }
+// tweak: { category: "Header", label: "Palette", default: "Banner", options: ["Main", "Banner", "Alternate"], property: "data-palette", target: "#header", title: "header-palette", type: "dropdown", recipe:true }
+// tweak: { category: "Header", label: "Width", default: "Full", options: ["Full", "Main"], property: "data-layout-width", target: "#header .content", title: "header-width", type: "dropdown", recipe:true }
+// tweak: { category: "Header", label: "Spacing", default: "Fixed Flexible", options: ["Flexible", "None Flexible", "Fixed Flexible"], property: "data-layout-spacing", target: "#header .content", title: "header-spacing", type: "dropdown", recipe:true }
 
-// tweak: { category: "Header: Navigation", label: "Behavior", title: "header-nav", default: "Auto", options: ["Regular", "Slidebar", "Auto"], property: "data-nav", target: "#header", type: "dropdown", recipe:true }
-// tweak: { category: "Header: Navigation", label: "Align", title: "header-nav-align", default: "Right", options: ["Left", "Right", "Center", "Space Around", "Space Between"], property: "data-align", target: "#header .navigation", showOnlyWhenPresent: "body:not(.header-nav-slidebar)", type: "dropdown", recipe:true }
-// tweak: { category: "Header: Navigation", label: "Active", title: "header-nav-active", default: "Underline", options: ["None", "Contrast", "Underline"], property: "data-active", target: "#header .navigation", showOnlyWhenPresent: "body:not(.header-nav-slidebar)", type: "dropdown", recipe:true }
-// tweak: { category: "Header: Navigation", title: "Font", target: "#header .navigation", type: "font" }
+// tweak: { category: "Header: Navigation", label: "Behavior", default: "Auto", options: ["Regular", "Slidebar", "Auto"], property: "data-nav", target: "#header", title: "header-nav", type: "dropdown", recipe:true }
+// tweak: { category: "Header: Navigation", label: "Align", default: "Right", options: ["Left", "Right", "Center", "Space Around", "Space Between"], property: "data-align", target: "#header .navigation", showOnlyWhenPresent: "body:not(.header-nav-slidebar)", title: "header-nav-align", type: "dropdown", recipe:true }
+// tweak: { category: "Header: Navigation", label: "Active", default: "Underline", options: ["None", "Contrast", "Underline"], property: "data-active", target: "#header .navigation", showOnlyWhenPresent: "body:not(.header-nav-slidebar)", title: "header-nav-active", type: "dropdown", recipe:true }
+// tweak: { category: "Header: Navigation", label: "Font", target: "#header .navigation", title: "nav-font", type: "font" }
 .nav-font {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 600;
@@ -19,11 +19,11 @@
   border-bottom: none;
 }
 
-// tweak: { category: "Header: Logo", label: "Position", title: "header-logo-position", default: "Left", options: ["Left","Right","Center","Center Reverse"], property: "data-logo-position", target: "#header", type: "dropdown", recipe:true }
-// tweak: { category: "Header: Logo", title: "Max Width", min : 50, max : 500, step : 5, target : "#header .site-logo", type : "value" }
+// tweak: { category: "Header: Logo", label: "Position", default: "Left", options: ["Left","Right","Center","Center Reverse"], property: "data-logo-position", target: "#header", title: "header-logo-position", type: "dropdown", recipe:true }
+// tweak: { category: "Header: Logo", label: "Max Width", min : 50, max : 500, step : 5, target : "#header .site-logo", title: "logoContainerWidth", type: "value" }
 @logoContainerWidth: 150px;
 
-// tweak: { category: "Header: Logo", title: "Site Title Font", target: "#header .site-logo", showOnlyWhenPresent: ".site-logo a[data-text-shrink]", type: "font" }
+// tweak: { category: "Header: Logo", label: "Site Title Font", target: "#header .site-logo", showOnlyWhenPresent: ".site-logo a[data-text-shrink]", title: "site-title-font", type: "font" }
 .site-title-font {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 600;
@@ -33,8 +33,8 @@
   text-transform: uppercase;
 }
 
-// tweak: { category: "Header: Logo", label: "Alternate Logo", title: "header-logo-alternate", default: "None", options: ["None", "Main", "Banner", "Alternate"], property: "data-alternate-logo", target: "#header", showOnlyWhenPresent: "#header .site-logo img", type: "dropdown", recipe:true }
-// tweak: { category: "Header: Logo", label: "Alternate Logo Image", title: "alt-logo-image", target: "#header .site-logo", showOnlyWhenPresent: "body:not(.header---alternate-logo-none) #header .site-logo img", type : "image" }
+// tweak: { category: "Header: Logo", label: "Alternate Logo", default: "None", options: ["None", "Main", "Banner", "Alternate"], property: "data-alternate-logo", target: "#header", showOnlyWhenPresent: "#header .site-logo img", title: "header-logo-alternate", type: "dropdown", recipe:true }
+// tweak: { category: "Header: Logo", label: "Alternate Logo Image", target: "#header .site-logo", showOnlyWhenPresent: "body:not(.header---alternate-logo-none) #header .site-logo img", title: "alt-logo-image", type : "image" }
 .alt-logo-image {
   background-image: none;
   background-position: center;

@@ -3,21 +3,15 @@ Y.use('node', function (Y) {
 	Y.on('domready', function() {
 		if (Y.Global) {
 
-			var setTweak = function(name, value) {
-				var parts = name.split('---');
-				if ( parts.length > 1 ) {
-					parts[0] = parts[0].replace(/--/g,' .'); // make double space into class
-
-					var node = Y.one('#'+parts[0]);
-					node && node.setAttribute('data-'+parts[1], value.toLowerCase().replace(/\s/g,"-"));
-				}
-			};
-
 			Y.Global.on('tweak:change', function (f) {
 				try {
-					console.log(f.config);
+					var obj = f.config;
+					obj.properties = obj.properties || [obj.property]; // convert single property to array
+					obj.properties[0] = obj.properties[0] + "=" + f.getValue().toLowerCase().replace(/\s/g,"-");
+
+					SquareMart.RecipeManager.add(obj);
 				} catch(e) {
-					console.log('error in tweaking.js', e);
+					console.log('error on tweak change', e);
 				}
 			});
 
@@ -33,7 +27,7 @@ Y.use('node', function (Y) {
 						var obj = eval('('+matches[1]+')');
 
 						obj.properties = obj.properties || [obj.property]; // convert single property to array
-						obj.properties[0] = obj.properties[0] + "=" + values[obj.title].toLowerCase();
+						obj.properties[0] = obj.properties[0] + "=" + values[obj.title].toLowerCase().replace(/\s/g,"-");
 
 						recipes.push({
 							target: obj.target,
