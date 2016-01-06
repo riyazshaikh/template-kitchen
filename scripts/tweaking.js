@@ -38,7 +38,7 @@ Y.use('node', function (Y) {
 							condition: obj.showOnlyWhenPresent
 						});
 					} catch(e) {
-						console.error('problem with tweak-recipe', matches[1]);
+						console.error('problem with tweak-recipe', matches[1], e);
 					}
 				};
 
