@@ -7,7 +7,7 @@ SquareMart.RecipeManager = {
 
 	layout: "{collection.regionName}",
 	collection: "{collection.typeName}",
-	item: Static.SQUARESPACE_CONTEXT.item,
+	// item: Static.SQUARESPACE_CONTEXT.item,
 
 	_add: function(target, properties, condition) {
 		if (condition) { // predict condition
