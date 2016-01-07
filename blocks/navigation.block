@@ -1,5 +1,5 @@
 {.section items}
-  <nav class="navigation" role="navigation">
+  <nav class="navigation" role="navigation" data-align="center">
     {.repeated section @}
       {.collection?}
         {.index?}
