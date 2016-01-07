@@ -3,7 +3,13 @@ Y.use('node', function (Y) {
 	Y.on('domready', function() {
 		if (Y.Global) {
 
+			Y.Global.on('tweak:beforeshow', function() {
+				window.top.document.querySelector('.presets-group-field-wrapper').style.display = 'block';
+			});
+
 			Y.Global.on('tweak:change', function (f) {
+				if (!f.config.property && !f.config.properties) return;
+
 				try {
 					var obj = f.config;
 					obj.properties = obj.properties || [obj.property]; // convert single property to array
@@ -11,7 +17,7 @@ Y.use('node', function (Y) {
 
 					SquareMart.RecipeManager.add(obj);
 				} catch(e) {
-					console.log('error on tweak change', e);
+					console.log('error on tweak change', e, f);
 				}
 			});
 
