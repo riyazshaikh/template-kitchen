@@ -1,6 +1,12 @@
 {
   "title" : "Bravo",
   "templateTweaks" : {
-  	"main-bgColor": "#d3d3d3"
+		"header-nav": "Auto",
+		"header-nav-align": "Center",
+		"header-width": "Main",
+
+    "footer-palette": "Main",
+		"metaWidth": "47%",
+		"main-metaColor": "rgba(15,15,15,0.5)",
   }
 }

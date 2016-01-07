@@ -1,6 +1,16 @@
 {
   "title" : "Alfa",
   "templateTweaks" : {
-  	"main-bgColor": "#fefefe"
+		"mainContentWidth": "1100px",
+
+		"header-palette": "Banner",
+		"page-footer-palette": "Alternate",
+		"banner-description-text-align": "Center",
+
+		"tweak-blog-list-style": "Grid",
+		"tweak-blog-list-columns": "3",
+		"tweak-blog-list-spacing": "5%",
+		"tweak-blog-list-item-image-aspect-ratio-grid": "3:2 Standard",
+		"tweak-blog-list-item-readmore": "Hide"
   }
 }
