@@ -8,7 +8,7 @@
   </nav>
   <script type="text/javascript">
   Y.use('node', function () {  
-    var rootEl = document.currentScript.parentNode;
+    var rootEl = SquareMart.Utils.currentScript().parentNode;
 
     // Logic to toggle active state
     Y.one(rootEl).delegate('click', function(e) {

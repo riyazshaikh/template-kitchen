@@ -55,7 +55,7 @@
   // for (var i=0; i<nodes.length; i++) {
   // 	nodes[i].parentNode.remove();
   // }
-  console.log(document.currentScript.parentNode.id);
+  console.log(SquareMart.Utils.currentScript().parentNode.id);
 
   Y.use('squarespace-gallery-ng', function (Y) {
 		Singleton.create({

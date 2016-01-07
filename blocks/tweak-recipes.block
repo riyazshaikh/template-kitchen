@@ -1,7 +1,5 @@
 {@|apply js-utils.block}
 <script>
-var SquareMart = window.SquareMart || {};
-
 SquareMart.RecipeManager = {
 	recipe: {},
 

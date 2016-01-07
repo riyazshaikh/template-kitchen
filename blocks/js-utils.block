@@ -18,3 +18,16 @@
 // check for old browsers - https://browser-update.org/
 function $buo_f(){var e=document.createElement("script");e.src="//browser-update.org/update.min.js",document.body.appendChild(e)}var $buoop={vs:{i:10,f:35,o:25,s:7},c:2};try{document.addEventListener("DOMContentLoaded",$buo_f,!1)}catch(e){window.attachEvent("onload",$buo_f)}
 </script>
+
+<script>
+window.SquareMart = {};
+
+SquareMart.Utils = {
+	currentScript: function() {
+		return document.currentScript || (function() {
+      var scripts = document.getElementsByTagName('script');
+      return scripts[scripts.length - 1];
+    })();
+	}
+}; 
+</script>

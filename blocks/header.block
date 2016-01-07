@@ -17,7 +17,7 @@
 <script>
 (function(){
 
-  var header = document.currentScript.parentNode;
+  var header = SquareMart.Utils.currentScript().parentNode;
   var head = document.getElementsByTagName('head')[0];
   var stylesheet, resizeOverlaid, rule;
 
