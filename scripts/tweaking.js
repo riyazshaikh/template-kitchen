@@ -44,7 +44,7 @@ Y.use('node', function (Y) {
 					}
 				};
 
-				str = "<script id='recipes'>"+JSON.stringify(recipes)+".forEach(SquareMart.RecipeManager.add);</script>";
+				str = "<script id='recipes'>"+JSON.stringify(recipes)+".forEach(SquareMart.RecipeManager.add, SquareMart.RecipeManager);</script>";
 
 				Y.Data.get({
 					url: '/api/config/GetInjectionSettings',

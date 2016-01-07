@@ -50,7 +50,7 @@ SquareMart.RecipeManager = {
 				this._add(data, arguments[1], arguments[2]);
 			}
 		} catch(e) {
-			console.error('problem adding recipe', arguments);
+			console.error('problem adding recipe', data, e);
 		}
 	},
 
