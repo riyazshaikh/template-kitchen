@@ -14,6 +14,23 @@
   display: flex;   
 }
 
+.flex-box-width(@width: 1) {
+	-webkit-box-flex: @width; 
+	-moz-box-flex: @width; 
+	width: 100%;
+	-webkit-flex: @width; 
+	-ms-flex: @width; 
+	flex: @width;     
+}
+
+.flex-box-order(@order: 1) {
+	-webkit-box-ordinal-group: @order;  
+  -moz-box-ordinal-group: @order;
+  -ms-flex-order: @order;
+  -webkit-order: @order;
+  order: @order;
+}
+
 .viewport-center {
 	height: 100vh;
 	.flex-box;
