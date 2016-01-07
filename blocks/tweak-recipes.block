@@ -43,9 +43,7 @@ SquareMart.RecipeManager = {
 	add: function(data) {
 		try {
 			if (Array.isArray(data)) {
-				data.forEach(function(item) {
-					this._add(item.target, item.properties, item.condition);
-				}, this);
+				this._add(data[0], data[1], data[2]);
 			} else if (typeof data === 'object') {
 				this._add(data.target, data.properties, data.condition);
 			} else if (typeof data === 'string' && arguments.length > 1) {

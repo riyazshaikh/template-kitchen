@@ -38,17 +38,13 @@ Y.use('node', function (Y) {
 							obj.properties[0] = obj.properties[0] + "=" + values[obj.title].toLowerCase().replace(/\s/g,"-");	
 						}
 
-						recipes.push({
-							target: obj.target,
-							properties: obj.properties,
-							condition: obj.showOnlyWhenPresent
-						});
+						recipes.push([obj.target,obj.properties,obj.showOnlyWhenPresent]);
 					} catch(e) {
 						console.error('problem with tweak-recipe', matches[1], e);
 					}
 				};
 
-				str = "<script id='recipes'>SquareMart.RecipeManager.add("+JSON.stringify(recipes)+");</script>";
+				str = "<script id='recipes'>"+JSON.stringify(recipes)+".forEach(SquareMart.RecipeManager.add);</script>";
 
 				Y.Data.get({
 					url: '/api/config/GetInjectionSettings',
