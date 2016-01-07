@@ -11,7 +11,7 @@ Y.use('node', function (Y) {
 				if (!f.config.property && !f.config.properties) return;
 
 				try {
-					var obj = Object.assign({},f.config);
+					var obj = Y.clone(f.config, true);
 					obj.properties = obj.properties || [obj.property]; // convert single property to array
 					obj.properties[0] = obj.properties[0] + "=" + f.getValue().toLowerCase().replace(/\s/g,"-");
 
