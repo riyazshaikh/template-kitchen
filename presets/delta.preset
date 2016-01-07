@@ -16,7 +16,7 @@
 
 		"banner-body-font": "{font-family:'raleway', Helvetica, Arial, Verdana, sans-serif;font-size:22px;font-weight:200;line-height:1.5em;}",
 		"banner-heading1-font": "{font-family:'raleway';font-size:60px;font-weight:200;line-height:1.33em;}",
-		"banner-heading2-font": "{font-family:'raleway';font-size:42px;font-weight:200;line-height:1.42em;}",
+		"banner-heading2-font": "{font-family:'raleway';font-size:42px;font-weight:200;line-height:1.42em;}"
 
   }
 }

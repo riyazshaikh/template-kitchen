@@ -2,6 +2,6 @@
   "title" : "Charlie",
   "templateTweaks" : {
 		"header-palette": "Main",
-		"header-nav": "Slidebar",
+		"header-nav": "Slidebar"
   }
 }
