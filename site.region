@@ -48,6 +48,7 @@
 
 
     <!--Combo and minify the scripts when you're not logged in.-->
+    <squarespace:script src="ElementQueries.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     <squarespace:script src="helpers.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     <squarespace:script src="sticky.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
     <squarespace:script src="parallax.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
