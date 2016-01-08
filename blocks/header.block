@@ -8,7 +8,7 @@
       {.end}
     </div>
   {.end}
-  <div class="main-nav" data-content-field="navigation-mainNav" data-folder="dropdown" media="query(mobile, (min-height: 50px))">
+  <div class="main-nav" data-content-field="navigation-mainNav" data-folder="dropdown">
     <squarespace:navigation navigationId="mainNav" template="navigation"/>
   </div>
   <squarespace:block-field class="block" id="header-block" columns="1" label="Header Block Content"/>
