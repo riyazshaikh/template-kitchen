@@ -51,7 +51,7 @@
   }
   
   function parseQueries(box){
-    var media = box.getAttribute('media');
+    var media = box.getAttribute('data-media');
     if (media != null) {
       var rules = baseRule;
       var nodes = '';
@@ -101,14 +101,14 @@
   var setAttr = Element.prototype.setAttribute;
   Element.prototype.setAttribute = function(name){
     setAttr.apply(this, arguments);
-    if (name == 'media') {
+    if (name == 'data-media') {
       if (this.__eq__) parseQueries(this);
       else attachQuerySensor(this);
     }
   }
   
   function initialize(){
-    var nodes = document.body.querySelectorAll('body [media]:not(style)');
+    var nodes = document.body.querySelectorAll('body [data-media]:not(style)');
     var index = nodes.length;
     while (index--) attachQuerySensor(nodes[index]);
   }
