@@ -17,8 +17,8 @@
   }
   
   function objectLoad(e){
-    var box = this.__querybox__;
-    var doc = box.__eq__.doc = this.contentDocument;
+    var box = e.target.__querybox__;
+    var doc = box.__eq__.doc = e.target.contentDocument;
     doc.__querybox__ = box;
     setStyle(doc, baseRule);
     doc.addEventListener('transitionend', debounceMatching);
