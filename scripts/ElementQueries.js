@@ -8,7 +8,7 @@
   function attachObject(box){
     var obj = document.createElement('object');
     obj.__querybox__ = box;
-    obj.onload = objectLoad;
+    // obj.onload = objectLoad;
     obj.type = 'text/html';
     if (!isIE) obj.data = 'about:blank';
     box.appendChild(obj);
@@ -106,6 +106,8 @@
       else attachQuerySensor(this);
     }
   }
+
+  document.addSelectorListener("[data-media] > object", objectLoad);
   
   function initialize(){
     var nodes = document.body.querySelectorAll('body [data-media]:not(style)');
