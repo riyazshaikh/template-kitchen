@@ -20,10 +20,8 @@
   }
   
   function objectLoad(e){
-    var box = this.__querybox__;
-
     try {
-      box.__eq__.doc = this.contentDocument;  
+      this.contentDocument.head = this.contentDocument.head;
     } catch(e) {
       isFrame = true;
       window.detachQuerySensor(box);
@@ -31,7 +29,9 @@
       return;
     }
 
-    var doc = box.__eq__.doc;
+    var box = this.__querybox__;
+    var doc = box.__eq__.doc = this.contentDocument;
+
     doc.__querybox__ = box;
     setStyle(doc, baseRule);
     doc.addEventListener('transitionend', debounceMatching);
