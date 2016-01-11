@@ -63,6 +63,11 @@ SquareMart.RecipeManager = {
 				this.add(val);
 				return false;
 
+			} else if (typeof val === 'function') {
+
+				val();
+				return true;
+
 			} else {
 
 				var parts = val.split('=');
