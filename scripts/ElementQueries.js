@@ -12,7 +12,7 @@
     obj.type = 'text/html';
     if (!isIE) obj.data = 'about:blank';
     box.appendChild(obj);
-    if (isIE) obj.data = 'about:blank'; // must add data source after insertion, because IE is a goon
+    if (!isIE) obj.data = 'about:blank'; // must add data source after insertion, because IE is a goon
     return obj;
   }
   
