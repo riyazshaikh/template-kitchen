@@ -1,20 +1,24 @@
 (function(){
   
-  var isIE = /*@cc_on!@*/0;
+  var isIE = /rv:11.0/i.test(navigator.userAgent) || /Edge\/12./i.test(navigator.userAgent);
   var queryRegExp = /query\((.+?(?=\)\s*query|\)$))/ig;
   var mediaRule = ' @media {rule} { [query-id="{id}"] { opacity: 1; } }';
   var baseRule = 'html, body { margin: 0; padding: 0 } div { -webkit-transition: opacity 0.01s; -ms-transition: opacity 0.01s; -o-transition: opacity 0.01s; transition: opacity 0.01s; opacity: 0; }';
   
   function attachObject(box){
-    var obj = document.createElement('object');
-    obj.__querybox__ = box;
-    // obj.onload = objectLoad;
-    obj.type = 'text/html';
-    if (!isIE) obj.data = 'about:blank';
-    // obj.src = 'about:blank';
-    box.appendChild(obj);
-    // if (!isIE) obj.data = 'about:blank'; // must add data source after insertion, because IE is a goon
-    return obj;
+    if (isIE) {
+      var obj = document.createElement('iframe');
+      obj.__querybox__ = box;
+      obj.src = 'about:blank';
+      box.appendChild(obj);
+      return obj;
+    } else {
+      var obj = document.createElement('object');
+      obj.__querybox__ = box;
+      obj.type = 'text/html';
+      obj.data = 'about:blank';
+      return obj;
+    }
   }
   
   function objectLoad(e){
@@ -108,8 +112,6 @@
     }
   }
 
-  document.addSelectorListener("[data-media] > object", objectLoad);
-  
   function initialize(){
     var nodes = document.body.querySelectorAll('body [data-media]:not(style)');
     var index = nodes.length;
@@ -119,4 +121,5 @@
   if (document.readyState == 'complete') initialize();
   else document.addEventListener('DOMContentLoaded', initialize);
 
+  document.addSelectorListener("[data-media] > iframe, [data-media] > object", objectLoad);
 })();
