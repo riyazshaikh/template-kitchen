@@ -20,8 +20,8 @@
   }
   
   function objectLoad(e){
-    var box = e.target.__querybox__;
-    var doc = box.__eq__.doc = e.target.contentDocument;
+    var box = this.__querybox__;
+    var doc = box.__eq__.doc = this.contentDocument;
 
     if (!doc) {
       isFrame = true;
