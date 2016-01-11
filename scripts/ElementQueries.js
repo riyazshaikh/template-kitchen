@@ -20,6 +20,8 @@
   }
   
   function objectLoad(e){
+    var box = this.__querybox__;
+
     try {
       this.contentDocument.head = this.contentDocument.head;
     } catch(e) {
@@ -29,9 +31,7 @@
       return;
     }
 
-    var box = this.__querybox__;
     var doc = box.__eq__.doc = this.contentDocument;
-
     doc.__querybox__ = box;
     setStyle(doc, baseRule);
     doc.addEventListener('transitionend', debounceMatching);
