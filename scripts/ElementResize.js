@@ -30,7 +30,7 @@
   window.addResizeListener = function(element, fn){
     if (!element.__resizeListeners__) {
       element.__resizeListeners__ = [];
-      element.setAttribute('data-resize');
+      element.setAttribute('data-resize','');
 
       var obj;
       if (SquareMart.bFrameRequired) {
