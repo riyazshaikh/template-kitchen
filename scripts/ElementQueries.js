@@ -21,15 +21,17 @@
   
   function objectLoad(e){
     var box = this.__querybox__;
-    var doc = box.__eq__.doc = this.contentDocument;
 
-    if (!doc) {
+    try {
+      box.__eq__.doc = this.contentDocument;  
+    } catch(e) {
       isFrame = true;
       window.detachQuerySensor(box);
       window.attachQuerySensor(box);
       return;
     }
 
+    var doc = box.__eq__.doc;
     doc.__querybox__ = box;
     setStyle(doc, baseRule);
     doc.addEventListener('transitionend', debounceMatching);
