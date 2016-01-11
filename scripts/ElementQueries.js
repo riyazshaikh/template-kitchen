@@ -14,6 +14,7 @@
       obj.type = 'text/html';
       obj.data = 'about:blank';
     }
+    obj.onload = objectLoad;
     obj.__querybox__ = box;
     box.appendChild(obj);
     return obj;
@@ -127,5 +128,5 @@
   if (document.readyState == 'complete') initialize();
   else document.addEventListener('DOMContentLoaded', initialize);
 
-  document.addSelectorListener("[data-media] > iframe, [data-media] > object", objectLoad);
+  // document.addSelectorListener("[data-media] > iframe, [data-media] > object", objectLoad);
 })();
