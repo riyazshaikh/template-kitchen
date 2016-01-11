@@ -1,29 +1,35 @@
 (function(){
   
-  var isIE = true; // /rv:11.0/i.test(navigator.userAgent) || /Edge\/12./i.test(navigator.userAgent);
+  var isFrame = false;
   var queryRegExp = /query\((.+?(?=\)\s*query|\)$))/ig;
   var mediaRule = ' @media {rule} { [query-id="{id}"] { opacity: 1; } }';
   var baseRule = 'html, body { margin: 0; padding: 0 } div { -webkit-transition: opacity 0.01s; -ms-transition: opacity 0.01s; -o-transition: opacity 0.01s; transition: opacity 0.01s; opacity: 0; }';
   
   function attachObject(box){
-    if (isIE) {
+    if (isFrame) {
       var obj = document.createElement('iframe');
-      obj.__querybox__ = box;
       obj.src = 'about:blank';
-      box.appendChild(obj);
-      return obj;
     } else {
       var obj = document.createElement('object');
-      obj.__querybox__ = box;
       obj.type = 'text/html';
       obj.data = 'about:blank';
-      return obj;
     }
+    obj.__querybox__ = box;
+    box.appendChild(obj);
+    return obj;
   }
   
   function objectLoad(e){
     var box = e.target.__querybox__;
     var doc = box.__eq__.doc = e.target.contentDocument;
+
+    if (!doc) {
+      isFrame = true;
+      window.detachQuerySensor(box);
+      window.attachQuerySensor(box);
+      return;
+    }
+
     doc.__querybox__ = box;
     setStyle(doc, baseRule);
     doc.addEventListener('transitionend', debounceMatching);
