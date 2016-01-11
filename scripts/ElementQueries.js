@@ -1,6 +1,6 @@
 (function(){
   
-  var isIE = /rv:11.0/i.test(navigator.userAgent) || /Edge\/12./i.test(navigator.userAgent);
+  var isIE = true; // /rv:11.0/i.test(navigator.userAgent) || /Edge\/12./i.test(navigator.userAgent);
   var queryRegExp = /query\((.+?(?=\)\s*query|\)$))/ig;
   var mediaRule = ' @media {rule} { [query-id="{id}"] { opacity: 1; } }';
   var baseRule = 'html, body { margin: 0; padding: 0 } div { -webkit-transition: opacity 0.01s; -ms-transition: opacity 0.01s; -o-transition: opacity 0.01s; transition: opacity 0.01s; opacity: 0; }';
