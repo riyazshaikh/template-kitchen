@@ -6,13 +6,14 @@
   var baseRule = 'html, body { margin: 0; padding: 0 } div { -webkit-transition: opacity 0.01s; -ms-transition: opacity 0.01s; -o-transition: opacity 0.01s; transition: opacity 0.01s; opacity: 0; }';
   
   function attachObject(box){
-    var obj = document.createElement('object');
+    var obj = document.createElement('iframe');
     obj.__querybox__ = box;
     // obj.onload = objectLoad;
-    obj.type = 'text/html';
-    if (!isIE) obj.data = 'about:blank';
+    // obj.type = 'text/html';
+    // if (!isIE) obj.data = 'about:blank';
+    obj.src = 'about:blank';
     box.appendChild(obj);
-    if (!isIE) obj.data = 'about:blank'; // must add data source after insertion, because IE is a goon
+    // if (!isIE) obj.data = 'about:blank'; // must add data source after insertion, because IE is a goon
     return obj;
   }
   
@@ -107,7 +108,7 @@
     }
   }
 
-  document.addSelectorListener("[data-media] > object", objectLoad);
+  document.addSelectorListener("[data-media] > iframe", objectLoad);
   
   function initialize(){
     var nodes = document.body.querySelectorAll('body [data-media]:not(style)');
