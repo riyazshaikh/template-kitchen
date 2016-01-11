@@ -55,8 +55,6 @@ SquareMart.RecipeManager = {
 
 		if (!this.recipe[selector]) return false; // nothing to do
 
-		console.log('Adding ingredient', this.recipe[selector], el);
-
 		this.recipe[selector] = this.recipe[selector].filter(function(val, i) {
 			if (typeof val === 'object') { // move conditional targets to top level
 
@@ -70,6 +68,7 @@ SquareMart.RecipeManager = {
 				return true;
 
 			} else {
+				console.log('Adding ingredient', val, el);
 
 				var parts = val.split('=');
 				if (parts[0].indexOf('data') === 0) {

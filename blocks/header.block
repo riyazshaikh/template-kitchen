@@ -35,12 +35,12 @@
       console.log('header init', header.offsetHeight);
       // refresh padding on header resize
       resizeOverlaid && resizeOverlaid.detach();
-      resizeOverlaid = new ResizeSensor(header.querySelector('.content'), function() {
-        console.log('header', header.offsetHeight);
-        stylesheet.removeChild(rule);
-        rule = document.createTextNode('[data-overlap=header] { padding-top:' + header.offsetHeight + 'px; }');
-        stylesheet.appendChild(rule);
-      });
+      // resizeOverlaid = new ResizeSensor(header.querySelector('.content'), function() {
+      //   console.log('header', header.offsetHeight);
+      //   stylesheet.removeChild(rule);
+      //   rule = document.createTextNode('[data-overlap=header] { padding-top:' + header.offsetHeight + 'px; }');
+      //   stylesheet.appendChild(rule);
+      // });
     } else { // remove anything added
       resizeOverlaid && resizeOverlaid.detach();
       stylesheet && head.removeChild(stylesheet);

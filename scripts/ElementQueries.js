@@ -1,16 +1,15 @@
 (function(){
-  
-  var isFrame = false;
   var queryRegExp = /query\((.+?(?=\)\s*query|\)$))/ig;
   var mediaRule = ' @media {rule} { [query-id="{id}"] { opacity: 1; } }';
   var baseRule = 'html, body { margin: 0; padding: 0 } div { -webkit-transition: opacity 0.01s; -ms-transition: opacity 0.01s; -o-transition: opacity 0.01s; transition: opacity 0.01s; opacity: 0; }';
   
   function attachObject(box){
-    if (isFrame) {
-      var obj = document.createElement('iframe');
+    var obj;
+    if (SquareMart.bFrameRequired) {
+      obj = document.createElement('iframe');
       obj.src = 'about:blank';
     } else {
-      var obj = document.createElement('object');
+      obj = document.createElement('object');
       obj.type = 'text/html';
       obj.data = 'about:blank';
     }
@@ -21,16 +20,6 @@
   
   function objectLoad(e){
     var box = this.__querybox__;
-
-    try {
-      this.contentDocument.head = this.contentDocument.head;
-    } catch(e) {
-      isFrame = true;
-      window.detachQuerySensor(box);
-      window.attachQuerySensor(box);
-      return;
-    }
-
     var doc = box.__eq__.doc = this.contentDocument;
     doc.__querybox__ = box;
     setStyle(doc, baseRule);
