@@ -29,6 +29,7 @@ SquareMart.RecipeManager = {
 		if (condition) {
 			this.recipe[condition].push({ target: target, properties: properties });
 		} else {
+			properties = Array.isArray(properties) ? properties : [properties];
 			Array.prototype.push.apply(this.recipe[target], properties);
 		}
 	},
