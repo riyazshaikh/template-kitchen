@@ -36,6 +36,7 @@
       // refresh padding on header resize
       resizeOverlaid && resizeOverlaid.detach();
       // resizeOverlaid = new ResizeSensor(header.querySelector('.content'), function() {
+      // window.addResizeListener(header.querySelector('.content'), function() {
       //   console.log('header', header.offsetHeight);
       //   stylesheet.removeChild(rule);
       //   rule = document.createTextNode('[data-overlap=header] { padding-top:' + header.offsetHeight + 'px; }');
