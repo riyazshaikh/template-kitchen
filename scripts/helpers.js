@@ -13,7 +13,7 @@ Y.use('squarespace-ui-base', function () {
 			this.dataLightbox();
 			this.dataTextShrink();
 
-      window.addResizeListener(Y.one('#site')._node, Y.bind(this.syncUI,this));
+      window.addResizeListener(Y.one('#site')._node, this.syncUI.bind(this));
 			// this.imgLoad();
 		},
 
