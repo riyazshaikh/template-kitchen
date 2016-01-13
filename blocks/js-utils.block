@@ -1,105 +1,13 @@
 <script>
-// SelectorListener By Daniel Buchner. Under Apache 2 License - https://github.com/csuwildcat/SelectorListener
-// Modified for personal needs - https://github.com/riyazshaikh/SelectorListener
-(function(){
-	
-	var events = {},
-		selectors = {},
-		docProto = typeof HTMLDocument !== 'undefined' ? HTMLDocument.prototype : Document.prototype,
-		elemProto = typeof HTMLElement !== 'undefined' ? HTMLElement.prototype : Element.prototype,
-		styles = document.createElement('style'),
-		keyframes = document.createElement('style'),
-		head = document.getElementsByTagName('head')[0],
-		startNames = ['animationstart', 'oAnimationStart', 'MSAnimationStart', 'webkitAnimationStart'],
-		startEvent = function(event){
-			event.selector = (events[event.animationName] || {}).selector;
-			var removeList = [];
-			((this.selectorListeners || {})[event.animationName] || []).forEach(function(fn){
-				if (fn.call(this, event) === false) removeList.push(fn);
-			}, this);
-			removeList.forEach(function(fn) {
-				this.removeSelectorListener(event.selector, fn);	
-			}, this);
-		},
-		prefix = (function() {
-			var duration = 'animation-duration: 0.001s;',
-				name = 'animation-name: SelectorListener !important;',
-				visibility = 'visibility:hidden;',
-				computed = window.getComputedStyle(document.documentElement, ''),
-				pre = (Array.prototype.slice.call(computed).join('').match(/moz|webkit|ms/)||(computed.OLink===''&&['o']))[0];
-			return {
-				css: '-' + pre + '-',
-				properties: '{' + visibility + duration + name + '-' + pre + '-' + duration + '-' + pre + '-' + name + '}',
-				keyframes: !!(window.CSSKeyframesRule || window[('WebKit|Moz|MS|O').match(new RegExp('(' + pre + ')', 'i'))[1] + 'CSSKeyframesRule'])
-			};
-		})();
-		
-	styles.type = keyframes.type = "text/css";
-	head.appendChild(styles);
-	head.appendChild(keyframes);
-	
-	docProto.addSelectorListener = elemProto.addSelectorListener = function(selector, fn){
-		var key = selectors[selector],
-			listeners = this.selectorListeners = this.selectorListeners || {};
-			
-		if (key) events[key].count++;
-		else {
-			key = selectors[selector] = 'SelectorListener-' + Math.random().toString(16).substr(2, 9);
-			var node = document.createTextNode('@' + (prefix.keyframes ? prefix.css : '') + 'keyframes ' + key + ' {'
-				+'from { outline-color: #fff; } to { outline-color: #000; }'
-			+ '}');
-			keyframes.appendChild(node);
-			var rule = document.createTextNode(selector + prefix.properties.replace(/SelectorListener/g, key));
-			styles.appendChild(rule);
-			events[key] = { count: 1, selector: selector, keyframe: node, rule: rule };
-		} 
-		
-		if (listeners.count) listeners.count++;
-		else {
-			listeners.count = 1;
-			startNames.forEach(function(name){
-				this.addEventListener(name, startEvent, false);
-			}, this);
-		}
-		
-		(listeners[key] = listeners[key] || []).push(fn);
-	};
-	
-	docProto.removeSelectorListener = elemProto.removeSelectorListener = function(selector, fn){
-		var listeners = this.selectorListeners || {},
-			key = selectors[selector],
-			listener = listeners[key] || [],
-			index = listener.indexOf(fn);
-			
-		if (index > -1){
-			var event = events[selectors[selector]];
-			event.count--;
-			if (!event.count){
-				styles.removeChild(event.rule);
-				keyframes.removeChild(event.keyframe);
-				delete events[key];
-				delete selectors[selector];
-			}
-			
-			listeners.count--;
-			listener.splice(index, 1);
-			if (!listeners.count) startNames.forEach(function(name){
-				this.removeEventListener(name, startEvent, false);
-			}, this);
-		}
-	};
-
-	// Single invocation version
-	HTMLDocument.prototype.onSelector = HTMLElement.prototype.onSelector = function(selector,fn) {
-		this.addSelectorListener(selector, function(event) { fn(event); return false; });
-	};
-
-})();
+!function(){var e={},t={},o="undefined"!=typeof HTMLDocument?HTMLDocument.prototype:Document.prototype,n="undefined"!=typeof HTMLElement?HTMLElement.prototype:Element.prototype,r=document.createElement("style"),i=document.createElement("style"),c=document.getElementsByTagName("head")[0],s=["animationstart","oAnimationStart","MSAnimationStart","webkitAnimationStart"],a=function(t){t.selector=(e[t.animationName]||{}).selector;var o=[];((this.selectorListeners||{})[t.animationName]||[]).forEach(function(e){e.call(this,t)===!1&&o.push(e)},this),o.forEach(function(e){this.removeSelectorListener(t.selector,e)},this)},l=function(){var e="animation-duration: 0.001s;",t="animation-name: SelectorListener !important;",o="visibility:hidden;",n=window.getComputedStyle(document.documentElement,""),r=(Array.prototype.slice.call(n).join("").match(/moz|webkit|ms/)||""===n.OLink&&["o"])[0];return{css:"-"+r+"-",properties:"{"+o+e+t+"-"+r+"-"+e+"-"+r+"-"+t+"}",keyframes:!(!window.CSSKeyframesRule&&!window["WebKit|Moz|MS|O".match(new RegExp("("+r+")","i"))[1]+"CSSKeyframesRule"])}}();r.type=i.type="text/css",c.appendChild(r),c.appendChild(i),o.addSelectorListener=n.addSelectorListener=function(o,n){var c=t[o],m=this.selectorListeners=this.selectorListeners||{};if(c)e[c].count++;else{c=t[o]="SelectorListener-"+Math.random().toString(16).substr(2,9);var u=document.createTextNode("@"+(l.keyframes?l.css:"")+"keyframes "+c+" {from { outline-color: #fff; } to { outline-color: #000; }}");i.appendChild(u);var d=document.createTextNode(o+l.properties.replace(/SelectorListener/g,c));r.appendChild(d),e[c]={count:1,selector:o,keyframe:u,rule:d}}m.count?m.count++:(m.count=1,s.forEach(function(e){this.addEventListener(e,a,!1)},this)),(m[c]=m[c]||[]).push(n)},o.removeSelectorListener=n.removeSelectorListener=function(o,n){var c=this.selectorListeners||{},l=t[o],m=c[l]||[],u=m.indexOf(n);if(u>-1){var d=e[t[o]];d.count--,d.count||(r.removeChild(d.rule),i.removeChild(d.keyframe),delete e[l],delete t[o]),c.count--,m.splice(u,1),c.count||s.forEach(function(e){this.removeEventListener(e,a,!1)},this)}},HTMLDocument.prototype.onSelector=HTMLElement.prototype.onSelector=function(e,t){this.addSelectorListener(e,function(e){return t(e),!1})}}();
 </script>
 
 <script>
-// ResizeSensor By Marc J. Schmidt. Under MIT license - https://github.com/marcj/css-element-queries/blob/master/LICENSE.
-!function(){this.ResizeSensor=function(e,t){function i(){this.q=[],this.add=function(e){this.q.push(e)};var e,t;this.call=function(){for(e=0,t=this.q.length;t>e;e++)this.q[e].call()}}function s(e,t,i){var s;return function(){var o=this,n=arguments,r=function(){s=null,i||e.apply(o,n)},l=i&&!s;clearTimeout(s),s=setTimeout(r,t),l&&e.apply(o,n)}}function o(e,t){return e.currentStyle?e.currentStyle[t]:window.getComputedStyle?window.getComputedStyle(e,null).getPropertyValue(t):e.style[t]}function n(e,t){if(e.resizedAttached){if(e.resizedAttached)return void e.resizedAttached.add(t)}else e.resizedAttached=new i,e.resizedAttached.add(t);e.resizeSensor=document.createElement("div"),e.resizeSensor.className="resize-sensor";var n="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: scroll; z-index: -1; visibility: hidden;",r="position: absolute; left: 0; top: 0;";e.resizeSensor.style.cssText=n,e.resizeSensor.innerHTML='<div class="resize-sensor-expand" style="'+n+'"><div style="'+r+'"></div></div><div class="resize-sensor-shrink" style="'+n+'"><div style="'+r+' width: 200%; height: 200%"></div></div>',e.appendChild(e.resizeSensor),{fixed:1,absolute:1}[o(e,"position")]||(e.style.position="relative");var l,d,c=e.resizeSensor.childNodes[0],h=c.childNodes[0],a=e.resizeSensor.childNodes[1],f=(a.childNodes[0],function(){h.style.width=c.offsetWidth+10+"px",h.style.height=c.offsetHeight+10+"px",c.scrollLeft=c.scrollWidth,c.scrollTop=c.scrollHeight,a.scrollLeft=a.scrollWidth,a.scrollTop=a.scrollHeight,l=e.offsetWidth,d=e.offsetHeight});f();var u=function(){e.resizedAttached&&e.resizedAttached.call()},v=function(e,t,i){e.attachEvent?e.attachEvent("on"+t,i):e.addEventListener(t,i)},z=function(){(e.offsetWidth!=l||e.offsetHeight!=d)&&u(),f()};v(c,"scroll",s(z,100)),v(a,"scroll",s(z,100))}var r=Object.prototype.toString.call(e),l="[object Array]"===r||"[object NodeList]"===r||"[object HTMLCollection]"===r||"undefined"!=typeof jQuery&&e instanceof jQuery||"undefined"!=typeof Elements&&e instanceof Elements;if(l)for(var d=0,c=e.length;c>d;d++)n(e[d],t);else n(e,t);this.detach=function(){if(l)for(var t=0,i=e.length;i>t;t++)ResizeSensor.detach(e[t]);else ResizeSensor.detach(e)}},this.ResizeSensor.detach=function(e){e.resizeSensor&&(e.removeChild(e.resizeSensor),delete e.resizeSensor,delete e.resizedAttached)}}();
+!function(){function e(e){var t=e.target||e.srcElement;t.__resizeRAF__&&n(t.__resizeRAF__),t.__resizeRAF__=r(function(){var r=t.__resizeTrigger__;r.__resizeListeners__.forEach(function(t){t.call(r,e)})})}function t(t){this.contentDocument.defaultView.__resizeTrigger__=this.__resizeElement__,this.contentDocument.defaultView.addEventListener("resize",e)}var r=function(){var e=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||function(e){return window.setTimeout(e,20)};return function(t){return e(t)}}(),n=function(){var e=window.cancelAnimationFrame||window.mozCancelAnimationFrame||window.webkitCancelAnimationFrame||window.clearTimeout;return function(t){return e(t)}}();window.addResizeListener=function(e,t){if("undefined"==typeof SquareMart.bFrameRequired&&(SquareMart.bFrameRequired=function(){var e,t=!1,r=document.querySelector("body");try{e=document.createElement("object"),e.type="text/html",e.data="about:blank",r.appendChild(e),e.contentDocument.head=e.contentDocument.head}catch(n){t=!0}return r.removeChild(e),t}()),!e.__resizeListeners__){e.__resizeListeners__=[],e.setAttribute("data-resize","");var r;SquareMart.bFrameRequired?(r=document.createElement("iframe"),r.src="about:blank"):(r=document.createElement("object"),r.type="text/html",r.data="about:blank"),r.__resizeElement__=e,e.__resizeTrigger__=r,e.appendChild(r)}e.__resizeListeners__.push(t)},window.removeResizeListener=function(t,r){t.__resizeListeners__.splice(t.__resizeListeners__.indexOf(r),1),t.__resizeListeners__.length||(t.__resizeTrigger__.contentDocument.defaultView.removeEventListener("resize",e),t.__resizeTrigger__=!t.removeChild(t.__resizeTrigger__),t.removeAttribute("data-resize"))},SquareMart.RecipeManager.add("[data-resize] > iframe, [data-resize] > object ",t)}();
+</script>
+
+<script>
+!function(){function e(e){var t;return SquareMart.bFrameRequired?(t=document.createElement("iframe"),t.src="about:blank"):(t=document.createElement("object"),t.type="text/html",t.data="about:blank"),t.__querybox__=e,e.appendChild(t),t}function t(e){var t=this.__querybox__,r=t.__eq__.doc=this.contentDocument;r.__querybox__=t,n(r,u),r.addEventListener("transitionend",i),r.addEventListener("MSTransitionEnd",i),r.addEventListener("webkitTransitionEnd",i),a(t),t.__eq__.loaded=!0}function i(){var e=this;e.__matching__||(e.__matching__=c(function(){r(e),e.__matching__=null}))}function n(e,t){var i=e.createElement("style");i.innerHTML=t,e.head.firstChild&&e.head.removeChild(e.head.firstChild),e.head.appendChild(i)}function a(e){var t=e.getAttribute("data-media");if(null!=t){var i=u,a="",o=t.match(d);e.setAttribute("matched-media",""),null!=o&&o.forEach(function(e){var t=e.replace("query(","").split(","),n=t.shift();a+='<div query-id="'+n+'"></div>',i+=_.replace("{rule}",t.join(",").trim()).replace("{id}",n)});var c=e.__eq__.doc;n(c,i),c.body.innerHTML=a,r(c)}}function r(e){for(var t=[],i=e.__querybox__,n=e.body.children,a=n.length;a--;)"1"==e.defaultView.getComputedStyle(n[a]).opacity&&t.push(n[a].getAttribute("query-id"));i.setAttribute("matched-media",t.join(" "))}function o(){for(var e=document.body.querySelectorAll("body [data-media]:not(style)"),t=e.length;t--;)attachQuerySensor(e[t])}var d=/query\((.+?(?=\)\s*query|\)$))/gi,_=' @media {rule} { [query-id="{id}"] { opacity: 1; } }',u="html, body { margin: 0; padding: 0 } div { -webkit-transition: opacity 0.01s; -ms-transition: opacity 0.01s; -o-transition: opacity 0.01s; transition: opacity 0.01s; opacity: 0; }",c=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||function(e){return window.setTimeout(e,20)};window.attachQuerySensor=function(t){t.__eq__||(t.__eq__={},t.__eq__.object=e(t))},window.detachQuerySensor=function(e){e.__eq__&&(e.removeChild(e.__eq__.object),delete e.__eq__)};var m=Element.prototype.setAttribute;Element.prototype.setAttribute=function(e){m.apply(this,arguments),"data-media"==e&&(this.__eq__?a(this):attachQuerySensor(this))},"complete"==document.readyState?o():document.addEventListener("DOMContentLoaded",o),SquareMart.RecipeManager.add("[data-media] > iframe, [data-media] > object ",t)}();
 </script>
 
 <script>

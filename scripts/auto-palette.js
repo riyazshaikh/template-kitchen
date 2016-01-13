@@ -13,7 +13,7 @@ Y.use('node', function (Y) {
 
 		bindUI: function() {
 			this.scrollHandler = new rafscroll(Y.bind(this.scrollLogic, this));
-      this.resizeHandler = new ResizeSensor(Y.one('#site')._node, Y.bind(this.syncUI,this));
+      window.addResizeListener(Y.one('#site')._node, Y.bind(this.syncUI,this));
 		},
 
 		syncUI: function() {

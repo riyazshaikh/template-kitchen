@@ -52,7 +52,8 @@
       },
 
       bindUI: function() {
-        this.resizeHandler = new ResizeSensor(Y.one('#site')._node, Y.bind(this.syncUI,this));
+        // this.resizeHandler = new ResizeSensor(Y.one('#site')._node, Y.bind(this.syncUI,this));
+        window.addResizeListener(Y.one('#site')._node, Y.bind(this.syncUI,this));
         this.scrollHandler = new rafscroll(Y.bind(this.scrollLogic, this));
       },
 

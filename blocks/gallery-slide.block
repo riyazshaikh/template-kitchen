@@ -46,7 +46,7 @@
       },
 
       bindUI: function() {
-        this.resizeHandler = new ResizeSensor(Y.one('#site')._node, Y.bind(this.gallery.refresh,this.gallery));
+        window.addResizeListener(Y.one('#site')._node, Y.bind(this.syncUI,this));
       },
 
       init: function() {

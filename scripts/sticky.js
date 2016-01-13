@@ -33,13 +33,13 @@ Y.use('node', function (Y) {
 
 			this.scrollHandler = new rafscroll(Y.bind(this.scrollLogic, this));
       // this.resizeHandler = new ResizeSensor(Y.one('#site')._node, Y.bind(this.syncUI,this));
-      window.addResizeListener(Y.one('#site')._node, function() { console.log('resized site'); });
+      window.addResizeListener(Y.one('#site')._node, Y.bind(this.syncUI,this));
 
 		},
 
 
 		syncUI: function () {
-			console.log('sticky sync');
+			console.log('sticky sync', this.stickyNodes);
 
 			this.stickyNodes.each(function(node) {
 				var elContainer = node.getData('elContainer');
