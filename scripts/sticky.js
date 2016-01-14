@@ -90,7 +90,7 @@ Y.use('node', function (Y) {
 		scrollLogic: function () {
 
 			// update without hitting dom
-			this.viewportRegion.top = window.scrollY;
+			this.viewportRegion.top = window.pageYOffset;
 			this.viewportRegion.bottom = this.viewportRegion.top + this.viewportRegion.height;
 
 			this.stickyNodes.each(function(node) {

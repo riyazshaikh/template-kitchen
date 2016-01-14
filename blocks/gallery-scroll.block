@@ -75,7 +75,7 @@
       scrollLogic: function() {
 
         for (var i=0; i<this.metaOffsets.length-1; i++) {
-          if (window.scrollY < this.metaOffsets[i+1]) {
+          if (window.pageYOffset < this.metaOffsets[i+1]) {
             break;
           }
         }

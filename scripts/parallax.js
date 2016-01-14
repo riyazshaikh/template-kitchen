@@ -30,7 +30,7 @@ Y.use('node', function (Y) {
 		},
 
 		scrollLogic: function() {
-      var scrollY = window.scrollY;
+      var scrollY = window.pageYOffset;
 
       this.parallaxNodes.each(function(node, i) {
 				if (Y.DOM.inViewportRegion(node.get('parentNode'),false,node.getData('region'))) {      	

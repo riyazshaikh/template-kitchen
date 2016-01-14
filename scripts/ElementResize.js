@@ -15,7 +15,7 @@
         win.__resizeRAF__ = null;
         console.log('end resize', win.offsetWidth, win.offsetHeight);
       });
-    };
+    }
   }
   
   function objectLoad(e){
@@ -24,42 +24,25 @@
   }
   
   window.addResizeListener = function(element, fn){
-    // if (typeof SquareMart.bFrameRequired === 'undefined') {
-    //   SquareMart.bFrameRequired = (function() {
-    //       var obj, value = false, site = document.querySelector('body');
-    //       try {
-    //         obj = document.createElement('object'); 
-    //         obj.type = 'text/html'; 
-    //         obj.data = 'about:blank'; 
-    //         site.appendChild(obj); 
-    //         obj.contentDocument.head = obj.contentDocument.head;
-    //       } catch(e) {
-    //          value = true;
-    //       }
-    //       site.removeChild(obj); 
-    //       return value;
-    //     })();      
+    // if (!element.__resizeListeners__) {
+    //   element.__resizeListeners__ = [];
+    //   element.setAttribute('data-resize','');
+
+    //   var obj;
+    //   if (SquareMart.bFrameRequired) {
+    //     obj = document.createElement('iframe');
+    //     obj.src = 'about:blank';
+    //   } else {
+    //     obj = document.createElement('object');
+    //     obj.type = 'text/html';
+    //     obj.data = 'about:blank';
+    //   }
+    //   obj.__resizeElement__ = element;
+    //   element.__resizeTrigger__ = obj;
+    //   obj.onload = objectLoad;
+    //   element.appendChild(obj);
     // }
-
-    if (!element.__resizeListeners__) {
-      element.__resizeListeners__ = [];
-      element.setAttribute('data-resize','');
-
-      var obj;
-      if (SquareMart.bFrameRequired) {
-        obj = document.createElement('iframe');
-        obj.src = 'about:blank';
-      } else {
-        obj = document.createElement('object');
-        obj.type = 'text/html';
-        obj.data = 'about:blank';
-      }
-      obj.__resizeElement__ = element;
-      element.__resizeTrigger__ = obj;
-      obj.onload = objectLoad;
-      element.appendChild(obj);
-    }
-    element.__resizeListeners__.push(fn);
+    // element.__resizeListeners__.push(fn);
   };
   
   window.removeResizeListener = function(element, fn){
@@ -70,7 +53,5 @@
       element.removeAttribute('data-resize');
     }
   };
-
-  // SquareMart.RecipeManager.add("[data-resize] > iframe, [data-resize] > object ", objectLoad);
 
 })();
