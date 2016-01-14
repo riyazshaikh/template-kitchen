@@ -24,22 +24,22 @@
   }
   
   window.addResizeListener = function(element, fn){
-    if (typeof SquareMart.bFrameRequired === 'undefined') {
-      SquareMart.bFrameRequired = (function() {
-          var obj, value = false, site = document.querySelector('body');
-          try {
-            obj = document.createElement('object'); 
-            obj.type = 'text/html'; 
-            obj.data = 'about:blank'; 
-            site.appendChild(obj); 
-            obj.contentDocument.head = obj.contentDocument.head;
-          } catch(e) {
-             value = true;
-          }
-          site.removeChild(obj); 
-          return value;
-        })();      
-    }
+    // if (typeof SquareMart.bFrameRequired === 'undefined') {
+    //   SquareMart.bFrameRequired = (function() {
+    //       var obj, value = false, site = document.querySelector('body');
+    //       try {
+    //         obj = document.createElement('object'); 
+    //         obj.type = 'text/html'; 
+    //         obj.data = 'about:blank'; 
+    //         site.appendChild(obj); 
+    //         obj.contentDocument.head = obj.contentDocument.head;
+    //       } catch(e) {
+    //          value = true;
+    //       }
+    //       site.removeChild(obj); 
+    //       return value;
+    //     })();      
+    // }
 
     if (!element.__resizeListeners__) {
       element.__resizeListeners__ = [];
