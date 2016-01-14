@@ -13,7 +13,7 @@
           fn.call(trigger, e);
         });
         win.__resizeRAF__ = null;
-        console.log('end resize');
+        console.log('end resize', win.offsetWidth, win.offsetHeight);
       });
     };
   }
