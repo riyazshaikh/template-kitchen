@@ -155,20 +155,21 @@ document.onSelector('.fa', function(event) {
   
   window.addResizeListener = function(element, fn){
     if (typeof SquareMart.bFrameRequired === 'undefined') {
-      SquareMart.bFrameRequired = (function() {
-          var obj, value = false, site = document.querySelector('body');
-          try {
-            obj = document.createElement('object'); 
-            obj.type = 'text/html'; 
-            obj.data = 'about:blank'; 
-            site.appendChild(obj); 
-            obj.contentDocument.head = obj.contentDocument.head;
-          } catch(e) {
-             value = true;
-          }
-          site.removeChild(obj); 
-          return value;
-        })();      
+      SquareMart.bFrameRequired = false;
+      // (function() {
+      //     var obj, value = false, site = document.querySelector('body');
+      //     try {
+      //       obj = document.createElement('object'); 
+      //       obj.type = 'text/html'; 
+      //       obj.data = 'about:blank'; 
+      //       site.appendChild(obj); 
+      //       obj.contentDocument.head = obj.contentDocument.head;
+      //     } catch(e) {
+      //        value = true;
+      //     }
+      //     site.removeChild(obj); 
+      //     return value;
+      //   })();      
     }
 
     if (!element.__resizeListeners__) {
