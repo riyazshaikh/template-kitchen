@@ -69,7 +69,7 @@
       element.__resizeTrigger__ = !element.removeChild(element.__resizeTrigger__);
       element.removeAttribute('data-resize');
     }
-  }
+  };
 
   // SquareMart.RecipeManager.add("[data-resize] > iframe, [data-resize] > object ", objectLoad);
 
