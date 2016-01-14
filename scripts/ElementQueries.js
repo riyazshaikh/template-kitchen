@@ -14,6 +14,7 @@
       obj.data = 'about:blank';
     }
     obj.__querybox__ = box;
+    obj.onload = objectLoad;
     box.appendChild(obj);
     return obj;
   }
@@ -118,5 +119,5 @@
   if (document.readyState == 'complete') initialize();
   else document.addEventListener('DOMContentLoaded', initialize);
 
-  SquareMart.RecipeManager.add("[data-media] > iframe, [data-media] > object ", objectLoad);
+  // SquareMart.RecipeManager.add("[data-media] > iframe, [data-media] > object ", objectLoad);
 })();

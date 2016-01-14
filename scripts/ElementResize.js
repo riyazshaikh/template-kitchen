@@ -4,7 +4,7 @@
                     window.webkitRequestAnimationFrame ||
                     function(fn){ return window.setTimeout(fn, 20); };
   
-  function debounceResize(){
+  function debounceResize(e){
     var win = e.target || e.srcElement;
     if (!win.__resizeRAF__) {
       win.__resizeRAF__ = requestFrame(function(){
@@ -56,6 +56,7 @@
       }
       obj.__resizeElement__ = element;
       element.__resizeTrigger__ = obj;
+      obj.onload = objectLoad;
       element.appendChild(obj);
     }
     element.__resizeListeners__.push(fn);
@@ -70,6 +71,6 @@
     }
   }
 
-  SquareMart.RecipeManager.add("[data-resize] > iframe, [data-resize] > object ", objectLoad);
+  // SquareMart.RecipeManager.add("[data-resize] > iframe, [data-resize] > object ", objectLoad);
 
 })();
