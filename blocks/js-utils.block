@@ -128,7 +128,81 @@ document.onSelector('.fa', function(event) {
 </script>
 
 <script>
-!function(){function e(e){var t=e.target||e.srcElement;t.__resizeRAF__&&n(t.__resizeRAF__),t.__resizeRAF__=r(function(){var r=t.__resizeTrigger__;r.__resizeListeners__.forEach(function(t){t.call(r,e)})})}function t(t){this.contentDocument.defaultView.__resizeTrigger__=this.__resizeElement__,this.contentDocument.defaultView.addEventListener("resize",e)}var r=function(){var e=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||function(e){return window.setTimeout(e,20)};return function(t){return e(t)}}(),n=function(){var e=window.cancelAnimationFrame||window.mozCancelAnimationFrame||window.webkitCancelAnimationFrame||window.clearTimeout;return function(t){return e(t)}}();window.addResizeListener=function(e,t){if("undefined"==typeof SquareMart.bFrameRequired&&(SquareMart.bFrameRequired=function(){var e,t=!1,r=document.querySelector("body");try{e=document.createElement("object"),e.type="text/html",e.data="about:blank",r.appendChild(e),e.contentDocument.head=e.contentDocument.head}catch(n){t=!0}return r.removeChild(e),t}()),!e.__resizeListeners__){e.__resizeListeners__=[],e.setAttribute("data-resize","");var r;SquareMart.bFrameRequired?(r=document.createElement("iframe"),r.src="about:blank"):(r=document.createElement("object"),r.type="text/html",r.data="about:blank"),r.__resizeElement__=e,e.__resizeTrigger__=r,e.appendChild(r)}e.__resizeListeners__.push(t)},window.removeResizeListener=function(t,r){t.__resizeListeners__.splice(t.__resizeListeners__.indexOf(r),1),t.__resizeListeners__.length||(t.__resizeTrigger__.contentDocument.defaultView.removeEventListener("resize",e),t.__resizeTrigger__=!t.removeChild(t.__resizeTrigger__),t.removeAttribute("data-resize"))},SquareMart.RecipeManager.add("[data-resize] > iframe, [data-resize] > object ",t)}();
+(function(){
+  var requestFrame = window.requestAnimationFrame ||
+                    window.mozRequestAnimationFrame ||
+                    window.webkitRequestAnimationFrame ||
+                    function(fn){ return window.setTimeout(fn, 20); };
+  
+  function debounceResize(){
+    var win = e.target || e.srcElement;
+    if (!win.__resizeRAF__) {
+      win.__resizeRAF__ = requestFrame(function(){
+        var trigger = win.__resizeTrigger__;
+        trigger.__resizeListeners__.forEach(function(fn){
+          fn.call(trigger, e);
+        });
+        win.__resizeRAF__ = null;
+        console.log('end resize', win.offsetWidth, win.offsetHeight);
+      });
+    };
+  }
+  
+  function objectLoad(e){
+    this.contentDocument.defaultView.__resizeTrigger__ = this.__resizeElement__;
+    this.contentDocument.defaultView.addEventListener('resize', debounceResize);
+  }
+  
+  window.addResizeListener = function(element, fn){
+    if (typeof SquareMart.bFrameRequired === 'undefined') {
+      SquareMart.bFrameRequired = (function() {
+          var obj, value = false, site = document.querySelector('body');
+          try {
+            obj = document.createElement('object'); 
+            obj.type = 'text/html'; 
+            obj.data = 'about:blank'; 
+            site.appendChild(obj); 
+            obj.contentDocument.head = obj.contentDocument.head;
+          } catch(e) {
+             value = true;
+          }
+          site.removeChild(obj); 
+          return value;
+        })();      
+    }
+
+    if (!element.__resizeListeners__) {
+      element.__resizeListeners__ = [];
+      element.setAttribute('data-resize','');
+
+      var obj;
+      if (SquareMart.bFrameRequired) {
+        obj = document.createElement('iframe');
+        obj.src = 'about:blank';
+      } else {
+        obj = document.createElement('object');
+        obj.type = 'text/html';
+        obj.data = 'about:blank';
+      }
+      obj.__resizeElement__ = element;
+      element.__resizeTrigger__ = obj;
+      element.appendChild(obj);
+    }
+    element.__resizeListeners__.push(fn);
+  };
+  
+  window.removeResizeListener = function(element, fn){
+    element.__resizeListeners__.splice(element.__resizeListeners__.indexOf(fn), 1);
+    if (!element.__resizeListeners__.length) {
+      element.__resizeTrigger__.contentDocument.defaultView.removeEventListener('resize', resizeListener);
+      element.__resizeTrigger__ = !element.removeChild(element.__resizeTrigger__);
+      element.removeAttribute('data-resize');
+    }
+  }
+
+  SquareMart.RecipeManager.add("[data-resize] > iframe, [data-resize] > object ", objectLoad);
+
+})();
 </script>
 
 <script>
