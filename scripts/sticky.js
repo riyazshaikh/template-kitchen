@@ -2,6 +2,8 @@ Y.use('node', function (Y) {
 	window.Sticky = Singleton.create({
 
 		ready: function() {
+			console.log('sticky init');
+			
 			this.stickyNodes = Y.all('[data-sticky]');
 
 			if (this.stickyNodes.size()) {
