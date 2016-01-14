@@ -28,7 +28,7 @@
 
 <script>
 (function(){
-  var parent = document.currentScript.parentNode;
+  var parent = SquareMart.Utils.currentScript().parentNode;
 
   Y.use('squarespace-gallery-ng', function (Y) {
     
