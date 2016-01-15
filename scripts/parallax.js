@@ -2,6 +2,9 @@ Y.use('node', function (Y) {
 	window.Parallax = Singleton.create({
 
 		ready: function() {
+			//skip for mobile
+			if (Y.one('html').hasClass('touch-styles')) return;
+
 			this.nodes = new Y.NodeList();
 
 			SquareMart.RecipeManager.add('[data-parallax] ', function() {

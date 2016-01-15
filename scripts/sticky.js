@@ -30,11 +30,13 @@ Y.use('node', function (Y) {
 
 				this.wrapItUp(node);
 
-				this.bindUI();
 				this.syncUI();
+	
+				//skip for mobile
+				if (!Y.one('html').hasClass('touch-styles')) {
+					this.bindUI();
+				}
 
-			} else {
-				console.log('duplicate', node)
 			}
 		},
 
