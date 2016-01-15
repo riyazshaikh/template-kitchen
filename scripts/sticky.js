@@ -2,48 +2,56 @@ Y.use('node', function (Y) {
 	window.Sticky = Singleton.create({
 
 		ready: function() {
-			console.log('sticky init');
+			this.nodes = new Y.NodeList();
+			console.log('sticky init ', Y.all('[data-sticky]'));
 			
-			this.stickyNodes = Y.all('[data-sticky]');
+			SquareMart.RecipeManager.add('[data-sticky] ', function() {
+				window.Sticky.add(Y.one(this));
+			});
+		},
 
-			if (this.stickyNodes.size()) {
-				this.stickyNodes.each(function(node) {
+		add: function(node) {
+			if (this.nodes.indexOf(node) === -1) {
 
-					// Config is data-sticky=<mode>-<selector>-<top/bottom>-<underlaid>
-					var config = node.getData('sticky').split('-');
-					config.length && node.setData('mode', config.shift());	
+				console.log('adding sticky', node);
+				this.nodes.push(node);
 
-					var target = Y.one('#' + config.shift()) || node.get('parentNode');
-					node.setData('elTarget', target);
+				// Config is data-sticky=<mode>-<selector>-<top/bottom>-<underlaid>
+				var config = node.getData('sticky').split('-');
+				config.length && node.setData('mode', config.shift());	
 
-					target.addClass('js-sticky-target'); // mostly for debugging
+				var target = Y.one('#' + config.shift()) || node.get('parentNode');
+				node.setData('elTarget', target);
 
-					// for deciding whether to check viewport crossing from top or bottom
-					node.setData('direction', config.length ? config.shift() : 'top'); // default is top
+				target.addClass('js-sticky-target'); // mostly for debugging
 
-					this.wrapItUp(node);
+				// for deciding whether to check viewport crossing from top or bottom
+				node.setData('direction', config.length ? config.shift() : 'top'); // default is top
 
+				this.wrapItUp(node);
 
-				}, this);
-				
 				this.bindUI();
 				this.syncUI();
+
+			} else {
+				console.log('duplicate', node)
 			}
 		},
 
 		bindUI: function () {
 
+			if (!this.scrollHandler)
 			this.scrollHandler = new rafscroll(Y.bind(this.scrollLogic, this));
-      // this.resizeHandler = new ResizeSensor(Y.one('#site')._node, Y.bind(this.syncUI,this));
-      window.addResizeListener(Y.one('#site')._node, this.syncUI.bind(this));
+
+			if (!this.resizeHandler)
+      this.resizeHandler = SquareMart.Utils.onResize(Y.bind(this.syncUI,this));
 
 		},
 
-
 		syncUI: function () {
-			console.log('sticky sync', this.stickyNodes);
+			console.log('sticky sync', this.nodes);
 
-			this.stickyNodes.each(function(node) {
+			this.nodes.each(function(node) {
 				var elContainer = node.getData('elContainer');
 				var elWrapper = node.getData('elWrapper');
 
@@ -93,7 +101,7 @@ Y.use('node', function (Y) {
 			this.viewportRegion.top = window.pageYOffset;
 			this.viewportRegion.bottom = this.viewportRegion.top + this.viewportRegion.height;
 
-			this.stickyNodes.each(function(node) {
+			this.nodes.each(function(node) {
 
 				var elContainer = node.getData('elContainer');
 				var elTargetRegion = node.getData('elTargetRegion');

@@ -12,6 +12,10 @@ SquareMart.Utils = {
       var scripts = document.getElementsByTagName('script');
       return scripts[scripts.length - 1];
     })();
+	},
+	onResize: function(callback, elem) {
+		elem = elem || document.querySelector('#site');
+		return new ResizeSensor(elem,callback);
 	}
 }; 
 

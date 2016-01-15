@@ -2,22 +2,38 @@ Y.use('node', function (Y) {
 	window.AutoPalette = Singleton.create({
 
 		ready: function() {
-			this.paletteNodes = Y.all('[data-palette]:not([data-display="overlaid"])');
-			this.transparentNodes = Y.all('[data-display="overlaid"]');
+			this.nodes = new Y.NodeList();
 
-			if (this.transparentNodes.size() && this.paletteNodes.size()) {
+			SquareMart.RecipeManager.add('[data-display="overlaid"] ', function() {
+				window.AutoPalette.add(Y.one(this));
+			});
+
+		},
+
+		add: function(node) {
+			if (this.nodes.indexOf(node) === -1) {
+
+				console.log('adding autopalette', node);
+				this.nodes.push(node);
+
 				this.bindUI();
 				this.syncUI();
+				
 			}
 		},
 
 		bindUI: function() {
+			if (!this.scrollHandler)
 			this.scrollHandler = new rafscroll(Y.bind(this.scrollLogic, this));
-      window.addResizeListener(Y.one('#site')._node, this.syncUI.bind(this));
+
+			if (!this.resizeHandler)
+      this.resizeHandler = SquareMart.Utils.onResize(Y.bind(this.syncUI,this));
 		},
 
 		syncUI: function() {
-			console.log('palette sync');
+			console.log('autopalette sync');
+
+			this.paletteNodes = Y.all('[data-palette]:not([data-display="overlaid"])');
 
 			// cache region values
 			this.paletteNodes.each(function(node) {
@@ -32,7 +48,7 @@ Y.use('node', function (Y) {
 			// console.log('start cycle');
       var viewportRegion = Y.one(Y.config.win).get('region');
 
-      this.transparentNodes.each(function(tNode) {
+      this.nodes.each(function(tNode) {
       	var tRegion = tNode.get('region');
         if (Y.DOM.inViewportRegion(tNode._node,false,tRegion)) {
         	var palette;

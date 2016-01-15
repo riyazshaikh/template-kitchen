@@ -13,8 +13,7 @@ Y.use('squarespace-ui-base', function () {
 			this.dataLightbox();
 			this.dataTextShrink();
 
-      window.addResizeListener(Y.one('#site')._node, this.imgLoad);
-			// this.imgLoad();
+      SquareMart.Utils.onResize(this.imgLoad);
 		},
 
 		radioCheckboxes: function (wrapper, checkbox, label) {

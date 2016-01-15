@@ -124,6 +124,13 @@ body {
   }
 }
 
+/* IE specific */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  #slidebar-nav {
+    .transform(translate3d(0,0,0)) !important;
+  }
+}
+
 [data-logo-position=right] #slidebar-nav, 
 [data-logo-position=center-reverse] #slidebar-nav {
   right: auto;
@@ -131,7 +138,7 @@ body {
   text-align: left;
   .transform(translate3d(-260px,0,0));
 }
-body.header---logo-position-right.mobile-nav-enabled, 
-body.header---logo-position-center-reverse.mobile-nav-enabled { /* Cannot find a cleaner way */
+body.header-logo-position-right.mobile-nav-enabled, 
+body.header-logo-position-center-reverse.mobile-nav-enabled { /* Cannot find a cleaner way */
   #site, .slidebar .body-overlay { .transform(translate3d(260px,0,0));  }
 }

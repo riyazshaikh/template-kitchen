@@ -2,17 +2,31 @@ Y.use('node', function (Y) {
 	window.Parallax = Singleton.create({
 
 		ready: function() {
-			this.parallaxNodes = Y.all('[data-parallax]');
-			if (this.parallaxNodes.size()) {
+			this.nodes = new Y.NodeList();
+
+			SquareMart.RecipeManager.add('[data-parallax] ', function() {
+				window.Parallax.add(Y.one(this));
+			});
+
+		},
+
+		add: function(node) {
+			if (this.nodes.indexOf(node) === -1) {
+
+				console.log('adding parallax', node);
+				this.nodes.push(node);
+
 				this.bindUI();
 				this.syncUI();
+
 			}
+
 		},
 
 		syncUI: function() {
-			console.log('parallax sync', this.parallaxNodes);
+			console.log('parallax sync', this.nodes);
 
-			this.parallaxNodes.each(function(node) {
+			this.nodes.each(function(node) {
 				// var img = node.one('img');
 				// if (img) {
 					node.get('parentNode').setStyle('transform', 'translateZ(0)');
@@ -24,15 +38,20 @@ Y.use('node', function (Y) {
 			this.scrollLogic();
 		},
 
-		bindUI: function() {
+		bindUI: function () {
+
+			if (!this.scrollHandler)
 			this.scrollHandler = new rafscroll(Y.bind(this.scrollLogic, this));
-      window.addResizeListener(Y.one('#site')._node, this.syncUI.bind(this));
+
+			if (!this.resizeHandler)
+      this.resizeHandler = SquareMart.Utils.onResize(Y.bind(this.syncUI,this));
+
 		},
 
 		scrollLogic: function() {
       var scrollY = window.pageYOffset;
 
-      this.parallaxNodes.each(function(node, i) {
+      this.nodes.each(function(node, i) {
 				if (Y.DOM.inViewportRegion(node.get('parentNode'),false,node.getData('region'))) {      	
           var pageYDoc = node.getData('region').top;
           var pageYViewport = pageYDoc - scrollY;
