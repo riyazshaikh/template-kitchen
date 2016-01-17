@@ -32,11 +32,9 @@
       head.appendChild(stylesheet);
       stylesheet.appendChild(rule);
 
-      console.log('header init', header.offsetHeight);
       // refresh padding on header resize
       resizeOverlaid && resizeOverlaid.detach();
       resizeOverlaid = SquareMart.Utils.onResize(function() {
-        console.log('header', header.offsetHeight);
         stylesheet.removeChild(rule);
         rule = document.createTextNode('[data-overlap=header] { padding-top:' + header.offsetHeight + 'px; }');
         stylesheet.appendChild(rule);

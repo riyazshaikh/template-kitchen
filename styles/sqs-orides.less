@@ -245,12 +245,6 @@
     }
   }
 
-  .sqs-edit-mode-active & {
-    padding: 50px;
-    [data-display*=overlaid] {
-      position: static !important;
-    }
-  }
   #site &.empty {
     padding: 0;
   }
@@ -272,5 +266,11 @@
 }
 
 body.sqs-edit-mode-active {
+  .sqs-layout {
+    padding: 50px;
+  }
   #header { z-index: 1 !important; }
+  [data-display*=overlaid] {
+    position: static !important;
+  }
 }

@@ -12,3 +12,12 @@
 //OFF tweak: { target: "#page .content h2", properties: ["data-font-effect=dash"], showOnlyWhenPresent: "body.collection-layout-bravo", recipe: true }
 
 //OFF tweak: { target: "#footer .sqs-block ", properties: ["data-layout-spacing=none"], showOnlyWhenPresent: "body.collection-layout-bravo", recipe: true }
+
+
+.collection-layout-bravo {
+	#banner .description p {
+		@media only screen and (max-width: 640px) {
+			display: none;
+		}
+	}
+}
