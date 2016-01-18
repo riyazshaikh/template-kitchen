@@ -1,0 +1,11 @@
+{
+  // grunt config
+  "assets": [],
+  "blocks": ["banner","dynamic-summary","footer","header","js-utils","nav-category","navigation","page-footer","slidebar"],
+  "collections": ["folders"],
+  "presets": ["alfa"], // set as default
+  "scripts": ["auto-palette","ElementQueries","helpers","parallax","rafscroll","ResizeSensor","SelectorListener","sticky","tweaking"], // uglify
+  "styles" : ["appearance","banner","element-queries","header","helpers","layout-alfa","mixins","navigation","page-footer","reset","slidebar","sqs-orides","sticky","tweaks-layout","tweaks-palette","tweaks-typography"], // compile to site.less
+  "regions": ["site.region"]
+
+}
