@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="initial-scale=1">
 
+     <squarespace:script src="SelectorListener.js" />    
     {@|apply js-utils.block}
 
     <!--Include sqs scripts, meta tags, and user content from the code injection tab.-->
@@ -57,7 +58,7 @@
     </script>    
 
     <script>
-      Y.later(1000, SquareMart.RecipeManager, SquareMart.RecipeManager.force); // make sure dom is ready by now
+      SquareMart.RecipeManager.syncAll(); // make sure dom is ready by now
     </script>
 
     <!--Injection point for tracking scripts and user content from the code injection tab.-->

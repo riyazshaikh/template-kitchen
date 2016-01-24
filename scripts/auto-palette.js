@@ -4,9 +4,9 @@ Y.use('node', function (Y) {
 		ready: function() {
 			this.nodes = new Y.NodeList();
 
-			SquareMart.RecipeManager.add('[data-display="overlaid"] ', function() {
-				window.AutoPalette.add(Y.one(this));
-			});
+			SquareMart.RecipeManager.add('[data-display="overlaid"] ', function(e) {
+				this.add(Y.one(e.target));
+			}.bind(this));
 
 		},
 
