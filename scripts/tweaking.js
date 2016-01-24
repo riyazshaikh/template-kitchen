@@ -3,12 +3,12 @@ Y.use('node', function (Y) {
 	Y.on('domready', function() {
 		if (Y.Global) {
 
-			Y.Global.on('tweak:beforeshow', function() {
-				window.top.document.querySelector('.presets-group-field-wrapper').style.display = 'block';
-			});
+			// Y.Global.on('tweak:beforeshow', function() {
+			// 	window.top.document.querySelector('.presets-group-field-wrapper').style.display = 'block';
+			// });
 
 			Y.Global.on('tweak:change', function (f) {
-				if (!f.config.property && !f.config.properties) return;
+				if (!f.config || (!f.config.property && !f.config.properties)) return;
 
 				try {
 					var obj = Y.clone(f.config, true);
