@@ -1,5 +1,5 @@
 Y.use('node', function (Y) {
-	window.Parallax = Singleton.create({
+	SquareMart.Parallax = Singleton.create({
 
 		ready: function() {
 			//skip for mobile

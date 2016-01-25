@@ -1,8 +1,8 @@
 Y.use('squarespace-ui-base', function () {
-	window.helper = Singleton.create({
+	SquareMart.Utils = Singleton.create({
 
 		ready: function() {
-			this.bindUI();
+			Y.on('domready', this.bindUI.bind(this));
 		},
 
 
@@ -14,6 +14,18 @@ Y.use('squarespace-ui-base', function () {
 			this.dataTextShrink();
 
       SquareMart.Utils.onResize(this.imgLoad);
+		},
+
+		currentScript: function() {
+			return document.currentScript || (function() {
+	      var scripts = document.getElementsByTagName('script');
+	      return scripts[scripts.length - 1];
+	    })();
+		},
+
+		onResize: function(callback, elem) {
+			elem = elem || document.querySelector('#site');
+			return new ResizeSensor(elem,callback);
 		},
 
 		radioCheckboxes: function (wrapper, checkbox, label) {

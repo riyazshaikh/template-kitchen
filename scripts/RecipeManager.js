@@ -1,22 +1,9 @@
-
-<script>
-window.SquareMart = {};
-
-SquareMart.Utils = {
-	currentScript: function() {
-		return document.currentScript || (function() {
-      var scripts = document.getElementsByTagName('script');
-      return scripts[scripts.length - 1];
-    })();
-	},
-	onResize: function(callback, elem) {
-		elem = elem || document.querySelector('#site');
-		return new ResizeSensor(elem,callback);
-	}
-}; 
-
 SquareMart.RecipeManager = {
 	recipe: {},
+
+	init: function() {
+		SquareMart.RECIPES && SquareMart.RECIPES.forEach(this.add,this);
+	},
 
 	_add: function(target, properties, condition) {
 		if (condition === target) { // condition on target is redundant
@@ -131,12 +118,4 @@ SquareMart.RecipeManager = {
 	}
 };
 
-
-// dynamically inject font awesome if needed
-document.onSelector('.fa', function(event) {
-	var link = document.createElement('link');
-	link.setAttribute('rel', 'stylesheet');
-	link.setAttribute('href', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
-	document.getElementsByTagName('head')[0].appendChild(link);
-});
-</script>
+SquareMart.RecipeManager.init();

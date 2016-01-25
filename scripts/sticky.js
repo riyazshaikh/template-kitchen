@@ -1,5 +1,5 @@
 Y.use('node', function (Y) {
-	window.Sticky = Singleton.create({
+	SquareMart.Sticky = Singleton.create({
 
 		ready: function() {
 			this.nodes = new Y.NodeList();

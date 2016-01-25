@@ -1,5 +1,5 @@
 Y.use('node', function (Y) {
-	window.AutoPalette = Singleton.create({
+	SquareMart.AutoPalette = Singleton.create({
 
 		ready: function() {
 			this.nodes = new Y.NodeList();

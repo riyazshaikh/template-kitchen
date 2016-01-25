@@ -5,14 +5,9 @@
   
   function attachObject(box){
     var obj;
-    if (SquareMart.bFrameRequired) {
-      obj = document.createElement('iframe');
-      obj.src = 'about:blank';
-    } else {
-      obj = document.createElement('object');
-      obj.type = 'text/html';
-      obj.data = 'about:blank';
-    }
+    obj = document.createElement('object');
+    obj.type = 'text/html';
+    obj.data = 'about:blank';
     obj.__querybox__ = box;
     obj.onload = objectLoad;
     box.appendChild(obj);

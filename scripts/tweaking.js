@@ -44,7 +44,7 @@ Y.use('node', function (Y) {
 					}
 				};
 
-				str = "<script id='recipes'>"+JSON.stringify(recipes)+".forEach(SquareMart.RecipeManager.add, SquareMart.RecipeManager);</script>";
+				str = "<script id='recipes'>SquareMart.RECIPES = "+JSON.stringify(recipes)+"</script>";
 
 				Y.Data.get({
 					url: '/api/config/GetInjectionSettings',
@@ -63,13 +63,6 @@ Y.use('node', function (Y) {
 			};
 
 			Y.Global.on('tweak:save', function (f) {
-				// var worker = new Worker("/scripts/recipe-worker.js");
-				// worker.onmessage = function(obj) {
-				// 	console.log(obj);
-				// }
-
-				// worker.postMessage(window.top.Y.Squarespace.TweakManager.rawLess);
-				// console.log('message sent');
 				updateRecipe();
 			});
 
