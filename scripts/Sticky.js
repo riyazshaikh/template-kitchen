@@ -1,13 +1,12 @@
 Y.use('node', function (Y) {
-	window.Sticky = Singleton.create({
+	SquareMart.Sticky = Singleton.create({
 
 		ready: function() {
 			this.nodes = new Y.NodeList();
-			console.log('sticky init ', Y.all('[data-sticky]'));
 			
-			SquareMart.RecipeManager.add('[data-sticky] ', function() {
-				window.Sticky.add(Y.one(this));
-			});
+			SquareMart.RecipeManager.add('[data-sticky] ', function(e) {
+				this.add(Y.one(e.target));
+			}.bind(this));
 		},
 
 		add: function(node) {

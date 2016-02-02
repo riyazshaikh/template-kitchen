@@ -1,4 +1,4 @@
-//tweak: { category: "Typography: Main", label: "Normal Text", title: "body-font", target: "div[data-typeset=main] p", type: "font" }
+//tweak: { category: "Typography: Main", label: "Normal Text", title: "body-font", target: "[data-typeset=main] p", type: "font" }
 .body-font {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -8,7 +8,7 @@
   line-height: 1.6em;
 }
 
-//tweak: { category: "Typography: Main", label: "Heading 1", title: "heading1-font", target: "div[data-typeset=main] h1", type: "font" } 
+//tweak: { category: "Typography: Main", label: "Heading 1", title: "heading1-font", target: "[data-typeset=main] h1", type: "font" } 
 .heading1-font {
   font-family: inherit;
   font-weight: 200;
@@ -19,7 +19,7 @@
   line-height: 1.2em;
 }
 
-//tweak: { category: "Typography: Main", label: "Heading 2", title: "heading2-font", target: "div[data-typeset=main] h2", type: "font" } 
+//tweak: { category: "Typography: Main", label: "Heading 2", title: "heading2-font", target: "[data-typeset=main] h2", type: "font" } 
 .heading2-font {
   font-family: inherit;
   font-weight: 200;
@@ -30,7 +30,7 @@
   line-height: 1.2em;
 }
 
-//tweak: { category: "Typography: Main", label: "Heading 3", title: "heading3-font", target: "div[data-typeset=main] h3", type: "font" } 
+//tweak: { category: "Typography: Main", label: "Heading 3", title: "heading3-font", target: "[data-typeset=main] h3", type: "font" } 
 .heading3-font {
   font-family: inherit;
   font-weight: 400;
@@ -41,7 +41,7 @@
   line-height: 1.6em;
 }
 
-//tweak: { category: "Typography: Main", label: "Button", title: "button-font", target: "div[data-typeset=main] a[data-appearance*=button]", type: "font" } 
+//tweak: { category: "Typography: Main", label: "Button", title: "button-font", target: "[data-typeset=main] a[data-appearance*=button]", type: "font" } 
 .button-font {
   font-family: inherit;
   font-size: 14px;
@@ -49,9 +49,10 @@
   font-weight: 500;
   text-transform: uppercase;
   text-decoration: none; 
+  font-style: normal;
 }
 
-//tweak: { category: "Typography: Main", label: "Quote", title: "quote-font", target: "div[data-typeset=main] .quote-block", showOnlyWhenPresent: ".quote-block", type: "font" } 
+//tweak: { category: "Typography: Main", label: "Quote", title: "quote-font", target: "[data-typeset=main] blockquote", showOnlyWhenPresent: "blockquote", type: "font" } 
 .quote-font {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
@@ -61,7 +62,7 @@
   line-height: 1.65em;
 }
 
-//tweak: { category: "Typography: Alternate", label: "Normal Text", title: "alt-body-font", target: "div[data-typeset=alternate] p", showOnlyWhenPresent: "div[data-typeset=alternate]", type: "font" } 
+//tweak: { category: "Typography: Alternate", label: "Normal Text", title: "alt-body-font", target: "[data-typeset=alternate] p", showOnlyWhenPresent: "div[data-typeset=alternate]", type: "font" } 
 .alt-body-font {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
@@ -71,7 +72,7 @@
   letter-spacing: 0px;
 }
 
-//tweak: { category: "Typography: Alternate", label: "Heading 1", title: "alt-heading1-font", target: "div[data-typeset=alternate] h1", showOnlyWhenPresent: "div[data-typeset=alternate]", type: "font" } 
+//tweak: { category: "Typography: Alternate", label: "Heading 1", title: "alt-heading1-font", target: "[data-typeset=alternate] h1", showOnlyWhenPresent: "div[data-typeset=alternate]", type: "font" } 
 .alt-heading1-font {
   font-family: inherit;
   font-weight: 300;
@@ -82,7 +83,7 @@
 }
 
 
-//tweak: { category: "Typography: Alternate", label: "Heading 2", title: "alt-heading2-font", target: "div[data-typeset=alternate] h2", showOnlyWhenPresent: "div[data-typeset=alternate]", type: "font" } 
+//tweak: { category: "Typography: Alternate", label: "Heading 2", title: "alt-heading2-font", target: "[data-typeset=alternate] h2", showOnlyWhenPresent: "div[data-typeset=alternate]", type: "font" } 
 .alt-heading2-font {
   font-family: inherit;
   font-weight: 300;
@@ -92,7 +93,7 @@
   letter-spacing: 0px;
 }
 
-//tweak: { category: "Typography: Alternate", label: "Heading 3", title: "alt-heading3-font", target: "div[data-typeset=alternate] h3", showOnlyWhenPresent: "div[data-typeset=alternate]", type: "font" } 
+//tweak: { category: "Typography: Alternate", label: "Heading 3", title: "alt-heading3-font", target: "[data-typeset=alternate] h3", showOnlyWhenPresent: "div[data-typeset=alternate]", type: "font" } 
 .alt-heading3-font {
   font-family: inherit;
   font-weight: 400;
@@ -102,7 +103,7 @@
   line-height: 1.6em;
 }
 
-//tweak: { category: "Typography: Alternate", label: "Button", title: "alt-button-font", target: "div[data-typeset=alternate] a[data-appearance*=button]", showOnlyWhenPresent: "div[data-typeset=alternate]", type: "font" } 
+//tweak: { category: "Typography: Alternate", label: "Button", title: "alt-button-font", target: "[data-typeset=alternate] a[data-appearance*=button]", showOnlyWhenPresent: "div[data-typeset=alternate]", type: "font" } 
 .alt-button-font {
   font-family: inherit;
   font-size: 14px;
@@ -113,7 +114,7 @@
 }
 
 
-//tweak: { category: "Typography: Banner", label: "Normal Text", title: "banner-body-font", target: "div[data-typeset=banner] p", showOnlyWhenPresent: "div[data-typeset=banner]", type: "font" }
+//tweak: { category: "Typography: Banner", label: "Normal Text", title: "banner-body-font", target: "[data-typeset=banner] p", showOnlyWhenPresent: "div[data-typeset=banner]", type: "font" }
 .banner-body-font {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -123,7 +124,7 @@
   letter-spacing: 0.5px;
 }
 
-//tweak: { category: "Typography: Banner", label: "Heading 1", title: "banner-heading1-font", target: "div[data-typeset=banner] h1", showOnlyWhenPresent: "div[data-typeset=banner]", type: "font" }
+//tweak: { category: "Typography: Banner", label: "Heading 1", title: "banner-heading1-font", target: "[data-typeset=banner] h1", showOnlyWhenPresent: "div[data-typeset=banner]", type: "font" }
 .banner-heading1-font {
   font-family: inherit;
   font-weight: 100;
@@ -133,7 +134,7 @@
   letter-spacing: 0px;
 }
 
-//tweak: { category: "Typography: Banner", label: "Heading 2", title: "banner-heading2-font", target: "div[data-typeset=banner] h2", showOnlyWhenPresent: "div[data-typeset=banner]", type: "font" }
+//tweak: { category: "Typography: Banner", label: "Heading 2", title: "banner-heading2-font", target: "[data-typeset=banner] h2", showOnlyWhenPresent: "div[data-typeset=banner]", type: "font" }
 .banner-heading2-font {
   font-family: inherit;
   font-weight: 300;
@@ -143,7 +144,7 @@
   letter-spacing: 0px;
 }
 
-//tweak: { category: "Typography: Banner", label: "Heading 3", title: "banner-heading3-font", target: "div[data-typeset=banner] h3", showOnlyWhenPresent: "div[data-typeset=banner]", type: "font" }
+//tweak: { category: "Typography: Banner", label: "Heading 3", title: "banner-heading3-font", target: "[data-typeset=banner] h3", showOnlyWhenPresent: "div[data-typeset=banner]", type: "font" }
 .banner-heading3-font {
   font-family: inherit;
   font-weight: 300;
@@ -153,7 +154,7 @@
   line-height: 1.6em;
 }
 
-//tweak: { category: "Typography: Banner", label: "Button", title: "banner-button-font", target: "div[data-typeset=banner] a[data-appearance*=button]", showOnlyWhenPresent: "div[data-typeset=banner]", type: "font" } 
+//tweak: { category: "Typography: Banner", label: "Button", title: "banner-button-font", target: "[data-typeset=banner] a[data-appearance*=button]", showOnlyWhenPresent: "div[data-typeset=banner]", type: "font" } 
 .banner-button-font {
   font-family: inherit;
   font-size: 14px;

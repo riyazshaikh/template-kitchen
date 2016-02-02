@@ -1,12 +1,12 @@
 Y.use('node', function (Y) {
-	window.AutoPalette = Singleton.create({
+	SquareMart.AutoPalette = Singleton.create({
 
 		ready: function() {
 			this.nodes = new Y.NodeList();
 
-			SquareMart.RecipeManager.add('[data-display="overlaid"] ', function() {
-				window.AutoPalette.add(Y.one(this));
-			});
+			SquareMart.RecipeManager.add('[data-display="overlaid"] ', function(e) {
+				this.add(Y.one(e.target));
+			}.bind(this));
 
 		},
 
