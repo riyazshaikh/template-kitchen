@@ -2,18 +2,33 @@ Y.use('squarespace-ui-base', function () {
 	SquareMart.Utils = Singleton.create({
 
 		ready: function() {
-			Y.on('domready', this.bindUI.bind(this));
+
+			this.touchCheck();				
+			this.bindUI();
 		},
 
+		touchCheck: function() {
+			var e='ontouchstart'in window||navigator.msMaxTouchPoints;
+			var t=document.documentElement;
+			if(!e&&t){
+				t.className=t.className.replace(/touch-styles/,'')
+			}			
+		},
 
 		bindUI: function() {
 
-			this.dataToggleBody();
-			this.dataToggleEl();
-			this.dataLightbox();
-			this.dataTextShrink();
+			Y.on('domready', function() {
+				this.dataToggleBody();
+				this.dataToggleEl();
+				this.dataLightbox();
+			}, this);
 
-      SquareMart.Utils.onResize(this.imgLoad);
+			this.dataTextShrink();
+			this.imgLoad();
+
+			document.onSelector('#site', function() {
+	      this.onResize(this.imgLoad);
+			}.bind(this));
 		},
 
 		currentScript: function() {
@@ -21,6 +36,20 @@ Y.use('squarespace-ui-base', function () {
 	      var scripts = document.getElementsByTagName('script');
 	      return scripts[scripts.length - 1];
 	    })();
+		},
+
+		loadResource: function(url, type) {
+			var elem;
+			if (type === 'css') {
+				elem = document.createElement('link');
+				elem.setAttribute('rel', 'stylesheet');
+				elem.setAttribute('href', url);
+			} else if (type === 'js') {
+				elem = document.createElement('script');
+				elem.setAttribute('src', url);
+			}
+			document.getElementsByTagName('head')[0].appendChild(elem);
+
 		},
 
 		onResize: function(callback, elem) {
@@ -170,9 +199,10 @@ Y.use('squarespace-ui-base', function () {
 		},
 
 		dataTextShrink: function() {
-			Y.all('[data-text-shrink]').each(function(node) {
+			document.addSelectorListener('[data-text-shrink]', function(node) {
+				node = Y.one(node);
 				node.plug(Y.Squarespace.TextShrink, {
-					parentEl: node.ancestor(node.getData('text-shrink'))
+					parentEl: node.get('parentNode')
     		});
     		node.TextShrink.refresh();
 			});

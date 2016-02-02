@@ -65,7 +65,7 @@ SquareMart.RecipeManager = {
 				return true;
 
 			} else {
-				// console.log('Adding ingredient', val, el);
+				console.log('Adding ingredient', val, el);
 
 				var parts = val.split('=');
 				if (parts[0].indexOf('data') === 0) {
