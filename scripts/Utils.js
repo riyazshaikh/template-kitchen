@@ -199,7 +199,7 @@ Y.use('squarespace-ui-base', function () {
 		},
 
 		dataTextShrink: function() {
-			document.addSelectorListener('[data-text-shrink]', function(node) {
+			SquareMart.RecipeManager.add('[data-text-shrink] ', function(node) {
 				node = Y.one(node);
 				node.plug(Y.Squarespace.TextShrink, {
 					parentEl: node.get('parentNode')
