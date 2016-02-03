@@ -199,8 +199,8 @@ Y.use('squarespace-ui-base', function () {
 		},
 
 		dataTextShrink: function() {
-			SquareMart.RecipeManager.add('[data-text-shrink] ', function(node) {
-				node = Y.one(node);
+			SquareMart.RecipeManager.add('[data-text-shrink] ', function(e) {
+				var node = Y.one(e.target);
 				node.plug(Y.Squarespace.TextShrink, {
 					parentEl: node.get('parentNode')
     		});
