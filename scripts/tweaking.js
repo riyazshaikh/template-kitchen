@@ -21,14 +21,32 @@ Y.use('node', function (Y) {
 				}
 			});
 
+			var rawLess;
+
+			Y.Global.on('tweak:aftershow', function (f) {
+				Y.Data.get({
+					url: '/api/template/GetTemplateCustomCss',
+					success: function(data) {
+						rawLess = window.top.Y.Squarespace.TweakManager.rawLess + data.css;
+					}
+				})
+			});
+
+			Y.Global.on('tweak:save', function (f) {
+				updateRecipe();
+			});
+
+			Y.Global.on('tweak:reset', function (f) {
+				updateRecipe();
+			});
+
 			var updateRecipe = function() {
-				var re = /tweak:(.*?recipe:.*?)\n/g;
+				var re = /tweak:(.*?recipe:.*?)$/mg;
 				var matches = [];
-				var str = window.top.Y.Squarespace.TweakManager.rawLess;
 				var values = window.top.Y.Squarespace.TweakManager.dialog.getData();
 				var recipes = [];
 
-				while((matches = re.exec(str)) !== null) {
+				while((matches = re.exec(rawLess)) !== null) {
 					try {
 						var obj = eval('('+matches[1]+')');
 
@@ -44,7 +62,7 @@ Y.use('node', function (Y) {
 					}
 				};
 
-				str = "<script id='recipes'>SquareMart.RECIPES = "+JSON.stringify(recipes)+"</script>";
+				var str = "<script id='recipes'>SquareMart.RECIPES = "+JSON.stringify(recipes)+"</script>";
 
 				Y.Data.get({
 					url: '/api/config/GetInjectionSettings',
@@ -61,14 +79,8 @@ Y.use('node', function (Y) {
 					}
 				})
 			};
+			
 
-			Y.Global.on('tweak:save', function (f) {
-				updateRecipe();
-			});
-
-			Y.Global.on('tweak:reset', function (f) {
-				updateRecipe();
-			});
 
 		}
 	});
