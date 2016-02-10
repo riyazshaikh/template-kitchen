@@ -23,7 +23,7 @@
         {@|apply header.block}
       </div>
 
-      <div id="banner" role="banner" data-palette="banner" data-typeset="banner">
+      <div id="banner" role="banner">
         {collection|apply banner.block}
       </div>
 
