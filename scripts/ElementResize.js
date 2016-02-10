@@ -1,3 +1,4 @@
+// ElementResize By Daniel Buchner. Under Apache 2 License - https://github.com/csuwildcat/ElementResize
 (function(){
   var requestFrame = window.requestAnimationFrame ||
                     window.mozRequestAnimationFrame ||

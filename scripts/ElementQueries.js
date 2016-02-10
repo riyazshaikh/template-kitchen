@@ -1,3 +1,4 @@
+// ElementQueries By Daniel Buchner. Under Apache 2 License - https://github.com/csuwildcat/ElementQueries
 (function(){
   var queryRegExp = /query\((.+?(?=\)\s*query|\)$))/ig;
   var mediaRule = ' @media {rule} { [query-id="{id}"] { opacity: 1; } }';

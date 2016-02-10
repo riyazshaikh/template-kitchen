@@ -2,10 +2,10 @@
 	{.section mainImage}
     <figure class="loading content-fill"><img class="image" {@|image-meta} /></figure>
   {.end}
-  <div class="blocks" data-typeset="banner" data-palette="banner">
+  <div class="blocks" >
     <squarespace:block-field class="content" id="banner-content-{id}" columns="12" label="Banner Content" data-annotation-alignment="bottom"/>
   </div>
-  <div class="description" data-typeset="banner" data-palette="banner">
+  <div class="description" >
     <div class="content{.if description} has-description{.end}" data-layout-width=main>
       <div data-content-field="description">
         <div class="title" data-content-field="title" data-appearance=heading1>

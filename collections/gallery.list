@@ -1,0 +1,13 @@
+{.equal? collection.regionName "charlie"}
+	{@|apply gallery-charlie.block}
+{.or}
+	{.equal? collection.regionName "delta"}
+		{@|apply gallery-delta.block}
+	{.or}
+		{.equal? collection.regionName "foxtrot"}
+			{@|apply gallery-foxtrot.block}
+		{.or}
+			{@|apply gallery-default.block}
+		{.end}
+	{.end}
+{.end}

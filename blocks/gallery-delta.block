@@ -12,7 +12,7 @@
             {.if title || body}
             <div class="slide-meta" data-layout-width=meta>
               <div class="meta-inside">
-                <div class="meta-title" data-appearance=heading1>{title}</p>              
+                <div class="meta-title" data-appearance=heading1>{title}</div>              
                 <div class="meta-description">{body}</div>
               </div>
             </div>
@@ -42,21 +42,14 @@
       ready: function() {
         this.parentEl = Y.one(parent);
         this.init();
-        this.bindUI();
-      },
-
-      bindUI: function() {
-        window.addResizeListener(Y.one('#site')._node, Y.bind(this.syncUI,this));
       },
 
       init: function() {
         this.gallery = new Y.Squarespace.Gallery2({       
             container: this.parentEl.one('.sqs-gallery'),
             slides: this.parentEl.all('.slide'),
-            elements: {
-              next: this.parentEl.one('.sqs-gallery-controls .next'),
-              previous: this.parentEl.one('.sqs-gallery-controls .previous')
-            },
+            loop: true,
+            autoplay: true,
             loaderOptions: {
               load: true
             },
@@ -66,7 +59,7 @@
               transition: 'scroll'
             },
             refreshOnResize: true
-        });   
+        });  
       },
 
       destroy: function() {

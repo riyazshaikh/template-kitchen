@@ -13,17 +13,17 @@
 
     {@|apply scripts.block}
   </head>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
+  <body id="{squarespace.page-id}" data-url="{collection.fullUrl}" class="{squarespace.page-classes}">
 
     <div class="sqs-announcement-bar-dropzone"></div>
 
-    <div id="site" data-region="{collection.regionName}">
+    <div id="site">
 
       <div id="header" role="banner">
         {@|apply header.block}
       </div>
 
-      <div id="banner" role="banner">
+      <div id="banner" role="banner" data-palette="banner" data-typeset="banner">
         {collection|apply banner.block}
       </div>
 

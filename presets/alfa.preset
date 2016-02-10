@@ -3,7 +3,6 @@
   "templateTweaks" : {
 		"mainContentWidth": "1100px",
 
-		"header-palette": "Banner",
 		"page-footer-palette": "Alternate",
 		"banner-description-text-align": "Center",
 
