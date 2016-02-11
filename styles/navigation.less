@@ -77,22 +77,15 @@
       .active > a, .active > label {
         border-bottom: 1px solid @textColor;
       }
+      .active .subnav .active > a {
+        border-bottom: none;
+      }
     }
     .colors(@main-textColor);
     [data-palette=alternate] & { .colors(@alt-textColor) }
     [data-palette=banner] & { .colors(@banner-textColor) }
   }
 
-}
-
-[data-background=translucent] {
-  [data-folder*=drop] .folder .subnav { .background-color(fade(@main-bgColor,60%)) }
-  &[data-palette=alternate] [data-folder*=drop] .folder .subnav { .background-color(fade(@alt-bgColor,60%)) }
-  &[data-palette=banner] [data-folder*=drop] .folder .subnav { .background-color(fade(@banner-bgColor,60%)) }
-}
-
-[data-background=transparent] {
-  [data-folder*=drop] .folder .subnav { background: transparent; }
 }
 
 [data-folder=dropdown] {
@@ -197,6 +190,17 @@
     }  
   }  
 }
+
+[data-background=translucent] {
+  [data-folder*=drop] .folder .subnav { .background-color(fade(@main-bgColor,60%)) }
+  &[data-palette=alternate] [data-folder*=drop] .folder .subnav { .background-color(fade(@alt-bgColor,60%)) }
+  &[data-palette=banner] [data-folder*=drop] .folder .subnav { .background-color(fade(@banner-bgColor,60%)) }
+}
+
+[data-background=transparent] {
+  [data-folder*=drop] .folder .subnav { background: transparent; }
+}
+
 
 [data-folder=visible] {
   .folder {

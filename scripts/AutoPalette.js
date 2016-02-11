@@ -14,6 +14,8 @@ Y.use('node', function (Y) {
 			if (this.nodes.indexOf(node) === -1) {
 
 				console.log('adding autopalette', node);
+				node.setAttribute('data-background','transparent');
+				
 				this.nodes.push(node);
 
 				this.bindUI();
