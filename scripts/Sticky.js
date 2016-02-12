@@ -150,6 +150,10 @@ Y.use('node', function (Y) {
 						}
 						break;
 
+					case 'always':
+						this.setSticky(elContainer, true);
+						break;
+
 				}
 			}, this);
 

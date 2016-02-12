@@ -81,11 +81,20 @@
     .transition2(background-color 0.1s 0.0s ease-in-out, color 0.1s 0.0s ease-in-out);
 
     padding: 1em 2em; 
+
+    html.view-mobile & {
+      padding: 0.5em 1em;
+    }
+
     margin-top: 1em;
-    margin-right: 1em; /* for whatevers next to it */
 
     .button-font;
   }
+
+  + a {
+    margin-left: 1em;
+  }
+
   border: none;
 
   #site [data-typeset=alternate] & { .alt-button-font; }

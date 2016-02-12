@@ -3,18 +3,21 @@
 
 //OFF tweak: { target: "#header .slidebar", properties: ["data-palette=alternate","data-background=transparent"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
 
-//OFF tweak: { target: "#banner .description", properties: ["data-display=overlaid-caption","data-palette=banner","data-background=translucent","data-overlap=header"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
-//OFF tweak: { target: "#banner .description .content", properties: ["data-layout-spacing=none-flexible","data-align=center-center-parent"], showOnlyWhenPresent: "body.collection-layout-foxtrotfoxtrot", recipe: true }
+//OFF tweak: { target: "#banner .description", properties: ["data-display=overlaid-caption","data-palette=banner","data-typeset=banner","data-background=translucent","data-overlap=header"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+//OFF tweak: { target: "#banner .description .content", properties: ["data-layout-spacing=none-flexible","data-align=center-center-parent"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
 //OFF tweak: { target: "#banner .description .content > div", properties: ["data-layout-width=meta","data-layout-spacing=none"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
 //OFF tweak: { target: "#banner .description .title", properties: ["data-appearance=meta"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
-//OFF tweak: { target: "#banner .description strong", properties: ["data-appearance=heading1","data-font-effect=dash"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
-//OFF tweak: { target: "#banner .description a", properties: ["data-appearance=button-solid-pill"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+//OFF tweak: { target: "#banner .description strong", properties: ["data-appearance=heading1"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+//OFF tweak: { target: "#banner .description a", properties: ["data-appearance=button-outline-pill"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
 
 
 //OFF tweak: { target: "#gallery .content", properties: ["data-layout-width=full"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
-//OFF tweak: { target: "#gallery .meta-description a ", properties: ["data-appearance=button-solid-pill"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+//OFF tweak: { target: "#gallery .meta-description strong ", properties: ["data-appearance=heading1"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+//OFF tweak: { target: "#gallery .meta-description a ", properties: ["data-appearance=button-outline"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
 //OFF tweak: { target: "#gallery .slide:nth-child(odd) .slide-meta ", properties: ["data-parallax=sideways-right"], showOnlyWhenPresent: "body.collection-layout-foxtrot" , recipe: true }
 //OFF tweak: { target: "#gallery .slide:nth-child(even) .slide-meta ", properties: ["data-parallax=sideways-left"], showOnlyWhenPresent: "body.collection-layout-foxtrot" , recipe: true }
+//OFF tweak: { target: "#gallery .image-container ", properties: ["class-content-fit=true"], showOnlyWhenPresent: "html:not(.view-mobile) body.collection-layout-foxtrot", recipe: true }
+
 
 //OFF tweak: { target: "#footer, main, #page-footer ", properties: ["data-background=transparent"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
 
@@ -38,7 +41,18 @@
 	.gallery-foxtrot {
 
 		a.image-container {
+			.border-box;
 			display: block;
+			html.view-mobile & img {
+				width: 100%;
+			}
+		}
+
+		a.image-container, .slide-meta {
+			margin: @itemSpacing;
+			html.view-mobile & {
+				text-align: center;
+			}
 		}
 		
 		@media only screen and (min-width: 641px) {		
@@ -52,12 +66,11 @@
 					flex-direction: row-reverse;
 				}
 
-				margin: @itemSpacing 0;
 			}
 			a.image-container {
 				width: @indexImageWidth;
 				height: @indexImageWidth;
 			}
-		}		
+		}
 	}
 }

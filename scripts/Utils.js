@@ -4,6 +4,7 @@ Y.use('squarespace-ui-base', function () {
 		ready: function() {
 
 			this.touchCheck();				
+			this.viewportCheck();
 			this.bindUI();
 		},
 
@@ -13,6 +14,18 @@ Y.use('squarespace-ui-base', function () {
 			if(!e&&t){
 				t.className=t.className.replace(/touch-styles/,'')
 			}			
+		},
+
+		viewportCheck: function() {
+			var width = window.innerWidth, viewport;
+			if (width <= 640) {
+				viewport = 'view-mobile';
+			} else if(width <= 768) {
+				viewport = 'view-tablet';
+			} else {
+				viewport = 'view-desktop';
+			}
+			document.documentElement.classList.add(viewport);
 		},
 
 		bindUI: function() {
