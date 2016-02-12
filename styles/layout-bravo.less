@@ -1,24 +1,17 @@
 //OFF tweak: { target: "#header", properties: ["data-display=overlaid"], showOnlyWhenPresent: "body.collection-layout-bravo", recipe: true }
 //OFF tweak: { target: "#header .content", properties: ["data-layout-width=main","data-layout-spacing=fixed-flexible"], showOnlyWhenPresent: "body.collection-layout-bravo", recipe: true }
 
-//OFF tweak: { target: "#banner .description", properties: ["data-display=overlaid-caption","data-palette=banner","data-background=translucent","data-overlap=header"], showOnlyWhenPresent: "body.collection-layout-bravo", recipe: true }
-//OFF tweak: { target: "#banner .description .content", properties: ["data-layout-spacing=none-flexible","data-align=center-left-parent"], showOnlyWhenPresent: "body.collection-layout-bravo", recipe: true }
+//OFF tweak: { target: "#banner .description", properties: ["data-display=overlaid-caption","data-palette=banner","data-typeset=banner","data-background=translucent","data-overlap=header"], showOnlyWhenPresent: "html:not(.touch-styles) body.collection-layout-bravo", recipe: true }
+//OFF tweak: { target: "#banner .description .content", properties: ["data-layout-spacing=fixed-flexible","data-align=center-left-parent"], showOnlyWhenPresent: "html:not(.touch-styles) body.collection-layout-bravo", recipe: true }
+//OFF tweak: { target: "#banner .description .content", properties: ["data-text-align=center"], showOnlyWhenPresent: "html.touch-styles body.collection-layout-bravo", recipe: true }
 //OFF tweak: { target: "#banner .description .content > div", properties: ["data-layout-width=meta","data-layout-spacing=none"], showOnlyWhenPresent: "body.collection-layout-bravo", recipe: true }
 //OFF tweak: { target: "#banner .description .title", properties: ["data-appearance=meta"], showOnlyWhenPresent: "body.collection-layout-bravo", recipe: true }
 //OFF tweak: { target: "#banner .description strong", properties: ["data-appearance=heading1","data-font-effect=dash"], showOnlyWhenPresent: "body.collection-layout-bravo", recipe: true }
 //OFF tweak: { target: "#banner .description a", properties: ["data-appearance=button-solid-pill"], showOnlyWhenPresent: "body.collection-layout-bravo", recipe: true }
 
-//OFF tweak: { target: "#page", properties: ["data-palette=alternate"], showOnlyWhenPresent: "body.collection-layout-bravo", recipe: true }
 //OFF tweak: { target: "#page .content", properties: ["data-layout-width=full","data-layout-spacing=flexible"], showOnlyWhenPresent: "body.collection-layout-bravo", recipe: true }
 //OFF tweak: { target: "#page .content h2", properties: ["data-font-effect=dash"], showOnlyWhenPresent: "body.collection-layout-bravo", recipe: true }
 
 //OFF tweak: { target: "#footer .sqs-block ", properties: ["data-layout-spacing=none"], showOnlyWhenPresent: "body.collection-layout-bravo", recipe: true }
 
 
-.collection-layout-bravo {
-	#banner .description p {
-		@media only screen and (max-width: 640px) {
-			display: none;
-		}
-	}
-}

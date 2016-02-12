@@ -21,12 +21,11 @@ Y.use('squarespace-ui-base', function () {
 				this.dataToggleBody();
 				this.dataToggleEl();
 				this.dataLightbox();
+				this.imgLoad();
 			}, this);
 
-			this.dataTextShrink();
-			this.imgLoad();
-
 			document.onSelector('#site', function() {
+				this.dataTextShrink();
 	      this.onResize(this.imgLoad);
 			}.bind(this));
 		},
