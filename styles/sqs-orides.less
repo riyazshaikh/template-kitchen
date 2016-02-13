@@ -281,10 +281,10 @@ body.sqs-edit-mode-active {
 
 img[data-bloom] {
   .transition(~"opacity 0.3s ease-out, -webkit-transform 0.3s ease-out, transform 0.3s ease-out");
-  .transform(scale(1));
-  opacity: 1;
-  &.loading {
-    .transform(scale(0.94));
-    opacity: 0;
+  .transform(scale(0.94));
+  opacity: 0 !important;
+  &.loaded {
+    .transform(scale(1));
+    opacity: 1 !important;
   }
 }
