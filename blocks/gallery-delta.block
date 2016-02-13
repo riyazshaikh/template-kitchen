@@ -21,7 +21,7 @@
       {.end}    
       </div>
       <div class="sqs-gallery-controls show-hover-effect">
-        <a href="#" class="previous"></a>
+        <!-- <a href="#" class="previous"></a> -->
         <a href="#" class="next"></a>
       </div>
     </div>
