@@ -45,6 +45,7 @@
 
     <script>
       SquareMart.RecipeManager.syncAll(); // make sure dom is ready by now
+      Y.all('img[data-image]').setAttribute('data-bloom',true);
     </script>
 
     <!--Injection point for tracking scripts and user content from the code injection tab.-->

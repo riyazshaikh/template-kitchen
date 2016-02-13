@@ -206,6 +206,10 @@
 
   }
 
+  .html-block p > a {
+    .link-underline();
+  }
+
   .color-overlay {
     .colors(@bgColor) {
       .background-color(fade(@bgColor,60%));  
@@ -272,5 +276,15 @@ body.sqs-edit-mode-active {
   #header { z-index: 1 !important; }
   [data-display*=overlaid] {
     position: static !important;
+  }
+}
+
+img[data-bloom] {
+  .transition(~"opacity 0.3s ease-out, -webkit-transform 0.3s ease-out, transform 0.3s ease-out");
+  .transform(scale(1));
+  opacity: 1;
+  &.loading {
+    .transform(scale(0.94));
+    opacity: 0;
   }
 }
