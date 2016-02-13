@@ -1,9 +1,10 @@
 {
-  "title" : "Charlie",
+  "title" : "Foxtrot",
   "templateTweaks" : {
 		"header-nav": "Slidebar",
+		"header-logo-position": "Center Reverse",
 		"newsletter-style": "Light",
-		
 		"newsletterBackgroundColor": "rgba(0,0,0,0)"
+
   }
 }

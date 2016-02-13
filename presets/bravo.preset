@@ -1,12 +1,12 @@
 {
   "title" : "Bravo",
   "templateTweaks" : {
-		"header-nav": "Auto",
 		"header-nav-align": "Center",
+		"header-logo-position": "Right",
 		"header-width": "Main",
 
-    "footer-palette": "Main",
-		"metaWidth": "47%",
-		"main-metaColor": "rgba(15,15,15,0.5)"
+		"newsletterBackgroundColor": "rgba(0,0,0,0)",
+
+		"footer-palette": "Alternate"
   }
 }

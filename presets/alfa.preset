@@ -1,15 +1,15 @@
 {
   "title" : "Alfa",
   "templateTweaks" : {
-		"mainContentWidth": "1100px",
-
-		"page-footer-palette": "Alternate",
-		"banner-description-text-align": "Center",
 
 		"tweak-blog-list-style": "Grid",
 		"tweak-blog-list-columns": "3",
 		"tweak-blog-list-spacing": "5%",
 		"tweak-blog-list-item-image-aspect-ratio-grid": "3:2 Standard",
-		"tweak-blog-list-item-readmore": "Hide"
+		"tweak-blog-list-item-readmore": "Hide",
+
+		"newsletter-style": "Light",
+		"newsletterBackgroundColor": "rgba(0,0,0,0)"
+
   }
 }

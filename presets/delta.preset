@@ -1,14 +1,12 @@
 {
   "title" : "Delta",
   "templateTweaks" : {
-		"header-nav": "Auto",
-		"header-width": "Main",
-		"banner-description-text-align": "Center",
+		"header-logo-position": "Right",
+		"header-nav-align": "Left",
 
 		"footer-navigation-align": "Left",
 		"footer-navigation-folder": "Visible",
 		"footer-palette": "Alternate",
-		"page-footer-palette": "Main",
 
 		"gallery-autoplay": "true",
 		"gallery-loop": "true",
