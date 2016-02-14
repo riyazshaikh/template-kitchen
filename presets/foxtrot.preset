@@ -2,7 +2,7 @@
   "title" : "Foxtrot",
   "templateTweaks" : {
 		"header-nav": "Slidebar",
-		"header-logo-position": "Center Reverse",
+		"header-logo-position": "Left",
 		"newsletter-style": "Light",
 		"newsletterBackgroundColor": "rgba(0,0,0,0)",
 

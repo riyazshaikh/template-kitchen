@@ -38,6 +38,15 @@
 		background: linear-gradient(to bottom,@banner-textColor,@main-bgColor,@alt-bgColor);		
 	}
 
+	.site-logo a {
+		.transform(rotate(-90deg) translateX(-55vh));
+	   transform-origin: left bottom;	
+
+	  @media only screen and (max-width: 640px) {		
+	  	margin-left: 0.5em;
+	  }
+	}
+
 	.gallery-foxtrot {
 
 		a.image-container {
