@@ -13,7 +13,7 @@
 
     {@|apply scripts.block}
   </head>
-  <body id="{squarespace.page-id}" data-url="{collection.fullUrl}" class="{squarespace.page-classes}">
+  <body id="{squarespace.page-id}" data-url="{collection.fullUrl}" class="{squarespace.page-classes} {.if collection.regionName}{.or}collection-layout-default{.end}">
 
     <div class="sqs-announcement-bar-dropzone"></div>
 
