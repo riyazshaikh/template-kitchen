@@ -591,10 +591,14 @@
 
 [data-intrinsic=vertical] {
   max-width: 50vh;
+  @media screen and (max-width: 640px) {  
+    max-width: 20vh;
+  }
+  
   margin: auto;
 
   > :first-child {
-    padding-bottom: 200%;
+    padding-bottom: 150%;
 
     position: relative;
     > :first-child {
