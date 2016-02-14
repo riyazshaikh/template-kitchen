@@ -258,6 +258,9 @@ Y.use('squarespace-ui-base', function () {
 			el = el || 'img[data-src]';
 
 			Y.one(el) && Y.all(el).each(function (img) {
+				if (img.get('complete') !== true) {
+					img.addClass('loading').setAttribute('data-bloom',true);
+				}				
 				ImageLoader.load(img);
 			});
 

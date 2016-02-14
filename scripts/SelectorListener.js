@@ -75,6 +75,7 @@
 			event.count--;
 			if (!event.count){
 				styles.removeChild(event.rule);
+				console.log('removing', selector);				
 				keyframes.removeChild(event.keyframe);
 				delete events[key];
 				delete selectors[selector];
