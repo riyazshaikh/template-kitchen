@@ -8,18 +8,25 @@
 
   {.repeated section collections}
   <div id="index-{@index}" class="index-section" data-url-id="{urlId}" data-collection-id="{id}">
-    <div id="index-{@index}-banner">
-      {@|apply banner.block}
-    </div>
-    <div id="index-{@index}-{typeName}" class="index-{typeName} content" data-content-field="main-content">
-    {.equal? typeName "gallery-scroll"}
-      {@|apply gallery-scroll.block}
-    {.or}  
-      {.equal? typeName "gallery-slide"}
-        {@|apply gallery-slide.block}
+    <div class="index-{typeName} content" data-content-field="main-content">
+    {.collectionTypeNameEquals? gallery}
+      {.equal? collection.regionName "charlie"}
+        {@|apply gallery-charlie.block}
       {.or}
-        {mainContent}
+        {.equal? collection.regionName "delta"}
+          {@|apply gallery-delta.block}
+        {.or}
+          {.equal? collection.regionName "foxtrot"}
+            {@|apply gallery-foxtrot.block}
+          {.or}
+            {@|apply gallery-default.block}
+          {.end}
+        {.end}
       {.end}
+    {.end}
+
+    {.collectionTypeNameEquals? page}
+      {mainContent}
     {.end}
     </div>
   </div>
