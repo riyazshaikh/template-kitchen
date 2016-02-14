@@ -11,7 +11,11 @@
 		"main-linkColor":"#192288",
 		"main-headingColor":"#192288",
 		"main-metaColor":"#192288",
-		"alt-bgColor": "#b1e5f8"
+		"alt-bgColor": "#b1e5f8",
 
-  }
+		"body-font": "{font-family:kinesis-pro-3;font-size:25px;line-height:36px;font-weight:400;}",
+		"heading1-font": "{font-family:futura-pt;font-size:40px;line-height:50px;font-weight:700;}"
+
+  },
+  "typekitfonts": [{"id":"vcsm","cssName":"proxima-nova","variants":["n6","n1","n4","n3","n5","i3","n7","i7"]},{"id":"qzql","cssName":"kinesis-pro-3","variants":["n4"]},{"id":"ftnk","cssName":"futura-pt","variants":["n7","i7"]}]
 }
