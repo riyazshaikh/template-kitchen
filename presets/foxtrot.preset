@@ -4,7 +4,14 @@
 		"header-nav": "Slidebar",
 		"header-logo-position": "Center Reverse",
 		"newsletter-style": "Light",
-		"newsletterBackgroundColor": "rgba(0,0,0,0)"
+		"newsletterBackgroundColor": "rgba(0,0,0,0)",
+
+		"main-bgColor": "#c8c2e9",
+		"main-textColor": "#192288",
+		"main-linkColor":"#192288",
+		"main-headingColor":"#192288",
+		"main-metaColor":"#192288",
+		"alt-bgColor": "#b1e5f8"
 
   }
 }
