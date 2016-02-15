@@ -34,6 +34,7 @@ Y.use('node', function (Y) {
 				// if (img) {
 					node.get('parentNode').setStyle('transform', 'translateZ(0)');
 					node.setStyle('transform', 'translate3d(0,0,0)');
+					node.removeAttribute('data-bloom');
 				// }
 				node.setData('region', node.get('parentNode').get('region'));
 			}, this);
