@@ -4,19 +4,27 @@
   > div {
     padding: 0 0.75em;
 
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+
     @media (max-width: 600px) {
       padding: 0 0.5em;
     }
 
-    a, label {
-      display: inline-block;
-      .nav-font;
-      .transition(color 0.1s 0s ease-in-out);
+  }
 
-      color: @main-textColor;
-      [data-palette=banner] & { color: @banner-textColor; }
-      [data-palette=alternate] & { color: @alt-textColor; }
-    }
+  a, label {
+    display: inline-block;
+    .nav-font;
+    .transition(color 0.1s 0s ease-in-out);
+
+    color: @main-textColor;
+    [data-palette=banner] & { color: @banner-textColor; }
+    [data-palette=alternate] & { color: @alt-textColor; }
   }
 
   .folder-toggle-label {
