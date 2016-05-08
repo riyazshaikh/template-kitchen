@@ -115,7 +115,6 @@ SquareMart.RecipeManager = {
 			}
 		}
 		
-		SquareMart.Site.init();
     document.querySelector('body').classList.add('loaded');
 
 	}
