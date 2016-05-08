@@ -26,8 +26,8 @@ SquareMart.RecipeManager = {
 		}
 
 		if (this.sync(selector) !== false && bNew) { // only attach listener if needed
-			console.log('adding listener', selector);
-			document.addSelectorListener(selector, this.attach.bind(this));	
+			// console.log('adding listener', selector);
+			// document.addSelectorListener(selector, this.attach.bind(this));	
 		}
 	},
 
@@ -91,7 +91,7 @@ SquareMart.RecipeManager = {
 		}
 
 		// else keep going
-    el.style.visibility = 'visible';
+    // el.style.visibility = 'visible';
 		return true; 
 	},
 
@@ -108,12 +108,16 @@ SquareMart.RecipeManager = {
 
 	// sync dom with all recipes
 	syncAll: function() {
-		console.log('forcing recipes');
+		// console.log('forcing recipes');
 		for(var selector in this.recipe) {
 			if (this.sync(selector) === false) {
-				document.removeSelectorListener(selector, this.attach.bind(this));
+				// document.removeSelectorListener(selector, this.attach.bind(this));
 			}
 		}
+		
+		SquareMart.Site.init();
+    document.querySelector('body').classList.add('loaded');
+
 	}
 };
 

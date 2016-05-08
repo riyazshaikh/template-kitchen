@@ -14,6 +14,15 @@
 @altSpacing: 17px;
 
 
+body {
+  opacity: 0;
+  .transition(opacity 0.2s);
+
+  &.loaded {
+    opacity: 1;
+  }
+}
+
 [role] { /* Make them stack */
   position: relative;
   z-index: 1;
