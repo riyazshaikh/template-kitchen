@@ -12,15 +12,6 @@
 // check for old browsers - https://browser-update.org/
 function $buo_f(){var e=document.createElement("script");e.src="//browser-update.org/update.min.js",document.body.appendChild(e)}var $buoop={vs:{i:10,f:35,o:25,s:7},c:2};try{document.addEventListener("DOMContentLoaded",$buo_f,!1)}catch(e){window.attachEvent("onload",$buo_f)}
 
-// dynamically inject resources
-SquareMart.RecipeManager.add('.fa', function() {
-	SquareMart.Utils.loadResource('//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 'css');
-});
-
-SquareMart.RecipeManager.add('[data-media]', function() {
-	SquareMart.Utils.loadResource('/scripts/ElementQueries.js','js');
-});
-
 SquareMart.RecipeManager.add('[data-sticky]', function() {
 	SquareMart.Utils.loadResource('/scripts/Sticky.js','js');
 });

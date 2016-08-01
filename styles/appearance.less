@@ -1,5 +1,6 @@
 /* These are mostly overrides, so giving weight by scoping under #site */
-[data-appearance=unset] {
+
+.appearance-unset, [data-appearance=unset] {
   #site & { 
     .body-font; 
     color: @main-textColor;
@@ -12,7 +13,7 @@
   #site [data-palette=banner] & { color: @banner-textColor; }
 }
 
-[data-appearance=heading1] {
+.appearance-heading1, [data-appearance=heading1] {
   #site & {
     display: block;
     .heading1-font;
@@ -26,7 +27,7 @@
   #site [data-palette=banner] & { color: @banner-headingColor; }
 }
 
-[data-appearance=heading2] {
+.appearance-heading2, [data-appearance=heading2] {
   #site & {
     display: block;
     color: @main-headingColor;
@@ -40,7 +41,7 @@
   #site [data-palette=banner] & { color: @banner-headingColor; }
 }
 
-[data-appearance=meta] {
+.appearance-meta, [data-appearance=meta] {
   #site & {
     color: @main-metaColor;
     .heading3-font;
@@ -63,7 +64,7 @@
   .link-underline();
 }
 
-[data-appearance=link-arrow] {
+.appearance-link-arrow, [data-appearance=link-arrow] {
   position: relative;
   &:after {
     content: ">";
@@ -78,7 +79,7 @@
   }
 }
 
-[data-appearance*=button] {
+.appearance-button, [data-appearance*=button] {
   #site & {
     display: inline-block;
     width: auto;
@@ -106,7 +107,7 @@
   #site [data-typeset=banner] & { .banner-button-font; }
 }
 
-[data-appearance*=button-solid] {
+.appearance-button-solid, [data-appearance*=button-solid] {
   .colors(@linkColor, @bgColor) {
     .background-color(@linkColor);    
     color: @bgColor;
@@ -119,7 +120,7 @@
   #site [data-palette=banner] & { .colors(@banner-linkColor, @banner-bgColor); }
 }
 
-[data-appearance*=button-outline] {
+.appearance-button-outline, [data-appearance*=button-outline] {
   .colors(@linkColor, @bgColor) {
     background-color: transparent;
     .font-smoothing(@bgColor);
@@ -137,7 +138,7 @@
 }
 
 
-[data-appearance*=button-overlay] {
+.appearance-button-overlay, [data-appearance*=button-overlay] {
   .colors(@linkColor, @bgColor) {
     background-color: fade(@bgColor,10%);
     color: @linkColor;
@@ -153,15 +154,15 @@
   #site [data-palette=banner] &  {  .colors(@banner-linkColor, @banner-bgColor); }
 }
 
-[data-appearance*=rounded] {
+.appearance-button-rounded, [data-appearance*=rounded] {
   border-radius: 3px;
 }
 
-[data-appearance*=pill] {
+.appearance-button-pill, [data-appearance*=pill] {
   border-radius: 300px;
 }
 
-[data-font-effect=dash] {
+.appearance-font-effect-dash, [data-font-effect=dash] {
   #site & {
     position: relative;
     margin-bottom: 2rem;
@@ -199,7 +200,7 @@
   }
 }
 
-[data-font-effect=highlight] {
+.appearance-font-effect-highlight, [data-font-effect=highlight] {
   display: inline;
 
   .colors(@bgColor) {

@@ -1,6 +1,15 @@
-<div class="banner{.if mainImage} has-image{.end}" data-collection-id="{id}" data-edit-main-image="Background" data-annotation-alignment="bottom left">    
-	{.section mainImage}
-    <figure class="content-fill"><img class="image loading" {@|image-meta} /></figure>
+<div class="banner{.if mainImage} has-image{.end}" data-collection-id="{id}" >    
+  {.background-source-video?}
+      <div class="banner-thumbnail-wrapper" data-content-field="main-image" data-edit-main-image="Banner" data-annotation-alignment="bottom left">
+        <div class="color-overlay"></div>
+        <figure id="thumbnail" class="loading content-fill">
+          {@|apply sqs-video-background.block}
+        </figure>
+      </div>
+  {.or}
+	  {.section mainImage}
+    <figure data-edit-main-image="Banner" data-annotation-alignment="bottom left" class="content-fill"><img class="image loading" {@|image-meta} /></figure>
+    {.end}
   {.end}
   <div class="blocks">
     <squarespace:block-field class="content" id="banner-content-{id}" columns="12" label="Banner Content" data-annotation-alignment="bottom"/>

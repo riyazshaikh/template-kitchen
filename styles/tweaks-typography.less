@@ -50,6 +50,7 @@
   text-transform: uppercase;
   text-decoration: none; 
   font-style: normal;
+  letter-spacing: 0px;
 }
 
 //tweak: { category: "Typography: Main", label: "Quote", title: "quote-font", target: "[data-typeset=main] blockquote", showOnlyWhenPresent: "blockquote", type: "font" } 
@@ -62,7 +63,7 @@
   line-height: 1.65em;
 }
 
-//tweak: { category: "Typography: Alternate", label: "Normal Text", title: "alt-body-font", target: "[data-typeset=alternate] p", showOnlyWhenPresent: "div[data-typeset=alternate]", type: "font" } 
+//tweak: { category: "Typography: Alternate", label: "Normal Text", title: "alt-body-font", target: "[data-typeset=alternate] p", showOnlyWhenPresent: "[data-typeset=alternate]", type: "font" } 
 .alt-body-font {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
@@ -72,7 +73,7 @@
   letter-spacing: 0px;
 }
 
-//tweak: { category: "Typography: Alternate", label: "Heading 1", title: "alt-heading1-font", target: "[data-typeset=alternate] h1", showOnlyWhenPresent: "div[data-typeset=alternate]", type: "font" } 
+//tweak: { category: "Typography: Alternate", label: "Heading 1", title: "alt-heading1-font", target: "[data-typeset=alternate] h1", showOnlyWhenPresent: "[data-typeset=alternate]", type: "font" } 
 .alt-heading1-font {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
@@ -83,7 +84,7 @@
 }
 
 
-//tweak: { category: "Typography: Alternate", label: "Heading 2", title: "alt-heading2-font", target: "[data-typeset=alternate] h2", showOnlyWhenPresent: "div[data-typeset=alternate]", type: "font" } 
+//tweak: { category: "Typography: Alternate", label: "Heading 2", title: "alt-heading2-font", target: "[data-typeset=alternate] h2", showOnlyWhenPresent: "[data-typeset=alternate]", type: "font" } 
 .alt-heading2-font {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
@@ -91,9 +92,10 @@
   line-height: 36px;
   font-style: normal;
   letter-spacing: 0px;
+  letter-spacing: 0px;
 }
 
-//tweak: { category: "Typography: Alternate", label: "Heading 3", title: "alt-heading3-font", target: "[data-typeset=alternate] h3", showOnlyWhenPresent: "div[data-typeset=alternate]", type: "font" } 
+//tweak: { category: "Typography: Alternate", label: "Heading 3", title: "alt-heading3-font", target: "[data-typeset=alternate] h3", showOnlyWhenPresent: "[data-typeset=alternate]", type: "font" } 
 .alt-heading3-font {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
@@ -102,9 +104,10 @@
   letter-spacing: 0px;
   text-transform: none;  
   line-height: 1.6em;
+  letter-spacing: 0px;
 }
 
-//tweak: { category: "Typography: Alternate", label: "Button", title: "alt-button-font", target: "[data-typeset=alternate] a[data-appearance*=button]", showOnlyWhenPresent: "div[data-typeset=alternate]", type: "font" } 
+//tweak: { category: "Typography: Alternate", label: "Button", title: "alt-button-font", target: "[data-typeset=alternate] a[data-appearance*=button]", showOnlyWhenPresent: "[data-typeset=alternate]", type: "font" } 
 .alt-button-font {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
@@ -112,10 +115,11 @@
   font-weight: 500;
   text-transform: uppercase;
   text-decoration: none;  
+  letter-spacing: 0px;
 }
 
 
-//tweak: { category: "Typography: Banner", label: "Normal Text", title: "banner-body-font", target: "[data-typeset=banner] p", showOnlyWhenPresent: "div[data-typeset=banner]", type: "font" }
+//tweak: { category: "Typography: Banner", label: "Normal Text", title: "banner-body-font", target: "[data-typeset=banner] p", showOnlyWhenPresent: "[data-typeset=banner]", type: "font" }
 .banner-body-font {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -125,7 +129,7 @@
   letter-spacing: 0.5px;
 }
 
-//tweak: { category: "Typography: Banner", label: "Heading 1", title: "banner-heading1-font", target: "[data-typeset=banner] h1", showOnlyWhenPresent: "div[data-typeset=banner]", type: "font" }
+//tweak: { category: "Typography: Banner", label: "Heading 1", title: "banner-heading1-font", target: "[data-typeset=banner] h1", showOnlyWhenPresent: "[data-typeset=banner]", type: "font" }
 .banner-heading1-font {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 100;
@@ -135,7 +139,7 @@
   letter-spacing: 0px;
 }
 
-//tweak: { category: "Typography: Banner", label: "Heading 2", title: "banner-heading2-font", target: "[data-typeset=banner] h2", showOnlyWhenPresent: "div[data-typeset=banner]", type: "font" }
+//tweak: { category: "Typography: Banner", label: "Heading 2", title: "banner-heading2-font", target: "[data-typeset=banner] h2", showOnlyWhenPresent: "[data-typeset=banner]", type: "font" }
 .banner-heading2-font {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -145,7 +149,7 @@
   letter-spacing: 0px;
 }
 
-//tweak: { category: "Typography: Banner", label: "Heading 3", title: "banner-heading3-font", target: "[data-typeset=banner] h3", showOnlyWhenPresent: "div[data-typeset=banner]", type: "font" }
+//tweak: { category: "Typography: Banner", label: "Heading 3", title: "banner-heading3-font", target: "[data-typeset=banner] h3", showOnlyWhenPresent: "[data-typeset=banner]", type: "font" }
 .banner-heading3-font {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -156,7 +160,7 @@
   line-height: 1.6em;
 }
 
-//tweak: { category: "Typography: Banner", label: "Button", title: "banner-button-font", target: "[data-typeset=banner] a[data-appearance*=button]", showOnlyWhenPresent: "div[data-typeset=banner]", type: "font" } 
+//tweak: { category: "Typography: Banner", label: "Button", title: "banner-button-font", target: "[data-typeset=banner] a[data-appearance*=button]", showOnlyWhenPresent: "[data-typeset=banner]", type: "font" } 
 .banner-button-font {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -191,24 +195,24 @@
 .banner-body-font-responsive() {
   .banner-body-font;
   @media (max-width: 600px)  {
-    .max-font-size(@banner-body-font-font-size * 0.8, 14px);
+    font-size: @banner-body-font-font-size * 0.8;
     line-height: 1.1em;
   }
 }
 .banner-heading1-font-responsive() {
   .banner-heading1-font;
   @media (max-width: 1200px) {
-    .max-font-size(@banner-heading1-font-font-size * 0.7, 84px);
+    font-size: @banner-heading1-font-font-size * 0.7;
   }  
   @media (max-width: 600px)  {
-    .max-font-size(@banner-heading1-font-font-size * 0.5, 24px);
+    font-size: @banner-heading1-font-font-size * 0.5;
     line-height: 1.1em;
   }
 }
 .banner-heading2-font-responsive() {
   .banner-heading2-font;
   @media (max-width: 600px)  {
-    .max-font-size(@banner-heading2-font-font-size * 0.7, 20px);
+    font-size: @banner-heading2-font-font-size * 0.7;
     line-height: 1.1em;
   }
 }

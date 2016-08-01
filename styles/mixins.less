@@ -32,10 +32,25 @@
   order: @order;
 }
 
+.flex-justify-content(@arg) {
+	-webkit-justify-content: @arg;
+	justify-content: @arg;
+}
+
+.flex-align-items(@arg) {
+	-webkit-align-items: @arg;
+	align-items: @arg;
+}
+
+.flex-wrap(@arg) {
+	-webkit-flex-wrap: @arg;
+	flex-wrap: @arg;
+}
+
 .viewport-center {
 	height: 100vh;
 	.flex-box;
-	align-items: center;
+	.flex-align-items(center);
 
 	> * {
 		width: 100%;

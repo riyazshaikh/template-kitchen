@@ -2,7 +2,7 @@
 
 /** All the style overrides for SQS system stuff i.e. blocks and layout engine, go here **/
 .sqs-layout {
-  overflow:hidden; /* To handle negative margins within */
+  /*overflow:hidden;  To handle negative margins within */
 
   .html-block,
   .markdown-block,
@@ -206,10 +206,6 @@
 
   }
 
-  .html-block p > a {
-    .link-underline();
-  }
-
   .color-overlay {
     .colors(@bgColor) {
       .background-color(fade(@bgColor,60%));  
@@ -273,11 +269,10 @@
   white-space: nowrap;
 }
 
-body.sqs-edit-mode-active {
-  .sqs-layout {
-    padding: 50px;
+body.sqs-edit-mode {
+  .sqs-layout.empty {
+    padding: 50px !important;
   }
-  #header { z-index: 1 !important; }
   [data-display*=overlaid] {
     position: static !important;
   }
