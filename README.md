@@ -6,7 +6,14 @@ Force push the entire repo to your Squarespace git url. Then navigate to Style E
 
 
 # Troubleshooting
-If css is not compiling, you can trigger LESS compiler by running this code (can be made into bookmarklet for convenience):
+If css is not compiling, you can trigger LESS compiler by running following code.
 
-<javascript:Y.Data.get({url:"/api/templates/"+Static.SQUARESPACE_CONTEXT.templateId+"/reprocess-tweaks", success:function() { alert('tweaks reprocessed'); } });>
+```javascript
+Y.Data.get({
+	url:"/api/templates/"+Static.SQUARESPACE_CONTEXT.templateId+"/reprocess-tweaks", 
+	success:function() { alert('Tweaks Reprocessed'); } 
+});
+```
+
+This can be made into a [bookmarklet](javascript:Y.Data.get({url:"/api/templates/"+Static.SQUARESPACE_CONTEXT.templateId+"/reprocess-tweaks", success:function() { alert('tweaks reprocessed'); } });) for convenience.
 
