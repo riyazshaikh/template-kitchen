@@ -15,5 +15,5 @@ Y.Data.get({
 });
 ```
 
-This can be made into a [bookmarklet](javascript:Y.Data.get({url:"/api/templates/"+Static.SQUARESPACE_CONTEXT.templateId+"/reprocess-tweaks", success:function() { alert('tweaks reprocessed'); } });) for convenience.
+This can be made into a <a href="javascript:Y.Data.get({url:'/api/templates/'+Static.SQUARESPACE_CONTEXT.templateId+'/reprocess-tweaks', success:function() { alert('tweaks reprocessed'); } });">bookmarklet</a> for convenience.
 
