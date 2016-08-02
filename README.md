@@ -1,4 +1,3 @@
-# template-kitchen
 A framework to create custom templates. You can see the framework's potential here - http://www.square-mart.com/templates
 
 
@@ -6,6 +5,7 @@ A framework to create custom templates. You can see the framework's potential he
 Requires knowledge of [Squarespace developer platform](http://developers.squarespace.com/overview)
 
 Force push the entire repo to your Squarespace git url. Then navigate to Style Editor, and click "Reset Defaults".
+
 
 # Secret Sauce
 This framework relies on a concept I like to call Recipes - basically, a tweak syntax that allows you to control dom behavior through data attributes. You can see it in action in LESS files like this:
@@ -27,6 +27,7 @@ Note that you can also mix classes and attributes, through the following syntax:
 ```
 
 You can see how complex layouts have been created with just a few lines of code, by browsing the /layouts folder.
+
 
 
 # Troubleshooting
