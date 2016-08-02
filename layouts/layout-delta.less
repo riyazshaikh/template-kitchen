@@ -1,0 +1,50 @@
+//OFF tweak: { target: "#header", properties: ["data-palette=banner"], showOnlyWhenPresent: "body.collection-layout-delta", recipe: true }
+
+//OFF tweak: { target: "#banner", properties: ["data-display=overlaid"], showOnlyWhenPresent: "body.collection-layout-delta", recipe: true }
+
+
+
+.collection-layout-delta {
+	#header .content {
+		.layout-width-main;
+		.layout-spacing-fixed-flexible;
+	}
+
+	#banner {
+		.palette(banner);
+
+		.description {
+			display: none;
+		}
+
+		.blocks {
+	    .typeset-banner;
+			.content {
+				.layout-width-main;
+			}
+
+			.html-block {
+				h1, h2, p {
+					.font-effect-highlight;
+				}
+			}
+		}
+	}
+
+	#page-footer {
+		.palette-main;
+		.typeset-main;
+
+		.content {
+			.layout-width-main;
+		}
+	}
+
+	#gallery {
+		.palette-banner;
+
+		.gallery-container { 
+			overflow: hidden;
+		}
+	}
+}

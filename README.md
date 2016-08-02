@@ -26,6 +26,9 @@ Note that you can also mix classes and attributes, through the following syntax:
 //tweak:{ target: "#gallery .meta .title ", properties:["data-font-effect=dash", "class-text-align-left=true"], showOnlyWhenPresent: "body.collection-layout-charlie", recipe: true}
 ```
 
+You can see how complex layouts have been created with just a few lines of code, by browsing the /layouts folder.
+
+
 # Troubleshooting
 If the styles appear broken, you can trigger LESS compiler by running following code.
 

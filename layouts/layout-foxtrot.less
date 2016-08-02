@@ -1,0 +1,86 @@
+//OFF tweak: { target: "#header", properties: ["data-display=overlaid","data-background=transparent","data-sticky=within-site","data-nav=slidebar"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+//OFF tweak: { target: "#header .content", properties: ["data-layout-width=full","data-layout-spacing=fixed-flexible"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+
+//OFF tweak: { target: "#header .slidebar", properties: ["data-palette=alternate","data-background=transparent"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+
+//OFF tweak: { target: "#banner .description", properties: ["data-display=overlaid-caption","data-palette=banner","data-typeset=banner","data-background=translucent","data-overlap=header"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+//OFF tweak: { target: "#banner .description .content", properties: ["data-layout-spacing=none-flexible","data-align=center-center-parent"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+//OFF tweak: { target: "#banner .description .content > div", properties: ["data-layout-width=meta","data-layout-spacing=none"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+//OFF tweak: { target: "#banner .description .title", properties: ["data-appearance=meta"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+//OFF tweak: { target: "#banner .description strong", properties: ["data-appearance=heading1"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+//OFF tweak: { target: "#banner .description a", properties: ["data-appearance=button-outline-pill"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+
+
+//OFF tweak: { target: "#gallery .content", properties: ["data-layout-width=full"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+//OFF tweak: { target: "#gallery .meta-description strong ", properties: ["data-appearance=heading1"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+//OFF tweak: { target: "#gallery .meta-description a ", properties: ["data-appearance=button-outline"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+//OFF tweak: { target: "#gallery .slide:nth-child(odd) .slide-meta ", properties: ["data-parallax=sideways-right"], showOnlyWhenPresent: "body.collection-layout-foxtrot" , recipe: true }
+//OFF tweak: { target: "#gallery .slide:nth-child(even) .slide-meta ", properties: ["data-parallax=sideways-left"], showOnlyWhenPresent: "body.collection-layout-foxtrot" , recipe: true }
+//OFF tweak: { target: "#gallery .image-container ", properties: ["class-content-fit=true"], showOnlyWhenPresent: "html:not(.view-mobile) body.collection-layout-foxtrot", recipe: true }
+
+
+//OFF tweak: { target: "#footer, main, #page-footer ", properties: ["data-background=transparent"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+
+//OFF tweak: { target: "#footer .content", properties: ["data-layout-width=full"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+//OFF tweak: { target: "#page-footer .content", properties: ["data-layout-spacing=fixed","data-palette=main","data-typeset=main"], showOnlyWhenPresent: "body.collection-layout-foxtrot", recipe: true }
+
+// tweak: { category: "Gallery", title: "Image Width", min: 0, max: 300, step: 10, target: "#gallery .image-container", showOnlyWhenPresent: "body.collection-type-foxtrot", type: "value" }
+@indexImageWidth: 30vw;
+
+
+// tweak: { category: "Gallery", title: "Item Spacing", min: 0, max: 100, step: 5, target: "#gallery .slide", showOnlyWhenPresent: "body.collection-type-foxtrot", type: "value" }
+@itemSpacing: 5%;
+
+
+.collection-layout-foxtrot {
+
+	#site {
+		background: linear-gradient(to bottom,@banner-textColor,@main-bgColor,@alt-bgColor);		
+	}
+
+	.site-logo a {
+		.transform(rotate(-90deg) translateX(-45vh));
+	   transform-origin: left bottom;	
+
+	  @media only screen and (max-width: 640px) {		
+	  	margin-left: 0.5em;
+	  }
+	}
+
+	.gallery-foxtrot {
+
+		a.image-container {
+			.border-box;
+			display: block;
+			html.view-mobile & img {
+				width: 100%;
+			}
+		}
+
+		a.image-container, .slide-meta {
+			margin: @itemSpacing;
+			html.view-mobile & {
+				text-align: center;
+			}
+		}
+		
+		@media only screen and (min-width: 641px) {		
+			.slide {
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				&:nth-child(odd) {
+					flex-direction: row-reverse;
+				}
+
+				margin: @itemSpacing 0;
+			}
+			a.image-container {
+				width: @indexImageWidth;
+				height: @indexImageWidth;
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+//OFF tweak: { target: "#header", properties: ["data-display=overlaid"], showOnlyWhenPresent: "body.collection-layout-alfa", recipe: true }
+//OFF tweak: { target: "#header .content", properties: ["data-layout-width=full","data-layout-spacing=fixed-flexible"], showOnlyWhenPresent: "body.collection-layout-alfa", recipe: true }
+
+//OFF tweak: { target: "#banner .image", properties: ["data-parallax=enable"], showOnlyWhenPresent: "body.collection-layout-alfa", recipe: true }
+//OFF tweak: { target: "#banner .blocks", properties: ["data-overlap=header","data-palette=banner","data-typeset=banner","data-background=translucent"], showOnlyWhenPresent: "body.collection-layout-alfa", recipe: true }
+//OFF tweak: { target: "#banner .blocks .content", properties: ["data-layout-width=main"], showOnlyWhenPresent: "body.collection-layout-alfa", recipe: true }
+//OFF tweak: { target: "#banner .description", properties: ["data-typeset=main","data-palette=main"], showOnlyWhenPresent: "body.collection-layout-alfa", recipe: true }
+//OFF tweak: { target: "#banner .description .title", properties: ["data-display=hide"], showOnlyWhenPresent: "body.collection-layout-alfa", recipe: true }
+//OFF tweak: { target: "#banner .description strong ", properties: ["data-appearance=heading2"], showOnlyWhenPresent: "body.collection-layout-alfa", recipe: true }
+
+// tweak: { category: "Banner", label: "Description Title", default: "", options: ["", "Hide"], property: 'data-title', target: "#banner .description .content", showOnlyWhenPresent: "body.collection-layout-alfa", title: "alfa-banner-description-display", type: "dropdown", recipe:true }
+// tweak: { category: "Banner", label: "Description Align", default: "Center", options: ["Left", "Center", "Right"], properties:['data-text-align'], target: "#banner .description .content", showOnlyWhenPresent: "body.collection-layout-alfa", title: "alfa-banner-description-text-align", type: "dropdown", recipe:true }
+
+
+//OFF tweak: { target: "#page .content", properties: ["data-layout-width=main"], showOnlyWhenPresent: "body.collection-layout-alfa", recipe: true }
+
+//OFF tweak: { target: "#blog .content", properties: ["data-layout-width=full","data-layout-spacing=flexible-minus-top"], showOnlyWhenPresent: "body.collection-layout-alfa", recipe: true }
+//OFF tweak: { target: "#blog-item .content", properties: ["data-layout-width=main"], showOnlyWhenPresent: "body.collection-layout-alfa", recipe: true }
+//OFF tweak: { target: "#blog article .BlogList-item-meta ", properties: ["data-display=hide"], showOnlyWhenPresent: "body.collection-layout-alfa", recipe: true }
+
+//OFF tweak: { target: "#page-footer .content", properties: ["data-layout-width=main","data-sticky=within-site-bottom"], showOnlyWhenPresent: "body.collection-layout-alfa", recipe: true }
+//OFF tweak: { target: "#page-footer .blocks", properties: ["data-background=translucent","data-palette=banner","data-typeset=banner"], showOnlyWhenPresent: "body.collection-layout-alfa", recipe: true }
+//OFF tweak: { target: "#page-footer .image", properties: ["data-parallax=enable"], showOnlyWhenPresent: "body.collection-layout-alfa", recipe: true }
+
+// tweak: { category: "Footer", label: "Footer Display", default: "", options: ["", "Hide"], property: 'data-display', target: "#footer", showOnlyWhenPresent: "body.collection-layout-alfa", title: "alfa-footer-description-display", type: "dropdown", recipe:true }
+
+
+.collection-layout-alfa {
+	&.view-item {
+		#banner .description {
+			display: none;
+		}
+	}
+}

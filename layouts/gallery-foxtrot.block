@@ -1,0 +1,17 @@
+<div class="gallery-foxtrot">
+
+  {.repeated section items}
+  <div class="slide" data-slide-id="{id}">
+    {.main-image?}
+      <a class="image-container" href="{clickthroughUrl}"><img class="image" {@|image-meta} /></a>
+    {.end}
+    {.if title || body}
+    <div class="slide-meta">
+      <div class="meta-title" data-appearance=meta>{title}</div>              
+      <div class="meta-description">{body}</div>    
+    </div>
+    {.end}
+  </div>
+  {.end}
+
+</div>
