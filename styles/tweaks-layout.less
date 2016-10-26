@@ -30,12 +30,13 @@ body {
   }
 }
 
-#site > [role] { /* Make them stack */
+[role="banner"], [role="main"], [role="contentinfo"] { /* Make them stack */
   position: relative;
   z-index: 1;
 }
 
 [role="complementary"] { /* Make prefooter go under by default */
+  position: relative;
   z-index: 0;
 }
 
