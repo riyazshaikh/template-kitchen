@@ -3,6 +3,9 @@
 // tweak: { category: "Layout", title: "Main Width", min: 500, max: 1500, step: 50, target: "div[data-layout-width=main]", type: "value" }
 @mainContentWidth: 1100px;
 
+// tweak: { category: "Layout", title: "Banner Width", min: 500, max: 1500, step: 50, target: "div[data-layout-width=banner]", type: "value" }
+@bannerContentWidth: 850px;
+
 // tweak: { category: "Layout", title: "Meta Width", min: 10, max: 50, step: 2, target: "div[data-layout-width=meta]", type: "value" }
 @metaWidth: 400px;
 
@@ -13,6 +16,10 @@
 // tweak: { category: "Layout", title: "Fixed Spacing", min: 0, max: 100, step: 5, target: "div[data-layout-spacing=alternate]", type: "value" }
 @altSpacing: 17px;
 
+@mobile: 640px;
+@tablet: 1023px;
+@tablet-portrait: 768px;
+@desktop: 1024px;
 
 body {
   opacity: 0;
@@ -23,7 +30,7 @@ body {
   }
 }
 
-[role] { /* Make them stack */
+#site > [role] { /* Make them stack */
   position: relative;
   z-index: 1;
 }
@@ -40,13 +47,21 @@ body {
   padding: @mainSpacing; /* default is mainSpacing */
 }
 
+.layout-width-banner, [data-layout-width=banner] {
+  width: @bannerContentWidth;
+  .border-box;
+  max-width: 100%;
+  margin: auto; /* default is center */
+  padding: @mainSpacing; /* default is mainSpacing */
+}
+
 .layout-width-meta, [data-layout-width=meta] {
   width: @metaWidth;
   .border-box;
   max-width: 100%;
   padding: @mainSpacing; /* default is mainSpacing */
 
-  @media screen and (max-width: 600px) {
+  @media (max-width: @mobile) {
     width: auto;
   }
 }

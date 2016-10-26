@@ -2,7 +2,7 @@
 
 /** All the style overrides for SQS system stuff i.e. blocks and layout engine, go here **/
 .sqs-layout {
-  /*overflow:hidden;  To handle negative margins within */
+  overflow:hidden;  /* To handle negative margins within */
 
   .html-block,
   .markdown-block,
@@ -270,7 +270,7 @@
 }
 
 body.sqs-edit-mode {
-  .sqs-layout.empty {
+  .sqs-layout.empty, .sqs-layout.sqs-editing {
     padding: 50px !important;
   }
   [data-display*=overlaid] {

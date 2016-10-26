@@ -1,6 +1,5 @@
 
 <!--Combo and minify the scripts when you're not logged in.-->
-<squarespace:script src="SelectorListener.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
 <squarespace:script src="ResizeSensor.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
 <squarespace:script src="rafscroll.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
 <squarespace:script src="RecipeManager.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />

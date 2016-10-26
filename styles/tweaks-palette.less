@@ -2,36 +2,36 @@
 @main-bgColor: #fff;
 
 //tweak: { category: "Palette: Main", label: "Text", title: "Main TextColor",  target: "[data-palette=main]", type: "color" }
-@main-textColor: rgb(16,17,19);
+@main-textColor: #7B7878;
 
 //tweak: { category: "Palette: Main", label: "Link", title: "Main LinkColor",  target: "[data-palette=main] a", type: "color" }
-@main-linkColor: rgb(16,17,19);
+@main-linkColor: #7B7878;
 
 //tweak: { category: "Palette: Main", label: "Heading", title: "Main HeadingColor",  target: "[data-palette=main] h1, [data-palette=main] h2", type: "color" }
-@main-headingColor: rgb(16,17,19);
+@main-headingColor: #4EBACF;
 
 //tweak: { category: "Palette: Main", label: "Meta", title: "Main MetaColor",  target: "[data-palette=main] h3", type: "color" }
-@main-metaColor: rgba(15,15,15,0.5);
+@main-metaColor: #4EBACF;
 
 
 //tweak: { category: "Palette: Alternate", label: "Background", title: "Alt BgColorColor",  target: "[data-palette=alternate]", showOnlyWhenPresent: "[data-palette=alternate]", type: "color" }
-@alt-bgColor: #f3efee;
+@alt-bgColor: #F0F5F6;
 
 //tweak: { category: "Palette: Alternate", label: "Text", title: "Alt TextColor",  target: "[data-palette=alternate]", showOnlyWhenPresent: "[data-palette=alternate]", type: "color" }
-@alt-textColor: rgb(16,17,19);
+@alt-textColor: #778389;
 
 //tweak: { category: "Palette: Alternate", label: "Link", title: "Alt LinkColor",  target: "[data-palette=alternate] a", showOnlyWhenPresent: "[data-palette=alternate]", type: "color" }
-@alt-linkColor: rgb(16,17,19);
+@alt-linkColor: #778389;
 
 //tweak: { category: "Palette: Alternate", label: "Heading", title: "Alt HeadingColor",  target: "[data-palette=alternate] h1, [data-palette=alternate] h2", showOnlyWhenPresent: "[data-palette=alternate]", type: "color" }
-@alt-headingColor: rgb(16,17,19);
+@alt-headingColor: #2F8AA1;
 
 //tweak: { category: "Palette: Alternate", label: "Meta", title: "Alt MetaColor",  target: "[data-palette=alternate] h3", showOnlyWhenPresent: "[data-palette=alternate]", type: "color" }
-@alt-metaColor: rgba(15,15,15,0.5);
+@alt-metaColor: #B4BFC9;
 
 
 //tweak: { category: "Palette: Banner", label: "Background", title: "Banner BgColorColor",  target: "[data-palette=banner]", showOnlyWhenPresent: "[data-palette=banner]", type: "color" }
-@banner-bgColor: rgb(16,17,19);
+@banner-bgColor: #4EBACF;
 
 //tweak: { category: "Palette: Banner", label: "Text", title: "Banner TextColor",  target: "[data-palette=banner]", showOnlyWhenPresent: "[data-palette=banner]", type: "color" }
 @banner-textColor: #fff; 
@@ -46,10 +46,10 @@
 @banner-metaColor: #fff;
 
 
-body, [data-palette=main] { /* Default */
+body, .palette-main, [data-palette=main] { /* Default */
 	color: @main-textColor;
 	.background-color(@main-bgColor);
-	h1,h2 {
+	h1,h2, h1 a, h2 a, {
 		color: @main-headingColor;
 	}
 	h3 {
@@ -61,10 +61,10 @@ body, [data-palette=main] { /* Default */
 	}
 }
 
-[data-palette=alternate] {
+.palette-alternate, [data-palette=alternate] {
 	color: @alt-textColor;
 	.background-color(@alt-bgColor);
-	h1,h2 {
+	h1,h2, h1 a, h2 a, {
 		color: @alt-headingColor;
 	}
 	h3 {
@@ -76,10 +76,10 @@ body, [data-palette=main] { /* Default */
 	}
 }
 
-[data-palette=banner] {
+.palette-banner, [data-palette=banner] {
 	color: @banner-textColor;
 	.background-color(@banner-bgColor);
-	h1,h2 {
+	h1,h2, h1 a, h2 a {
 		color: @banner-headingColor;
 	}
 	h3 {

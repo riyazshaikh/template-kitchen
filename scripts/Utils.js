@@ -35,12 +35,9 @@ Y.use('squarespace-ui-base', function () {
 				this.dataToggleEl();
 				this.dataLightbox();
 				this.imgLoad();
-			}, this);
-
-			document.onSelector('#site', function() {
 				this.dataTextShrink();
 	      this.onResize(this.imgLoad);
-			}.bind(this));
+			}, this);
 		},
 
 		currentScript: function() {

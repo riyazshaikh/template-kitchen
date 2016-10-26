@@ -11,9 +11,9 @@
 //tweak: { category: "Typography: Main", label: "Heading 1", title: "heading1-font", target: "[data-typeset=main] h1", type: "font" } 
 .heading1-font {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 200;
+  font-weight: 100;
   font-style: normal;
-  font-size: 48px;
+  font-size: 50px;
   letter-spacing: 0px;
   text-transform: none;
   line-height: 1.2em;
@@ -24,10 +24,10 @@
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 200;
   font-style: normal;
-  font-size: 32px;
+  font-size: 30px;
   letter-spacing: 0px;
   text-transform: none;
-  line-height: 1.2em;
+  line-height: 1.25em;
 }
 
 //tweak: { category: "Typography: Main", label: "Heading 3", title: "heading3-font", target: "[data-typeset=main] h3", type: "font" } 
@@ -36,7 +36,7 @@
   font-weight: 400;
   font-style: normal;
   font-size: 14px;
-  letter-spacing: 0px;
+  letter-spacing: 1.75px;
   text-transform: none;
   line-height: 1.6em;
 }
@@ -44,13 +44,13 @@
 //tweak: { category: "Typography: Main", label: "Button", title: "button-font", target: "[data-typeset=main] a[data-appearance*=button]", type: "font" } 
 .button-font {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1em;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   text-decoration: none; 
   font-style: normal;
-  letter-spacing: 0px;
+  letter-spacing: 0.93px;
 }
 
 //tweak: { category: "Typography: Main", label: "Quote", title: "quote-font", target: "[data-typeset=main] blockquote", showOnlyWhenPresent: "blockquote", type: "font" } 
@@ -124,7 +124,7 @@
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 20px;
-  line-height: 1.4em;
+  line-height: 1.5em;
   font-style: normal;
   letter-spacing: 0.5px;
 }
@@ -142,9 +142,9 @@
 //tweak: { category: "Typography: Banner", label: "Heading 2", title: "banner-heading2-font", target: "[data-typeset=banner] h2", showOnlyWhenPresent: "[data-typeset=banner]", type: "font" }
 .banner-heading2-font {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 42px;
-  line-height: 50px;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 1.25em;
   font-style: normal;
   letter-spacing: 0px;
 }
@@ -152,7 +152,7 @@
 //tweak: { category: "Typography: Banner", label: "Heading 3", title: "banner-heading3-font", target: "[data-typeset=banner] h3", showOnlyWhenPresent: "[data-typeset=banner]", type: "font" }
 .banner-heading3-font {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 200;
   font-style: normal;
   font-size: 16px;
   letter-spacing: 0px;
@@ -171,72 +171,85 @@
 }
 
 /** Make font mixins responsive */
+.heading1-font-responsive() {
+  .heading1-font;
+  @media (max-width: @tablet)  {
+    font-size: @heading1-font-font-size * 0.8;
+    line-height: 1.3em;
+  }
+}
+.heading2-font-responsive() {
+  .heading2-font;
+  @media (max-width: @tablet)  {
+    font-size: 24px;
+  }
+}
 .alt-body-font-responsive() {
   .alt-body-font;
-  @media (max-width: 600px)  {
-    font-size: @alt-body-font-font-size * 0.8;
-    line-height: 1.1em;
-  }
 }
 .alt-heading1-font-responsive() {
   .alt-heading1-font;
-  @media (max-width: 600px)  {
+  @media (max-width: @mobile)  {
     font-size: @alt-heading1-font-font-size * 0.67;
     line-height: 1.1em;
   }
 }
 .alt-heading2-font-responsive() {
   .alt-heading2-font;
-  @media (max-width: 600px)  {
+  @media (max-width: @mobile)  {
     font-size: @alt-heading2-font-font-size * 0.7;
     line-height: 1.1em;
   }
 }
 .banner-body-font-responsive() {
   .banner-body-font;
-  @media (max-width: 600px)  {
-    font-size: @banner-body-font-font-size * 0.8;
-    line-height: 1.1em;
+  @media (max-width: @mobile)  {
+    font-size: 16px;
   }
 }
 .banner-heading1-font-responsive() {
   .banner-heading1-font;
-  @media (max-width: 1200px) {
-    font-size: @banner-heading1-font-font-size * 0.7;
+  @media (max-width: @tablet) {
+    font-size: 24px;
   }  
-  @media (max-width: 600px)  {
-    font-size: @banner-heading1-font-font-size * 0.5;
-    line-height: 1.1em;
-  }
 }
 .banner-heading2-font-responsive() {
   .banner-heading2-font;
-  @media (max-width: 600px)  {
+  @media (max-width: @mobile)  {
     font-size: @banner-heading2-font-font-size * 0.7;
     line-height: 1.1em;
   }
 }
 
 
-body, [data-typeset=main] { /* Default */
+body, .typeset-main, [data-typeset=main] { /* Default */
   .body-font;
-  h1 { .heading1-font; }
-  h2 { .heading2-font; }
+  h1 { .heading1-font-responsive; }
+  h2 { .heading2-font-responsive; }
   h3 { .heading3-font; }
+  .sqs-block-button .sqs-block-button-element {
+    .button-font;
+  }
 }
 
-[data-typeset=alternate] {
+.typeset-alternate, [data-typeset=alternate] {
   .alt-body-font-responsive;
   h1 { .alt-heading1-font-responsive; }
   h2 { .alt-heading2-font-responsive; }
   h3 { .alt-heading3-font; }
+  .sqs-block-button .sqs-block-button-element {
+    .alt-button-font;
+  }
 }
 
-[data-typeset=banner] {
+.typeset-banner, [data-typeset=banner] {
   .banner-body-font-responsive;
   h1 { .banner-heading1-font-responsive; }
   h2 { .banner-heading2-font-responsive; }
   h3 { .banner-heading3-font; }
+  .sqs-block-button .sqs-block-button-element {
+    .banner-button-font;
+  }
 
   p, h1 {
     margin: 0; 
