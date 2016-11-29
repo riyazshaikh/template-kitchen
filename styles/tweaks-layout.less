@@ -46,6 +46,9 @@ body {
   max-width: 100%;
   margin: auto; /* default is center */
   padding: @mainSpacing; /* default is mainSpacing */
+  @media (max-width: @tablet) {
+    padding: 50px;
+  }
 }
 
 .layout-width-banner, [data-layout-width=banner] {
@@ -169,6 +172,7 @@ body {
 }
 
 [data-layout=absolute], .layout-absolute {
+  display: block;
   position: absolute;
   left: 0;
   right: 0;

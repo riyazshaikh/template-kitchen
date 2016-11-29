@@ -37,6 +37,7 @@ Y.use('squarespace-ui-base', function () {
 				this.imgLoad();
 				this.dataTextShrink();
 	      this.onResize(this.imgLoad);
+	      this.folderRedirect();
 			}, this);
 		},
 
