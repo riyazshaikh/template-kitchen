@@ -1,0 +1,3 @@
+{.equal? regionName "default"}
+  {@|apply gallery-default.block}
+{.end}

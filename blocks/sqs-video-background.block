@@ -7,4 +7,5 @@
     <div id="player"></div>
 
   </div>
+	<squarespace:script src="site-bundle.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
 {.end}

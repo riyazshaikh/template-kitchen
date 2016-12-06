@@ -1,16 +1,27 @@
 <div class="index content">
-  <div class="nav" data-align=center>
-    {@|apply nav-index.block}
-  </div>
-
 {.section collection}
   <!-- Create index sections -->
-
   {.repeated section collections}
-  <div id="index-{@index}" class="index-section" data-url-id="{urlId}" data-collection-id="{id}">
+  <div id="index-{@index}" class="index-section collection-layout-{regionName} {.equal? @index 1}active{.end}" data-url-id="{urlId}" data-collection-id="{id}" data-palette="{title}">
+    
+    {.collectionTypeNameEquals? page}
+      {.section mainImage}
+      <figure data-edit-main-image="Background" data-annotation-alignment="bottom left" class="background-wrapper content-fill"><img class="image loading" {@|image-meta} /></figure>
+      {.end}
+    {.end}
+
     <div class="index-{typeName} content" data-content-field="main-content">
+    {.section description}
+    <div class="description">{@}</div>
+    {.end}
+
     {.collectionTypeNameEquals? page}
       {mainContent}
+    {.or}
+      <!-- Switch gallery implementation based on Page Layout selected -->
+      {.collectionTypeNameEquals? gallery}
+        {@|apply gallery-router.block}
+      {.end}
     {.end}
     </div>
   </div>
